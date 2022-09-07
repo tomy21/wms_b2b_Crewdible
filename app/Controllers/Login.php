@@ -15,6 +15,7 @@ class Login extends BaseController
             'config' => config('Auth'),
         ];
         return view('login/index', $data);
+        <?= $this->extend('layouts/signin') ?>
     }
     public function cekUser()
     {
