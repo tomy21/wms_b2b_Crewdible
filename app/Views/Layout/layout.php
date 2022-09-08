@@ -111,7 +111,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= site_url('invoice/index'); ?>" class="nav-link">
+                            <a href="<?= site_url('Invoice/index'); ?>" class="nav-link">
                                 <i class="nav-icon fas fa-file"></i>
                                 <p>
                                     Upload Order

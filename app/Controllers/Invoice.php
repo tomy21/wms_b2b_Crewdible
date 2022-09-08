@@ -20,7 +20,7 @@ class Invoice extends BaseController
         $data = [
             'data' => $this->invoiceModel->dataStatus()
         ];
-        return view('stock/invoice', $data);
+        return view('Stock/invoice', $data);
     }
     public function upload()
     {
