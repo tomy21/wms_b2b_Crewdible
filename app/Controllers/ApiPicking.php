@@ -196,10 +196,6 @@ class ApiPicking extends ResourceController
             }
         }
 
-
-
-
-
         return $this->respond($response);
     }
 

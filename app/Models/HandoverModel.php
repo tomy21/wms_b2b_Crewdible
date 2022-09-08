@@ -8,6 +8,6 @@ class HandoverModel extends Model
 {
     protected $table            = 'tbl_handover';
     protected $primaryKey       = 'id_handover';
-    protected $allowedFields    = ['Order_id', 'listItem', 'driver', 'foto', 'tandatangan', 'status'];
+    protected $allowedFields    = ['listItem', 'driver', 'foto', 'tandatangan', 'status'];
     protected $useTimestamps    = true;
 }

@@ -93,24 +93,32 @@ class ApiManifest extends ResourceController
         }
         // }
     }
-    // public function add(){
-    //     $list   = $this->request->getPost('list');
-    //     $driver = $this->request->getPost('driver');
-    //     $foto   = $this->request->getFile('foto');
-    //     $foto->move('./assets/uploades');
-    //     $ttd    = $this->request->getFile('ttd');
-    //     $ttd->move('./assets/uploades');
+    public function add()
+    {
+        $list   = $this->request->getPost('list');
+        $driver = $this->request->getPost('driver');
+        $foto   = $this->request->getFile('foto');
+        $foto->move('./assets/uploades');
+        $ttd    = $this->request->getFile('ttd');
+        $ttd->move('./assets/uploades');
 
-    //     $modelHandover= new HandoverModel();
+        $modelHandover = new HandoverModel();
 
-    //     $Order = $modelHandover->getWhere(['Order_id' => $order])->getResultArray();
+        // $Order = $modelHandover->getWhere(['Order_id' => $order])->getResultArray();
 
-    //         $data = [
-    //             'listOrder'         => $list,
-    //             'driver'            => 1,
-    //             'foto'              => $foto->getName(),
-    //             'tandatangan'       => $ttd->getName(),
-    //         ];
+        $data = [
+            'listItem'          => $list,
+            'driver'            => $driver,
+            'foto'              => $foto->getName(),
+            'tandatangan'       => $ttd->getName(),
+        ];
+        $modelHandover->insert($data);
 
-    // }
+        $respon = [
+            'success'       => true,
+            'data'          => $data
+        ];
+
+        return $this->respond(json_encode($respon), 200);
+    }
 }

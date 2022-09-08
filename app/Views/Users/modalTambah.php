@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-cyan">
-                <h5 class="modal-title" id="staticBackdropLabel">Tambah Karyawan</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Tambah Warehouse</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -21,7 +21,7 @@
                                 <input type="text"
                                     class="form-control <?php if (session('errors.username')) : ?>is-invalid<?php endif ?>"
                                     placeholder="<?= lang('Auth.username') ?>" value="<?= old('username') ?>"
-                                    name="username">
+                                    name="username" autocomplete="off">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <span class="fas fa-user"></span>
