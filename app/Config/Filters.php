@@ -25,7 +25,8 @@ class Filters extends BaseConfig
         'secureheaders' => SecureHeaders::class,
         'filterAdmin'   => \App\Filters\FilterAdmin::class,
         'filterSeller'  => \App\Filters\filterSeller::class,
-        'login'         => \Myth\Auth\Filters\LoginFilter::class,
+//         'login'         => \Myth\Auth\Filters\LoginFilter::class,
+//         'login'         => \App\
         'role'          => \Myth\Auth\Filters\RoleFilter::class,
         'permission'    => \Myth\Auth\Filters\PermissionFilter::class,
         // 'apipicking'     => \App\Filters\ApiPicking::class,

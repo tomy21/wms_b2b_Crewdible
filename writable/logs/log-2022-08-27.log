@@ -1,0 +1,335 @@
+CRITICAL - 2022-08-27 12:20:52 --> Undefined variable $idKaryawan
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Views\Users\modalTambah.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 17)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Users/modalTamb...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\Karyawan.php(23): view('Users/modalTamb...')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Karyawan->modalTambah()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-08-27 12:20:58 --> Undefined variable $idKaryawan
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Views\Users\modalTambah.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 17)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Users/modalTamb...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\Karyawan.php(23): view('Users/modalTamb...')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Karyawan->modalTambah()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-08-27 12:27:47 --> Invalid file: Karyawan/modalTambah.php
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Karyawan/modalT...')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Karyawan/modalT...', Array, true)
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\Karyawan.php(24): view('Karyawan/modalT...', Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Karyawan->modalTambah()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-08-27 12:28:27 --> Invalid file: Users/karyawan.php
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Users/karyawan....')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Users/karyawan', Array, true)
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\Karyawan.php(16): view('Users/karyawan', Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Karyawan->index()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-08-27 12:44:59 --> Invalid file: users/updateUser.php
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('users/updateUse...')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('users/updateUse...', Array, true)
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\Karyawan.php(132): view('users/updateUse...', Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Karyawan->updateData()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-08-27 12:45:11 --> Invalid file: users/updateUser.php
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('users/updateUse...')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('users/updateUse...', Array, true)
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\Karyawan.php(132): view('users/updateUse...', Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Karyawan->updateData()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-08-27 12:45:33 --> Invalid file: users/updateUser.php
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('users/updateUse...')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('users/updateUse...', Array, true)
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\Karyawan.php(132): view('users/updateUse...', Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Karyawan->updateData()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-08-27 12:45:41 --> Invalid file: users/updateUser.php
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('users/updateUse...')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('users/updateUse...', Array, true)
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\Karyawan.php(132): view('users/updateUse...', Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Karyawan->updateData()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-08-27 12:50:58 --> Undefined variable $pass
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Views\Karyawan\updateUser.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 41)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('karyawan/update...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\Karyawan.php(132): view('karyawan/update...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Karyawan->updateData()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-08-27 13:00:53 --> Undefined property: stdClass::$User_id
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Views\basket\index.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\Users\\DUTA D...', 45)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('basket/index', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\ProsesInvoice.php(77): view('basket/index', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->index()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-08-27 14:32:29 --> Undefined property: stdClass::$id_user
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Views\basket\modalBarang.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\Users\\DUTA D...', 22)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('basket/modalbar...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\Picking.php(133): view('basket/modalbar...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->cariBarang()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-08-27 14:32:31 --> Undefined property: stdClass::$id_user
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Views\basket\modalBarang.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\Users\\DUTA D...', 22)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('basket/modalbar...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\Picking.php(133): view('basket/modalbar...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->cariBarang()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-08-27 14:46:03 --> Call to undefined method App\Models\PickingModel::tampilData
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\ProsesInvoice.php(37): CodeIgniter\Model->__call('tampilData', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->index()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-08-27 14:46:15 --> Call to undefined method App\Models\PickingModel::tampilData
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\ProsesInvoice.php(37): CodeIgniter\Model->__call('tampilData', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->index()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-08-27 14:46:23 --> Call to undefined method App\Models\PickingModel::tampilData
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\ProsesInvoice.php(37): CodeIgniter\Model->__call('tampilData', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->index()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-08-27 14:47:16 --> Call to undefined method App\Models\PickingModel::tampilData
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\ProsesInvoice.php(37): CodeIgniter\Model->__call('tampilData', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->index()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-08-27 14:51:49 --> Array to string conversion
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Views\basket\index.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\Users\\DUTA D...', 47)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('basket/index', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\ProsesInvoice.php(34): view('basket/index', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->index()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-08-27 15:01:50 --> Call to undefined method App\Models\InvoiceModel::countData
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\ProsesInvoice.php(24): CodeIgniter\Model->__call('countData', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->index()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-08-27 15:03:48 --> Undefined array key "jumlah"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\ProsesInvoice.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 28)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->index()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-08-27 15:03:56 --> Undefined array key "quantity"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\ProsesInvoice.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 28)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->index()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-08-27 15:04:15 --> Call to undefined method App\Models\ModelOrder::getNumRows
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\ProsesInvoice.php(32): CodeIgniter\Model->__call('getNumRows', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->index()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-08-27 15:05:32 --> Undefined array key "Order_id"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\ProsesInvoice.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 28)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->index()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-08-27 15:05:41 --> Call to undefined method App\Models\ModelOrder::getNumRows
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\ProsesInvoice.php(32): CodeIgniter\Model->__call('getNumRows', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->index()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-08-27 15:05:57 --> Object of class CodeIgniter\Database\MySQLi\Builder could not be converted to string
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('basket/index', Array, true)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\ProsesInvoice.php(40): view('basket/index', Array)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->index()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-08-27 15:07:13 --> Undefined array key "jumlah"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\ProsesInvoice.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 28)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->index()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-08-27 15:12:13 --> Object of class CodeIgniter\Database\MySQLi\Builder could not be converted to string
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('basket/index', Array, true)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\ProsesInvoice.php(40): view('basket/index', Array)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->index()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-08-27 15:12:32 --> Object of class CodeIgniter\Database\MySQLi\Builder could not be converted to string
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('basket/index', Array, true)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\ProsesInvoice.php(40): view('basket/index', Array)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->index()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-08-27 15:14:13 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::getNumArray()
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->index()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#5 {main}
+CRITICAL - 2022-08-27 15:15:29 --> Call to undefined method App\Models\ModelOrder::getNumRows
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\ProsesInvoice.php(31): CodeIgniter\Model->__call('getNumRows', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->index()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-08-27 15:17:12 --> Call to a member function getNumRows() on array
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->index()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#5 {main}
+CRITICAL - 2022-08-27 15:17:52 --> Call to undefined method App\Models\InvoiceModel::jumlah
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\ProsesInvoice.php(35): CodeIgniter\Model->__call('jumlah', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->index()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-08-27 15:18:05 --> Undefined variable $sumOrder
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Views\basket\index.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 54)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('basket/index', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\ProsesInvoice.php(40): view('basket/index', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->index()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+ERROR - 2022-08-27 16:18:41 --> Illegal parameter data types int and row for operation '='
+CRITICAL - 2022-08-27 16:18:41 --> Illegal parameter data types int and row for operation '='
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\Picking.php(288): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->ProsesPick()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#11 {main}
+ERROR - 2022-08-27 16:18:48 --> Illegal parameter data types int and row for operation '='
+CRITICAL - 2022-08-27 16:18:48 --> Illegal parameter data types int and row for operation '='
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\app\Controllers\Picking.php(288): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->ProsesPick()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI2\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#11 {main}

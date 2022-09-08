@@ -1,0 +1,751 @@
+CRITICAL - 2022-09-04 01:17:36 --> CodeIgniter\Database\BaseBuilder::getWhere(): Argument #2 ($limit) must be of type ?int, string given, called in C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php on line 728
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere('Order_id', 'R364036484')
+#1 C:\xampp\htdocs\Project_BMI2\app\Controllers\Sorting.php(62): CodeIgniter\Model->__call('getWhere', Array)
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Sorting->invoice('R364036484')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sorting))
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-09-04 01:18:09 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::select()
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Sorting->invoice('R389610777')
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sorting))
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+ERROR - 2022-09-04 01:18:54 --> Operand should contain 1 column(s)
+CRITICAL - 2022-09-04 01:18:54 --> Operand should contain 1 column(s)
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\Project_BMI2\app\Controllers\Sorting.php(73): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Sorting->invoice('R526762976')
+#9 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sorting))
+#10 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-09-04 01:24:54 --> Array to string conversion
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 312)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\Query.php(312): implode(',', Array)
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\Query.php(293): CodeIgniter\Database\Query->matchNamedBinds('INSERT INTO `tb...', Array)
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\Query.php(150): CodeIgniter\Database\Query->compileBinds()
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\Query->getQuery()
+#5 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#9 C:\xampp\htdocs\Project_BMI2\app\Controllers\Sorting.php(63): CodeIgniter\Model->insert(Array)
+#10 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Sorting->invoice('R871655835')
+#11 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sorting))
+#12 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-09-04 01:27:07 --> Array to string conversion
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 61)
+#1 C:\xampp\htdocs\Project_BMI2\app\Controllers\Sorting.php(61): implode(Array)
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Sorting->invoice('R871655835')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sorting))
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-09-04 01:29:04 --> Array to string conversion
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 312)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\Query.php(312): implode(',', Array)
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\Query.php(293): CodeIgniter\Database\Query->matchNamedBinds('INSERT INTO `tb...', Array)
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\Query.php(150): CodeIgniter\Database\Query->compileBinds()
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\Query->getQuery()
+#5 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#9 C:\xampp\htdocs\Project_BMI2\app\Controllers\Sorting.php(63): CodeIgniter\Model->insert(Array)
+#10 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Sorting->invoice('R871655835')
+#11 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sorting))
+#12 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-09-04 02:29:37 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::get()
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-04 11:56:19 --> Call to a member function isValid() on null
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->update()
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-04 11:57:03 --> Call to a member function isValid() on null
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->update()
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-04 12:01:09 --> Call to a member function isValid() on null
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->update()
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-04 12:06:02 --> Call to a member function isValid() on null
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->update()
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-04 13:29:44 --> Call to a member function move() on null
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->update()
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-04 14:47:08 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:47:27 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:49:44 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:49:48 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:49:55 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:50:05 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:52:35 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:52:43 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:52:47 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:53:14 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:53:19 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:53:27 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:53:32 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:53:56 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:53:59 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:54:58 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:55:02 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:55:06 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:55:29 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:56:34 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:59:30 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:59:33 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:59:36 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:59:38 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 14:59:46 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-09-04 15:05:14 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-09-04 15:05:14 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(31): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-04 15:05:16 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-09-04 15:05:16 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(31): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-04 15:05:19 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-09-04 15:05:19 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(31): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-04 15:05:23 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-09-04 15:05:23 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(31): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-04 15:05:29 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-09-04 15:05:29 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(31): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-04 15:06:20 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-09-04 15:06:20 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(31): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-04 15:06:35 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-09-04 15:06:35 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(31): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-04 15:06:40 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-09-04 15:06:40 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(31): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-04 15:07:14 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-09-04 15:07:14 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(31): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-04 15:07:17 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-09-04 15:07:17 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(31): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-04 15:08:04 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-09-04 15:08:04 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(31): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-04 15:12:40 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-09-04 15:12:40 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(31): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-04 15:13:06 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-09-04 15:13:06 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(31): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-04 15:13:15 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-09-04 15:13:15 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(31): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-04 15:13:22 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-09-04 15:13:22 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(31): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-09-04 15:18:24 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 15:18:30 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 15:18:48 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 15:19:14 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 15:19:26 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 15:19:41 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 17:43:19 --> Cannot declare class App\Controllers\ApiPacking, because the name is already in use
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+ERROR - 2022-09-04 17:59:21 --> Unknown column 'Status' in 'where clause'
+CRITICAL - 2022-09-04 17:59:21 --> Unknown column 'Status' in 'where clause'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiManifest.php(20): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiManifest->index()
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiManifest))
+#9 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2022-09-04 20:14:33 --> There is no data to insert.
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\BaseModel.php(718): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#2 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiManifest.php(41): CodeIgniter\Model->insert(Array)
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiManifest->show()
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiManifest))
+#5 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-04 20:18:15 --> foreach() argument must be of type array|object, null given
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiManifest.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argum...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiManifest->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiManifest))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 20:19:09 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::get()
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiManifest->show()
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiManifest))
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-04 20:19:21 --> Attempt to read property "getResult" on null
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiManifest.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiManifest->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiManifest))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 20:19:38 --> foreach() argument must be of type array|object, null given
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiManifest.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argum...', 'C:\\xampp\\htdocs...', 35)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiManifest->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiManifest))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-09-04 20:54:30 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-09-04 20:54:30 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(59): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->update()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-04 20:54:36 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-09-04 20:54:36 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(59): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->update()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-04 20:54:54 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-09-04 20:54:54 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(59): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->update()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-04 20:55:08 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-09-04 20:55:08 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(59): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->update()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-04 20:55:36 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-09-04 20:55:36 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(59): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->update()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-04 20:56:25 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-09-04 20:56:25 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(59): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->update()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-04 20:56:39 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-09-04 20:56:39 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(59): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->update()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-09-04 21:08:07 --> Undefined array key 22
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\Invoice.php(90): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 90)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Invoice->upload()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoice))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 21:08:16 --> Undefined array key 2
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\Invoice.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 70)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Invoice->upload()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoice))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-09-04 21:50:54 --> Unknown column 'idBasket' in 'group statement'
+CRITICAL - 2022-09-04 21:50:54 --> Unknown column 'idBasket' in 'group statement'
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPicking.php(17): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPicking->index()
+#8 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPicking))
+#9 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2022-09-04 21:54:14 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::groupBy()
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPicking->show('Tomy_Agung')
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPicking))
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-04 21:54:34 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::groupBy()
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPicking->show('Tomy_agung')
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPicking))
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-04 21:55:10 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::groupBy()
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPicking->show('Tomy_agung')
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPicking))
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-04 21:55:24 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::groupBy()
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPicking->show('Tomy_agung')
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPicking))
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-04 21:55:37 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::groupBy()
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPicking->show('Tomy_agung')
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPicking))
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-04 21:56:21 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::groupBy()
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPicking->show('Tomy_agung')
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPicking))
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-04 22:51:13 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::findAll()
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPicking->index()
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPicking))
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-04 22:53:54 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::groupBy()
+#0 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPicking->show('Tomy_agung')
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPicking))
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-04 22:54:28 --> Call to undefined method App\Models\PickingModel::getResult
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPicking.php(29): CodeIgniter\Model->__call('getResult', Array)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPicking->show('Tomy_agung')
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPicking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-04 23:22:47 --> Undefined array key 0
+#0 C:\xampp\htdocs\Project_BMI2\app\Controllers\ApiPacking.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 36)
+#1 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ApiPacking->show()
+#2 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiPacking))
+#3 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

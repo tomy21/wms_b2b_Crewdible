@@ -1,0 +1,697 @@
+CRITICAL - 2022-07-11 15:40:30 --> Cannot modify header information - headers already sent
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'C:\\Users\\DUTA D...', 743)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(743): setcookie('csrfCookieBMI', '49fb16113b6e251...', Array)
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(719): CodeIgniter\HTTP\Response->doSetCookie('csrfCookieBMI', '49fb16113b6e251...', Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(699): CodeIgniter\HTTP\Response->dispatchCookies()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(443): CodeIgniter\HTTP\Response->sendCookies()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(998): CodeIgniter\HTTP\Response->send()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(458): CodeIgniter\CodeIgniter->sendResponse()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-07-11 15:40:30 --> Uncaught ErrorException: Cannot modify header information - headers already sent in C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Debug\Exceptions.php:112
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'C:\\Users\\DUTA D...', 112)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Debug\Exceptions.php(112): header('HTTP/1.1 500 In...', true, 500)
+#2 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#3 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-07-11 15:40:32 --> Cannot modify header information - headers already sent
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'C:\\Users\\DUTA D...', 743)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(743): setcookie('csrfCookieBMI', 'f458bce85da6c7d...', Array)
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(719): CodeIgniter\HTTP\Response->doSetCookie('csrfCookieBMI', 'f458bce85da6c7d...', Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(699): CodeIgniter\HTTP\Response->dispatchCookies()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(443): CodeIgniter\HTTP\Response->sendCookies()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(998): CodeIgniter\HTTP\Response->send()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(458): CodeIgniter\CodeIgniter->sendResponse()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-07-11 15:40:32 --> Uncaught ErrorException: Cannot modify header information - headers already sent in C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Debug\Exceptions.php:112
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'C:\\Users\\DUTA D...', 112)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Debug\Exceptions.php(112): header('HTTP/1.1 500 In...', true, 500)
+#2 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#3 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-07-11 15:44:34 --> Call to undefined method Dompdf\Image\Cache::resolve_url()
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\Frame\Factory.php(202): Dompdf\FrameDecorator\Image->__construct(Object(Dompdf\Frame), Object(Dompdf\Dompdf))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\Dompdf.php(736): Dompdf\Frame\Factory::decorate_frame(Object(Dompdf\Frame), Object(Dompdf\Dompdf), Object(Dompdf\FrameDecorator\Page))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(378): Dompdf\Dompdf->render()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-11 15:44:41 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 262148096 bytes)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-07-11 15:51:14 --> getimagesize(): Passing null to parameter #1 ($filename) of type string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'getimagesize():...', 'C:\\Users\\DUTA D...', 665)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\Helpers.php(665): getimagesize(NULL)
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameDecorator\Image.php(85): Dompdf\Helpers::dompdf_getimagesize(NULL, Resource id #167)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\Image.php(144): Dompdf\FrameDecorator\Image->get_intrinsic_dimensions()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\Image.php(69): Dompdf\FrameReflower\Image->calculate_size(NULL, NULL)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\AbstractFrameReflower.php(459): Dompdf\FrameReflower\Image->get_min_max_content_width()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(924): Dompdf\FrameReflower\AbstractFrameReflower->get_min_max_width()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\AbstractFrameReflower.php(397): Dompdf\FrameDecorator\AbstractFrameDecorator->get_min_max_width()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\TableCell.php(141): Dompdf\FrameReflower\AbstractFrameReflower->get_min_max_child_width()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\AbstractFrameReflower.php(459): Dompdf\FrameReflower\TableCell->get_min_max_content_width()
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(924): Dompdf\FrameReflower\AbstractFrameReflower->get_min_max_width()
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\Cellmap.php(730): Dompdf\FrameDecorator\AbstractFrameDecorator->get_min_max_width()
+#12 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\Cellmap.php(605): Dompdf\Cellmap->calculate_column_widths()
+#13 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\Table.php(462): Dompdf\Cellmap->add_frame(Object(Dompdf\FrameDecorator\Table))
+#14 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\Table.php(333): Dompdf\FrameReflower\Table->get_min_max_width()
+#15 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(916): Dompdf\FrameReflower\Table->reflow(Object(Dompdf\FrameDecorator\Block))
+#16 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\Block.php(865): Dompdf\FrameDecorator\AbstractFrameDecorator->reflow(Object(Dompdf\FrameDecorator\Block))
+#17 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(916): Dompdf\FrameReflower\Block->reflow(NULL)
+#18 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\Page.php(142): Dompdf\FrameDecorator\AbstractFrameDecorator->reflow()
+#19 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(916): Dompdf\FrameReflower\Page->reflow(NULL)
+#20 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\Dompdf.php(770): Dompdf\FrameDecorator\AbstractFrameDecorator->reflow()
+#21 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(378): Dompdf\Dompdf->render()
+#22 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#23 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#24 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#25 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#26 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#27 {main}
+CRITICAL - 2022-07-11 15:51:23 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 262148096 bytes)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-07-11 15:51:24 --> getimagesize(): Passing null to parameter #1 ($filename) of type string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'getimagesize():...', 'C:\\Users\\DUTA D...', 665)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\Helpers.php(665): getimagesize(NULL)
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameDecorator\Image.php(85): Dompdf\Helpers::dompdf_getimagesize(NULL, Resource id #167)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\Image.php(144): Dompdf\FrameDecorator\Image->get_intrinsic_dimensions()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\Image.php(69): Dompdf\FrameReflower\Image->calculate_size(NULL, NULL)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\AbstractFrameReflower.php(459): Dompdf\FrameReflower\Image->get_min_max_content_width()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(924): Dompdf\FrameReflower\AbstractFrameReflower->get_min_max_width()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\AbstractFrameReflower.php(397): Dompdf\FrameDecorator\AbstractFrameDecorator->get_min_max_width()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\TableCell.php(141): Dompdf\FrameReflower\AbstractFrameReflower->get_min_max_child_width()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\AbstractFrameReflower.php(459): Dompdf\FrameReflower\TableCell->get_min_max_content_width()
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(924): Dompdf\FrameReflower\AbstractFrameReflower->get_min_max_width()
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\Cellmap.php(730): Dompdf\FrameDecorator\AbstractFrameDecorator->get_min_max_width()
+#12 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\Cellmap.php(605): Dompdf\Cellmap->calculate_column_widths()
+#13 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\Table.php(462): Dompdf\Cellmap->add_frame(Object(Dompdf\FrameDecorator\Table))
+#14 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\Table.php(333): Dompdf\FrameReflower\Table->get_min_max_width()
+#15 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(916): Dompdf\FrameReflower\Table->reflow(Object(Dompdf\FrameDecorator\Block))
+#16 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\Block.php(865): Dompdf\FrameDecorator\AbstractFrameDecorator->reflow(Object(Dompdf\FrameDecorator\Block))
+#17 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(916): Dompdf\FrameReflower\Block->reflow(NULL)
+#18 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\Page.php(142): Dompdf\FrameDecorator\AbstractFrameDecorator->reflow()
+#19 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(916): Dompdf\FrameReflower\Page->reflow(NULL)
+#20 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\Dompdf.php(770): Dompdf\FrameDecorator\AbstractFrameDecorator->reflow()
+#21 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(378): Dompdf\Dompdf->render()
+#22 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R274472975')
+#23 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#24 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#25 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#26 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#27 {main}
+CRITICAL - 2022-07-11 15:51:30 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 262148096 bytes)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-07-11 15:52:55 --> getimagesize(): Passing null to parameter #1 ($filename) of type string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'getimagesize():...', 'C:\\Users\\DUTA D...', 665)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\Helpers.php(665): getimagesize(NULL)
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameDecorator\Image.php(85): Dompdf\Helpers::dompdf_getimagesize(NULL, Resource id #167)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\Image.php(144): Dompdf\FrameDecorator\Image->get_intrinsic_dimensions()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\Image.php(69): Dompdf\FrameReflower\Image->calculate_size(NULL, NULL)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\AbstractFrameReflower.php(459): Dompdf\FrameReflower\Image->get_min_max_content_width()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(924): Dompdf\FrameReflower\AbstractFrameReflower->get_min_max_width()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\AbstractFrameReflower.php(397): Dompdf\FrameDecorator\AbstractFrameDecorator->get_min_max_width()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\TableCell.php(141): Dompdf\FrameReflower\AbstractFrameReflower->get_min_max_child_width()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\AbstractFrameReflower.php(459): Dompdf\FrameReflower\TableCell->get_min_max_content_width()
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(924): Dompdf\FrameReflower\AbstractFrameReflower->get_min_max_width()
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\Cellmap.php(730): Dompdf\FrameDecorator\AbstractFrameDecorator->get_min_max_width()
+#12 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\Cellmap.php(605): Dompdf\Cellmap->calculate_column_widths()
+#13 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\Table.php(462): Dompdf\Cellmap->add_frame(Object(Dompdf\FrameDecorator\Table))
+#14 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\Table.php(333): Dompdf\FrameReflower\Table->get_min_max_width()
+#15 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(916): Dompdf\FrameReflower\Table->reflow(Object(Dompdf\FrameDecorator\Block))
+#16 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\Block.php(865): Dompdf\FrameDecorator\AbstractFrameDecorator->reflow(Object(Dompdf\FrameDecorator\Block))
+#17 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(916): Dompdf\FrameReflower\Block->reflow(NULL)
+#18 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameReflower\Page.php(142): Dompdf\FrameDecorator\AbstractFrameDecorator->reflow()
+#19 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(916): Dompdf\FrameReflower\Page->reflow(NULL)
+#20 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\dompdf\dompdf\src\Dompdf.php(770): Dompdf\FrameDecorator\AbstractFrameDecorator->reflow()
+#21 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(378): Dompdf\Dompdf->render()
+#22 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R274472975')
+#23 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#24 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#25 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#26 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#27 {main}
+CRITICAL - 2022-07-11 15:53:04 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 262148096 bytes)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-07-11 16:41:37 --> Maximum execution time of 60 seconds exceeded
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-07-11 16:42:41 --> Maximum execution time of 60 seconds exceeded
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-07-11 21:14:57 --> Permission denied on <!-- DEBUG-VIEW START 1 APPPATH\Views\Layout\invoice.php -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Print</title>
+</head>
+<style>
+body {
+    margin: auto;
+}
+
+p {
+    margin-bottom: -10px;
+    color: grey;
+    font-size: 12px;
+}
+
+span {
+    font-style: italic;
+}
+
+h3 {
+    margin-bottom: 30px;
+    font-size: 12px;
+}
+
+table {
+    margin: auto;
+    font-family: "Arial";
+    font-size: 12px;
+
+}
+
+.table {
+    border-collapse: collapse;
+    font-size: 14px;
+    width: 100%;
+    text-align: left;
+}
+
+.table-1 {
+    border-collapse: collapse;
+    font-size: 14px;
+    width: 100%;
+    text-align: left;
+    border: 0px;
+}
+
+.table th,
+.table td {
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    border-left: 1px solid #cccccc;
+    padding: 9px 21px;
+}
+
+.table th,
+.table td:last-child {
+    border-right: 1px solid #cccccc;
+}
+
+.table td:first-child {
+    border-top: 1px solid #cccccc;
+}
+
+caption {
+    caption-side: top;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.grid {
+    display: grid;
+    width: 100%;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, 33.33%);
+    grid-gap: 10px;
+}
+
+.head-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+
+/*Tabel Responsive 1*/
+.table-container {
+    overflow: auto;
+}
+</style>
+
+<body>
+    <table class="table-1">
+        <thead>
+            <tr width="40px">
+                <td>
+                    <p>Tanggal Pesanan <span>(Order date)</span></p>
+                    <h3 style="font-weight:1000 ;">2022-07-04 22:40:52</h3>
+                </td>
+                <td rowspan="3">
+                    <img src="{{url('../img/coba1.png')}}" alt="" width="100px">
+                </td>
+                <td rowspan="3">
+                    <img src="http://localhost:8080/dist/img/logocrew.png" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Nomor Pesanan <span>(Order number)</span></p>
+                    <h3 style="font-weight:900 ;">R274472975</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Tanggal Pengiriman <span>(Schedule Delivery Time)</span></p>
+                    <h3 style="font-weight:900 ;">2022-05-31 07:00:00 +0700</h3>
+                </td>
+            </tr>
+        </thead>
+    </table>
+
+
+    <hr>
+    <br>
+    <hr>
+    <div class="grid">
+        <div>
+            <p>Penerima <span>(Recipient)</span></p>
+            <h3 style="font-weight:1000 ;">Farah Annisa</h3>
+        </div>
+        <div>
+            <p>Alamat Pengiriman <span>(Delivery address)</span></p>
+            <h3 style="font-weight:1000 ;">Gang Yahya, Gg. Yahya No.28, RT.3/RW.7, Sukabumi Utara, Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11540, Indonesia - </h3>
+        </div>
+        <div>
+            <p>Catatan <span>(Note)</span></p>
+            <h3 style="font-weight:1000 ;"></h3>
+        </div>
+        <div>
+            <p>Nomor Telepon <span>(Phone Number)</span></p>
+            <h3 style="font-weight:1000 ;">+ 6281908657755</h3>
+        </div>
+        <div>
+            <p>Detail Alamat <span>(Address Detail)</span></p>
+            <h3 style="font-weight:1000 ;">-</h3>
+        </div>
+    </div>
+
+
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Product <br><span
+                            style="font-size:12px; font-style:italic ; color: grey; font-weight: 100;">(product
+                            name)</span></th>
+                    <th>SKU</th>
+                    <th>Jumlah <br><span
+                            style="font-size:12px; font-style:italic ; color: grey; font-weight: 100;">(Quantity)</span>
+                    </th>
+                    <th>Berat <br><span
+                            style="font-size:12px; font-style:italic ; color: grey; font-weight: 100;">(Quantity)</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                                <tr>
+                    <td>1</td>
+                    <td>[PROMO] Telur Ayam Negeri Fresh 1 kg</td>
+                    <td>1553127</td>
+                    <td>1</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+                            <tr>
+                    <td>2</td>
+                    <td>Paha Ayam Bawah/Chicken Drumstick Freshly Frozen 1 kg</td>
+                    <td>1550720</td>
+                    <td>1</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+                            <tr>
+                    <td>3</td>
+                    <td>Sayap Ayam Freshly Frozen 500 gr</td>
+                    <td>1553230</td>
+                    <td>3</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+                    </table>
+    </div>
+
+
+</body>
+
+</html>
+<!-- DEBUG-VIEW ENDED 1 APPPATH\Views\Layout\invoice.php -->
+. The communication protocol is not supported.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(376): Dompdf\Dompdf->loadHtmlFile('<!-- DEBUG-VIEW...')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R274472975')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-11 21:15:11 --> Permission denied on <!-- DEBUG-VIEW START 1 APPPATH\Views\Layout\invoice.php -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Print</title>
+</head>
+<style>
+body {
+    margin: auto;
+}
+
+p {
+    margin-bottom: -10px;
+    color: grey;
+    font-size: 12px;
+}
+
+span {
+    font-style: italic;
+}
+
+h3 {
+    margin-bottom: 30px;
+    font-size: 12px;
+}
+
+table {
+    margin: auto;
+    font-family: "Arial";
+    font-size: 12px;
+
+}
+
+.table {
+    border-collapse: collapse;
+    font-size: 14px;
+    width: 100%;
+    text-align: left;
+}
+
+.table-1 {
+    border-collapse: collapse;
+    font-size: 14px;
+    width: 100%;
+    text-align: left;
+    border: 0px;
+}
+
+.table th,
+.table td {
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    border-left: 1px solid #cccccc;
+    padding: 9px 21px;
+}
+
+.table th,
+.table td:last-child {
+    border-right: 1px solid #cccccc;
+}
+
+.table td:first-child {
+    border-top: 1px solid #cccccc;
+}
+
+caption {
+    caption-side: top;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.grid {
+    display: grid;
+    width: 100%;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, 33.33%);
+    grid-gap: 10px;
+}
+
+.head-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+
+/*Tabel Responsive 1*/
+.table-container {
+    overflow: auto;
+}
+</style>
+
+<body>
+    <table class="table-1">
+        <thead>
+            <tr width="40px">
+                <td>
+                    <p>Tanggal Pesanan <span>(Order date)</span></p>
+                    <h3 style="font-weight:1000 ;">2022-07-04 22:40:52</h3>
+                </td>
+                <td rowspan="3">
+                    <img src="{{url('../img/coba1.png')}}" alt="" width="100px">
+                </td>
+                <td rowspan="3">
+                    <img src="http://localhost:8080/dist/img/logocrew.png" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Nomor Pesanan <span>(Order number)</span></p>
+                    <h3 style="font-weight:900 ;">R274472975</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Tanggal Pengiriman <span>(Schedule Delivery Time)</span></p>
+                    <h3 style="font-weight:900 ;">2022-05-31 07:00:00 +0700</h3>
+                </td>
+            </tr>
+        </thead>
+    </table>
+
+
+    <hr>
+    <br>
+    <hr>
+    <div class="grid">
+        <div>
+            <p>Penerima <span>(Recipient)</span></p>
+            <h3 style="font-weight:1000 ;">Farah Annisa</h3>
+        </div>
+        <div>
+            <p>Alamat Pengiriman <span>(Delivery address)</span></p>
+            <h3 style="font-weight:1000 ;">Gang Yahya, Gg. Yahya No.28, RT.3/RW.7, Sukabumi Utara, Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11540, Indonesia - </h3>
+        </div>
+        <div>
+            <p>Catatan <span>(Note)</span></p>
+            <h3 style="font-weight:1000 ;"></h3>
+        </div>
+        <div>
+            <p>Nomor Telepon <span>(Phone Number)</span></p>
+            <h3 style="font-weight:1000 ;">+ 6281908657755</h3>
+        </div>
+        <div>
+            <p>Detail Alamat <span>(Address Detail)</span></p>
+            <h3 style="font-weight:1000 ;">-</h3>
+        </div>
+    </div>
+
+
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Product <br><span
+                            style="font-size:12px; font-style:italic ; color: grey; font-weight: 100;">(product
+                            name)</span></th>
+                    <th>SKU</th>
+                    <th>Jumlah <br><span
+                            style="font-size:12px; font-style:italic ; color: grey; font-weight: 100;">(Quantity)</span>
+                    </th>
+                    <th>Berat <br><span
+                            style="font-size:12px; font-style:italic ; color: grey; font-weight: 100;">(Quantity)</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                                <tr>
+                    <td>1</td>
+                    <td>[PROMO] Telur Ayam Negeri Fresh 1 kg</td>
+                    <td>1553127</td>
+                    <td>1</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+                            <tr>
+                    <td>2</td>
+                    <td>Paha Ayam Bawah/Chicken Drumstick Freshly Frozen 1 kg</td>
+                    <td>1550720</td>
+                    <td>1</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+                            <tr>
+                    <td>3</td>
+                    <td>Sayap Ayam Freshly Frozen 500 gr</td>
+                    <td>1553230</td>
+                    <td>3</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+                    </table>
+    </div>
+
+
+</body>
+
+</html>
+<!-- DEBUG-VIEW ENDED 1 APPPATH\Views\Layout\invoice.php -->
+. The communication protocol is not supported.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(376): Dompdf\Dompdf->loadHtmlFile('<!-- DEBUG-VIEW...')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R274472975')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-11 21:16:58 --> Maximum execution time of 60 seconds exceeded
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-07-11 21:18:10 --> Maximum execution time of 60 seconds exceeded
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-07-11 21:22:35 --> Maximum execution time of 60 seconds exceeded
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-07-11 21:26:05 --> Maximum execution time of 60 seconds exceeded
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-07-11 21:30:18 --> Maximum execution time of 60 seconds exceeded
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-07-11 21:49:11 --> Unsupported operand types: float - string
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\tecnickcom\tcpdf\tcpdf.php(17238): TCPDF->MultiCell('<!-- DEBUG-VIEW...', true, false, '', '', false, 0, false, 1.0, true, 0, true, true, 0, 'T', false)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(376): TCPDF->writeHTMLCell('<!-- DEBUG-VIEW...', true, false, true, false, '')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R274472975')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-11 21:50:31 --> Unsupported operand types: float - string
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\tecnickcom\tcpdf\tcpdf.php(17238): TCPDF->MultiCell('<!-- DEBUG-VIEW...', 0, true, '', '', false, true, 1, 0.0, true, 0, true, true, 0, 'T', false)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(376): TCPDF->writeHTMLCell('<!-- DEBUG-VIEW...', 0, 1, 0, true, '', true)
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R274472975')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-11 21:51:38 --> Undefined array key 0
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\tecnickcom\tcpdf\tcpdf.php(17299): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 17299)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(376): TCPDF->writeHTML('<!-- DEBUG-VIEW...', true, false, true, false, '')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R274472975')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-11 21:53:45 --> Undefined array key 0
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\tecnickcom\tcpdf\tcpdf.php(17299): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 17299)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(376): TCPDF->writeHTML('<!-- DEBUG-VIEW...', true, false, true, false, '')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R274472975')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-11 21:54:20 --> Undefined array key 0
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\tecnickcom\tcpdf\tcpdf.php(17299): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 17299)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\tecnickcom\tcpdf\tcpdf.php(5916): TCPDF->writeHTML('<!-- DEBUG-VIEW...', true, false, true, true, '')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\tecnickcom\tcpdf\tcpdf.php(17238): TCPDF->MultiCell(199.99889444444, 0, '<!-- DEBUG-VIEW...', 0, '', 0, 1, NULL, NULL, true, 0, true, true, 0, 'T', false)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(376): TCPDF->writeHTMLCell(0, 0, '', '', '<!-- DEBUG-VIEW...', 0, 1, 0, true, '', true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R274472975')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-11 21:58:57 --> Undefined array key 0
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\tecnickcom\tcpdf\tcpdf.php(17299): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 17299)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(376): TCPDF->writeHTML('<!-- DEBUG-VIEW...', true, false, true, false, '')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R274472975')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-11 23:47:53 --> Undefined variable $qrCode
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\Layout\invoice.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 93)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('layout/invoice', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(373): view('layout/invoice', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-07-11 23:48:05 --> Object of class Endroid\QrCode\QrCode could not be converted to string
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('layout/invoice', Array, true)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(373): view('layout/invoice', Array)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-11 23:49:24 --> Undefined variable $writer
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(363): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 363)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-11 23:51:30 --> Invalid data at path "./dist/img/R066943586.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(380): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
