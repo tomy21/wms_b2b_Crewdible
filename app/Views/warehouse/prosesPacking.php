@@ -1,4 +1,4 @@
-<?= $this->extend('layout/layout'); ?>
+<?= $this->extend('Layout/layout'); ?>
 <?= $this->section('judul'); ?>
 <h1>Packing Proses</h1>
 <?= $this->endsection('judul'); ?>

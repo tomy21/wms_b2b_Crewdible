@@ -95,12 +95,7 @@ class AuthController extends Controller
 
         $redirectURL = session('redirect_url') ?? site_url('/home');
         unset($_SESSION['redirect_url']);
-        $simpan_sess = [
-            'email'        => $login,
-            'namaUser'      => $row->name,
-            'usersLevel'    => $idLevel
-        ];
-        session()->set($simpan_sess);
+
         return redirect()->to($redirectURL)->withCookies()->with('message', lang('Auth.loginSuccess'));
     }
 

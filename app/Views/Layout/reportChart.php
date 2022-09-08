@@ -1,4 +1,4 @@
-<?= $this->extend('main/layout'); ?>
+<?= $this->extend('Layout/layout'); ?>
 <?= $this->section('judul'); ?>
 Report Data
 <?= $this->endsection('judul'); ?>

@@ -457,3 +457,28 @@ CRITICAL - 2022-09-08 17:32:22 --> Object of class Myth\Auth\Entities\User could
 #7 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 {main}
+CRITICAL - 2022-09-08 17:44:41 --> Object of class Myth\Auth\Entities\User could not be converted to string
+#0 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(226): CodeIgniter\View\View->render('Layout/layout', Array, true)
+#3 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Layout/Dashboar...', Array, true)
+#4 C:\xampp\htdocs\wms-b2b\app\Controllers\Main.php(61): view('Layout/Dashboar...', Array)
+#5 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Main->index()
+#6 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#7 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-08 17:44:44 --> Undefined variable $row
+#0 C:\xampp\htdocs\wms-b2b\vendor\myth\auth\src\Controllers\AuthController.php(100): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 100)
+#1 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(832): Myth\Auth\Controllers\AuthController->attemptLogin()
+#2 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#3 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-08 17:45:04 --> Undefined variable $row
+#0 C:\xampp\htdocs\wms-b2b\vendor\myth\auth\src\Controllers\AuthController.php(100): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 100)
+#1 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(832): Myth\Auth\Controllers\AuthController->attemptLogin()
+#2 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#3 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
