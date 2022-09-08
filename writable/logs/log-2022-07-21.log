@@ -1,0 +1,124 @@
+CRITICAL - 2022-07-21 12:25:04 --> Cannot use object of type stdClass as array
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->spk()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#5 {main}
+CRITICAL - 2022-07-21 12:25:21 --> Cannot use object of type stdClass as array
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->spk()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#5 {main}
+CRITICAL - 2022-07-21 12:25:52 --> Undefined property: stdClass::$item_id
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(448): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\Users\\DUTA D...', 448)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->spk()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-21 12:37:40 --> Cannot use object of type mysqli as array
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->spk()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#5 {main}
+CRITICAL - 2022-07-21 12:38:18 --> Undefined property: mysqli::$Item_id
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(433): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\Users\\DUTA D...', 433)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->spk()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-21 12:40:41 --> Attempt to read property "Item_id" on array
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(432): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\Users\\DUTA D...', 432)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->spk()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-21 12:40:54 --> Undefined array key "Item_id"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(432): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 432)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->spk()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-21 12:43:43 --> Undefined array key "Item_id"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(434): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 434)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->spk()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-21 12:44:45 --> Undefined array key "Item_id"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(434): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 434)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->spk()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-21 12:49:42 --> Undefined array key "Item_id"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(434): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 434)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->spk()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-21 12:51:14 --> Undefined array key "Item_id"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(434): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 434)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->spk()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-21 12:59:28 --> Cannot use object of type mysqli as array
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->spk()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#5 {main}
+CRITICAL - 2022-07-21 15:18:34 --> Undefined array key "quantity"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(425): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 425)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->spk()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-21 15:19:22 --> Undefined array key "quantity"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(425): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 425)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->spk()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-21 15:19:59 --> Undefined array key "quantity"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(425): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 425)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->spk()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-21 16:17:38 --> Undefined array key "assign"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(425): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 425)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->spk()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}

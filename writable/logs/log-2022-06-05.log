@@ -1,0 +1,1246 @@
+CRITICAL - 2022-06-05 11:43:35 --> Undefined array key "quantity"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ProsesInvoice.php(135): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 135)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->savePick()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-06-05 12:02:42 --> Undefined array key "quantity"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ProsesInvoice.php(132): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 132)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->savePick()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+ERROR - 2022-06-05 13:22:13 --> Illegal parameter data types varchar and row for operation '='
+CRITICAL - 2022-06-05 13:22:13 --> Illegal parameter data types varchar and row for operation '='
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(131): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->updateAssign()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#11 {main}
+ERROR - 2022-06-05 13:22:29 --> Illegal parameter data types varchar and row for operation '='
+CRITICAL - 2022-06-05 13:22:29 --> Illegal parameter data types varchar and row for operation '='
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(131): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->updateAssign()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#11 {main}
+ERROR - 2022-06-05 13:24:58 --> Illegal parameter data types varchar and row for operation '='
+CRITICAL - 2022-06-05 13:24:58 --> Illegal parameter data types varchar and row for operation '='
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(120): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->updateAssign()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#11 {main}
+ERROR - 2022-06-05 13:26:19 --> Illegal parameter data types varchar and row for operation '='
+CRITICAL - 2022-06-05 13:26:19 --> Illegal parameter data types varchar and row for operation '='
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(120): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->updateAssign()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#11 {main}
+CRITICAL - 2022-06-05 13:44:49 --> 'continue' not in the 'loop' or 'switch' context
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-06-05 13:52:26 --> Undefined array key "quantity"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ProsesInvoice.php(103): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 103)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->savePick()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-06-05 13:52:32 --> Undefined array key "quantity"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ProsesInvoice.php(103): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 103)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->savePick()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-06-05 13:55:15 --> Undefined array key "status"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ProsesInvoice.php(104): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 104)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->savePick()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-06-05 14:02:07 --> Undefined array key "quantity_pick"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\dataTemp.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 56)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/warehouse/data...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(162): view('/warehouse/data...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->dataTemp()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+ERROR - 2022-06-05 14:05:15 --> Duplicate entry '1553127' for key 'PRIMARY'
+CRITICAL - 2022-06-05 14:05:15 --> Duplicate entry '1553127' for key 'PRIMARY'
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(148): CodeIgniter\Model->insert(Array)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->dataTemp()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#13 {main}
+ERROR - 2022-06-05 14:05:19 --> Duplicate entry '1546718' for key 'PRIMARY'
+CRITICAL - 2022-06-05 14:05:19 --> Duplicate entry '1546718' for key 'PRIMARY'
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(148): CodeIgniter\Model->insert(Array)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->dataTemp()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#13 {main}
+CRITICAL - 2022-06-05 14:07:19 --> Undefined array key "quantity"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\dataTemp.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 53)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/warehouse/data...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(152): view('/warehouse/data...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->dataTemp()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 14:08:01 --> Undefined array key "quantity_pick"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\dataTemp.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 56)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/warehouse/data...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(152): view('/warehouse/data...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->dataTemp()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 14:09:15 --> Call to undefined method App\Models\PickingModel::tampilDataPicker
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(140): CodeIgniter\Model->__call('tampilDataPicke...', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->dataTemp()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+ERROR - 2022-06-05 14:10:35 --> Unknown column 'quantity' in 'field list'
+CRITICAL - 2022-06-05 14:10:35 --> Unknown column 'quantity' in 'field list'
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `Assign`...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `Assign`...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `Assign`...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `Assign`...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Models\PickingModel.php(30): CodeIgniter\Model->__call('get', Array)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(140): App\Models\PickingModel->tampilDataPicker('User1')
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->dataTemp()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#12 {main}
+ERROR - 2022-06-05 14:11:00 --> Unknown column 'Order_id' in 'field list'
+CRITICAL - 2022-06-05 14:11:00 --> Unknown column 'Order_id' in 'field list'
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `Assign`...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `Assign`...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `Assign`...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `Assign`...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Models\PickingModel.php(30): CodeIgniter\Model->__call('get', Array)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(140): App\Models\PickingModel->tampilDataPicker('User1')
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->dataTemp()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#12 {main}
+CRITICAL - 2022-06-05 14:11:36 --> Undefined array key "quantity_pick"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\dataTemp.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 56)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/warehouse/data...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(150): view('/warehouse/data...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->dataTemp()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 14:39:59 --> Undefined array key "jumlah"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\Stock\prosesWarehouse.php(152): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 152)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Stock/prosesWar...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ProsesInvoice.php(51): view('Stock/prosesWar...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->index()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+ERROR - 2022-06-05 14:59:48 --> Column 'Item_id' cannot be null
+CRITICAL - 2022-06-05 14:59:48 --> Column 'Item_id' cannot be null
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(259): CodeIgniter\Model->insert(Array)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->ProsesPick()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#13 {main}
+ERROR - 2022-06-05 14:59:56 --> Column 'Item_id' cannot be null
+CRITICAL - 2022-06-05 14:59:56 --> Column 'Item_id' cannot be null
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(259): CodeIgniter\Model->insert(Array)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->ProsesPick()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#13 {main}
+ERROR - 2022-06-05 15:02:16 --> Column 'Item_id' cannot be null
+CRITICAL - 2022-06-05 15:02:16 --> Column 'Item_id' cannot be null
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(259): CodeIgniter\Model->insert(Array)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->ProsesPick()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#13 {main}
+CRITICAL - 2022-06-05 15:21:34 --> Call to undefined method App\Models\PickingModel::getDataItem
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(251): CodeIgniter\Model->__call('getDataItem', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->ProsesPick()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-06-05 15:21:45 --> Call to undefined method App\Models\PickingModel::getDataItem
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(251): CodeIgniter\Model->__call('getDataItem', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->ProsesPick()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-06-05 15:23:30 --> Call to undefined method App\Models\PickingModel::getDataItem
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(252): CodeIgniter\Model->__call('getDataItem', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->ProsesPick()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-06-05 15:28:21 --> count(): Argument #1 ($value) must be of type Countable|array, string given
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(259): count('R339064791')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->ProsesPick()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+ERROR - 2022-06-05 15:30:31 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order
+FROM `tbl_invoice`
+GROUP BY `Order_id`' at line 1
+CRITICAL - 2022-06-05 15:30:31 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order
+FROM `tbl_invoice`
+GROUP BY `Order_id`' at line 1
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `Order_i...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `Order_i...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `Order_i...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `Order_i...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Models\InvoiceModel.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(253): App\Models\InvoiceModel->getDataCount()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->ProsesPick()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#11 {main}
+ERROR - 2022-06-05 15:33:48 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order
+FROM `tbl_invoice`
+GROUP BY `Order_id`' at line 1
+CRITICAL - 2022-06-05 15:33:48 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order
+FROM `tbl_invoice`
+GROUP BY `Order_id`' at line 1
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `Order_i...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `Order_i...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `Order_i...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `Order_i...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Models\InvoiceModel.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(253): App\Models\InvoiceModel->getDataCount()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->ProsesPick()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#11 {main}
+ERROR - 2022-06-05 15:38:28 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order
+FROM `tbl_invoice`
+GROUP BY `Order_id`' at line 1
+CRITICAL - 2022-06-05 15:38:28 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order
+FROM `tbl_invoice`
+GROUP BY `Order_id`' at line 1
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `Order_i...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `Order_i...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `Order_i...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `Order_i...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Models\InvoiceModel.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(253): App\Models\InvoiceModel->getDataCount()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->ProsesPick()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#11 {main}
+ERROR - 2022-06-05 15:39:30 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order
+FROM `tbl_invoice`
+GROUP BY `Order_id`' at line 1
+CRITICAL - 2022-06-05 15:39:30 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order
+FROM `tbl_invoice`
+GROUP BY `Order_id`' at line 1
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `Order_i...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `Order_i...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `Order_i...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `Order_i...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Models\InvoiceModel.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(253): App\Models\InvoiceModel->getDataCount()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->ProsesPick()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#11 {main}
+CRITICAL - 2022-06-05 15:40:09 --> Call to undefined method App\Models\InvoiceModel::getResultArray
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(253): CodeIgniter\Model->__call('getResultArray', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->ProsesPick()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-06-05 15:44:17 --> Call to undefined method App\Models\InvoiceModel::getResultArray
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(254): CodeIgniter\Model->__call('getResultArray', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->ProsesPick()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-06-05 15:44:49 --> There is no data to update.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(256): CodeIgniter\Model->update('R274472975', Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->ProsesPick()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-06-05 15:52:08 --> Uninitialized string offset 10
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(264): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Uninitialized s...', 'C:\\Users\\DUTA D...', 264)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->ProsesPick()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+ERROR - 2022-06-05 15:53:32 --> Unknown column 'quantity_pick' in 'field list'
+CRITICAL - 2022-06-05 15:53:32 --> Unknown column 'quantity_pick' in 'field list'
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('UPDATE `tbl_ite...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_ite...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_ite...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1913): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_ite...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(298): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\BaseModel.php(865): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(236): CodeIgniter\Model->update('1550717', Array)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->simpanTemp()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#13 {main}
+ERROR - 2022-06-05 15:53:39 --> Unknown column 'quantity_pick' in 'field list'
+CRITICAL - 2022-06-05 15:53:39 --> Unknown column 'quantity_pick' in 'field list'
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('UPDATE `tbl_ite...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_ite...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_ite...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1913): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_ite...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(298): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\BaseModel.php(865): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(236): CodeIgniter\Model->update('1550717', Array)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->simpanTemp()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#13 {main}
+ERROR - 2022-06-05 16:01:48 --> Unknown column 'id' in 'field list'
+CRITICAL - 2022-06-05 16:01:48 --> Unknown column 'id' in 'field list'
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `Order_i...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `Order_i...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `Order_i...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `Order_i...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\packing.php(28): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/packi...', Array, true)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(24): view('warehouse/packi...', Array)
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->index()
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#14 {main}
+ERROR - 2022-06-05 16:02:22 --> Unknown column 'id' in 'field list'
+CRITICAL - 2022-06-05 16:02:22 --> Unknown column 'id' in 'field list'
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `Order_i...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `Order_i...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `Order_i...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `Order_i...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\packing.php(28): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/packi...', Array, true)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(24): view('warehouse/packi...', Array)
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->index()
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#14 {main}
+ERROR - 2022-06-05 16:03:20 --> Unknown column 'NamaDriver' in 'field list'
+CRITICAL - 2022-06-05 16:03:20 --> Unknown column 'NamaDriver' in 'field list'
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `Order_i...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `Order_i...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `Order_i...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `Order_i...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\packing.php(28): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/packi...', Array, true)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(24): view('warehouse/packi...', Array)
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->index()
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#14 {main}
+ERROR - 2022-06-05 16:04:09 --> Unknown column 'NamaDriver' in 'field list'
+CRITICAL - 2022-06-05 16:04:09 --> Unknown column 'NamaDriver' in 'field list'
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `Order_i...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `Order_i...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `Order_i...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `Order_i...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\packing.php(28): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/packi...', Array, true)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(24): view('warehouse/packi...', Array)
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->index()
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#14 {main}
+CRITICAL - 2022-06-05 16:04:32 --> Undefined array key "Assign"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\listOrder.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 20)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/warehouse/list...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(42): view('/warehouse/list...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->dataTemp()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 16:04:37 --> Undefined array key "Assign"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\listOrder.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 20)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/warehouse/list...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(42): view('/warehouse/list...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->dataTemp()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 16:05:03 --> Undefined array key "Assign"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\listOrder.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 20)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/warehouse/list...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(42): view('/warehouse/list...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->dataTemp()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 16:16:13 --> Undefined array key "Assign"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\listOrder.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 20)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/warehouse/list...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(42): view('/warehouse/list...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->dataTemp()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 16:26:49 --> Undefined array key "quantity"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 89)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->ambilStock()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-06-05 16:26:51 --> Undefined array key "quantity"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 89)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->ambilStock()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-06-05 16:26:58 --> Undefined array key "quantity"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 89)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->ambilStock()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+ERROR - 2022-06-05 16:44:31 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order
+FROM `tbl_invoice`
+GROUP BY `Order_id`' at line 1
+CRITICAL - 2022-06-05 16:44:31 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order
+FROM `tbl_invoice`
+GROUP BY `Order_id`' at line 1
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `Order_i...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `Order_i...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `Order_i...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `Order_i...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Models\InvoiceModel.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(16): App\Models\InvoiceModel->getDataCount()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->index()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#11 {main}
+ERROR - 2022-06-05 16:45:17 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order
+FROM `tbl_invoice`
+GROUP BY `Order_id`' at line 1
+CRITICAL - 2022-06-05 16:45:17 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order
+FROM `tbl_invoice`
+GROUP BY `Order_id`' at line 1
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `Order_i...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `Order_i...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `Order_i...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `Order_i...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Models\InvoiceModel.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(16): App\Models\InvoiceModel->getDataCount()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->index()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#11 {main}
+CRITICAL - 2022-06-05 16:47:39 --> Undefined array key "qty"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\data.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 38)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/data', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(21): view('warehouse/data', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->index()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 16:48:01 --> Undefined array key "jumlah"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\data.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 39)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/data', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(21): view('warehouse/data', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->index()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 16:48:35 --> Undefined array key "qty"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\data.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 38)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/data', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(21): view('warehouse/data', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->index()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 17:07:21 --> Undefined variable $row
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\data.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 46)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/data', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(21): view('warehouse/data', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->index()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 17:22:33 --> Undefined array key "nofaktur"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(130): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 130)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->edit('e8f5c50a94a6a9a...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-06-05 17:22:49 --> Undefined variable $nofaktur
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\prosesPacking.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 16)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/prose...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(133): view('warehouse/prose...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->edit('e8f5c50a94a6a9a...')
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 17:23:23 --> strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtotime(): Pa...', 'C:\\Users\\DUTA D...', 21)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\prosesPacking.php(21): strtotime(NULL)
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/prose...', Array, true)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(133): view('warehouse/prose...', Array)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->edit('e8f5c50a94a6a9a...')
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#11 {main}
+CRITICAL - 2022-06-05 17:53:45 --> Call to undefined method App\Models\InvoiceModel::getResult
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Models\InvoiceModel.php(21): CodeIgniter\Model->__call('getResult', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(125): App\Models\InvoiceModel->dataDetail('e8f5c50a94a6a9a...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->edit('e8f5c50a94a6a9a...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-06-05 17:54:54 --> Cannot use object of type mysqli as array
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/prose...', Array, true)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(138): view('warehouse/prose...', Array)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->edit('e8f5c50a94a6a9a...')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-06-05 17:56:45 --> Call to undefined method App\Models\InvoiceModel::getResult
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Models\InvoiceModel.php(21): CodeIgniter\Model->__call('getResult', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(125): App\Models\InvoiceModel->dataDetail('e8f5c50a94a6a9a...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->edit('e8f5c50a94a6a9a...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-06-05 17:57:02 --> Cannot use object of type mysqli as array
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/prose...', Array, true)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(138): view('warehouse/prose...', Array)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->edit('e8f5c50a94a6a9a...')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-06-05 17:57:34 --> Call to undefined method App\Models\InvoiceModel::result
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Models\InvoiceModel.php(21): CodeIgniter\Model->__call('result', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(125): App\Models\InvoiceModel->dataDetail('e8f5c50a94a6a9a...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->edit('e8f5c50a94a6a9a...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-06-05 17:57:40 --> Cannot use object of type mysqli as array
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/prose...', Array, true)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(138): view('warehouse/prose...', Array)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->edit('e8f5c50a94a6a9a...')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-06-05 17:58:27 --> Undefined property: mysqli::$Item_id
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\prosesPacking.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\Users\\DUTA D...', 55)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/prose...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(138): view('warehouse/prose...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->edit('e8f5c50a94a6a9a...')
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 17:59:35 --> Undefined variable $data
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\prosesPacking.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 50)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/prose...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(140): view('warehouse/prose...', Array, Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->edit('e8f5c50a94a6a9a...')
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 18:00:16 --> Undefined variable $data
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\prosesPacking.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 50)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/prose...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(138): view('warehouse/prose...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->edit('e8f5c50a94a6a9a...')
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 18:00:17 --> Undefined variable $data
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\prosesPacking.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 50)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/prose...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(138): view('warehouse/prose...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->edit('e8f5c50a94a6a9a...')
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 18:00:43 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::result()
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->edit('e8f5c50a94a6a9a...')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#5 {main}
+CRITICAL - 2022-06-05 18:01:52 --> Attempt to read property "Item_id" on array
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\prosesPacking.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\Users\\DUTA D...', 55)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/prose...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(138): view('warehouse/prose...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->edit('e8f5c50a94a6a9a...')
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 18:55:04 --> Undefined variable $datatemp
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\picking.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 86)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/picki...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(21): view('warehouse/picki...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->index()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 18:55:41 --> Undefined variable $datatemp
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\picking.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 86)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/picki...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(21): view('warehouse/picki...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->index()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 18:57:23 --> Undefined variable $datatemp
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\picking.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 86)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/picki...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(21): view('warehouse/picki...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->index()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 18:57:27 --> Undefined variable $datatemp
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\picking.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 86)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/picki...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(21): view('warehouse/picki...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->index()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 18:58:14 --> Undefined variable $datatemp
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\picking.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 86)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/picki...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(21): view('warehouse/picki...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->index()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+ERROR - 2022-06-05 19:02:20 --> Unknown column 'quantity' in 'field list'
+CRITICAL - 2022-06-05 19:02:20 --> Unknown column 'quantity' in 'field list'
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `assign`...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `assign`...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `assign`...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `assign`...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Models\PickingModel.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(18): App\Models\PickingModel->group_driver()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->index()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#11 {main}
+CRITICAL - 2022-06-05 19:03:10 --> Undefined array key "Order_id"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\picking.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 34)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/picki...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(21): view('warehouse/picki...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->index()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 19:06:01 --> Undefined array key "Status"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\picking.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 36)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/picki...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(21): view('warehouse/picki...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->index()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 19:09:03 --> Call to undefined method App\Models\PickingModel::cekTransaksi
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(292): CodeIgniter\Model->__call('cekTransaksi', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->edit('4146594c9c6ac54...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-06-05 19:09:43 --> Undefined array key "jumlah"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\dataTemp.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 52)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/dataT...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(300): view('warehouse/dataT...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->edit('4146594c9c6ac54...')
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 19:12:00 --> Undefined variable $order
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\dataTemp.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 13)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/dataT...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(301): view('warehouse/dataT...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->edit('4146594c9c6ac54...')
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 19:43:14 --> Call to a member function getWhere() on string
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->simpanTemp()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#5 {main}
+CRITICAL - 2022-06-05 19:43:19 --> Call to a member function getWhere() on string
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->simpanTemp()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#5 {main}
+CRITICAL - 2022-06-05 19:45:02 --> count(): Argument #1 ($value) must be of type Countable|array, string given
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(233): count('1550717')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->simpanTemp()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-06-05 19:47:40 --> count(): Argument #1 ($value) must be of type Countable|array, string given
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(234): count('1550717')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->simpanTemp()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-06-05 20:07:55 --> Undefined array key "Item_detail"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 85)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->ambilStock()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-06-05 20:08:02 --> Undefined array key "Item_detail"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 85)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->ambilStock()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-06-05 20:08:33 --> Undefined array key "Item_detail"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 85)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->ambilStock()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-06-05 20:08:54 --> Undefined array key "Item_detail"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 85)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->ambilStock()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-06-05 20:46:02 --> Undefined array key "Assign"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\Stock\data.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 40)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Stock/data', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ProsesInvoice.php(59): view('Stock/data', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->data()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 20:46:31 --> Undefined array key "Assign"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\Stock\data.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 40)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Stock/data', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ProsesInvoice.php(59): view('Stock/data', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->data()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 20:46:47 --> Undefined array key "Assign"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\Stock\data.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 40)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Stock/data', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ProsesInvoice.php(59): view('Stock/data', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->data()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 20:47:14 --> Undefined array key "Assign"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\Stock\data.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 40)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Stock/data', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ProsesInvoice.php(59): view('Stock/data', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->data()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 20:47:49 --> Undefined array key "Assign"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\Stock\data.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 40)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Stock/data', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ProsesInvoice.php(59): view('Stock/data', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->data()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 20:48:14 --> Undefined array key "Assign"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\Stock\data.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 40)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Stock/data', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ProsesInvoice.php(59): view('Stock/data', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->data()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 20:48:19 --> Undefined array key "Assign"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\Stock\data.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 40)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Stock/data', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ProsesInvoice.php(59): view('Stock/data', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->data()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 20:48:43 --> Undefined array key "Assign"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\Stock\data.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 42)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Stock/data', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ProsesInvoice.php(59): view('Stock/data', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->data()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 20:49:52 --> Undefined array key "qty"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\Stock\data.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 38)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Stock/data', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ProsesInvoice.php(59): view('Stock/data', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->data()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 21:28:42 --> Undefined variable $assign
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 44)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->dataTemp()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-06-05 21:28:49 --> Undefined variable $assign
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 44)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->dataTemp()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-06-05 21:32:10 --> Undefined variable $assign
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 44)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->dataTemp()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+ERROR - 2022-06-05 21:35:14 --> Unknown column 'Order_id' in 'where clause'
+CRITICAL - 2022-06-05 21:35:14 --> Unknown column 'Order_id' in 'where clause'
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Models\PackingModel.php(15): CodeIgniter\Model->__call('get', Array)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(33): App\Models\PackingModel->tampilDataTemp(NULL)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->dataTemp()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#12 {main}
+ERROR - 2022-06-05 21:36:04 --> Unknown column 'Order_id' in 'where clause'
+CRITICAL - 2022-06-05 21:36:04 --> Unknown column 'Order_id' in 'where clause'
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Models\PackingModel.php(15): CodeIgniter\Model->__call('get', Array)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(29): App\Models\PackingModel->tampilDataTemp(NULL)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->dataTemp()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#12 {main}
+CRITICAL - 2022-06-05 22:15:47 --> syntax error, unexpected token "return", expecting identifier
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('Return/index')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('Return/index')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-06-05 22:43:06 --> Undefined variable $tampilData
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\Returns.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 40)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/Retur...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ReturnItem.php(13): view('warehouse/Retur...')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ReturnItem->index()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReturnItem))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 22:56:18 --> Undefined array key "Assign"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\Stock\data.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 40)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Stock/data', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ProsesInvoice.php(59): view('Stock/data', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->data()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-06-05 23:48:00 --> Undefined array key "Assign"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\Stock\data.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 40)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Stock/data', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ProsesInvoice.php(59): view('Stock/data', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ProsesInvoice->data()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesInvoice))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+ERROR - 2022-06-05 23:58:36 --> Table 'tbl_picking' already exists
+ERROR - 2022-06-05 23:59:04 --> Table 'db_bmi.tbl_invoice' doesn't exist
+CRITICAL - 2022-06-05 23:59:04 --> Table 'db_bmi.tbl_invoice' doesn't exist
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ReturnItem.php(16): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ReturnItem->index()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReturnItem))
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#11 {main}
+ERROR - 2022-06-05 23:59:11 --> Table 'tbl_picking' already exists
+ERROR - 2022-06-05 23:59:57 --> Table 'tbl_picking' already exists

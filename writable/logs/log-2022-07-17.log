@@ -1,0 +1,708 @@
+CRITICAL - 2022-07-17 08:06:05 --> Cannot use object of type stdClass as array
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->simpanTemp()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#5 {main}
+CRITICAL - 2022-07-17 08:06:11 --> Cannot use object of type stdClass as array
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->simpanTemp()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#5 {main}
+CRITICAL - 2022-07-17 08:07:15 --> Undefined variable $json
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(259): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 259)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->simpanTemp()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-17 08:08:25 --> Undefined variable $json
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(256): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 256)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->simpanTemp()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-17 08:11:08 --> Undefined variable $qtyPicking
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(237): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 237)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->simpanTemp()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-17 08:41:06 --> Undefined array key 4
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Invoice.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 72)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Invoice->upload()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoice))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-17 09:36:18 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('picking/SimpanP...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+ERROR - 2022-07-17 09:56:19 --> Unknown column 'assign' in 'where clause'
+CRITICAL - 2022-07-17 09:56:19 --> Unknown column 'assign' in 'where clause'
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('UPDATE `tbl_sto...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_sto...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_sto...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1913): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_sto...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(298): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\BaseModel.php(865): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(240): CodeIgniter\Model->update('1553127', Array)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->simpanTemp()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#13 {main}
+CRITICAL - 2022-07-17 10:24:23 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/data...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 10:24:24 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/simp...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 10:24:31 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/data...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 10:24:32 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/simp...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 10:24:39 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/data...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 10:24:40 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/data...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 10:24:40 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/data...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 10:24:41 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/simp...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 10:25:29 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/data...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 10:25:30 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/data...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 10:25:30 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/data...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 10:25:30 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/data...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 10:25:30 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/data...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 10:25:32 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/simp...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 10:30:27 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/data...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 10:30:28 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/simp...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 10:30:33 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/simp...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 10:34:10 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/data...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 10:38:42 --> Call to undefined method App\Models\ModelReturn::tampilDataInv
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ReturnItem.php(18): CodeIgniter\Model->__call('tampilDataInv', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ReturnItem->index()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReturnItem))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-17 10:39:28 --> Call to undefined method App\Models\ModelReturn::tampilDataInv
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ReturnItem.php(18): CodeIgniter\Model->__call('tampilDataInv', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ReturnItem->index()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReturnItem))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-17 10:40:40 --> Call to a member function getResultArray() on array
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/listR...', Array, true)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ReturnItem.php(22): view('warehouse/listR...', Array)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ReturnItem->index()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReturnItem))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-17 10:41:11 --> Undefined array key "qty"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\listReturn.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 49)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/listR...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ReturnItem.php(22): view('warehouse/listR...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ReturnItem->index()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReturnItem))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-07-17 10:42:04 --> Undefined array key "Receive"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\listReturn.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 50)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/listR...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ReturnItem.php(22): view('warehouse/listR...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ReturnItem->index()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReturnItem))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-07-17 10:44:02 --> Cannot use object of type mysqli as array
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/listR...', Array, true)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ReturnItem.php(22): view('warehouse/listR...', Array)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ReturnItem->index()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReturnItem))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-17 10:44:22 --> Undefined array key "Item_id"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\listReturn.php(62): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 62)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/listR...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ReturnItem.php(22): view('warehouse/listR...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ReturnItem->index()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReturnItem))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-07-17 10:45:42 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/data...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+ERROR - 2022-07-17 10:45:44 --> Unknown column 'Item_id' in 'field list'
+CRITICAL - 2022-07-17 10:45:44 --> Unknown column 'Item_id' in 'field list'
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ReturnItem.php(95): CodeIgniter\Model->insert(Array)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ReturnItem->simpanData()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReturnItem))
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#13 {main}
+ERROR - 2022-07-17 10:45:48 --> Unknown column 'Item_id' in 'field list'
+CRITICAL - 2022-07-17 10:45:48 --> Unknown column 'Item_id' in 'field list'
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ReturnItem.php(95): CodeIgniter\Model->insert(Array)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ReturnItem->simpanData()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReturnItem))
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#13 {main}
+CRITICAL - 2022-07-17 10:47:17 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/data...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 10:48:47 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/data...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 10:49:38 --> Call to undefined method App\Models\ModelOrder::cekOrder
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ReturnItem.php(78): CodeIgniter\Model->__call('cekOrder', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ReturnItem->simpanData()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReturnItem))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-17 10:49:43 --> Call to undefined method App\Models\ModelOrder::cekOrder
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ReturnItem.php(78): CodeIgniter\Model->__call('cekOrder', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ReturnItem->simpanData()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReturnItem))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-17 10:53:03 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/data...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+ERROR - 2022-07-17 11:11:00 --> Unknown column 'tb_return.Item_id' in 'where clause'
+CRITICAL - 2022-07-17 11:11:00 --> Unknown column 'tb_return.Item_id' in 'where clause'
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(142): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\BaseModel.php(523): CodeIgniter\Model->doFind(true, 'R946859777')
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ReturnItem.php(114): CodeIgniter\BaseModel->find('R946859777')
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ReturnItem->detail()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReturnItem))
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#12 {main}
+ERROR - 2022-07-17 11:11:27 --> Unknown column 'tb_return.Item_id' in 'where clause'
+CRITICAL - 2022-07-17 11:11:27 --> Unknown column 'tb_return.Item_id' in 'where clause'
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(142): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\BaseModel.php(523): CodeIgniter\Model->doFind(true, 'R946859777')
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ReturnItem.php(114): CodeIgniter\BaseModel->find('R946859777')
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ReturnItem->detail()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReturnItem))
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#12 {main}
+ERROR - 2022-07-17 11:13:18 --> Unknown column 'tb_return.Item_id' in 'where clause'
+CRITICAL - 2022-07-17 11:13:18 --> Unknown column 'tb_return.Item_id' in 'where clause'
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(142): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\BaseModel.php(523): CodeIgniter\Model->doFind(true, 'R946859777')
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ReturnItem.php(114): CodeIgniter\BaseModel->find('R946859777')
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ReturnItem->detail()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReturnItem))
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#12 {main}
+ERROR - 2022-07-17 11:19:11 --> Unknown column 'tb_return.Item_id' in 'where clause'
+CRITICAL - 2022-07-17 11:19:11 --> Unknown column 'tb_return.Item_id' in 'where clause'
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(142): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\BaseModel.php(523): CodeIgniter\Model->doFind(true, 'R946859777')
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ReturnItem.php(114): CodeIgniter\BaseModel->find('R946859777')
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ReturnItem->detail()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReturnItem))
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#12 {main}
+CRITICAL - 2022-07-17 11:23:36 --> Call to a member function getResultArray() on array
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/listR...', Array, true)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ReturnItem.php(22): view('warehouse/listR...', Array)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ReturnItem->index()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReturnItem))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-17 11:24:22 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/data...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 11:24:34 --> Undefined array key "Item_detail"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ReturnItem.php(116): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 116)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ReturnItem->detail()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReturnItem))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-17 11:27:44 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/data...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 11:28:05 --> Undefined variable $Drop_name
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\warehouse\modalPickup.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 19)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('warehouse/modal...', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ReturnItem.php(121): view('warehouse/modal...', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ReturnItem->detail()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReturnItem))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-07-17 11:28:48 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/inpu...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 11:30:06 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/inpu...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 11:30:39 --> Undefined array key "quantity"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ReturnItem.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 206)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ReturnItem->inputData()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReturnItem))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-17 11:31:38 --> There is no data to update.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ReturnItem.php(217): CodeIgniter\Model->update('1553127', Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ReturnItem->inputData()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReturnItem))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-17 11:33:32 --> There is no data to update.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\ReturnItem.php(217): CodeIgniter\Model->update('1553127', Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\ReturnItem->inputData()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReturnItem))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-17 11:36:20 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/inpu...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 11:49:14 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/inpu...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 11:49:21 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/inpu...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}
+CRITICAL - 2022-07-17 12:01:49 --> Undefined array key "No_Po"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\Stock\inbound.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 44)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Stock/inbound', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Inbound.php(28): view('Stock/inbound', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Inbound->index()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inbound))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-07-17 12:15:15 --> Undefined array key "update_at"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\Stock\inbound.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\DUTA D...', 48)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Stock/inbound', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Inbound.php(29): view('Stock/inbound', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Inbound->index()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inbound))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
+CRITICAL - 2022-07-17 13:14:57 --> Undefined variable $json
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Picking.php(468): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 468)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Picking->spk()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Picking))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-17 14:32:14 --> Call to undefined method App\Models\ModelLogInbound::getResultArray
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Laporan.php(50): CodeIgniter\Model->__call('getResultArray', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Laporan->cetak_inbound_periode()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-17 14:36:15 --> Cannot use object of type mysqli as array
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Laporan->cetak_inbound_periode()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#5 {main}
+CRITICAL - 2022-07-17 14:36:46 --> Cannot use object of type mysqli as array
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Laporan->cetak_inbound_periode()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#5 {main}
+CRITICAL - 2022-07-17 15:05:36 --> Call to undefined method App\Models\InvoiceModel::getNumRows
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Main.php(14): CodeIgniter\Model->__call('getNumRows', Array)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Main->index()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-17 15:05:55 --> count(): Argument #1 ($value) must be of type Countable|array, App\Models\InvoiceModel given
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Main.php(14): count(Object(App\Models\InvoiceModel))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Main->index()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-17 15:10:34 --> count(): Argument #1 ($value) must be of type Countable|array, int given
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Main.php(39): count(0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Main->index()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-17 15:24:26 --> Object of class CodeIgniter\Database\MySQLi\Result could not be converted to string
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Layout/Dashboar...', Array, true)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Main.php(56): view('Layout/Dashboar...', Array)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Main->index()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-17 15:26:05 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::row()
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Main->index()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#5 {main}
+CRITICAL - 2022-07-17 15:26:21 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::row()
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Main->index()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#5 {main}
+CRITICAL - 2022-07-17 15:26:30 --> Undefined property: CodeIgniter\Database\MySQLi\Result::$jumlah
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Main.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\Users\\DUTA D...', 55)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Main->index()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+ERROR - 2022-07-17 15:30:48 --> Unknown column 'quantity' in 'field list'
+CRITICAL - 2022-07-17 15:30:48 --> Unknown column 'quantity' in 'field list'
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT sum(quan...', 0)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT sum(quan...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT sum(quan...')
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT sum(quan...', Array, false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Main.php(43): CodeIgniter\BaseModel->first()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Main->index()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#12 {main}
+CRITICAL - 2022-07-17 19:22:25 --> The action you requested is not allowed.
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Security\Security.php(289): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('ReturnItem/data...', 'before')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#7 {main}

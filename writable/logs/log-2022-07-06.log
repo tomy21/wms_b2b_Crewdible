@@ -1,0 +1,592 @@
+CRITICAL - 2022-07-06 10:45:09 --> Class "App\Controllers\ErrorCorrectionLevelLow" not found
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#5 {main}
+CRITICAL - 2022-07-06 10:45:36 --> Object of class Endroid\QrCode\QrCode could not be converted to string
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('layout/invoice', Array, true)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(363): view('layout/invoice', Array)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-06 10:45:59 --> Object of class Endroid\QrCode\QrCode could not be converted to string
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('layout/invoice', Array, true)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(363): view('layout/invoice', Array)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-06 10:57:04 --> Class "App\Controllers\Endroid\QrCode\QrCode" not found
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#5 {main}
+CRITICAL - 2022-07-06 10:57:19 --> Class "App\Controllers\Endroid\QrCode\QrCode" not found
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#5 {main}
+CRITICAL - 2022-07-06 10:58:44 --> Class "App\Controllers\Endroid\QrCode\QrCode" not found
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#5 {main}
+CRITICAL - 2022-07-06 11:54:32 --> Class "App\Controllers\Endroid\QrCode\QrCode" not found
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#5 {main}
+CRITICAL - 2022-07-06 11:54:52 --> Class "App\Controllers\QrCode" not found
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#5 {main}
+CRITICAL - 2022-07-06 12:44:09 --> Invalid data at path "C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers/assets/symfony.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(377): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 12:44:25 --> Invalid data at path "C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers/assets/symfony.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(377): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 13:05:31 --> Invalid data at path "C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers/dist/img/orderId-'R066943586'"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Builder\Builder.php(231): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label), Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(371): Endroid\QrCode\Builder\Builder->build()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-06 13:07:08 --> Invalid data at path "C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers/dist/img/orderId-'R066943586'"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Builder\Builder.php(231): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label), Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(371): Endroid\QrCode\Builder\Builder->build()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-06 13:07:14 --> Invalid data at path "C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers/dist/img/orderId-'R066943586'"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Builder\Builder.php(231): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label), Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(371): Endroid\QrCode\Builder\Builder->build()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-06 13:08:02 --> Invalid data at path "C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers/dist/img/orderId-'R066943586'"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Builder\Builder.php(231): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label), Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(371): Endroid\QrCode\Builder\Builder->build()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-06 13:08:47 --> Invalid data at path "../public/dist/img/orderId-'R066943586'"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Builder\Builder.php(231): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label), Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(371): Endroid\QrCode\Builder\Builder->build()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-06 13:08:58 --> Invalid data at path "/public/dist/img/orderId-'R066943586'"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Builder\Builder.php(231): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label), Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(371): Endroid\QrCode\Builder\Builder->build()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-06 13:09:25 --> Invalid data at path "C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers/public/dist/img/orderId-'R066943586'"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Builder\Builder.php(231): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label), Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(371): Endroid\QrCode\Builder\Builder->build()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-06 13:09:36 --> Invalid data at path "C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers../public/dist/img/orderId-'R066943586'"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Builder\Builder.php(231): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label), Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(371): Endroid\QrCode\Builder\Builder->build()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-06 13:09:58 --> Invalid data at path "../public/dist/img/orderId-'R066943586'"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Builder\Builder.php(231): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label), Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(371): Endroid\QrCode\Builder\Builder->build()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-06 13:10:13 --> Invalid data at path "public/dist/img/orderId-'R066943586'"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Builder\Builder.php(231): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label), Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(371): Endroid\QrCode\Builder\Builder->build()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-06 13:10:24 --> Invalid data at path "public/dist/img/orderId-'R066943586'.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Builder\Builder.php(231): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label), Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(371): Endroid\QrCode\Builder\Builder->build()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-06 13:18:31 --> Call to undefined method Endroid\QrCode\QrCode::writeFile()
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('layout/invoice', Array, true)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(361): view('layout/invoice', Array)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-06 13:21:57 --> Call to undefined method Endroid\QrCode\QrCode::writeFile()
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('layout/invoice', Array, true)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(361): view('layout/invoice', Array)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-06 13:24:55 --> Call to undefined method Endroid\QrCode\QrCode::writeFile()
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('layout/invoice', Array, true)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(361): view('layout/invoice', Array)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-06 14:13:10 --> Call to a member function library() on null
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(363): App\Models\PackingModel->qr('R066943586')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-06 14:13:49 --> Call to a member function libraries() on null
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(363): App\Models\PackingModel->qr('R066943586')
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#6 {main}
+CRITICAL - 2022-07-06 14:51:18 --> Call to undefined method Endroid\QrCode\QrCode::getContentType()
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#5 {main}
+CRITICAL - 2022-07-06 14:55:39 --> Invalid data at path "C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers/assets/symfony.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Builder\Builder.php(231): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label), Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(375): Endroid\QrCode\Builder\Builder->build()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-06 14:55:50 --> Invalid data at path "C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers/assets/symfony.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Builder\Builder.php(231): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label), Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(375): Endroid\QrCode\Builder\Builder->build()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-06 14:56:07 --> Invalid data at path "C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers/assets/symfony.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Builder\Builder.php(231): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label), Array)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(375): Endroid\QrCode\Builder\Builder->build()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-06 15:00:06 --> Maximum execution time of 60 seconds exceeded
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-07-06 15:01:06 --> Maximum execution time of 60 seconds exceeded
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-07-06 15:02:58 --> Maximum execution time of 60 seconds exceeded
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-07-06 15:08:24 --> Invalid data at path "C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers/assets/symfony.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(383): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:10:10 --> Maximum execution time of 60 seconds exceeded
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-07-06 15:11:00 --> Invalid data at path "/dist/img/12.jpg"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(383): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:13:41 --> Invalid data at path "C:\Users\DUTA DAYA 2\Desktop\Project_BMI\writable\../public/dist/img/12.jpg"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(383): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:14:11 --> Invalid data at path "../public/dist/img/12.jpg"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(383): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:21:11 --> Maximum execution time of 60 seconds exceeded
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-07-06 15:21:41 --> Invalid data at path "base_url()/dist/img/logocrew.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(383): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:21:51 --> Invalid data at path "../dist/img/logocrew.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(383): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:22:01 --> Invalid data at path "../dist/img/logocrew.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(383): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:22:13 --> Invalid data at path "public/dist/img/logocrew.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(383): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:22:35 --> Invalid data at path "C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllerspublic/dist/img/logocrew.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(383): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:22:54 --> Invalid data at path "C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllerspublic\dist\img\logocrew.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(383): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:23:01 --> Invalid data at path "C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\public\dist\img\logocrew.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(383): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:23:12 --> Invalid data at path "C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers..\public\dist\img\logocrew.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(383): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:25:11 --> Invalid data at path "logo"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(384): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:27:11 --> Invalid data at path "\public\dist\img\gambar.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(383): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:27:31 --> Invalid data at path "\public\dist\img\gambar.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(383): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:27:50 --> Invalid data at path "\public\dist\img\gambar.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(383): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:28:14 --> Invalid data at path "\public\dist\img\gambar.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(384): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:28:27 --> Invalid data at path "\public\dist\img\gambar.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(384): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:28:54 --> Invalid data at path "\public\dist\img\gambar.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(384): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:28:56 --> Invalid data at path "\public\dist\img\gambar.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(384): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:29:24 --> Invalid data at path "\public\dist\img\gambar.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(384): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:29:41 --> Invalid data at path "dist\img\gambar.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(384): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:29:49 --> Invalid data at path "dist/img/gambar.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(384): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:30:02 --> Invalid data at path "C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllersdist/img/gambar.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(384): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:30:33 --> Invalid data at path "C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers/gambar.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(384): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:30:41 --> Invalid data at path "C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\gambar.png"
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(128): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\endroid\qr-code\src\Writer\PngWriter.php(116): Endroid\QrCode\Writer\PngWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\PngResult))
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(384): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->qrCode()
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#8 {main}
+CRITICAL - 2022-07-06 15:32:54 --> Call to undefined method Endroid\QrCode\QrCode::writeFile()
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('layout/invoice', Array, true)
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(359): view('layout/invoice', Array)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#9 {main}
+CRITICAL - 2022-07-06 16:02:58 --> Undefined variable $Note
+#0 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Views\Layout\invoice.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\DUTA D...', 52)
+#1 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\DUTA D...')
+#2 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('layout/invoice', Array, true)
+#4 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\app\Controllers\Packing.php(363): view('layout/invoice', Array)
+#5 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Packing->invoice('R066943586')
+#6 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Packing))
+#7 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\DUTA DAYA 2\Desktop\Project_BMI\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\DUTA D...')
+#10 {main}
