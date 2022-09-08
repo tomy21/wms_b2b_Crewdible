@@ -301,3 +301,16 @@ CRITICAL - 2022-09-08 16:50:29 --> Undefined variable $config
 #7 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 {main}
+ERROR - 2022-09-08 16:57:45 --> Unknown column 'id_basket' in 'field list'
+CRITICAL - 2022-09-08 16:57:45 --> Unknown column 'id_basket' in 'field list'
+#0 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `Order_i...', 0)
+#1 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `Order_i...')
+#2 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `Order_i...')
+#3 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `Order_i...', Array, false)
+#4 C:\xampp\htdocs\wms-b2b\app\Models\InvoiceModel.php(103): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\wms-b2b\app\Controllers\Assign.php(16): App\Models\InvoiceModel->group_item()
+#6 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Assign->index()
+#7 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Assign))
+#8 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
