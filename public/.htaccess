@@ -29,7 +29,10 @@ Options All -Indexes
 	# Checks to see if the user is attempting to access a valid file,
 	# such as an image or css document, if this isn't true it sends the
 	# request to the front controller, index.php
+<<<<<<< HEAD
 	RewriteCond $1 !^(index\.php|images|assets|doc|data|robots\.txt)
+=======
+>>>>>>> a50043dd4f987b03db425e24d1afc6206f32efce
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteRule ^([\s\S]*)$ index.php/$1 [L,NC,QSA]
