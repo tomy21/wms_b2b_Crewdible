@@ -23,7 +23,11 @@ class App extends BaseConfig
      *
      * @var string
      */
+<<<<<<< HEAD
     public $baseURL = 'https://wms-b2b.crewdible.co.id';
+=======
+    public $baseURL = 'https://localhost/Project_BMI2/';
+>>>>>>> origin/main
 
     /**
      * --------------------------------------------------------------------------
@@ -55,7 +59,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $uriProtocol = 'REQUEST_URI';
+    public $uriProtocol = 'PATH_INFO';
 
     /**
      * --------------------------------------------------------------------------
