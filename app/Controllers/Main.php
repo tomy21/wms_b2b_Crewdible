@@ -56,7 +56,7 @@ class Main extends BaseController
             'done'      => $done,
             'stockData' => $StockData,
             'qtyStock'  => $data['sum'] = $result['sumQuantities'],
-
+            // 'config' => config('Auth'),
         ];
         return view('Layout/Dashboard', $data);
     }

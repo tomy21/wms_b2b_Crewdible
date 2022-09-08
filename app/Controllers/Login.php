@@ -14,6 +14,7 @@ class Login extends BaseController
             'title'  => 'Login',
             'config' => config('Auth'),
         ];
+        
         return view('login/index', $data);
     }
     public function cekUser()

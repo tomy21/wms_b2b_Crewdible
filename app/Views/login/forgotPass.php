@@ -52,7 +52,7 @@
 
                 </form>
                 <br>
-                <p><a href="<?= site_url('Home/index'); ?>" class="text-center">Back to Login</a></p>
+                <p><a href="<?= site_url('/'); ?>" class="text-center">Back to Login</a></p>
             </div>
         </div>
     </div>
