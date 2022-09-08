@@ -89,3 +89,61 @@ Main connection [MySQLi]: No connection could be made because the target machine
 #9 C:\xampp\htdocs\Project_BMI2\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #10 C:\xampp\htdocs\Project_BMI2\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #11 {main}
+CRITICAL - 2022-09-08 16:11:53 --> Call to undefined method CodeIgniter\CodeIgniter::setContext()
+#0 {main}
+CRITICAL - 2022-09-08 16:14:43 --> login filter must have a matching alias defined.
+#0 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Filters\Filters.php(493): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('login')
+#1 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Filters\Filters.php(243): CodeIgniter\Filters\Filters->processAliasesToClass('before')
+#2 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Filters\Filters.php(163): CodeIgniter\Filters\Filters->initialize('/')
+#3 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('/', 'before')
+#4 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-09-08 16:15:16 --> login filter must have a matching alias defined.
+#0 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Filters\Filters.php(493): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('login')
+#1 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Filters\Filters.php(243): CodeIgniter\Filters\Filters->processAliasesToClass('before')
+#2 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Filters\Filters.php(163): CodeIgniter\Filters\Filters->initialize('/')
+#3 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('/', 'before')
+#4 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-09-08 16:19:40 --> Attempt to read property "id" on null
+#0 C:\xampp\htdocs\wms-b2b\vendor\myth\auth\src\Models\UserModel.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\xampp\\htdocs...', 77)
+#1 C:\xampp\htdocs\wms-b2b\vendor\myth\auth\src\Controllers\AuthController.php(176): Myth\Auth\Models\UserModel->withGroup('warehouse')
+#2 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(832): Myth\Auth\Controllers\AuthController->attemptRegister()
+#3 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#4 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-09-08 16:25:31 --> Invalid file: http://localhost/wms-b2b/public/Layout/layout.php
+#0 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('http://localhos...')
+#1 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(226): CodeIgniter\View\View->render('http://localhos...', Array, true)
+#2 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Layout/Dashboar...', Array, true)
+#3 C:\xampp\htdocs\wms-b2b\app\Controllers\Main.php(61): view('Layout/Dashboar...', Array)
+#4 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Main->index()
+#5 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#6 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-08 16:26:36 --> Call to undefined function in_groups()
+#0 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(226): CodeIgniter\View\View->render('Layout/layout', Array, true)
+#3 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Layout/Dashboar...', Array, true)
+#4 C:\xampp\htdocs\wms-b2b\app\Controllers\Main.php(61): view('Layout/Dashboar...', Array)
+#5 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Main->index()
+#6 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#7 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-08 16:27:33 --> Call to undefined function in_groups()
+#0 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(226): CodeIgniter\View\View->render('Layout/layout', Array, true)
+#3 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Layout/Dashboar...', Array, true)
+#4 C:\xampp\htdocs\wms-b2b\app\Controllers\Main.php(61): view('Layout/Dashboar...', Array)
+#5 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Main->index()
+#6 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#7 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

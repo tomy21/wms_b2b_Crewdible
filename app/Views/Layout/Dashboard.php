@@ -1,4 +1,4 @@
-<?= $this->extend(base_url('Layout/layout')); ?>
+<?= $this->extend('Layout/layout'); ?>
 <?= $this->section('judul'); ?>
 <h1>Dashboard</h1>
 <?= $this->endsection('judul'); ?>
