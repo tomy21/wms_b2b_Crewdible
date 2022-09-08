@@ -21,7 +21,7 @@ $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(true);
 $routes->set404Override();
-$routes->setAutoRoute(true);
+// $routes->setAutoRoute(true);
 
 /*
  * --------------------------------------------------------------------
@@ -33,7 +33,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Login::index');
 $routes->get('/home', 'Main::index');
-$routes->get('/UploadPO', 'UploadPO::index');
+$routes->get('/uploadpo', 'UploadPO::index');
 $routes->resource("ApiPicking");
 $routes->resource("apikaryawan");
 

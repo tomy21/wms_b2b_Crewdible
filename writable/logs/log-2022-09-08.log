@@ -314,3 +314,146 @@ CRITICAL - 2022-09-08 16:57:45 --> Unknown column 'id_basket' in 'field list'
 #8 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #9 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #10 {main}
+ERROR - 2022-09-08 17:07:56 --> Unknown column 'id_basket' in 'field list'
+CRITICAL - 2022-09-08 17:07:56 --> Unknown column 'id_basket' in 'field list'
+#0 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `Order_i...', 0)
+#1 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `Order_i...')
+#2 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `Order_i...')
+#3 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `Order_i...', Array, false)
+#4 C:\xampp\htdocs\wms-b2b\app\Models\InvoiceModel.php(103): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\wms-b2b\app\Controllers\Assign.php(16): App\Models\InvoiceModel->group_item()
+#6 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Assign->index()
+#7 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Assign))
+#8 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-08 17:08:39 --> Unknown column 'id_basket' in 'field list'
+CRITICAL - 2022-09-08 17:08:39 --> Unknown column 'id_basket' in 'field list'
+#0 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `Order_i...', 0)
+#1 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `Order_i...')
+#2 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `Order_i...')
+#3 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `Order_i...', Array, false)
+#4 C:\xampp\htdocs\wms-b2b\app\Models\InvoiceModel.php(103): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\wms-b2b\app\Controllers\Assign.php(16): App\Models\InvoiceModel->group_item()
+#6 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Assign->index()
+#7 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Assign))
+#8 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-08 17:08:47 --> Unknown column 'id_basket' in 'field list'
+CRITICAL - 2022-09-08 17:08:47 --> Unknown column 'id_basket' in 'field list'
+#0 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `Order_i...', 0)
+#1 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `Order_i...')
+#2 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `Order_i...')
+#3 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `Order_i...', Array, false)
+#4 C:\xampp\htdocs\wms-b2b\app\Models\InvoiceModel.php(103): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\wms-b2b\app\Controllers\Assign.php(16): App\Models\InvoiceModel->group_item()
+#6 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Assign->index()
+#7 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Assign))
+#8 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-08 17:09:54 --> Unknown column 'id_basket' in 'field list'
+CRITICAL - 2022-09-08 17:09:54 --> Unknown column 'id_basket' in 'field list'
+#0 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `Order_i...', 0)
+#1 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `Order_i...')
+#2 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `Order_i...')
+#3 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `Order_i...', Array, false)
+#4 C:\xampp\htdocs\wms-b2b\app\Models\InvoiceModel.php(103): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\wms-b2b\app\Controllers\Assign.php(16): App\Models\InvoiceModel->group_item()
+#6 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Assign->index()
+#7 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Assign))
+#8 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-09-08 17:22:46 --> Object of class Myth\Auth\Entities\User could not be converted to string
+#0 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(226): CodeIgniter\View\View->render('Layout/layout', Array, true)
+#3 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Layout/Dashboar...', Array, true)
+#4 C:\xampp\htdocs\wms-b2b\app\Controllers\Main.php(61): view('Layout/Dashboar...', Array)
+#5 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Main->index()
+#6 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#7 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-08 17:25:12 --> Undefined global variable $_SESSION
+#0 C:\xampp\htdocs\wms-b2b\app\Views\Layout\layout.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined globa...', 'C:\\xampp\\htdocs...', 72)
+#1 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(226): CodeIgniter\View\View->render('Layout/layout', Array, true)
+#4 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Layout/Dashboar...', Array, true)
+#5 C:\xampp\htdocs\wms-b2b\app\Controllers\Main.php(61): view('Layout/Dashboar...', Array)
+#6 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Main->index()
+#7 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#8 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-09-08 17:25:18 --> Undefined global variable $_SESSION
+#0 C:\xampp\htdocs\wms-b2b\app\Views\Layout\layout.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined globa...', 'C:\\xampp\\htdocs...', 72)
+#1 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(226): CodeIgniter\View\View->render('Layout/layout', Array, true)
+#4 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Layout/Dashboar...', Array, true)
+#5 C:\xampp\htdocs\wms-b2b\app\Controllers\Main.php(61): view('Layout/Dashboar...', Array)
+#6 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Main->index()
+#7 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#8 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-09-08 17:31:00 --> Undefined global variable $_SESSION
+#0 C:\xampp\htdocs\wms-b2b\app\Views\Layout\layout.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined globa...', 'C:\\xampp\\htdocs...', 72)
+#1 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(226): CodeIgniter\View\View->render('Layout/layout', Array, true)
+#4 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Layout/Dashboar...', Array, true)
+#5 C:\xampp\htdocs\wms-b2b\app\Controllers\Main.php(61): view('Layout/Dashboar...', Array)
+#6 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Main->index()
+#7 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#8 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-09-08 17:31:12 --> Undefined constant "session"
+#0 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(226): CodeIgniter\View\View->render('Layout/layout', Array, true)
+#3 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Layout/Dashboar...', Array, true)
+#4 C:\xampp\htdocs\wms-b2b\app\Controllers\Main.php(61): view('Layout/Dashboar...', Array)
+#5 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Main->index()
+#6 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#7 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-08 17:32:12 --> Undefined constant "session"
+#0 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(226): CodeIgniter\View\View->render('Layout/layout', Array, true)
+#3 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Layout/Dashboar...', Array, true)
+#4 C:\xampp\htdocs\wms-b2b\app\Controllers\Main.php(61): view('Layout/Dashboar...', Array)
+#5 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Main->index()
+#6 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#7 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-08 17:32:18 --> Undefined constant "session"
+#0 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(226): CodeIgniter\View\View->render('Layout/layout', Array, true)
+#3 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Layout/Dashboar...', Array, true)
+#4 C:\xampp\htdocs\wms-b2b\app\Controllers\Main.php(61): view('Layout/Dashboar...', Array)
+#5 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Main->index()
+#6 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#7 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-08 17:32:22 --> Object of class Myth\Auth\Entities\User could not be converted to string
+#0 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\View\View.php(226): CodeIgniter\View\View->render('Layout/layout', Array, true)
+#3 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('Layout/Dashboar...', Array, true)
+#4 C:\xampp\htdocs\wms-b2b\app\Controllers\Main.php(61): view('Layout/Dashboar...', Array)
+#5 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Main->index()
+#6 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#7 C:\xampp\htdocs\wms-b2b\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wms-b2b\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

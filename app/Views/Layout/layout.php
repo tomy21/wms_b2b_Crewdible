@@ -69,7 +69,7 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block"><?= session()->get('namaUser') ?></a>
+                        <a href="#" class="d-block"><?= user('namaUser') ?></a>
                     </div>
                 </div>
 

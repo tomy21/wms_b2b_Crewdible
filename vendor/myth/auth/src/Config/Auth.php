@@ -174,7 +174,7 @@ class Auth extends BaseConfig
      *
      * @var bool
      */
-    public $allowRegistration = true;
+    public $allowRegistration = false;
 
     /**
      * --------------------------------------------------------------------

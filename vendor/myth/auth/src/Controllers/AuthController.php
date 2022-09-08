@@ -52,7 +52,6 @@ class AuthController extends Controller
             return redirect()->to($redirectURL);
         }
 
-        // Set a return URL if none is specified
         $_SESSION['redirect_url'] = session('redirect_url') ?? previous_url() ?? site_url('/');
 
         return $this->_render($this->config->views['login'], ['config' => $this->config]);
@@ -80,6 +79,7 @@ class AuthController extends Controller
         $password = $this->request->getPost('password');
         $remember = (bool) $this->request->getPost('remember');
 
+
         // Determine credential type
         $type = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 
@@ -95,7 +95,12 @@ class AuthController extends Controller
 
         $redirectURL = session('redirect_url') ?? site_url('/home');
         unset($_SESSION['redirect_url']);
-
+        $simpan_sess = [
+            'email'        => $login,
+            'namaUser'      => $row->name,
+            'usersLevel'    => $idLevel
+        ];
+        session()->set($simpan_sess);
         return redirect()->to($redirectURL)->withCookies()->with('message', lang('Auth.loginSuccess'));
     }
 
