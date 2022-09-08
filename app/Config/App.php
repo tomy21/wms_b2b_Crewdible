@@ -23,7 +23,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = 'https://localhost/Project_BMI2/';
+    public $baseURL = 'http://localhost/Project_BMI2/';
 
     /**
      * --------------------------------------------------------------------------
@@ -55,7 +55,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $uriProtocol = 'PATH_INFO';
+    public $uriProtocol = 'REQUEST_URI';
 
     /**
      * --------------------------------------------------------------------------
