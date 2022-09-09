@@ -172,7 +172,7 @@ $(document).ready(function() {
     $('#tombolcariIn').click(function(e) {
         e.preventDefault();
         $.ajax({
-            url: "<?= base_url() ?>Assign/cariBarang",
+            url: "<?= site_url('/Assign/cariBarang') ?>",
             dataType: "json",
             success: function(response) {
                 if (response.data) {

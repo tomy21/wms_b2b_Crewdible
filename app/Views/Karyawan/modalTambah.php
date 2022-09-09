@@ -13,7 +13,7 @@
                 <div class="form-row">
                     <div class="col-6">
                         <label for="">Id Users</label>
-                        <input type="text" class="form-control" id="users" name="users" value="<?= $idKaryawan ?>"
+                        <input type="text" class="form-control" id="users" name="users" value="<?= $id_user ?>"
                             autocomplete="off" readonly>
                         <div id="msg-users" class="invalid-feedback">
 
