@@ -14,7 +14,7 @@
     <div class="card-body">
         <p>
             <button class="btn btn-info tambahData" type="submit" id="tambahData">
-                <i class=" fa fa-plus"> Tambah Karyawan</i>
+                <i class=" fa fa-plus"> Tambah User</i>
             </button>
         </p>
         <table id="table1" class="table table-striped" style="width: 100%;">
@@ -31,25 +31,25 @@
             <tbody>
                 <?php
                 $no = 1;
-                foreach ($data->getResultArray() as $row) :
+                foreach ($data as $row) :
                 ?>
                 <tr>
                     <td><?= $no++; ?></td>
-                    <td><?= $row['id_user']; ?></td>
+                    <td><?= $row['email']; ?></td>
+                    <td><?= $row['username']; ?></td>
                     <td><?= $row['name']; ?></td>
-                    <td><?= $row['level'] ?></td>
                     <td>
-                        <?php if ($row['status'] == 1) : ?>
+                        <?php if ($row['active'] == 1) : ?>
                         <span class="badge badge-success">Active</span>
                         <?php else : ?>
                         <span class="badge badge-danger">Non Active</span>
                         <?php endif; ?>
                     </td>
                     <td>
-                        <button href="#" class="btn btn-sm btn-info" onclick="edit('<?= $row['id_user']; ?>')"><i
+                        <button href="#" class="btn btn-sm btn-info" onclick="edit('<?= $row['userId']; ?>')"><i
                                 class="fa fa-pen-alt"></i>
                         </button>
-                        <button class="btn btn-sm btn-danger" onclick="hapusUser('<?= $row['id_user']; ?>')"><i
+                        <button class="btn btn-sm btn-danger" onclick="hapusUser('<?= $row['userId']; ?>')"><i
                                 class="fa fa-trash-alt"></i>
                     </td>
                 </tr>

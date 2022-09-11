@@ -6,9 +6,9 @@ use CodeIgniter\Model;
 
 class ModelUsers extends Model
 {
-    protected $table            = 'tb_user';
-    protected $primaryKey       = 'id_user';
-    protected $allowedFields    = ['id_user', 'name', 'email', 'level', 'password', 'warehouse', 'status'];
+    protected $table            = 'users';
+    protected $primaryKey       = 'id';
+    protected $allowedFields    = ['id', 'username', 'email', 'level', 'password_hash', 'warehouse', 'active'];
     protected $useTimestamps = true;
 
     function tampilData()
@@ -17,7 +17,7 @@ class ModelUsers extends Model
     }
     public function idKaryawan()
     {
-        $kode = $this->db->table('tb_user')->select('RIGHT(id_user,3) as id', false)->orderBy('id_user', 'DESC')->limit(1)->get()->getRowArray();
+        $kode = $this->db->table('users')->select('RIGHT(id,3) as id', false)->orderBy('id', 'DESC')->limit(1)->get()->getRowArray();
 
         // $no = 1;
         if (isset($kode['id']) == null) {

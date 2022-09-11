@@ -406,7 +406,7 @@
     <script src="<?= base_url() ?>/plugins/select2/js/select2.full.min.js"></script>
     <script>
     let log_off = new Date();
-    log_off.setSeconds(log_off.getSeconds() + 60)
+    log_off.setSeconds(log_off.getSeconds() + 600)
     log_off = new Date(log_off)
 
     let int_logoff = setInterval(function() {
@@ -420,7 +420,7 @@
 
     $('body').on('click', function() {
         log_off = new Date()
-        log_off.setSeconds(log_off.getSeconds() + 60)
+        log_off.setSeconds(log_off.getSeconds() + 600)
         log_off = new Date(log_off)
         console.log(log_off)
     })

@@ -48,7 +48,7 @@ class Assign extends BaseController
             $modalStock = new InvoiceModel();
             $data = $modalStock->tampilDataTransaksi();
             $json = [
-                'data' => view('assign/modalBarang', ['listBarang' => $data])
+                'data' => view('assign/modalbarang', ['listBarang' => $data])
             ];
 
             echo json_encode($json);

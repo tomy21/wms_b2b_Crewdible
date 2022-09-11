@@ -9,9 +9,18 @@ class Users extends BaseController
 {
     public function index()
     {
-        $modelUsers = new ModelUsers();
+        // $modelUsers = new \Myth\Auth\Models\UserModel();
 
-        $data = ['data' => $modelUsers->tampilData()];
+        // $data = ['data' => $modelUsers->findAll()];
+
+        $db = \Config\Database::connect();
+        $builder = $db->table('users');
+        $builder->select('users.id as userId, username, email, foto, name, active');
+        $builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
+        $builder->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id');
+        $query = $builder->get();
+
+        $data = ['data' => $query->getResultArray()];
 
         return view('Users/index', $data);
     }

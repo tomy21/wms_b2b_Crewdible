@@ -149,7 +149,7 @@ $(document).ready(function() {
         e.preventDefault();
         $.ajax({
             url: "<?= site_url('/Karyawan/modalTambah'); ?>",
-            dataType: "json",
+            // dataType: "json",
             success: function(response) {
                 $('.tambahUsers').html(response).show();
                 $('#tambahUsers').on('show.bs.modal', function(event) {

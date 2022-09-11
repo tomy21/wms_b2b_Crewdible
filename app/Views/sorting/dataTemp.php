@@ -25,11 +25,10 @@
                     <td><?= $row->Order_id; ?></td>
                     <td><?= $row->Drop_name; ?></td>
                     <td><?= $row->Drop_address ?></td>
-                    <td><?= $row->jumlah ?></td>
                     <td>
                         <?php
                             $db = \Config\Database::connect();
-                            $jumlah = $db->table('tbl_invoice')->getWhere(['status' => 4, 'Order_id ' => $row->Order_id])->getResult();
+                            $jumlah = $db->table('tbl_invoice')->getWhere(['Order_id' => $row->Order_id])->getResult();
 
                             $total = 0;
                             foreach ($jumlah as $data) {
@@ -38,22 +37,24 @@
                             echo $total;
                             ?>
                     </td>
+                    <td><?= $row->jumlah ?></td>
                     <td>
                         <?php
                             $db = \Config\Database::connect();
-                            $jumlah = $db->table('tbl_invoice')->getWhere(['status' => 4, 'Order_id ' => $row->Order_id])->getResult();
+                            $jumlah = $db->table('tbl_invoice')->getWhere(['Order_id' => $row->Order_id])->getResult();
+
                             $total = 0;
                             foreach ($jumlah as $data) {
                                 $total += $data->quantity;
                             }
-                            if ($total != $row->jumlah && $row->status == 4) :
+                            if ($total != $row->jumlah) :
                             ?>
                         <span class="badge badge-info">On Proses</span>
-                        <?php elseif ($total == $row->jumlah && $row->status == 3) : ?>
+                        <?php elseif ($total == $row->jumlah) : ?>
                         <a href="<?= site_url('Sorting/invoice/' . $row->Order_id) ?>"
                             class="btn btn-sm btn-success-outline" target="_blank"> <i class="fa fa-print"></i></a>
-                        <?php elseif ($total != $row->jumlah && $row->status == 4) : ?>
-                        <span class="badge badge-success">Packing</span>
+                        <?php elseif ($row->status == 5) : ?>
+                        <span class="badge badge-success">Done</span>
                         <?php endif; ?>
                     </td>
                 </tr>
