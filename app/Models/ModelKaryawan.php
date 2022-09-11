@@ -11,9 +11,9 @@ class ModelKaryawan extends Model
     protected $allowedFields    = ['id_user', 'nama_user', 'email', 'level', 'password', 'warehouse', 'status_kar'];
     protected $useTimestamps = true;
 
-    function tampilData()
+    function tampilData($warehouse)
     {
-        return $this->table('tbl_karyawan')->get();
+        return $this->table('tbl_karyawan')->getWhere(['warehouse' => $warehouse])->getResultArray();
     }
     public function idKaryawan()
     {

@@ -180,7 +180,7 @@
                         <li class="nav-header">Utility</li>
                         <li class="nav-item">
                             <a href="<?= site_url('Users/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-users"></i>
+                                <i class="nav-icon fas fa-user"></i>
                                 <p class="text">Daftar Users</p>
                             </a>
                         </li>
@@ -188,6 +188,12 @@
                             <a href="<?= site_url('Karyawan/index'); ?>" class="nav-link">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p class="text">Daftar karyawan</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= site_url('MasterWarehouse/index'); ?>" class="nav-link">
+                                <i class="nav-icon fas fa-industry"></i>
+                                <p class="text">Daftar Warehouse</p>
                             </a>
                         </li>
                         <li class="nav-item">

@@ -2,18 +2,19 @@
     rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 
-<div class="modal fade" id="updateUser" data-backdrop="static" data-keyboard="false" tabindex="-1"
+<div class="modal fade" id="updateUsers" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header bg-cyan">
-                <h5 class="modal-title" id="staticBackdropLabel">Tambah Karyawan</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Tambah Users</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <?= form_open(site_url('Karyawan/UpdateUser'), ['class' => 'formupdateusers']) ?>
+                <input type="hidden" class="form-control" id="id" name="id" value="<?= $id ?>">
                 <div class="form-row">
                     <div class="col-6">
                         <label for="">Id Users</label>
@@ -27,7 +28,7 @@
                     <div class="col-6">
                         <div class="form-group">
                             <label for="nama">Nama Users</label>
-                            <input type="text" class="form-control" id="nama" name="nama" value="<?= $nama_user ?>"
+                            <input type="text" class="form-control" id="nama" name="nama" value="<?= $name ?>"
                                 autocomplete="off">
                             <div id="msg-nama" class="invalid-feedback">
 
@@ -45,36 +46,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <div class="form-group">
-                            <label for="nama">Warehouse</label>
-                            <input type="text" class="form-control" id="warehouse" name="warehouse"
-                                value="<?= $warehouse ?>" autocomplete="off">
-                            <div id="msg-warehouse" class="invalid-feedback">
 
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12">
-                        <div class="form-group">
-                            <label for="jenisbarang">Level</label>
-                            <select class="form-control" id="level" name="level">
-                                <option value="<?= $level ?>" selected><?= $level ?></option>
-                                <option value="Admin">Admin</option>
-                                <option value="Officer">Officer</option>
-                                <option value="Manager">Manager</option>
-                            </select>
-                            <div id="msg-level" class="invalid-feedback">
-
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="col-12">
                         <div class="form-group">
                             <label for="status">Status</label>
-                            <input type="checkbox" <?= ($status == '1') ? 'checked' : ''; ?> data-toggle="toggle"
+                            <input type="checkbox" <?= ($active == '1') ? 'checked' : ''; ?> data-toggle="toggle"
                                 data-on="Active" data-off="Not Active" data-onstyle="success" data-offstyle="danger"
                                 data-width="150px" class="chStatus" name="status">
                         </div>
@@ -108,9 +85,9 @@ $(document).ready(function() {
         e.preventDefault();
         $.ajax({
             type: "post",
-            url: "<?= site_url() ?>Karyawan/UpdateStatus",
+            url: "<?= site_url() ?>Users/UpdateStatus",
             data: {
-                users: $('#users').val(),
+                users: $('#id').val(),
             },
             dataType: "json",
             success: function(response) {

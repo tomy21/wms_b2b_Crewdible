@@ -7,18 +7,23 @@ use App\Models\ModelUsers;
 
 class Users extends BaseController
 {
+    protected $db, $builder;
+
+    public function __construct()
+    {
+        $this->db = \Config\Database::connect();
+        $this->builder = $this->db->table('users');
+    }
+
     public function index()
     {
-        // $modelUsers = new \Myth\Auth\Models\UserModel();
 
-        // $data = ['data' => $modelUsers->findAll()];
 
-        $db = \Config\Database::connect();
-        $builder = $db->table('users');
-        $builder->select('users.id as userId, username, email, foto, name, active');
-        $builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
-        $builder->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id');
-        $query = $builder->get();
+        $this->builder->select('users.id as userId, username, email, foto, name, active');
+        $this->builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
+        $this->builder->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id');
+
+        $query = $this->builder->get();
 
         $data = ['data' => $query->getResultArray()];
 
@@ -27,9 +32,13 @@ class Users extends BaseController
     function modalTambah()
     {
         if ($this->request->isAJAX()) {
-            $modelUsers = new ModelUsers();
+            $this->builder->select('users.id as userId, username, email, foto, name, active');
+            $this->builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
+            $this->builder->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id');
 
-            $data = $modelUsers->idKaryawan();
+            $query = $this->builder->get();
+
+            $data = ['data' => $query->getRow()];
 
             return view('Users/modalTambah', ['id_user' => $data]);
         }
@@ -131,12 +140,12 @@ class Users extends BaseController
 
 
         $data       = [
-            'id_user'       => $code,
-            'name'     => $cekStock['nama_user'],
-            'level'         => $cekStock['level'],
-            'password'      => $cekStock['password'],
-            'email'      => $cekStock['warehouse'],
-            'status'        => $cekStock['status_kar'],
+            'id_user'       => $cekStock['email'],
+            'id'       => $cekStock['id'],
+            'name'     => $cekStock['username'],
+            // 'level'         => $cekStock['level'],
+            'password'      => $cekStock['password_hash'],
+            'active'        => $cekStock['active'],
 
         ];
 
@@ -158,11 +167,10 @@ class Users extends BaseController
 
         $modelUser = new ModelUsers();
         $modelUser->update($users, [
-            'name'         => $nama,
-            'password'          => $pass,
-            'level'             => $level,
-            'status'             => $status,
-            'email'             => $warehouse,
+            'username'               => $nama,
+            'password_hash'          => $pass,
+            'active'                 => $status,
+            'warehouse'              => $warehouse,
         ]);
 
 
@@ -178,14 +186,14 @@ class Users extends BaseController
         $modelUser      = new ModelUsers();
         $rowUser        = $modelUser->find($users);
 
-        $userAktif      = $rowUser['status_kar'];
+        $userAktif      = $rowUser['active'];
         if ($userAktif == '1') {
             $modelUser->update($users, [
-                'status'    => '0'
+                'active'    => '0'
             ]);
         } else {
             $modelUser->update($users, [
-                'status'    => '1'
+                'active'    => '1'
             ]);
         }
         $json = [
@@ -194,4 +202,5 @@ class Users extends BaseController
 
         echo json_encode($json);
     }
+    
 }

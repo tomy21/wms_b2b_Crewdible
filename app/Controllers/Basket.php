@@ -12,7 +12,7 @@ class Basket extends BaseController
     {
         $modalBasket = new ModelMasterBasket();
 
-        return view('basket/basketMaster', ['data' => $modalBasket->findAll()]);
+        return view('basket/basketMaster', ['data' => $modalBasket->getWhere(['warehouse' => user()->warehouse])->getResultArray()]);
     }
     public function printBasket($string, $tipe = "PNG")
     {
@@ -23,7 +23,7 @@ class Basket extends BaseController
         $order = $modelInvoice->find($id);
         $cekData = $modelInvoice->getWhere(['id_basket' => $id]);
 
-        $pdf = new TCPDF('P', PDF_UNIT, 'A8', true, 'UTF-8', false);
+        $pdf = new TCPDF('L', PDF_UNIT, 'A6', true, 'UTF-8', false);
         $pdf->SetCreator(PDF_CREATOR);
         $pdf->SetAuthor('Barcode Basket ');
         $pdf->SetTitle("Basket $id ");
@@ -35,19 +35,28 @@ class Basket extends BaseController
         $pdf->setPrintFooter(false);
 
         $style = array(
-            'border' => 0,
-            'vpadding' => 'auto',
+            'position' => 'C',
+            'align' => 'C',
+            'stretch' => true,
+            'fitwidth' => true,
+            'cellfitalign' => '',
+            'border' => false,
             'hpadding' => 'auto',
-            'fgcolor' => array(0, 0, 0),
-            'bgcolor' => false, //array(255,255,255)
-            'module_width' => 200, // width of a single module in points
-            'module_height' => 200 // height of a single module in points
+            'vpadding' => 'auto',
+            'fgcolor' => array(127, 0, 0),
+            'bgcolor' => array(255, 255, 240),
+            'text' => true,
+            'label' => $id,
+            'font' => 'helvetica',
+            'fontsize' => 8,
+            'stretchtext' => 4
         );
+        // $pdf->Cell(0, 0, 'CODE 39 EXTENDED + CHECKSUM', 0, 1);
+        // $pdf->SetLineStyle(array('width' => 1, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(255, 0, 0)));
+        $out = $pdf->write1DBarcode($id, 'C128B', '', 30, 150, 30, 0.9, $style, 'N');
 
         $html =  view('basket/print', [
-
-            'id_basket'   => $id,
-            'barcode'   => $pdf->write2DBarcode($id, 'QRCODE,M', 10, 10, 30, 30, $style),
+            'barcode'   => $out
         ]);
         $pdf->writeHTML($html, true, true, true, true, '');
         $this->response->setContentType('application/pdf');
@@ -71,6 +80,7 @@ class Basket extends BaseController
     {
         if ($this->request->isAJAX()) {
             $idbasket = $this->request->getPost('idbasket');
+            $warehouse = $this->request->getPost('warehouse');
             $panjang = $this->request->getPost('panjang');
             $lebar = $this->request->getPost('lebar');
             $tinggi = $this->request->getPost('tinggi');
@@ -107,6 +117,7 @@ class Basket extends BaseController
             } else {
                 $modelBasket->insert([
                     'id_basket'     => $idbasket,
+                    'warehouse'     => $warehouse,
                     'type'          => $type,
                     'kapasitas'     => $kapasitas,
                 ]);

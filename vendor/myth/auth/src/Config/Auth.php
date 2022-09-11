@@ -77,7 +77,7 @@ class Auth extends BaseConfig
         'login'           => '\App\Views\login\index',
         'register'        => 'Myth\Auth\Views\register',
         'forgot'          => '\App\Views\login\forgotPass',
-        'reset'           => 'Myth\Auth\Views\reset',
+        'reset'           => '\App\Views\login\reset',
         'emailForgot'     => 'Myth\Auth\Views\emails\forgot',
         'emailActivation' => 'Myth\Auth\Views\emails\activation',
     ];
@@ -123,7 +123,7 @@ class Auth extends BaseConfig
      *
      * @var string[]
      */
-    public $personalFields = [];
+    public $personalFields = ['warehouse'];
 
     /**
      * --------------------------------------------------------------------

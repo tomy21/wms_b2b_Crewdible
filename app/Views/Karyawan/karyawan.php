@@ -31,7 +31,7 @@
             <tbody>
                 <?php
                 $no = 1;
-                foreach ($data->getResultArray() as $row) :
+                foreach ($data as $row) :
                 ?>
                 <tr>
                     <td><?= $no++; ?></td>

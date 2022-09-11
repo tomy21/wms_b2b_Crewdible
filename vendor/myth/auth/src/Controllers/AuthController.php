@@ -147,6 +147,7 @@ class AuthController extends Controller
 
         // Validate basics first since some password rules rely on these fields
         $rules = config('Validation')->registrationRules ?? [
+            'warehouse' => 'required',
             'username' => 'required|alpha_numeric_space|min_length[3]|max_length[30]|is_unique[users.username]',
             'email'    => 'required|valid_email|is_unique[users.email]',
         ];
@@ -172,8 +173,8 @@ class AuthController extends Controller
         $this->config->requireActivation === null ? $user->activate() : $user->generateActivateHash();
 
         // Ensure default group gets assigned if set
-        if (!empty($this->config->defaultUserGroup)) {
-            $users = $users->withGroup($this->config->defaultUserGroup);
+        if (!empty($this->request->getPost('role'))) {
+            $users = $users->withGroup($this->request->getPost('role'));
         }
 
         if (!$users->save($user)) {
@@ -189,11 +190,11 @@ class AuthController extends Controller
             }
 
             // Success!
-            return redirect()->route('login')->with('message', lang('Auth.activationSuccess'));
+            return redirect()->to('/Users/index')->with('message', lang('Auth.activationSuccess'));
         }
 
         // Success!
-        return redirect()->route('login')->with('message', lang('Auth.registerSuccess'));
+        return redirect()->route('/Users/index')->with('message', lang('Auth.registerSuccess'));
     }
 
     //--------------------------------------------------------------------

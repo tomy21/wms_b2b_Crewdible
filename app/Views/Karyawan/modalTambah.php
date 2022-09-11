@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <?php form_open(site_url('Karyawan/tambahUsers'), ['class' => 'formtambahusers']) ?>
+                <?= form_open('Karyawan/tambahUsers', ['class' => 'formtambahusers']) ?>
                 <div class="form-row">
                     <div class="col-6">
                         <label for="">Id Users</label>
@@ -45,6 +45,17 @@
                             <input type="text" class="form-control" id="warehouse" name="warehouse" autocomplete="off"
                                 value="<?= $warehouse ?>" readonly>
                             <div id="msg-warehouse" class="invalid-feedback">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="warehouse">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" autocomplete="off"
+                                value="">
+                            <div id="msg-email" class="invalid-feedback">
 
                             </div>
                         </div>

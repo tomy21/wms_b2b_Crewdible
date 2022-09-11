@@ -10,8 +10,8 @@ class Karyawan extends BaseController
     public function index()
     {
         $modelKaryawan = new ModelKaryawan();
-
-        $data = ['data' => $modelKaryawan->tampilData()];
+        $warehouse = user()->warehouse;
+        $data = ['data' => $modelKaryawan->tampilData($warehouse)];
 
         return view('Karyawan/karyawan', $data);
     }
@@ -28,6 +28,7 @@ class Karyawan extends BaseController
     {
         $users          = $this->request->getVar('users');
         $nama           = $this->request->getVar('nama');
+        $email          = $this->request->getVar('email');
         $pass           = password_hash($this->request->getVar('pass'), PASSWORD_BCRYPT);
         $level          = $this->request->getVar('level');
         $warehouse      = $this->request->getVar('warehouse');
@@ -66,6 +67,14 @@ class Karyawan extends BaseController
                     'required'  => 'Warehouse Tidak Boleh Kosong',
                 ]
             ],
+            'email' => [
+                'rules' => 'required|is_unique[tbl_karyawan.email]',
+                'label' => 'Id Users',
+                'errors' => [
+                    'required'  => '{field} Tidak Boleh Kosong',
+                    'is_unique' => "$email sudah digunakan"
+                ]
+            ],
         ]);
 
         if (!$validate) {
@@ -75,22 +84,24 @@ class Karyawan extends BaseController
                 'pass'     => $validation->getError('pass'),
                 'level'     => $validation->getError('level'),
                 'warehouse'     => $validation->getError('warehouse'),
+                'email'     => $validation->getError('email'),
             ];
 
             $json = [
                 'error'     => $error
             ];
         } else {
-            $modelStock = new ModelKaryawan();
+            $modelKar = new ModelKaryawan();
             $data       = [
                 'id_user'           => $users,
                 'nama_user'         => $nama,
+                'email'             => $email,
                 'password'          => $pass,
                 'level'             => $level,
-                'status_kar'             => 1,
+                'status_kar'        => 1,
                 'warehouse'         => $warehouse,
             ];
-            $modelStock->insert($data);
+            $modelKar->insert($data);
 
             $json = [
                 'success'   => 'Data berhasil ditambah'

@@ -7,9 +7,6 @@
 <?= $this->endsection('subjudul'); ?>
 <?= $this->section('isi'); ?>
 
-
-
-
 <div class="col-lg-12">
     <div class="card">
         <div class="card-header bg-danger">

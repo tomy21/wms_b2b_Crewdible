@@ -119,9 +119,9 @@
                         </div>
                         <?php endif; ?>
 
-                        <?php if ($config->allowRegistration) : ?>
+                        <!-- <?php if ($config->allowRegistration) : ?>
                         <p><a href="<?= url_to('register') ?>"><?= lang('Auth.needAnAccount') ?></a></p>
-                        <?php endif; ?>
+                        <?php endif; ?> -->
 
                     </div>
                 </form>

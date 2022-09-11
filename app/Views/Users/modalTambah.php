@@ -29,13 +29,34 @@
                                 </div>
                             </div>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control " placeholder="Warehouse">
+                                <input type="text"
+                                    class="form-control <?php if (session('errors.warehouse')) : ?>is-invalid<?php endif ?>"
+                                    placeholder="Warehouse" value="<?= old('warehouse') ?>" name="warehouse"
+                                    autocomplete="off">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <span class="fas fa-warehouse"></span>
                                     </div>
                                 </div>
                             </div>
+                            <div class="input-group mb-4">
+                                <select name="role" id="role" class="form-control" required>
+                                    <option value="" selected disabled> -- pilih Role -- </option>
+                                    <?php
+                                    $db = \Config\Database::connect();
+                                    $basket = $db->table('auth_groups')->get()->getResult();
+                                    foreach ($basket as $row) :
+                                    ?>
+                                    <option value="<?= $row->name ?>"><?= $row->name ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-users"></span>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="input-group mb-3">
                                 <input type="email"
                                     class="form-control <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>"

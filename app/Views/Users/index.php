@@ -17,12 +17,13 @@
                 <i class=" fa fa-plus"> Tambah User</i>
             </button>
         </p>
+        <?= view('Myth\Auth\Views\_message_block') ?>
         <table id="table1" class="table table-striped" style="width: 100%;">
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>ID Karyawan</th>
-                    <th>Nama Karyawan</th>
+                    <th>Email Users</th>
+                    <th>Nama Users</th>
                     <th>Level</th>
                     <th>Status</th>
                     <th>Aksi</th>
@@ -59,9 +60,30 @@
     </div>
 </div>
 <div class="tambahUser" style="display: none;"></div>
-<div class="updateUser" style="display: none;"></div>
+<div class="updateUsers" style="display: none;"></div>
 
 <script>
+function edit(users) {
+    $.ajax({
+        type: "post",
+        url: "<?= site_url() ?>Users/updateData",
+        data: {
+            code: users,
+        },
+        dataType: "json",
+        success: function(response) {
+
+            if (response.data) {
+                $('.updateUsers').html(response.data).show();
+                $('#updateUsers').modal('show');
+
+            }
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            alert(xhr.status + '\n' + thrownError);
+        }
+    });
+}
 $(document).ready(function() {
     $('#table1').DataTable();
 
@@ -84,6 +106,47 @@ $(document).ready(function() {
     });
 
 });
+
+function hapusUser(iduser) {
+    Swal.fire({
+        title: 'Hapus Users',
+        text: "Yakin untuk hapus User ini ? ",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Iya, Hapus!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                type: "post",
+                url: "<?= site_url('/Users/deleteUser'); ?>",
+                data: {
+                    code: iduser
+                },
+                dataType: "json",
+                success: function(response) {
+                    if (response.success) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Berhasil',
+                            text: response.success,
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = (
+                                    '<?= site_url() ?>/Users/index ');
+                            }
+                        });
+                        play_notif();
+                    }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status + '\n' + thrownError);
+                }
+            });
+        }
+    })
+}
 </script>
 
 <?= $this->endsection('isi'); ?>
