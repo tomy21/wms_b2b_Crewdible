@@ -4,6 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url() ?>/dist/img/favicon.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
     <title>BMI Project | Crewdible</title>
 
     <!-- Google Font: Source Sans Pro -->
@@ -165,6 +168,14 @@
                                 <i class="nav-icon fas fa-square"></i>
                                 <p>
                                     Packing
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= site_url('Handover/index'); ?>" class="nav-link">
+                                <i class="nav-icon fas fa-motorcycle"></i>
+                                <p>
+                                    Handover
                                 </p>
                             </a>
                         </li>

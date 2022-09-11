@@ -54,6 +54,7 @@
                     <table id="viewStatus" class="table table-striped" style="width: 100%;">
                         <thead>
                             <th>No</th>
+                            <th>Warehouse</th>
                             <th>Item ID</th>
                             <th>Item Detail</th>
                             <th>Quantity All</th>
@@ -65,9 +66,10 @@
                             <tr>
                                 <?php
                                 $no = 1;
-                                foreach ($data->getResultArray() as $user) :
+                                foreach ($data as $user) :
                                 ?>
                                 <td><?= $no++; ?></td>
+                                <td><?= $user['warehouse']; ?></td>
                                 <td><?= $user['Item_id']; ?></td>
                                 <td><?= $user['Item_detail']; ?></td>
                                 <td align="center">

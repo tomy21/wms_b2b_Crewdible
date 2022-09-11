@@ -18,7 +18,7 @@
                                 <option value="" selected disabled> -- pilih basket -- </option>
                                 <?php
                                 $db = \Config\Database::connect();
-                                $basket = $db->table('tbl_masterbasket')->get()->getResult();
+                                $basket = $db->table('tbl_masterbasket')->getWhere(['warehouse' => user()->warehouse])->getResult();
                                 foreach ($basket as $row) :
                                 ?>
                                 <option value="<?= $row->id_basket ?>"><?= $row->id_basket ?></option>
@@ -34,7 +34,7 @@
                                 <option value="" selected disabled> -- pilih picker -- </option>
                                 <?php
                                 $db = \Config\Database::connect();
-                                $basket = $db->table('tbl_karyawan')->get()->getResult();
+                                $basket = $db->table('tbl_karyawan')->getWhere(['warehouse' => user()->warehouse])->getResult();
                                 foreach ($basket as $row) :
                                 ?>
                                 <option value="<?= $row->id_user ?>"><?= $row->nama_user ?></option>

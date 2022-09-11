@@ -16,9 +16,9 @@ class InvoiceModel extends Model
     ];
     protected $useTimestamps    = true;
 
-    function tampilDataTransaksi()
+    function tampilDataTransaksi($warehouse)
     {
-        return $this->table('tbl_invoice')->where('status', 1)->get()->getResultArray();
+        return $this->table('tbl_invoice')->getWhere(['status' => 1, 'stock_location' => $warehouse])->getResultArray();
     }
     function tampilDataInv()
     {
@@ -49,10 +49,9 @@ class InvoiceModel extends Model
     {
         return $this->db->table('tbl_invoice')->where('Item_id', $sku)->get()->getRowArray();
     }
-    public function dataStatus()
+    public function dataStatus($warehouse)
     {
-        return $this->db->table('tbl_invoice')->select(' Order_id,Drop_name,Drop_address,Drop_contact,Drop_city,stock_location,status')
-            ->groupBy('Order_id')->get()->getResult();
+        return $this->db->table('tbl_invoice')->select(' Order_id,Drop_name,Drop_address,Drop_contact,Drop_city,stock_location,status')->where(['stock_location' => $warehouse])->groupBy('Order_id')->get()->getResult();
     }
     public function getDataSorting()
     {

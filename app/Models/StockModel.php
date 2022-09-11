@@ -8,12 +8,12 @@ class StockModel extends Model
 {
     protected $table            = 'tbl_stock';
     protected $primaryKey       = 'Item_id';
-    protected $allowedFields    = ['Item_id', 'Item_detail', 'quantity_good', 'quantity_reject'];
+    protected $allowedFields    = ['Item_id', 'Item_detail', 'quantity_good', 'quantity_reject', 'warehouse'];
     protected $useTimestamps    = true;
 
-    function tampilDataTransaksi()
+    function tampilDataTransaksi($warehouse)
     {
-        return $this->table('tbl_stock')->get();
+        return $this->table('tbl_stock')->getWhere(['warehouse' => $warehouse])->getResultArray();
     }
     public function dataDetail($item_id)
     {

@@ -8,12 +8,12 @@ class PickingModel extends Model
 {
     protected $table            = 'tbl_picking';
     protected $primaryKey       = 'id';
-    protected $allowedFields    = ['Item_id', 'Item_detail', 'qty', 'quantity_pick', 'assign', 'status', 'id_basket'];
+    protected $allowedFields    = ['Item_id', 'Item_detail', 'qty', 'quantity_pick', 'assign', 'status', 'id_basket', 'warehouse'];
     protected $useTimestamps    = true;
 
-    function tampilDataTransaksi()
+    function tampilDataTransaksi($warehouse)
     {
-        return $this->table('tbl_picking')->get()->getResultArray();
+        return $this->table('tbl_picking')->getWhere(['warehouse' => $warehouse])->getResultArray();
     }
     public function getPickCount()
     {

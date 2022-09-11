@@ -14,8 +14,9 @@ class Stock extends BaseController
     public function index()
     {
         $StatusModel = new StockModel();
+        $warehouse = user()->warehouse;
         $data = [
-            'data'  => $StatusModel->tampilDataTransaksi()
+            'data'  => $StatusModel->tampilDataTransaksi($warehouse)
         ];
         return view('Stock/viewStock', $data);
     }

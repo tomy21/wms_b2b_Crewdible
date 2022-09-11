@@ -112,6 +112,10 @@ class TbOrder extends Migration
                 'type' => 'varchar',
                 'constraint' => 225,
             ],
+            'id_basket' => [
+                'type' => 'varchar',
+                'constraint' => 225,
+            ],
             'created_at' => [
                 'type' => 'datetime',
                 'null' => TRUE,

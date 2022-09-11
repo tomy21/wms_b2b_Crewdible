@@ -17,6 +17,10 @@ class TbPacking extends Migration
             'list' => [
                 'type' => 'longtext',
             ],
+            'warehouse' => [
+                'type' => 'varchar',
+                'constraint' => 225,
+            ],
             'foto' => [
                 'type' => 'varchar',
                 'constraint' => 225,

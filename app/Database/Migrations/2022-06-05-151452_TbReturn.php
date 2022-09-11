@@ -14,6 +14,10 @@ class TbReturn extends Migration
                 'type' => 'varchar',
                 'constraint' => 225,
             ],
+            'warehouse' => [
+                'type' => 'varchar',
+                'constraint' => 225,
+            ],
             'Receive' => [
                 'type' => 'varchar',
                 'constraint' => 225,

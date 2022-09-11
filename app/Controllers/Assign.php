@@ -46,7 +46,8 @@ class Assign extends BaseController
     {
         if ($this->request->isAJAX()) {
             $modalStock = new InvoiceModel();
-            $data = $modalStock->tampilDataTransaksi();
+            $warehouse = user()->warehouse;
+            $data = $modalStock->tampilDataTransaksi($warehouse);
             $json = [
                 'data' => view('assign/modalbarang', ['listBarang' => $data])
             ];
