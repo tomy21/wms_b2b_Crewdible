@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\InvoiceModel;
+use App\Models\ModelMasterBasket;
 use App\Models\ModelOrder;
 use App\Models\PackingModel;
 use TCPDF;
@@ -35,11 +36,13 @@ class Sorting extends BaseController
 
         $modalInvoice = new InvoiceModel();
         $modalOrder = new ModelOrder();
+        $modalBasket = new ModelMasterBasket();
         $cekData = $modalInvoice->getWhere(['id_basket' => $id])->getResult();
 
         foreach ($cekData as $row) {
             $modalInvoice->update($row->id, ['status' => 4]);
             $modalOrder->update($row->id, ['status' => 4]);
+            $modalBasket->update($row->id, ['kap_order' => 0, 'status' => 0]);
         }
         $json = [
             'success'   => 'Berhasil discan'
@@ -60,12 +63,13 @@ class Sorting extends BaseController
         $listItem = $modelInv->where('Order_id', $id)->select('id,Item_id,Item_detail,quantity')->get()->getResultArray();
         $data = [
             'order_id'  => $id,
+            'warehouse' => user()->warehouse,
             'list'      => json_encode($listItem)
         ];
         $modelPacking->insert($data);
         foreach ($cekData->getResult() as $row) {
-            $modelInv->update($row->id, ['status' => 3]);
-            $modelInvoice->update($row->id, ['status' => 3]);
+            $modelInv->update($row->id, ['status' => 5]);
+            $modelInvoice->update($row->id, ['status' => 5]);
         }
 
         $pdf = new TCPDF('P', PDF_UNIT, 'A4', true, 'UTF-8', false);

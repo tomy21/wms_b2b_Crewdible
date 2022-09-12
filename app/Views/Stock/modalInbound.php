@@ -13,6 +13,7 @@
                 <div class="form-group col-md-6">
                     <label for="">No Po</label>
                     <input type="text" class="form-control" name="nopo" id="nopo" value="<?= $nopo ?>" readonly>
+
                 </div>
                 <table>
                     <table class="table table-sm table-striped table-bordered" style="width: 100%;">

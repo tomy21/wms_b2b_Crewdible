@@ -26,15 +26,15 @@ class ApiPicking extends ResourceController
     public function show($assign = null)
     {
         $model = new PickingModel();
-        $data = $model->where('assign', $assign)->groupBy('id_basket')->findAll();
-        if ($data) {
+        $data = $model->where('assign', $assign)->where('status', 0)->groupBy('id_basket')->findAll();
+        if (!$data) {
+            return $this->failNotFound('No Data Found with id ' . $assign);
+        } else {
             $response = [
                 "success"   => true,
                 "data"      => $data
             ];
             return $this->respond($response);
-        } else {
-            return $this->failNotFound('No Data Found with id ' . $assign);
         }
     }
     public function getId($id = null)
@@ -99,6 +99,7 @@ class ApiPicking extends ResourceController
 
         $id             = $this->request->getVar('id');
         $qtyCount       = $this->request->getVar('quantity');
+        $warehouse      = $this->request->getVar('warehouse');
 
         $cekData = $model->getWhere(['id' => $id])->getResult();
 
@@ -121,20 +122,22 @@ class ApiPicking extends ResourceController
                                 'error' => 'Quantity melebihi orderan'
                             ]
                         ];
+                        return $this->fail('Quantity melebihi orderan');
                     } else {
                         $modelStock = new StockModel();
                         $getStock = $modelStock->getWhere(['Item_id'  => $row->Item_id])->getResult();
                         foreach ($getStock as $query) {
                             if ($query['quantity_good'] < $qtyCount) {
                                 $response = [
-                                    'status'   => 500,
+                                    'status'   => 400,
                                     'error'    => true,
                                     'messages' => [
                                         'error' => 'Stock Kurang'
                                     ]
                                 ];
+                                return $this->fail('Quantity melebihi orderan');
                             } else {
-                                $itemId = $modelStock->getWhere(['Item_id' => $row->Item_id])->getResult();
+                                $itemId = $modelStock->getWhere(['Item_id' => $row->Item_id, 'warehouse' => $warehouse])->getResult();
 
                                 $qtyStock = 0;
                                 foreach ($itemId as $x) {

@@ -175,6 +175,7 @@ class Inbound extends BaseController
     public function simpanInbound()
     {
         $good       = $this->request->getVar('qtyGood');
+        $warehouse       = $this->request->getVar('warehouse');
         $bad        = $this->request->getVar('qtyBad');
         $itemid     = $this->request->getVar('itemid');
         $itemdetail = $this->request->getVar('itemdetail');
@@ -193,6 +194,7 @@ class Inbound extends BaseController
         for ($h = 0; $h < $count; $h++) {
             $data5 = [
                 'nopo'          => $nopo,
+                'warehouse'     => $warehouse,
                 'Item_id'       => $itemid[$h],
                 'Item_detail'   => $itemdetail[$h],
                 'quantity'      => $qty[$h],
@@ -235,6 +237,7 @@ class Inbound extends BaseController
             } else {
                 $data = [
                     'Item_id'           => $item_id,
+                    'warehouse'         => user()->warehouse,
                     'Item_detail'       => $item_detail,
                     'quantity_good'     => $qty,
                     'quantity_reject'   => $qtyBad,

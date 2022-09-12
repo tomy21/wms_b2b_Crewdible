@@ -17,14 +17,24 @@ class ApiPacking extends ResourceController
     public function index()
     {
         $modelPacking   = new PackingModel();
-        $cekOrder = $modelPacking->where('Status', 1)->findAll();
+        $cekOrder = $modelPacking->where('status', 0)->findAll();
         $response = [
             "success"   => true,
             "data"      => $cekOrder
         ];
         return $this->respond($response, 200);
     }
-    public function show($order = null)
+    public function detail()
+    {
+        $modelPacking   = new PackingModel();
+        $cekOrder = $modelPacking->where('status', 1)->findAll();
+        $response = [
+            "success"   => true,
+            "data"      => $cekOrder
+        ];
+        return $this->respond($response, 200);
+    }
+    public function show($assign = null)
     {
         $modelPacking = new PackingModel();
         $id = $this->request->getPost('id');

@@ -18,7 +18,7 @@ class ApiManifest extends ResourceController
     public function index()
     {
         $modelPacking = new HandoverModel();
-        $order = $modelPacking->findAll();
+        $order = $modelPacking->getWhere(['status' => 0])->getResult();
 
         $data = [
             'success'   => true,
@@ -26,29 +26,19 @@ class ApiManifest extends ResourceController
         ];
         return $this->respond($data);
     }
-    public function show($order = null)
+    public function show($assign = null)
     {
-        $modelPacking = new PackingModel();
-        $modelHandover = new HandoverModel();
-        $modelInvoice = new InvoiceModel();
-        $modelOrder   = new ModelOrder();
+        $modelPacking = new HandoverModel();
         $id = $this->request->getPost('id');
 
-        $Order = $modelPacking->getWhere(['order_id' => $id])->getResult();
-        foreach ($Order as $row) {
-            $modelHandover->insert([
-                'orderId'   => $id,
-                'listItem'  => $row->list,
-            ]);
-        }
-        $modelInvoice->update($id, ['status' => 6]);
-        $modelOrder->update($id, ['status' => 6]);
+        $Order = $modelPacking->getWhere(['id_handover' => $id])->getResultArray();
+
         $respon = [
             'success'       => true,
+            'data'          => $Order[0]
         ];
 
-
-        return $this->respond($respon, 200);
+        return $this->respond(json_encode($respon), 200);
     }
     public function update($id = null)
     {
@@ -57,33 +47,44 @@ class ApiManifest extends ResourceController
         $modelInvoice = new InvoiceModel();
         $modelOrder   = new ModelOrder();
         $file = $this->request->getFile('foto');
-
         $file->move('./assets/uploades');
-
+        $ttd = $this->request->getPost('tandatangan');
+        // $ttd->move('./assets/uploades');
         $id = $this->request->getPost('id');
         $assign = $this->request->getPost('assign');
+        $warehouse = $this->request->getPost('warehouse');
 
-        $Order = $modelPacking->getWhere(['id' => $id])->getResultArray();
+        $Order = $modelPacking->getWhere(['id_handover' => $id])->getResultArray();
 
         if (!$Order) {
             return $this->failNotFound('Data tidak ditemukan');
         } else {
             $data = [
-                'assign'    => $assign,
-                'Status'    => 1,
-                'foto'      => $file->getName(),
+                'assign'            => $assign,
+                'status'            => 1,
+                'foto'              => $file->getName(),
+                'tandatangan'       => $ttd,
+                'warehouse'         => $warehouse,
             ];
-            $modelPacking->update($id, $data);
-            $modelInvoice->update($id, ['status' => 7]);
-            $modelOrder->update($id, ['status' => 7]);
-            $modelHandover = new HandoverModel();
+
             foreach ($Order as $row) {
-                $data = [
-                    'Order_id'  => $row['Order_id'],
-                    'listItem'  => $row['list'],
-                ];
-                $modelHandover->insert($data);
+                $item = json_decode($row['listItem']);
+                $list = (array)$item;
+                $count = count($item);
+                for ($i = 0; $i < $count; $i++) {
+                    $orderID = $item[$i]->order_id;
+
+                    $getId = $modelInvoice->getWhere(['Order_id' => $orderID])->getResult();
+                    foreach ($getId as $data) {
+                        $modelInvoice->update($data->id, ['status' => 7]);
+                    }
+
+                    $modelOrder->update($orderID, ['status' => 7]);
+                }
             }
+            $modelPacking->update($id, $data);
+            // $modelHandover = new HandoverModel();
+
             $respon = [
                 'success'       => true,
                 'data'          => $data
@@ -95,22 +96,20 @@ class ApiManifest extends ResourceController
     }
     public function add()
     {
+        $modelHandover = new HandoverModel();
+        $idHandover = $modelHandover->idHandover();
         $list   = $this->request->getPost('list');
         $driver = $this->request->getPost('driver');
-        $foto   = $this->request->getFile('foto');
-        $foto->move('./assets/uploades');
-        $ttd    = $this->request->getFile('ttd');
-        $ttd->move('./assets/uploades');
+        $warehouse = $this->request->getPost('warehouse');
 
-        $modelHandover = new HandoverModel();
 
         // $Order = $modelHandover->getWhere(['Order_id' => $order])->getResultArray();
 
         $data = [
+            'id_handover'       => $idHandover,
             'listItem'          => $list,
             'driver'            => $driver,
-            'foto'              => $foto->getName(),
-            'tandatangan'       => $ttd->getName(),
+            'warehouse'         => $warehouse
         ];
         $modelHandover->insert($data);
 

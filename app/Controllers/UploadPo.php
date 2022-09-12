@@ -71,14 +71,16 @@ class UploadPo extends BaseController
                 $item_id                = $row[0];
                 $item_detail            = $row[1];
                 $qty                    = $row[2];
+                $warehouse              = $row[3];
                 $db = \Config\Database::connect();
                 $cekCode = $db->table('tbl_inbound')->getWhere(['Item_id' => $item_id])->getResult();
 
                 $data = [
-                    'nopo'         => $nopo,
-                    'Item_id'      => $item_id,
-                    'Item_detail'    => $item_detail,
-                    'quantity'     => $qty,
+                    'nopo'          => $nopo,
+                    'warehouse'     => $warehouse,
+                    'Item_id'       => $item_id,
+                    'Item_detail'   => $item_detail,
+                    'quantity'      => $qty,
                     'created_at'    => $date,
                     'updated_at'    => $date,
                 ];
