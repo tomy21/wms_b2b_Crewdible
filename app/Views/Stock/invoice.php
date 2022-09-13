@@ -28,6 +28,13 @@
                     <input type="datetime" class="form-control" name="tglupload" id="tglManifest"
                         value="<?= date('Y-m-d H:i:s') ?>" readonly>
                 </div>
+                <div class="form-group col-md-4">
+                    <label for="">Slot</label>
+                    <select name="slot" id="slot">
+                        <option value="1">Slot 1 (Pagi)</option>
+                        <option value="2">Slot 2 (Siang)</option>
+                    </select>
+                </div>
                 <label for="fileimport" class="col-sm-4 col-form-label"></label>
                 <div class="col-sm-4">
                     <button type="submit" class="btn btn-success">Upload</button>

@@ -21,7 +21,7 @@ $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(true);
 $routes->set404Override();
-// $routes->setAutoRoute(true);
+$routes->setAutoRoute(true);
 
 /*
  * --------------------------------------------------------------------
