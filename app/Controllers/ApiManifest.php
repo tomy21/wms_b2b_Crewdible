@@ -63,10 +63,9 @@ class ApiManifest extends ResourceController
                 'assign'            => $assign,
                 'status'            => 1,
                 'foto'              => $file->getName(),
-                'tandatangan'       => $ttd,
                 'warehouse'         => $warehouse,
             ];
-
+            $modelPacking->update($id, $data);
             foreach ($Order as $row) {
                 $item = json_decode($row['listItem']);
                 $list = (array)$item;
@@ -82,7 +81,7 @@ class ApiManifest extends ResourceController
                     $modelOrder->update($orderID, ['status' => 7]);
                 }
             }
-            $modelPacking->update($id, $data);
+
             // $modelHandover = new HandoverModel();
 
             $respon = [
