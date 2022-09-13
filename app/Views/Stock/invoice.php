@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group col-md-4">
                     <label for="">Slot</label>
-                    <select name="slot" id="slot">
+                    <select name="slot" id="slot" class="form-control">
                         <option value="1">Slot 1 (Pagi)</option>
                         <option value="2">Slot 2 (Siang)</option>
                     </select>

@@ -51,6 +51,7 @@ class Invoice extends BaseController
         } else {
             $file_upload = $this->request->getFile('fileimport');
             // $date = $this->request->getPost('tglupload');
+            $slot = $this->request->getPost('slot');
             $ext = $file_upload->getClientExtension();
 
             if ($ext == 'xls') {
@@ -88,7 +89,6 @@ class Invoice extends BaseController
                 $Amount             = $row[19];
                 $Note               = $row[20];
                 $Stock_Location     = $row[21];
-                $slot               = $row[22];
 
 
                 $data = [
