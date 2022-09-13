@@ -18,6 +18,11 @@ class TbReturnReject extends Migration
                 'type' => 'varchar',
                 'constraint' => 225,
             ],
+            'warehouse' => [
+                'type' => 'varchar',
+                'constraint' => 225,
+            ],
+
             'Item_id' => [
                 'type' => 'varchar',
                 'constraint' => 225,
