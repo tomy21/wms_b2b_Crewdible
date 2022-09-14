@@ -10,10 +10,7 @@ class TbStock extends Migration
     {
         $this->forge->addField([
 
-            'warehouse' => [
-                'type' => 'varchar',
-                'constraint' => 225,
-            ],
+            
             'Item_id' => [
                 'type' => 'varchar',
                 'constraint' => 225,

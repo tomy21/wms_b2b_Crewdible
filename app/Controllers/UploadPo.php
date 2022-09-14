@@ -22,7 +22,7 @@ class UploadPo extends BaseController
             'data'          => $statusPO->tampilDataTransaksi(),
             'nopo'          => $this->PoModel->buatPo()
         ];
-        return view('stock/uploadPO', $data);
+        return view('Stock/uploadPO', $data);
     }
 
     public function Upload()

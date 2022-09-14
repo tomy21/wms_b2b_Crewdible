@@ -40,7 +40,7 @@
                         <td>
                             <?php
                                 $db = \Config\Database::connect();
-                                $jumlah = $db->table('tbl_Po')->where('no_Po', $user['no_Po'])->countAllResults();
+                                $jumlah = $db->table('tbl_po')->where('no_Po', $user['no_Po'])->countAllResults();
                                 ?>
                             <?php if ($jumlah == null) : ?>
                             <?= $user['created_at'] ?>

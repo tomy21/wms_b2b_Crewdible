@@ -14,10 +14,6 @@ class TblMasterbasket extends Migration
                 'type' => 'varchar',
                 'constraint' => 17,
             ],
-            'warehouse' => [
-                'type' => 'varchar',
-                'constraint' => 17,
-            ],
             'type' => [
                 'type' => 'varchar',
                 'constraint' => 225,
