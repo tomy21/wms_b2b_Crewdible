@@ -34,8 +34,8 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Login::index');
 $routes->get('/home', 'Main::index');
 // $routes->get('/uploadpo', 'UploadPO::index');
-$routes->resource("ApiPicking");
-$routes->resource("apikaryawan");
+// $routes->resource("ApiPicking");
+// $routes->resource("apikaryawan");
 
 /*
  * --------------------------------------------------------------------
