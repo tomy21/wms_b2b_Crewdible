@@ -53,6 +53,10 @@ class InvoiceModel extends Model
     {
         return $this->db->table('tbl_invoice')->select(' Order_id,Drop_name,Drop_address,Drop_contact,Drop_city,stock_location,status')->where(['stock_location' => $warehouse])->groupBy('Order_id')->get()->getResult();
     }
+    public function dataStatusHo()
+    {
+        return $this->table('tbl_invoice')->get()->getResult();
+    }
     public function getDataSorting()
     {
         return $this->db->table('tbl_invoice')->where('status', 4)->select(' Order_id,Drop_name,Drop_address,Drop_contact,Drop_city,stock_location,status,sum(quantity) as jumlah,')
