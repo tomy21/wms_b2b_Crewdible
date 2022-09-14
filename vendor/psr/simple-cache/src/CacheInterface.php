@@ -31,7 +31,8 @@ interface CacheInterface
      * @throws \Psr\SimpleCache\InvalidArgumentException
      *   MUST be thrown if the $key string is not a legal value.
      */
-    public function set(string $key, mixed $value, null|int|\DateInterval $ttl = null);
+    // public function set(string $key, mixed $value, null|int|\DateInterval $ttl = null);
+    public function set(string $key, mixed $value, $ttl = null);
 
     /**
      * Delete an item from the cache by its unique key.
