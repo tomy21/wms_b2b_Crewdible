@@ -18,15 +18,12 @@ class Invoice extends BaseController
     public function index()
     {
         $warehouse = user()->warehouse;
-        if ($warehouse = "Headoffice") {
-            $data = [
-                'data' => $this->invoiceModel->dataStatusHo()
-            ];
-        } else {
-            $data = [
-                'data' => $this->invoiceModel->dataStatus($warehouse)
-            ];
-        }
+
+        $data = [
+            'data' => $this->invoiceModel->dataStatus(),
+            'data' => $this->invoiceModel->dataStatusHo()
+        ];
+
 
         return view('Stock/invoice', $data);
     }
@@ -123,7 +120,7 @@ class Invoice extends BaseController
                     'Note'              => $Note,
                     'status'            => 1,
                     'slot'              => $slot,
-                    'created_at'        => isset($slot) == 1 ? $date = date('Y-m-d 08:15:00', strtotime('+1 days')) : $date = date('Y-m-d 14:15:00',strtotime('+1 days')),
+                    'created_at'        => isset($slot) == 1 ? $date = date('Y-m-d 08:15:00', strtotime('+1 days')) : $date = date('Y-m-d 14:15:00', strtotime('+1 days')),
                 ];
                 $this->invoiceModel->add($data);
                 $data2 = [
