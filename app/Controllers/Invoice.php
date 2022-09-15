@@ -17,18 +17,7 @@ class Invoice extends BaseController
     }
     public function index()
     {
-        $warehouse = user()->warehouse;
-        if ($warehouse = "Headoffice") {
-            $data = [
-                'data' => $this->invoiceModel->dataStatusHo()
-            ];
-        } else {
-            $data = [
-                'data' => $this->invoiceModel->dataStatus($warehouse)
-            ];
-        }
-
-        return view('Stock/invoice', $data);
+        return view('Stock/invoice');
     }
     public function upload()
     {

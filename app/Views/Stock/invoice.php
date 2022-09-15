@@ -74,6 +74,7 @@
                     <table id="viewStatus" class="table table-striped" style="width: 100%;">
                         <thead>
                             <th>No</th>
+                            <th>Date Upload</th>
                             <th>Warehouse</th>
                             <th>Order ID</th>
                             <th>Nama Penerima</th>
@@ -85,10 +86,18 @@
                         <tbody>
                             <tr>
                                 <?php
+                                $db = \Config\Database::connect();
+                                if (user()->warehouse == 'Headoffice') {
+                                    $data = $db->table('tbl_invoice')->get()->getResult();
+                                } else {
+                                    $data = $db->table('tbl_invoice')->where('stock_location', user()->warehouse)->get()->getResult();
+                                }
+
                                 $no = 1;
                                 foreach ($data as $user) :
                                 ?>
                                 <td><?= $no++; ?></td>
+                                <td><?= $user->created_at ?></td>
                                 <td><?= $user->stock_location ?></td>
                                 <td><?= $user->Order_id ?></td>
                                 <td><?= $user->Drop_name ?></td>
