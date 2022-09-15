@@ -57,7 +57,7 @@ class Invoice extends BaseController
             return redirect()->to('/Invoice');
         } else {
             $file_upload = $this->request->getFile('fileimport');
-            // $date = $this->request->getPost('tglupload');
+            $date = $this->request->getPost('tglupload');
             $slot = $this->request->getPost('slot');
             $ext = $file_upload->getClientExtension();
 
@@ -123,7 +123,7 @@ class Invoice extends BaseController
                     'Note'              => $Note,
                     'status'            => 1,
                     'slot'              => $slot,
-                    'created_at'        => isset($slot) == 1 ? $date = date('Y-m-d 08:15:00', strtotime('+1 days')) : $date = date('Y-m-d 14:15:00'),
+                    'created_at'        => isset($slot) == 1 ? $date = date('Y-m-d 08:15:00', strtotime('+1 days')) : $date = date('Y-m-d 14:15:00',strtotime('+1 days')),
                 ];
                 $this->invoiceModel->add($data);
                 $data2 = [
@@ -145,7 +145,7 @@ class Invoice extends BaseController
                     'note'              => $Note,
                     'Status'            => 1,
                     'created_at'        =>
-                    isset($slot) == 1 ? $date = date('Y-m-d 08:15:00', strtotime('+1 days')) : $date = date('Y-m-d 14:15:00'),
+                    isset($slot) == 1 ? $date = date('Y-m-d 08:15:00', strtotime('+1 days')) : $date = date('Y-m-d 14:15:00', strtotime('+1 days')),
                 ];
                 $this->ModalOrder->add($data2);
                 $pesan_success = [

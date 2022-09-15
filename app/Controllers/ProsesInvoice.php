@@ -43,9 +43,10 @@ class ProsesInvoice extends BaseController
     {
         $ModelPicking = new PickingModel();
         $modalPick    = new ModelKaryawan();
+        $warehouse = user()->warehouse;
         $data = [
-            'data'      => $ModelPicking->tampilDataTransaksi(),
-            'dataKar'   => $modalPick->tampilData()
+            'data'      => $ModelPicking->tampilDataTransaksi($warehouse),
+            'dataKar'   => $modalPick->tampilData($warehouse)
         ];
         return view('Stock/data', $data);
     }

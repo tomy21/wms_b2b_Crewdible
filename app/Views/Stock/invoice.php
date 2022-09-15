@@ -31,14 +31,18 @@
                 <div class="form-group col-md-4">
                     <label for="">Slot</label>
                     <select name="slot" id="slot" class="form-control">
+                        <option value="" selected> - Pilih Slot - </option>
                         <option value="1">Slot 1 (Pagi)</option>
                         <option value="2">Slot 2 (Siang)</option>
                     </select>
                 </div>
-                <label for="fileimport" class="col-sm-4 col-form-label"></label>
-                <div class="col-sm-4">
-                    <button type="submit" class="btn btn-success">Upload</button>
+                <div class="form-group col-md-4">
+                    <label for="fileimport" class="col-sm-4 col-form-label"></label>
+                    <div class="col-sm-4">
+                        <button type="submit" class="btn btn-success form-control">Upload</button>
+                    </div>
                 </div>
+
             </div>
             <?= form_close(); ?>
             </p>
