@@ -68,7 +68,7 @@ class Basket extends BaseController
             $modalStock = new ModelMasterBasket();
             $data = $modalStock->idBasket();
             $json = [
-                'data' => view('basket/modalbasket', ['idBasket' => $data]),
+                'data' => view('basket/modalBasket', ['idBasket' => $data]),
             ];
 
             echo json_encode($json);
