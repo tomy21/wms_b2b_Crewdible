@@ -150,7 +150,7 @@ class Users extends BaseController
         ];
 
         $json = [
-            'data'              => view('users/updateUser', $data)
+            'data'              => view('Users/updateUser', $data)
         ];
 
         echo json_encode($json);
@@ -161,8 +161,8 @@ class Users extends BaseController
         $nama           = $this->request->getVar('nama');
         $pass           = password_hash($this->request->getVar('pass'), PASSWORD_BCRYPT);
         $level          = $this->request->getVar('level');
-        $status          = $this->request->getVar('status');
-        $warehouse          = $this->request->getVar('warehouse');
+        $status         = $this->request->getVar('status');
+        $warehouse      = $this->request->getVar('warehouse');
 
 
         $modelUser = new ModelUsers();
@@ -202,5 +202,4 @@ class Users extends BaseController
 
         echo json_encode($json);
     }
-    
 }
