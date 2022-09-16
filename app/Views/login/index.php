@@ -45,7 +45,7 @@
                             ?>
                         <input type="email"
                             class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>"
-                            placeholder="<?= lang('Auth.email') ?>" name="email" autofocus autocomplete="off">
+                            placeholder="<?= lang('Auth.email') ?>" name="email" autofocus autocomplete="on">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
