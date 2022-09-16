@@ -13,26 +13,27 @@ class Main extends BaseController
     {
         $ModelInvoice = new InvoiceModel();
         $ModelStock = new StockModel();
-        $Totnew = $ModelInvoice->getWhere(['status' => 1]);
+        $warehouse = user()->warehouse;
+        $Totnew = $ModelInvoice->getWhere(['status' => 1], ['warehouse' => $warehouse]);
         $new = $Totnew->getNumRows();
 
         $brand2    = 2;
-        $Totpick = $ModelInvoice->getWhere(['status' => $brand2]);
+        $Totpick = $ModelInvoice->getWhere(['status' => $brand2], ['warehouse' => $warehouse]);
         $pick = $Totpick->getNumRows();
 
         $brand3    = 3;
-        $Totpack = $ModelInvoice->getWhere(['status' => $brand3]);
+        $Totpack = $ModelInvoice->getWhere(['status' => $brand3], ['warehouse' => $warehouse]);
         $pack = $Totpack->getNumRows();
 
         $brand4    = 4;
-        $Totrtn = $ModelInvoice->getWhere(['status' => $brand4]);
+        $Totrtn = $ModelInvoice->getWhere(['status' => $brand4], ['warehouse' => $warehouse]);
         $rtn = $Totrtn->getNumRows();
 
         $brand5    = 6;
-        $Totrtn = $ModelInvoice->getWhere(['status' => $brand5]);
+        $Totrtn = $ModelInvoice->getWhere(['status' => $brand5], ['warehouse' => $warehouse]);
         $assign = $Totrtn->getNumRows();
 
-        $Totnew = $ModelInvoice->getWhere(['status' => 5]);
+        $Totnew = $ModelInvoice->getWhere(['status' => 5], ['warehouse' => $warehouse]);
         $done = $Totnew->getNumRows();
 
         $transaksi = $ModelInvoice->findAll();
