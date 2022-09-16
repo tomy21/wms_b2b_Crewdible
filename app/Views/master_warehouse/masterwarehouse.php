@@ -19,7 +19,7 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Basket Id</th>
+                        <th>Warehouse Id</th>
                         <th>Warehouse</th>
                         <th>#</th>
                     </tr>

@@ -85,7 +85,7 @@ class UploadPo extends BaseController
                     'created_at'    => $date,
                     'updated_at'    => $date,
                 ];
-                $this->InboundModel->add($data);
+                $this->InboundModel->insert($data);
                 $pesan_success = [
                     'success' => '<div class="alert alert-success alert-dismissible" role="alert">
                         <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
