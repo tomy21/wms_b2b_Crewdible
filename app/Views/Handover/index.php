@@ -31,7 +31,7 @@
                 ?>
                 <tr>
                     <td><?= $no++; ?></td>
-                    <td><?= $row['id_handover']; ?></td>
+                    <td><?= $row['Order_id']; ?></td>
                     <td><?= $row['listItem']; ?></td>
                     <td><?= $row['driver'] ?></td>
                     <td><img src="<?= base_url() ?>/assets/uploades/<?= $row['foto'] ?>" alt="" width="50"></td>
