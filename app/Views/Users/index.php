@@ -25,6 +25,7 @@
                     <th>Email Users</th>
                     <th>Nama Users</th>
                     <th>Level</th>
+                    <th>Warehouse Name</th>
                     <th>Status</th>
                     <th>Aksi</th>
                 </tr>
@@ -39,6 +40,7 @@
                     <td><?= $row['email']; ?></td>
                     <td><?= $row['username']; ?></td>
                     <td><?= $row['name']; ?></td>
+                    <td><?= $row['warehouse']; ?></td>
                     <td>
                         <?php if ($row['active'] == 1) : ?>
                         <span class="badge badge-success">Active</span>
