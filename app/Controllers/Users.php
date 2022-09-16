@@ -19,7 +19,7 @@ class Users extends BaseController
     {
 
 
-        $this->builder->select('users.id as userId, username, email, foto, name, active');
+        $this->builder->select('users.id as userId, username, email, foto, name, active,warehouse');
         $this->builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
         $this->builder->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id');
 
