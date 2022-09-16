@@ -21,7 +21,7 @@ class Karyawan extends BaseController
             $modalUsers = new ModelKaryawan();
             $data = $modalUsers->idKaryawan();
 
-            return view('Karyawan/modalTambah', ['id' => $data, 'warehouse' => user()->warehouse]);
+            return view('Karyawan/modalTambah', ['id' => $data]);
         }
     }
     public function tambahUsers()
