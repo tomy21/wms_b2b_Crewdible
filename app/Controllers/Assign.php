@@ -49,7 +49,7 @@ class Assign extends BaseController
             $warehouse = user()->warehouse;
             $data = $modalStock->tampilDataTransaksi($warehouse);
             $json = [
-                'data' => view('assign/modalbarang', ['listBarang' => $data])
+                'data' => view('assign/modalBarang', ['listBarang' => $data])
             ];
 
             echo json_encode($json);
