@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control " placeholder="Warehouse">
+                        <input type="text" class="form-control " placeholder="Warehouse" name="warehouse">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-warehouse"></span>
