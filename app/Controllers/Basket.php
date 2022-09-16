@@ -12,7 +12,7 @@ class Basket extends BaseController
     {
         $modalBasket = new ModelMasterBasket();
 
-        return view('basket/basketMaster', ['data' => $modalBasket->getWhere(['warehouse' => user()->warehouse])->getResultArray()]);
+        return view('basket/basketMaster');
     }
     public function printBasket($string, $tipe = "PNG")
     {

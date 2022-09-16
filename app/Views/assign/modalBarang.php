@@ -52,7 +52,7 @@
                     <thead>
                         <tr>
                             <th><input type="checkbox" id="centangsemua"></th>
-                            <th>Order Id</th>
+                            <!-- <th>Order Id</th> -->
                             <th>Code Barang</th>
                             <th>Nama Barang</th>
                             <th>Qty</th>
@@ -61,11 +61,14 @@
                     <tbody>
                         <?php
                         $no = 1;
+                        $db = \Config\Database::connect();
+                        $data = $db->table('tbl_invoice')->where('warehouse', user()->warehouse)->orderBy('Item_id')->get()->getResult();
+
                         foreach ($listBarang as $row) :
                         ?>
                         <tr>
                             <td><input type="checkbox" name="id[]" class="centangId" value="<?= $row['id'] ?>"></td>
-                            <td><?= $row['Order_id']; ?></td>
+                            <!-- <td><?= $row['Order_id']; ?></td> -->
                             <td><?= $row['Item_id']; ?></td>
                             <td><?= $row['Item_detail']; ?></td>
                             <td><?= $row['quantity']; ?></td>

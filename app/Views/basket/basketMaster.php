@@ -30,6 +30,11 @@
                 <tbody>
                     <?php
                     $no = 1;
+                    $db = \Config\Database::connect();
+
+                    $data = $db->table('tbl_masterbasket')->where('warehouse', user()->warehouse)->get()->getResult();
+
+
                     foreach ($data as $row) :
                     ?>
 
