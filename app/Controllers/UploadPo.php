@@ -27,6 +27,7 @@ class UploadPo extends BaseController
 
     public function Upload()
     {
+        $warehouse = $this->request->getPost('warehouse');
         $db = \Config\Database::connect();
         $validation = \Config\Services::validation();
         $valid = $this->validate([
@@ -71,7 +72,7 @@ class UploadPo extends BaseController
                 $item_id                = $row[0];
                 $item_detail            = $row[1];
                 $qty                    = $row[2];
-                $warehouse              = $row[3];
+                // $warehouse              = $row[3];
                 $db = \Config\Database::connect();
                 $cekCode = $db->table('tbl_inbound')->getWhere(['Item_id' => $item_id])->getResult();
 

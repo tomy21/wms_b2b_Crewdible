@@ -21,6 +21,24 @@
                 <label for="fileimport">No PO</label>
                 <input type="text" class="form-control" name="noPo" id="noPo" value="<?= $nopo ?>" readonly>
             </div>
+            <div class="input-group mb-3">
+                <select name="warehouse" id="warehouse"
+                    class="form-control <?php if (session('errors.warehouse')) : ?>is-invalid<?php endif ?>" required>
+                    <option value="" selected disabled> -- Pilih Warehouse -- </option>
+                    <?php
+                    $db = \Config\Database::connect();
+                    $basket = $db->table('tbl_warehouse')->get()->getResult();
+                    foreach ($basket as $row) :
+                    ?>
+                    <option value="<?= $row->warehouse_name ?>"><?= $row->warehouse_name ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-warehouse"></span>
+                    </div>
+                </div>
+            </div>
             <div class="form-group row">
                 <div class="form-group col-md-4">
                     <label for="fileimport">Upload Data</label>
