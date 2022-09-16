@@ -78,7 +78,7 @@
 
                 <!-- SidebarSearch Form -->
 
-
+                <?php if (in_groups('admin')) : ?>
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
@@ -223,7 +223,130 @@
                     </ul>
                 </nav>
 
-                <!--  -->
+                <?php elseif (in_groups('warehouse')) : ?>
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+                        <li class="nav-header">Warehouse</li>
+                        <li class="nav-item">
+                            <a href="<?= site_url('Stock/index'); ?>" class="nav-link">
+                                <i class="nav-icon fas fa-tags"></i>
+                                <p>
+                                    Stock
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= site_url('basket/index'); ?>" class="nav-link">
+                                <i class="nav-icon fas fa-shopping-bag"></i>
+                                <p>
+                                    Basket
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= site_url('Assign/index'); ?>" class="nav-link">
+                                <i class="nav-icon fas fa-cart-arrow-down"></i>
+                                <p>
+                                    Picklist Assignment
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= site_url('Picking/index'); ?>" class="nav-link">
+                                <i class="nav-icon fas fa-box"></i>
+                                <p>
+                                    Picking
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= site_url('Sorting/index'); ?>" class="nav-link">
+                                <i class="nav-icon fas fa-sort"></i>
+                                <p>
+                                    Sorting
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= site_url('Packing/index'); ?>" class="nav-link">
+                                <i class="nav-icon fas fa-square"></i>
+                                <p>
+                                    Packing
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= site_url('ReturnItem/index'); ?>" class="nav-link">
+                                <i class="nav-icon fas fa-file-archive"></i>
+                                <p>
+                                    Return Order
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="<?= site_url('Karyawan/index'); ?>" class="nav-link">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p class="text">Daftar karyawan</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="<?= site_url('login/keluar'); ?>" class="nav-link">
+                                <i class="nav-icon fas fa-sign-out-alt"></i>
+                                <p class="text">Sign Out</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <?php elseif (in_groups('seller')) : ?>
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+                        <li class="nav-item">
+                            <a href="<?= site_url('main/index'); ?>" class="nav-link">
+                                <i class="nav-icon fas fa-laptop"></i>
+                                <p>
+                                    Dashboard
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="<?= site_url('UploadPO/index'); ?>" class="nav-link">
+                                <i class="nav-icon fas fa-upload"></i>
+                                <p>
+                                    Upload PO
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="<?= site_url('Stock/index'); ?>" class="nav-link">
+                                <i class="nav-icon fas fa-tags"></i>
+                                <p>
+                                    Stock
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="<?= site_url('invoice/index'); ?>" class="nav-link">
+                                <i class="nav-icon fas fa-file"></i>
+                                <p>
+                                    Upload Order
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <?php endif; ?>
                 <!-- /.sidebar-menu -->
             </div>
         </aside>
