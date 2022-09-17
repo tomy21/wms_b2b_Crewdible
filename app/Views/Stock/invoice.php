@@ -7,49 +7,83 @@
 <?= $this->endsection('subjudul'); ?>
 <?= $this->section('isi'); ?>
 
-<div class="col-lg-12">
-    <div class="card">
-        <div class="card-header bg-danger">
-            <h3 class="card-title">Upload File Invoice</h3>
-        </div>
-        <div class="card-body">
-            <?= form_open_multipart('Invoice/upload') ?>
-            <?= session()->getFlashdata('error'); ?>
-            <?= session()->getFlashdata('success'); ?>
-            <div class="form-group row">
-
-                <div class="form-group col-md-6">
-                    <label for="fileimport">Upload Data</label>
-                    <input type="file" class="form-control" name="fileimport" accept=".xls,.xlsx " required>
-                </div>
-                <!-- <div class="form-group col-md-4">
+<div class="section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-danger">
+                        <h3 class="card-title">Upload File Invoice</h3>
+                    </div>
+                    <div class="card-body">
+                        <?= form_open_multipart('Invoice/upload') ?>
+                        <?= session()->getFlashdata('error'); ?>
+                        <?= session()->getFlashdata('success'); ?>
+                        <div class="form-group row">
+                            <div class="form-group col-md-6">
+                                <label for="fileimport">Upload Data</label>
+                                <input type="file" class="form-control" name="fileimport" accept=".xls,.xlsx " required>
+                            </div>
+                            <!-- <div class="form-group col-md-4">
                     <label for="fileimport">Created Date</label>
                     <input type="datetime" class="form-control" name="tglupload" id="tglManifest"
                         value="<?= date('Y-m-d H:i:s') ?>" readonly>
                 </div> -->
-                <div class="form-group col-md-6">
-                    <label for="">Slot</label>
-                    <select name="slot" id="slot" class="form-control" required>
-                        <option value="" selected> - Pilih Slot - </option>
-                        <option value="1">Slot 1 (Pagi)</option>
-                        <option value="2">Slot 2 (Siang)</option>
-                    </select>
+                            <div class="form-group col-md-6">
+                                <label for="">Slot</label>
+                                <select name="slot" id="slot" class="form-control" required>
+                                    <option value="" selected> - Pilih Slot - </option>
+                                    <option value="1">Slot 1 (Pagi)</option>
+                                    <option value="2">Slot 2 (Siang)</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <button type="submit" class="btn btn-success form-control"> <i class="fa fa-upload"></i>
+                                    Upload</button>
+                            </div>
+                            <?= form_close(); ?>
+                            <?= form_open('Invoice/download') ?>
+                            <div class="form-group col-sm-12">
+                                <button type="submit" class="btn btn-info form-control"> <i class="fa fa-download"></i>
+                                    download tamplate</button>
+                            </div>
+                            <?= form_close(); ?>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group col-sm-4">
-                    <button type="submit" class="btn btn-success form-control"> <i class="fa fa-upload"></i>
-                        Upload</button>
+            </div>
+            <div class="col-md-6">
+                <?= form_open('Invoice/index') ?>
+                <div class="card">
+                    <div class="card-header bg-danger">
+                        <h3 class="card-title">
+                            Pilih Warehouse
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <select name="warehouse" id="warehouse"
+                            class="form-control <?php if (session('errors.warehouse')) : ?>is-invalid<?php endif ?>">
+                            <option value="" selected> -- Pilih Warehouse -- </option>
+                            <?php
+                            $db = \Config\Database::connect();
+                            $basket = $db->table('tbl_warehouse')->get()->getResult();
+                            foreach ($basket as $row) :
+                            ?>
+                            <option value="<?= $row->warehouse_name ?>"><?= $row->warehouse_name ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-sm btn-success"> Pilih </button>
 
+                    <?= form_close(); ?>
                 </div>
-                <?= form_close(); ?>
-                <?= form_open('Invoice/download') ?>
-                <div class="form-group col-sm-12">
-                    <button type="submit" class="btn btn-info form-control"> <i class="fa fa-download"></i>
-                        download tamplate</button>
-                </div>
-                <?= form_close(); ?>
             </div>
         </div>
     </div>
+</div>
+
+<div class="col-lg-12">
+
 </div>
 
 <div class="col-lg-12">
@@ -88,10 +122,11 @@
                         <tbody>
                             <tr>
                                 <?php
-                                $db = \Config\Database::connect();
+
                                 if (user()->warehouse == 'Headoffice') {
-                                    $data = $db->table('tbl_invoice')->get()->getResult();
+                                    $data = $status;
                                 } else {
+                                    $db = \Config\Database::connect();
                                     $data = $db->table('tbl_invoice')->where('stock_location', user()->warehouse)->get()->getResult();
                                 }
 
@@ -141,6 +176,25 @@
 <script>
 $(document).ready(function() {
     $('#viewStatus').DataTable();
+
+});
+
+$('#warehouse').change(function(e) {
+    let warehouse = $('#warehouse').val();
+
+    if (warehouse != '') {
+        $.ajax({
+            type: "post",
+            url: "<?= site_url('/Invoice/index') ?>",
+            data: {
+                warehouse: warehouse
+            },
+            dataType: "JSON",
+            success: function(response) {
+
+            }
+        });
+    }
 
 });
 

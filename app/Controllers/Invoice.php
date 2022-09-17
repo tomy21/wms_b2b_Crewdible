@@ -19,7 +19,18 @@ class Invoice extends BaseController
     }
     public function index()
     {
-        return view('Stock/invoice');
+        $warehouse = $this->request->getPost('warehouse');
+        if ($warehouse == null) {
+            $data = [
+                'status'    => $this->invoiceModel->get()->getResult(),
+            ];
+        } else {
+            $data = [
+                'status' => $this->invoiceModel->dataStatus($warehouse)
+            ];
+        }
+
+        return view('Stock/invoice', $data);
     }
     public function upload()
     {

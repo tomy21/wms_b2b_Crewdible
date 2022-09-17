@@ -239,6 +239,14 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="<?= site_url('Inbound/index'); ?>" class="nav-link">
+                                <i class="nav-icon fas fa-warehouse"></i>
+                                <p>
+                                    Inbound Receiving
+                                </p>
+                            </a>
+                        </li>
 
                         <li class="nav-item">
                             <a href="<?= site_url('Stock/index'); ?>" class="nav-link">

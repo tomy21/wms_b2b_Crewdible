@@ -51,7 +51,7 @@ class InvoiceModel extends Model
     }
     public function dataStatus($warehouse)
     {
-        return $this->db->table('tbl_invoice')->select(' Order_id,Drop_name,Drop_address,Drop_contact,Drop_city,stock_location,status')->where(['stock_location' => $warehouse])->groupBy('Order_id')->get()->getResult();
+        return $this->db->table('tbl_invoice')->select(' Order_id,Drop_name,Drop_address,Drop_contact,Drop_city,stock_location,status,created_at')->where(['stock_location' => $warehouse])->groupBy('Order_id')->get()->getResult();
     }
     public function dataStatusHo()
     {

@@ -7,9 +7,6 @@
 <?= $this->endsection('subjudul'); ?>
 <?= $this->section('isi'); ?>
 
-
-
-
 <div class="col-lg-12">
     <!-- <div class="card">
         <div class="card-header bg-danger">
@@ -44,13 +41,32 @@
 
 <div class="col-lg-12">
     <div class="card">
-        <div class="card-header bg-danger">
+        <div class="card-header bg-cyan">
             <h3 class="card-title">Tabel Stock</h3>
         </div>
 
         <div class="card-body">
             <div class="row">
                 <div class="col-lg-12">
+                    <?= form_open('Stock/index') ?>
+                    <div class="input-group col-lg-3 float-lg-right" style="margin-bottom: 30px;">
+                        <select name="warehouse" id="warehouse"
+                            class=" form-control <?php if (session('errors.warehouse')) : ?>is-invalid<?php endif ?>">
+                            <option value="" selected> -- Pilih Warehouse -- </option>
+                            <?php
+                            $db = \Config\Database::connect();
+                            $basket = $db->table('tbl_warehouse')->get()->getResult();
+                            foreach ($basket as $row) :
+                            ?>
+                            <option value="<?= $row->warehouse_name ?>"><?= $row->warehouse_name ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-sm btn-success"> Pilih </button>
+                        </div>
+                        <?= form_close(); ?>
+                    </div>
+
                     <table id="viewStatus" class="table table-striped" style="width: 100%;">
                         <thead>
                             <th>No</th>
