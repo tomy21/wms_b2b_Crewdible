@@ -20,6 +20,7 @@
                     <tr>
                         <th>No</th>
                         <th>Basket Id</th>
+                        <th>Warehouse</th>
                         <th>Type</th>
                         <th>Kapasitas</th>
                         <th>Barcode</th>
@@ -31,8 +32,12 @@
                     <?php
                     $no = 1;
                     $db = \Config\Database::connect();
+                    if (user()->warehouse == 'Headoffice') {
+                        $data = $db->table('tbl_masterbasket')->get()->getResult();
+                    } else {
+                        $data = $db->table('tbl_masterbasket')->where('warehouse', user()->warehouse)->get()->getResult();
+                    }
 
-                    $data = $db->table('tbl_masterbasket')->where('warehouse', user()->warehouse)->get()->getResult();
 
 
                     foreach ($data as $row) :
@@ -40,18 +45,19 @@
 
                     <tr>
                         <td><?= $no++ ?></td>
-                        <td><?= $row['id_basket'] ?></td>
-                        <td><?= $row['type'] ?></td>
-                        <td><?= $row['kapasitas'] ?></td>
+                        <td><?= $row->id_basket ?></td>
+                        <td><?= $row->warehouse ?></td>
+                        <td><?= $row->type ?></td>
+                        <td><?= $row->kapasitas ?></td>
                         <td>
                             <?php
                                 $generator = new Picqer\Barcode\BarcodeGeneratorPNG();
-                                echo '<img src="data:image/png;base64,' . base64_encode($generator->getBarcode($row['id_basket'], $generator::TYPE_CODE_128)) . '">';
+                                echo '<img src="data:image/png;base64,' . base64_encode($generator->getBarcode($row->id_basket, $generator::TYPE_CODE_128)) . '">';
 
                                 ?>
                         </td>
                         <td>
-                            <a href="<?= base_url('Basket/printBasket/' . $row['id_basket']) ?>"
+                            <a href="<?= base_url('Basket/printBasket/' . $row->id_basket) ?>"
                                 class="btn btn-sm btn-danger" target="_blank"> <i class="fa fa-print"></i></a>
                         </td>
                     </tr>
