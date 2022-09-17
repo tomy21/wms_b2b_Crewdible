@@ -62,18 +62,21 @@
                         <?php
                         $no = 1;
                         $db = \Config\Database::connect();
-                        $data = $db->table('tbl_invoice')->where('warehouse', user()->warehouse)->orderBy('Item_id')->get()->getResult();
-
+                        if (user()->warehouse == 'Headoffice') {
+                            $listBarang = $db->table('tbl_invoice')->select('id, Item_id,Item_detail, sum(quantity) as quantity')->groupBy('Item_id,Item_detail')->get()->getResult();
+                        } else {
+                            $listBarang = $db->table('tbl_invoice')->where('stock_location', user()->warehouse)->orderBy('Item_id,Item_detail')->get()->getResult();
+                        }
                         foreach ($listBarang as $row) :
                         ?>
                         <tr>
-                            <td><input type="checkbox" name="id[]" class="centangId" value="<?= $row['id'] ?>"></td>
-                            <!-- <td><?= $row['Order_id']; ?></td> -->
-                            <td><?= $row['Item_id']; ?></td>
-                            <td><?= $row['Item_detail']; ?></td>
-                            <td><?= $row['quantity']; ?></td>
+                            <td><input type="checkbox" name="id[]" class="centangId" value="<?= $row->Item_id ?>">
+                            </td>
+                            <td><?= $row->Item_id; ?></td>
+                            <td><?= $row->Item_detail; ?></td>
+                            <td><?= $row->quantity; ?></td>
+                            <?php endforeach; ?>
                         </tr>
-                        <?php endforeach; ?>
                     </tbody>
                 </table>
                 <?= form_close(); ?>

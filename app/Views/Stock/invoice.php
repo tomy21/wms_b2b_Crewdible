@@ -13,39 +13,41 @@
             <h3 class="card-title">Upload File Invoice</h3>
         </div>
         <div class="card-body">
-            <p>
-                <?= form_open_multipart('Invoice/upload') ?>
-                <?= session()->getFlashdata('error'); ?>
-                <?= session()->getFlashdata('success'); ?>
+            <?= form_open_multipart('Invoice/upload') ?>
+            <?= session()->getFlashdata('error'); ?>
+            <?= session()->getFlashdata('success'); ?>
             <div class="form-group row">
 
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6">
                     <label for="fileimport">Upload Data</label>
-                    <input type="file" class="form-control" name="fileimport" accept=".xls,.xlsx ">
+                    <input type="file" class="form-control" name="fileimport" accept=".xls,.xlsx " required>
                 </div>
-                <div class="form-group col-md-4">
+                <!-- <div class="form-group col-md-4">
                     <label for="fileimport">Created Date</label>
                     <input type="datetime" class="form-control" name="tglupload" id="tglManifest"
                         value="<?= date('Y-m-d H:i:s') ?>" readonly>
-                </div>
-                <div class="form-group col-md-4">
+                </div> -->
+                <div class="form-group col-md-6">
                     <label for="">Slot</label>
-                    <select name="slot" id="slot" class="form-control">
+                    <select name="slot" id="slot" class="form-control" required>
                         <option value="" selected> - Pilih Slot - </option>
                         <option value="1">Slot 1 (Pagi)</option>
                         <option value="2">Slot 2 (Siang)</option>
                     </select>
                 </div>
-                <div class="form-group col-md-4">
-                    <label for="fileimport" class="col-sm-4 col-form-label"></label>
-                    <div class="col-sm-4">
-                        <button type="submit" class="btn btn-success form-control">Upload</button>
-                    </div>
-                </div>
+                <div class="form-group col-sm-4">
+                    <button type="submit" class="btn btn-success form-control"> <i class="fa fa-upload"></i>
+                        Upload</button>
 
+                </div>
+                <?= form_close(); ?>
+                <?= form_open('Invoice/download') ?>
+                <div class="form-group col-sm-12">
+                    <button type="submit" class="btn btn-info form-control"> <i class="fa fa-download"></i>
+                        download tamplate</button>
+                </div>
+                <?= form_close(); ?>
             </div>
-            <?= form_close(); ?>
-            </p>
         </div>
     </div>
 </div>

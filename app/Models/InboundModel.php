@@ -8,7 +8,7 @@ class InboundModel extends Model
 {
     protected $table            = 'tbl_inbound';
     protected $primaryKey       = 'id';
-    protected $allowedFields    = ['nopo', 'warehouse', 'Item_id', 'Item_detail', 'quantity', 'volume'];
+    protected $allowedFields    = ['nopo', 'warehouse', 'Item_id', 'Item_detail', 'quantity', 'volume', 'estimate_date'];
     protected $useTimestamps    = true;
 
     public function add($data)

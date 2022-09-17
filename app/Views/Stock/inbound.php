@@ -17,7 +17,8 @@
                     <th>No_Po</th>
                     <th>Jumlah Item</th>
                     <th>Quantity Item</th>
-                    <th>Created Date</th>
+                    <th>Estimasi kedatangan</th>
+                    <th>Selesai Inbound</th>
                     <th>#</th>
                 </thead>
                 <tbody>
@@ -38,24 +39,17 @@
                         </td>
                         <td><?= $user['quantity_item']; ?></td>
                         <td>
-                            <?php
-                                $db = \Config\Database::connect();
-                                $jumlah = $db->table('tbl_po')->where('no_Po', $user['no_Po'])->countAllResults();
-                                ?>
-                            <?php if ($jumlah == null) : ?>
                             <?= $user['created_at'] ?>
-                            <?php elseif ($jumlah != null) : ?>
-                            <?= $user['updated_at'] ?>
-                            <?php endif; ?>
                         </td>
+                        <td><?= $user['updated_at'] ?></td>
                         <td>
                             <?php
                                 $resi
                                 ?>
-                            <?php if ($jumlah == null) : ?>
-                            <span style="font-weight:bold; color:green;" onclick="detail('<?= $user['No_Po']; ?>')"><i
+                            <?php if ($user['updated_at'] != null) : ?>
+                            <span style="font-weight:bold; color:green;" onclick="detail('<?= $user['no_Po']; ?>')"><i
                                     class="fa fa-check"></i> Done</span>
-                            <?php elseif ($jumlah != null) : ?>
+                            <?php elseif ($user['updated_at'] == null) : ?>
 
                             <button type="button" class="btn btn-sm btn-outline-info"
                                 onclick="edit('<?= sha1($user['no_Po']); ?>')"><i class="fa fa-edit"></i>

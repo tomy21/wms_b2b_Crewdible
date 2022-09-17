@@ -6,6 +6,8 @@ use App\Controllers\BaseController;
 use App\Models\InvoiceModel;
 use App\Models\ModelItem;
 use App\Models\ModelOrder;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class Invoice extends BaseController
 {
@@ -164,5 +166,68 @@ class Invoice extends BaseController
             ];
             echo json_encode($json);
         }
+    }
+    public function download()
+    {
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setCellValue('A1', "Order ID");
+        $sheet->setCellValue('B1', "Item ID");
+        $sheet->setCellValue('C1', "Item Detail");
+        $sheet->setCellValue('D1', "Quantity");
+        $sheet->setCellValue('E1', "Volume");
+        $sheet->setCellValue('F1', "Vehicle Tag");
+        $sheet->setCellValue('G1', "Drop Name");
+        $sheet->setCellValue('H1', "Drop Contact");
+        $sheet->setCellValue('I1', "Drop Address");
+        $sheet->setCellValue('J1', "Drop City");
+        $sheet->setCellValue('K1', "Drop Country");
+        $sheet->setCellValue('L1', "Drop Zipcode");
+        $sheet->setCellValue('M1', "Drop Latitude");
+        $sheet->setCellValue('N1', "Drop Longitude");
+        $sheet->setCellValue('O1', "Transaction Time (minutes)");
+        $sheet->setCellValue('P1', "Drop Date");
+        $sheet->setCellValue('Q1', "Drop Start Time");
+        $sheet->setCellValue('R1', "Drop End Time");
+        $sheet->setCellValue('S1', "Payment Method");
+        $sheet->setCellValue('T1', "Amount");
+        $sheet->setCellValue('U1', "Note");
+        $sheet->setCellValue('V1', "Stock Location");
+
+        $column = 2;
+
+        $spreadsheet->setActiveSheetIndex(0)
+            ->setCellValue('A' . $column, '')
+            ->setCellValue('B' . $column, '')
+            ->setCellValue('C' . $column, '')
+            ->setCellValue('D' . $column, '')
+            ->setCellValue('E' . $column, '')
+            ->setCellValue('F' . $column, '')
+            ->setCellValue('G' . $column, '')
+            ->setCellValue('H' . $column, '')
+            ->setCellValue('I' . $column, '')
+            ->setCellValue('J' . $column, '')
+            ->setCellValue('K' . $column, '')
+            ->setCellValue('L' . $column, '')
+            ->setCellValue('M' . $column, '')
+            ->setCellValue('N' . $column, '')
+            ->setCellValue('O' . $column, '')
+            ->setCellValue('P' . $column, '')
+            ->setCellValue('Q' . $column, '')
+            ->setCellValue('R' . $column, '')
+            ->setCellValue('S' . $column, '')
+            ->setCellValue('T' . $column, '')
+            ->setCellValue('U' . $column, '')
+            ->setCellValue('V' . $column, '');
+        $column++;
+
+        $writer = new Xlsx($spreadsheet);
+        $fileName = 'Tamplate Picking List';
+
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename=' . $fileName . '.xlsx');
+        header('Cache-Control: max-age=0');
+
+        $writer->save('php://output');
     }
 }

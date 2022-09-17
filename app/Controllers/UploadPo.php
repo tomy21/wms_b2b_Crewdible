@@ -8,6 +8,9 @@ use App\Models\PoModel;
 use App\Models\UploadPoModel;
 use CodeIgniter\HTTP\Files\UploadedFile;
 
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
 class UploadPo extends BaseController
 {
     public function __construct()
@@ -28,6 +31,8 @@ class UploadPo extends BaseController
     public function Upload()
     {
         $warehouse = $this->request->getPost('warehouse');
+        $estimate = $this->request->getPost('estimate');
+        $estimate = date('Y-m-d', strtotime($estimate));
         $db = \Config\Database::connect();
         $validation = \Config\Services::validation();
         $valid = $this->validate([
@@ -53,7 +58,7 @@ class UploadPo extends BaseController
             return redirect()->to('/uploadPO');
         } else {
             $file_upload = $this->request->getFile('fileimport');
-            $date = $this->request->getPost('tglupload');
+            // $date = $this->request->getPost('tglupload');
             $nopo = $this->request->getPost('noPo');
             $ext = $file_upload->getClientExtension();
 
@@ -72,7 +77,6 @@ class UploadPo extends BaseController
                 $item_id                = $row[0];
                 $item_detail            = $row[1];
                 $qty                    = $row[2];
-                // $warehouse              = $row[3];
                 $db = \Config\Database::connect();
                 $cekCode = $db->table('tbl_inbound')->getWhere(['Item_id' => $item_id])->getResult();
 
@@ -82,8 +86,7 @@ class UploadPo extends BaseController
                     'Item_id'       => $item_id,
                     'Item_detail'   => $item_detail,
                     'quantity'      => $qty,
-                    'created_at'    => $date,
-                    'updated_at'    => $date,
+                    'estimate_date' => $estimate,
                 ];
                 $this->InboundModel->insert($data);
                 $pesan_success = [
@@ -105,9 +108,34 @@ class UploadPo extends BaseController
                 'no_Po'         => $nopo,
                 'jumlah_item'   => $countItem,
                 'quantity_item' => $subtotal,
-                'created_at'    => $date
+                'created_at'    => $estimate
             ]);
             return redirect()->to('/UploadPO/index');
         }
+    }
+    public function download()
+    {
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setCellValue('A1', "Item Id");
+        $sheet->setCellValue('B1', "Item Detail");
+        $sheet->setCellValue('C1', "Quantity");
+
+        $column = 2;
+
+        $spreadsheet->setActiveSheetIndex(0)
+            ->setCellValue('A' . $column, '')
+            ->setCellValue('B' . $column, '')
+            ->setCellValue('C' . $column, '');
+        $column++;
+
+        $writer = new Xlsx($spreadsheet);
+        $fileName = 'Tamplate Input Inbound';
+
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename=' . $fileName . '.xlsx');
+        header('Cache-Control: max-age=0');
+
+        $writer->save('php://output');
     }
 }

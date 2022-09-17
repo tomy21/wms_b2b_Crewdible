@@ -27,7 +27,7 @@
                             <td><?= $no++; ?></td>
                             <td><?= $row['Item_id']; ?></td>
                             <td><?= $row['Item_detail']; ?></td>
-                            <td><?= $row['quantity_good']; ?></td>
+                            <td><?= $row['quantity']; ?></td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
