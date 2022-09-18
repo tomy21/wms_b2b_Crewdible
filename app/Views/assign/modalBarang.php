@@ -8,6 +8,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+
             <div class="modal-body">
                 <?= form_open('Assign/ProsesPick', ['class' => 'formAssignPicker']) ?>
                 <div class="row">
@@ -57,7 +58,7 @@
                     <thead>
                         <tr>
                             <th><input type="checkbox" id="centangsemua"></th>
-                            <!-- <th>Order Id</th> -->
+                            <th>Warehouse</th>
                             <th>Code Barang</th>
                             <th>Nama Barang</th>
                             <th>Qty</th>
@@ -68,15 +69,20 @@
                         $no = 1;
                         $db = \Config\Database::connect();
                         if (user()->warehouse == 'Headoffice') {
-                            $listBarang = $db->table('tbl_invoice')->select('id, Item_id,Item_detail, sum(quantity) as quantity')->groupBy('Item_id,Item_detail')->get()->getResult();
+                            $listBarang = $db->table('tbl_invoice')->select('id, Item_id,Item_detail, sum(quantity) as quantity,stock_location')->groupBy('Item_id,Item_detail,stock_location')->get()->getResult();
                         } else {
                             $listBarang = $db->table('tbl_invoice')->where('stock_location', user()->warehouse)->orderBy('Item_id,Item_detail')->get()->getResult();
                         }
                         foreach ($listBarang as $row) :
                         ?>
                         <tr>
-                            <td><input type="checkbox" name="id[]" class="centangId" value="<?= $row->Item_id ?>">
+                            <td>
+
+                                <input type="checkbox" name="id[]" class="centangId" value="
+                                <?= $row->Item_id ?>">
+
                             </td>
+                            <td><?= $row->stock_location ?></td>
                             <td><?= $row->Item_id; ?></td>
                             <td><?= $row->Item_detail; ?></td>
                             <td><?= $row->quantity; ?></td>

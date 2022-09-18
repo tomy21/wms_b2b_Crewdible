@@ -58,7 +58,9 @@
                         </td>
                         <td>
                             <a href="<?= base_url('Basket/printBasket/' . $row->id_basket) ?>"
-                                class="btn btn-sm btn-danger" target="_blank"> <i class="fa fa-print"></i></a>
+                                class="btn btn-sm btn-warning" target="_blank"> <i class="fa fa-print"></i></a>
+                            <button class="btn btn-sm btn-danger" onclick="hapus('<?= $row->id_basket ?>')"><i
+                                    class="fa fa-trash-alt"></i></button>
                         </td>
                     </tr>
                     <?php endforeach; ?>
@@ -72,6 +74,43 @@
 <div class="modalBasket" style="display: none;"></div>
 
 <script>
+function hapus(idBasket) {
+    Swal.fire({
+        title: 'Hapus Basket',
+        text: "Yakin untuk hapus basket ? ",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Iya, Hapus!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                type: "post",
+                url: "<?= site_url('/Basket/hapusBasket') ?>",
+                data: {
+                    idBasket: idBasket
+                },
+                dataType: "json",
+                success: function(response) {
+                    if (response.success) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Berhasil',
+                            text: response.success,
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = (
+                                    '<?= site_url() ?>/Basket/index ');
+                            }
+                        });
+                    }
+                }
+            });
+        }
+    })
+
+}
 $('#tambahBasket').click(function(e) {
     e.preventDefault();
     $.ajax({

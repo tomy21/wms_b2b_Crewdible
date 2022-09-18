@@ -131,4 +131,14 @@ class Basket extends BaseController
             exit('Maaf tidak bisa dipanggil');
         }
     }
+    function hapusBasket()
+    {
+        $id = $this->request->getPost('idBasket');
+        $model = new ModelMasterBasket();
+        $model->delete($id);
+        $json = [
+            'success' => 'Basket berhasil di haspus'
+        ];
+        echo json_encode($json);
+    }
 }
