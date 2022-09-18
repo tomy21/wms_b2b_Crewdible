@@ -18,7 +18,12 @@
                                 <option value="" selected disabled> -- pilih basket -- </option>
                                 <?php
                                 $db = \Config\Database::connect();
-                                $basket = $db->table('tbl_masterbasket')->getWhere(['warehouse' => user()->warehouse])->getResult();
+                                if (user()->warehouse == 'Headoffice') {
+                                    $basket = $db->table('tbl_masterbasket')->get()->getResult();
+                                } else {
+                                    $basket = $db->table('tbl_masterbasket')->getWhere(['warehouse' => user()->warehouse])->getResult();
+                                }
+
                                 foreach ($basket as $row) :
                                 ?>
                                 <option value="<?= $row->id_basket ?>"><?= $row->id_basket ?></option>

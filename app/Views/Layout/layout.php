@@ -198,7 +198,7 @@
                         <li class="nav-item">
                             <a href="<?= site_url('Karyawan/index'); ?>" class="nav-link">
                                 <i class="nav-icon fas fa-users"></i>
-                                <p class="text">Daftar karyawan</p>
+                                <p class="text">Daftar Acount</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -308,7 +308,7 @@
                         <li class="nav-item">
                             <a href="<?= site_url('Karyawan/index'); ?>" class="nav-link">
                                 <i class="nav-icon fas fa-users"></i>
-                                <p class="text">Daftar karyawan</p>
+                                <p class="text">Daftar Acount</p>
                             </a>
                         </li>
 

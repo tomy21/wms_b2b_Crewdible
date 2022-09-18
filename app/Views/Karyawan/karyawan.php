@@ -1,6 +1,6 @@
 <?= $this->extend('Layout/layout'); ?>
 <?= $this->section('judul'); ?>
-<h1>Daftar Karyawan</h1>
+<h1>Daftar Acount</h1>
 <?= $this->endsection('judul'); ?>
 <?= $this->section('subjudul'); ?>
 
@@ -8,20 +8,20 @@
 <?= $this->section('isi'); ?>
 <div class="card">
     <div class="card-header bg-green">
-        Daftar Karyawan
+        Daftar User Acount
     </div>
     <div class="card-body">
         <p>
             <button class="btn btn-info tambahData" type="submit" id="tambahData">
-                <i class=" fa fa-plus"> Tambah Karyawan</i>
+                <i class=" fa fa-plus"> Tambah User</i>
             </button>
         </p>
         <table id="table1" class="table table-striped" style="width: 100%;">
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>ID Karyawan</th>
-                    <th>Nama Karyawan</th>
+                    <th>ID User</th>
+                    <th>Nama User</th>
                     <th>Level</th>
                     <th>Warehouse</th>
                     <th>Status</th>

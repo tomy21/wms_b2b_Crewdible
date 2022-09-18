@@ -16,7 +16,7 @@
                         aria-describedby="CodeBasket" value="<?= $idBasket ?>" readonly>
                 </div>
                 <div class="form-group">
-                    <label for="warehouse">Kode Basket</label>
+                    <label for="warehouse">Warehouse</label>
                     <input type="text" class="form-control" name="warehouse" id="warehouse" aria-describedby="warehouse"
                         value="<?= user()->warehouse ?>" readonly>
                 </div>
