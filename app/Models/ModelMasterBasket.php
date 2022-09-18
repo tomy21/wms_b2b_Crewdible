@@ -10,7 +10,7 @@ class ModelMasterBasket extends Model
     protected $primaryKey       = 'id_basket';
     protected $useTimestamps    = true;
     protected $allowedFields    = [
-        'id_basket', 'kapasitas', 'type', 'kap_order', 'status'
+        'id_basket', 'kapasitas', 'type', 'kap_order', 'status', 'warehouse'
     ];
 
     public function idBasket()

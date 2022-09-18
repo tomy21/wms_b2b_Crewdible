@@ -59,10 +59,10 @@
                             <?php
                                 $isInvalidUser = (session()->getFlashdata('errEmail')) ? 'is-invalid' : '';
                                 ?>
-                            <input type="email"
+                            <input type="text"
                                 class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>"
                                 name="login" placeholder="<?= lang('Auth.emailOrUsername') ?>"
-                                placeholder="<?= lang('Auth.email') ?>" name="email" autofocus autocomplete="off">
+                                placeholder="<?= lang('Auth.email') ?>" name="email" autofocus autocomplete="on">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-user"></span>
