@@ -71,7 +71,7 @@
                         if (user()->warehouse == 'Headoffice') {
                             $listBarang = $db->table('tbl_invoice')->select('id, Item_id,Item_detail, sum(quantity) as quantity,stock_location')->groupBy('Item_id,Item_detail,stock_location')->get()->getResult();
                         } else {
-                            $listBarang = $db->table('tbl_invoice')->where('stock_location', user()->warehouse)->orderBy('Item_id,Item_detail')->get()->getResult();
+                            $listBarang = $db->table('tbl_invoice')->where('stock_location', user()->warehouse)->select('id, Item_id,Item_detail, sum(quantity) as quantity,stock_location')->groupBy('Item_id,Item_detail,stock_location')->get()->getResult();
                         }
                         foreach ($listBarang as $row) :
                         ?>
