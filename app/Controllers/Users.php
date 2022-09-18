@@ -191,14 +191,18 @@ class Users extends BaseController
             $modelUser->update($users, [
                 'active'    => '0'
             ]);
+            $json = [
+                'success'   => 'User Berhasil di nonaktifkan'
+            ];
         } else {
             $modelUser->update($users, [
                 'active'    => '1'
             ]);
+            $json = [
+                'success'   => 'User Berhasil di aktifkan'
+            ];
         }
-        $json = [
-            'success'   => ''
-        ];
+
 
         echo json_encode($json);
     }

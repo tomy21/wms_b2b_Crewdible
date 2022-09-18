@@ -184,14 +184,18 @@ class Karyawan extends BaseController
             $modelUser->update($users, [
                 'status_kar'    => '0'
             ]);
+            $json = [
+                'success'   => 'User berhasil di aktikan'
+            ];
         } else {
             $modelUser->update($users, [
                 'status_kar'    => '1'
             ]);
+            $json = [
+                'success'   => 'User berhasil di aktikan'
+            ];
         }
-        $json = [
-            'success'   => ''
-        ];
+
 
         echo json_encode($json);
     }

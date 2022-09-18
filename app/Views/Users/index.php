@@ -47,10 +47,10 @@
                     <td><?= $row['name']; ?></td>
                     <td><?= $row['warehouse']; ?></td>
                     <td>
-                        <input type="hidden" value="<?= $row['userId'] ?>" id="users">
-                        <input type="checkbox" <?= ($row['active'] == '1') ? 'checked' : ''; ?> data-toggle="toggle"
-                            data-on="Active" data-off="Not Active" data-onstyle="success" data-offstyle="danger"
-                            data-width="120px" class="chStatus" name="status">
+                        <button class="btn btn-sm <?= $row['active'] == 1 ? "btn-success" : "btn-danger" ?>"
+                            onclick="status('<?= $row['userId']; ?>')">
+                            <?= $row['active'] == 1 ? "Aktif" : "No Aktif" ?>
+                        </button>
                     </td>
                     <td>
                         <button href="#" class="btn btn-sm btn-info" onclick="edit('<?= $row['userId']; ?>')"><i
@@ -69,6 +69,48 @@
 <div class="updateUsers" style="display: none;"></div>
 
 <script>
+function status(users) {
+    Swal.fire({
+        title: 'Aktifkan/Noaktifkan',
+        text: 'Update sekarang ? ',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Update !'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                type: "post",
+                url: "<?= site_url() ?>Users/UpdateStatus",
+                data: {
+                    users: users
+                },
+                dataType: "json",
+                success: function(response) {
+                    if (response.success) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Berhasil',
+                            text: response.success,
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = (
+                                    '<?= site_url() ?>/Users/index ');
+                            }
+                        });
+                        play_notif();
+                    }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status + '\n' + thrownError);
+                }
+            });
+        }
+    })
+
+}
+
 function edit(users) {
     $.ajax({
         type: "post",
@@ -94,12 +136,13 @@ $(document).ready(function() {
     $('#table1').DataTable();
 
     $('.chStatus').change(function(e) {
+        let users = $('#users').val();;
         e.preventDefault();
         $.ajax({
             type: "post",
             url: "<?= site_url() ?>Users/UpdateStatus",
             data: {
-                users: $('#users').val(),
+                users: users,
             },
             dataType: "json",
             success: function(response) {

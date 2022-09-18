@@ -48,14 +48,14 @@
                 <tr>
                     <td><?= $no++; ?></td>
                     <td><?= $row['id_user']; ?></td>
-                    <input type="hidden" value="<?= $row['id_user'] ?>" id="users" name="users">
                     <td><?= $row['nama_user']; ?></td>
                     <td><?= $row['level'] ?></td>
                     <td><?= $row['warehouse'] ?></td>
                     <td>
-                        <input type="checkbox" <?= ($row['status_kar'] == '1') ? 'checked' : ''; ?> data-toggle="toggle"
-                            data-on="Active" data-off="Not Active" data-onstyle="success" data-offstyle="danger"
-                            data-width="120px" class="chStatus" name="status" >
+                        <button class="btn btn-sm <?= $row['status_kar'] == 1 ? "btn-success" : "btn-danger" ?>"
+                            onclick="status('<?= $row['id_user']; ?>')">
+                            <?= $row['status_kar'] == 1 ? "Aktif" : "No Aktif" ?>
+                        </button>
                     </td>
                     <td>
                         <button href="#" class="btn btn-sm btn-info" onclick="edit('<?= $row['id_user']; ?>')"><i
@@ -70,19 +70,52 @@
         </table>
     </div>
 </div>
-<!-- <div class=" card">
-            <div class="card-header bg-white">
-
-            </div>
-            <div class="card-body">
-                <div class="row" id="tampilDataManifest">
-                </div>
-            </div>
-    </div> -->
 <div class="tambahUsers" style="display: none;"></div>
 <div class="updateUser" style="display: none;"></div>
 
 <script>
+function status(users) {
+    Swal.fire({
+        title: 'Aktifkan/Noaktifkan',
+        text: 'Update sekarang ? ',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Update !'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                type: "post",
+                url: "<?= site_url() ?>Karyawan/UpdateStatus",
+                data: {
+                    users: users
+                },
+                dataType: "json",
+                success: function(response) {
+                    if (response.success) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Berhasil',
+                            text: response.success,
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = (
+                                    '<?= site_url() ?>/Karyawan/index ');
+                            }
+                        });
+                        play_notif();
+                    }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status + '\n' + thrownError);
+                }
+            });
+        }
+    })
+
+}
+
 function edit(users) {
     $.ajax({
         type: "post",
@@ -155,23 +188,6 @@ function hapusUser(iduser) {
 }
 $(document).ready(function() {
     $('#table1').DataTable();
-
-    $('.chStatus').change(function(e) {
-        e.preventDefault();
-        $.ajax({
-            type: "post",
-            url: "<?= site_url() ?>Karyawan/UpdateStatus",
-            data: {
-                users: $('#users').val(),
-            },
-            dataType: "json",
-            success: function(response) {
-                if (response.success == '') {
-                    window.location.reload();
-                }
-            }
-        });
-    });
 
     $('.tambahData').click(function(e) {
         e.preventDefault();
