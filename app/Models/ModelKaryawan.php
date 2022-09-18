@@ -13,7 +13,7 @@ class ModelKaryawan extends Model
 
     function tampilData($warehouse)
     {
-        return $this->table('tbl_karyawan')->getWhere(['warehouse' => $warehouse])->getResultArray();
+        return $this->table('tbl_karyawan')->get()->getResultArray();
     }
     public function idKaryawan()
     {

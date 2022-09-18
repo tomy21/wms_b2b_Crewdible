@@ -43,7 +43,7 @@
                         <div class="form-group">
                             <label for="warehouse">Warehouse</label>
                             <input type="text" class="form-control" id="warehouse" name="warehouse" autocomplete="off"
-                                value="<?= $warehouse ?>" readonly>
+                                value="<?= user()->warehouse; ?>" readonly>
                             <div id="msg-warehouse" class="invalid-feedback">
 
                             </div>

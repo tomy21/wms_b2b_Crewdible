@@ -6,6 +6,12 @@
 
 <?= $this->endsection('subjudul'); ?>
 <?= $this->section('isi'); ?>
+
+<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+    rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+
 <div class="card">
     <div class="card-header bg-green">
         Daftar User Acount
@@ -31,20 +37,25 @@
             <tbody>
                 <?php
                 $no = 1;
+                if (user()->warehouse == 'Headoffice') {
+                    $data = $data;
+                } else {
+                    $db = \Config\Database::connect();
+                    $data = $db->table('tbl_masterbasket')->where('warehouse', user()->warehouse)->get()->getResultArray();
+                }
                 foreach ($data as $row) :
                 ?>
                 <tr>
                     <td><?= $no++; ?></td>
                     <td><?= $row['id_user']; ?></td>
+                    <input type="hidden" value="<?= $row['id_user'] ?>" id="users" name="users">
                     <td><?= $row['nama_user']; ?></td>
                     <td><?= $row['level'] ?></td>
                     <td><?= $row['warehouse'] ?></td>
                     <td>
-                        <?php if ($row['status_kar'] == 1) : ?>
-                        <span class="badge badge-success">Active</span>
-                        <?php else : ?>
-                        <span class="badge badge-danger">Non Active</span>
-                        <?php endif; ?>
+                        <input type="checkbox" <?= ($row['status_kar'] == '1') ? 'checked' : ''; ?> data-toggle="toggle"
+                            data-on="Active" data-off="Not Active" data-onstyle="success" data-offstyle="danger"
+                            data-width="120px" class="chStatus" name="status" >
                     </td>
                     <td>
                         <button href="#" class="btn btn-sm btn-info" onclick="edit('<?= $row['id_user']; ?>')"><i
@@ -144,6 +155,23 @@ function hapusUser(iduser) {
 }
 $(document).ready(function() {
     $('#table1').DataTable();
+
+    $('.chStatus').change(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: "post",
+            url: "<?= site_url() ?>Karyawan/UpdateStatus",
+            data: {
+                users: $('#users').val(),
+            },
+            dataType: "json",
+            success: function(response) {
+                if (response.success == '') {
+                    window.location.reload();
+                }
+            }
+        });
+    });
 
     $('.tambahData').click(function(e) {
         e.preventDefault();

@@ -7,6 +7,11 @@
 <?= $this->endsection('subjudul'); ?>
 <?= $this->section('isi'); ?>
 
+<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+    rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+
 <div class="card">
     <div class="card-header bg-green">
         User Management
@@ -42,11 +47,10 @@
                     <td><?= $row['name']; ?></td>
                     <td><?= $row['warehouse']; ?></td>
                     <td>
-                        <?php if ($row['active'] == 1) : ?>
-                        <span class="badge badge-success">Active</span>
-                        <?php else : ?>
-                        <span class="badge badge-danger">Non Active</span>
-                        <?php endif; ?>
+                        <input type="hidden" value="<?= $row['userId'] ?>" id="users">
+                        <input type="checkbox" <?= ($row['active'] == '1') ? 'checked' : ''; ?> data-toggle="toggle"
+                            data-on="Active" data-off="Not Active" data-onstyle="success" data-offstyle="danger"
+                            data-width="120px" class="chStatus" name="status">
                     </td>
                     <td>
                         <button href="#" class="btn btn-sm btn-info" onclick="edit('<?= $row['userId']; ?>')"><i
@@ -88,6 +92,23 @@ function edit(users) {
 }
 $(document).ready(function() {
     $('#table1').DataTable();
+
+    $('.chStatus').change(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: "post",
+            url: "<?= site_url() ?>Users/UpdateStatus",
+            data: {
+                users: $('#users').val(),
+            },
+            dataType: "json",
+            success: function(response) {
+                if (response.success == '') {
+                    window.location.reload();
+                }
+            }
+        });
+    });
 
     $('.tambahData').click(function(e) {
         e.preventDefault();
