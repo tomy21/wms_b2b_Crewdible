@@ -297,6 +297,14 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="<?= site_url('Handover/index'); ?>" class="nav-link">
+                                <i class="nav-icon fas fa-motorcycle"></i>
+                                <p>
+                                    Handover
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="<?= site_url('ReturnItem/index'); ?>" class="nav-link">
                                 <i class="nav-icon fas fa-file-archive"></i>
                                 <p>
