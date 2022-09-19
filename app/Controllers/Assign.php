@@ -64,15 +64,7 @@ class Assign extends BaseController
         $modelPicking = new PickingModel();
         $modelBasket = new ModelMasterBasket();
 
-        $cekData = $modelInvoice->whereIn('Item_id', $id)->get();
-        $count = $cekData->getNumRows();
-        // $data['id'] = $cekData->getResultArray();
-        // foreach ($data as $k) {
-        //     $id = $k;
-        // dd($count);
-        // die;
-        // }
-
+        $count = count($id);
 
         // $count = $cekCode->getNumRows();
         $cekKap         = $modelBasket->find($basket);
@@ -95,16 +87,23 @@ class Assign extends BaseController
                     'error'     => 'Basket penuh, gunakan basket lain !',
                 ];
             } else {
-                foreach ($cekData->getResult() as $data) {
-                    $id = $data->id;
-                    $dataUpdate = [
-                        'status'    => 2,
-                        'assign'    => $assign,
-                        'id_basket' => $basket
-                    ];
-                    $modelInvoice->update($id, $dataUpdate);
+                for ($i = 0; $i < $count; $i++) {
+                    $cekData = $modelInvoice->where(['Item_id' => $id[$i], 'status' => 1])->get();
+                    // print_r($modelInvoice->getLastQuery()->getQuery());
+                    // die;
+                    foreach ($cekData->getResult() as $data) {
+                        $id = $data->id;
+                        // $count = count($data['id']);
+                        // for ($x = 0; $x < $count; $x++) {
+                        $data = [
+                            'assign'    => $assign,
+                            'status'    => 2,
+                            'id_basket' => $basket,
+                        ];
+                        $modelInvoice->update($id, $data);
+                        // }
+                    }
                 }
-
                 $status = 1;
                 $dataBasket = [
                     'kap_order'     => $jumlahKapasitas,

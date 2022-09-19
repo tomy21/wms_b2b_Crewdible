@@ -69,17 +69,16 @@
                         $no = 1;
                         $db = \Config\Database::connect();
                         if (user()->warehouse == 'Headoffice') {
-                            $listBarang = $db->table('tbl_invoice')->select('id, Item_id,Item_detail, sum(quantity) as quantity,stock_location')->groupBy('Item_id,Item_detail,stock_location')->get()->getResult();
+                            $listBarang = $db->table('tbl_invoice')->where(['status' => 1])->select('id, Item_id,Item_detail, sum(quantity) as quantity,stock_location')->groupBy('Item_id,Item_detail,stock_location')->get()->getResult();
                         } else {
-                            $listBarang = $db->table('tbl_invoice')->where('stock_location', user()->warehouse)->select('id, Item_id,Item_detail, sum(quantity) as quantity,stock_location')->groupBy('Item_id,Item_detail,stock_location')->get()->getResult();
+                            $listBarang = $db->table('tbl_invoice')->where(['stock_location' => user()->warehouse, 'status' => 1])->select('id, Item_id,Item_detail, sum(quantity) as quantity,stock_location')->groupBy('Item_id,Item_detail,stock_location')->get()->getResult();
                         }
                         foreach ($listBarang as $row) :
                         ?>
                         <tr>
                             <td>
 
-                                <input type="checkbox" name="id[]" class="centangId" value="
-                                <?= $row->Item_id ?>">
+                                <input type="checkbox" name="id[]" class="centangId" value="<?= $row->Item_id ?>">
 
                             </td>
                             <td><?= $row->stock_location ?></td>
