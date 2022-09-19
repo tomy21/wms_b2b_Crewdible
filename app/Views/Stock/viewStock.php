@@ -49,20 +49,17 @@
             <div class="row">
                 <div class="col-lg-12">
                     <?= form_open('Stock/index') ?>
+                    <?php if (user()->warehouse == 'Headoffice') : ?>
                     <div class="input-group col-lg-3 float-lg-right" style="margin-bottom: 30px;">
                         <select name="warehouse" id="warehouse"
                             class=" form-control <?php if (session('errors.warehouse')) : ?>is-invalid<?php endif ?>">
                             <option value="" selected> -- Pilih Warehouse -- </option>
                             <?php
-                            $db = \Config\Database::connect();
-                            $basket = $db->table('tbl_warehouse')->get()->getResult();
-                            foreach ($basket as $row) :
-                            ?>
-                            <?= user()->warehouse == 'Headoffice' ? "<option value='<?= $row->warehouse_name ?>'><?= $row->warehouse_name ?>
-                            </option>" : ''
-
-                            ?>
-
+                                $db = \Config\Database::connect();
+                                $basket = $db->table('tbl_warehouse')->get()->getResult();
+                                foreach ($basket as $row) :
+                                ?>
+                            <option value="<?= $row->warehouse_name ?>"><?= $row->warehouse_name ?></option>
                             <?php endforeach; ?>
                         </select>
                         <div class="input-group-append">
@@ -70,7 +67,7 @@
                         </div>
                         <?= form_close(); ?>
                     </div>
-
+                    <?php endif; ?>
                     <table id="viewStatus" class="table table-striped" style="width: 100%;">
                         <thead>
                             <th>No</th>

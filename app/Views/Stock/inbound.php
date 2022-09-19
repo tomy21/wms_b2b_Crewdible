@@ -15,9 +15,9 @@
                 <thead>
                     <th>No</th>
                     <th>No_Po</th>
+                    <th>Warehouse</th>
                     <th>Jumlah Item</th>
                     <th>Quantity Item</th>
-                    <th>Estimasi kedatangan</th>
                     <th>Selesai Inbound</th>
                     <th>#</th>
                 </thead>
@@ -25,10 +25,17 @@
                     <tr>
                         <?php
                         $no = 1;
-                        foreach ($data->getResultArray() as $user) :
+                        $db = \Config\Database::connect();
+                        if (user()->warehouse = 'Headoffice') {
+                            $inbound = $db->table('tbl_po')->get()->getResultArray();
+                        } else {
+                            $inbound = $db->table('tbl_po')->getWhere(['warehouse' => user()->warehouse])->getResultArray();
+                        }
+                        foreach ($inbound as $user) :
                         ?>
                         <td><?= $no++; ?></td>
                         <td><?= $user['no_Po']; ?></td>
+                        <td><?= $user['warehouse'] ?></td>
                         <td align="center">
                             <?php
                                 $db = \Config\Database::connect();
@@ -38,9 +45,6 @@
                                 onclick="detail('<?= $user['no_Po']; ?>')"><?= $jumlah; ?></span>
                         </td>
                         <td><?= $user['quantity_item']; ?></td>
-                        <td>
-                            <?= $user['created_at'] ?>
-                        </td>
                         <td><?= $user['updated_at'] ?></td>
                         <td>
                             <?php

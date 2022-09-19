@@ -106,6 +106,7 @@ class UploadPo extends BaseController
             endforeach;
             $this->PoModel->add([
                 'no_Po'         => $nopo,
+                'warehouse'     => $warehouse,
                 'jumlah_item'   => $countItem,
                 'quantity_item' => $subtotal,
                 'created_at'    => $estimate
