@@ -58,8 +58,9 @@
                             $basket = $db->table('tbl_warehouse')->get()->getResult();
                             foreach ($basket as $row) :
                             ?>
-                            <?= user()->warehouse == 'Headoffice' ? '' :
-                                    '<option value="<?= $row->warehouse_name ?>"><?= $row->warehouse_name ?></option>'
+                            <?= user()->warehouse == 'Headoffice' ? "<option value='<?= $row->warehouse_name ?>'><?= $row->warehouse_name ?>
+                            </option>" : ''
+
                             ?>
 
                             <?php endforeach; ?>
