@@ -127,17 +127,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-6">
-                <div class="small-box bg-pink">
-                    <div class="inner">
-                        <h3><?= $qtyStock ?></h3>
-                        <p>Amount Items</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-pie-graph"></i>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </section>

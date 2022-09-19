@@ -83,7 +83,7 @@
                             <th>Item ID</th>
                             <th>Item Detail</th>
                             <th>Quantity</th>
-                            <th>Estimasi kedatangan</th>
+                            <!-- <th>Estimasi kedatangan</th> -->
                         </thead>
                         <tbody>
                             <tr>
@@ -98,7 +98,7 @@
                                 <td><?= $user['Item_id']; ?></td>
                                 <td><?= $user['Item_detail']; ?></td>
                                 <td><?= $user['quantity']; ?></td>
-                                <td><?= $user['estimate_date']; ?></td>
+                                <!-- <td><?= $user['estimate_date']; ?></td> -->
 
                             </tr>
 
