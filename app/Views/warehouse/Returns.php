@@ -19,7 +19,7 @@
                         </p>
                         <div class="form-row">
                             <div class="form-group col-md-2">
-                                <label for="">Item Id</label>
+                                <label for="">Order ID</label>
                                 <input type="text" class="form-control" placeholder="Masukn Kode Item" id="OrderId"
                                     name="OrderId" value="">
                             </div>
