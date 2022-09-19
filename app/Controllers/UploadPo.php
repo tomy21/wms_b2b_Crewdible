@@ -86,7 +86,7 @@ class UploadPo extends BaseController
                     'Item_id'       => $item_id,
                     'Item_detail'   => $item_detail,
                     'quantity'      => $qty,
-                    'estimate_date' => $estimate,
+                    // 'estimate_date' => $estimate,
                 ];
                 $this->InboundModel->insert($data);
                 $pesan_success = [

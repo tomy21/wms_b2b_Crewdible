@@ -44,8 +44,16 @@
                         <div class="form-group row">
                             <label for="transaksi" class="col-sm-9 col-form-label">Total Order</label>
                             <div class="col-sm-3">
-                                <input type="number" class="form-control" id="transaksi" value="<?= $countOrder ?>"
-                                    style="border:none; background-color:transparent; font-size:24px; font-weight:bold;">
+                                <?php
+                                $db = \Config\Database::connect();
+                                $data = $db->table('tbl_invoice')->where(['stock_location' => user()->warehouse])->countAllResults();
+
+                                ?>
+
+                                <input type="number" class="form-control" id="transaksi"
+                                    value="<?= user()->warehouse == 'Headoffice' ? "$countOrder" : "$data"; ?>"
+                                    style="border:none; background-color:transparent; font-size:24px; font-weight:bold;"
+                                    readonly>
                             </div>
                         </div>
                         <div class="form-group row">
