@@ -58,7 +58,10 @@
                             $basket = $db->table('tbl_warehouse')->get()->getResult();
                             foreach ($basket as $row) :
                             ?>
-                            <option value="<?= $row->warehouse_name ?>"><?= $row->warehouse_name ?></option>
+                            <?= user()->warehouse == 'Headoffice' ? '' :
+                                    '<option value="<?= $row->warehouse_name ?>"><?= $row->warehouse_name ?></option>'
+                            ?>
+
                             <?php endforeach; ?>
                         </select>
                         <div class="input-group-append">
