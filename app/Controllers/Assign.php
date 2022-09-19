@@ -92,16 +92,13 @@ class Assign extends BaseController
                     // print_r($modelInvoice->getLastQuery()->getQuery());
                     // die;
                     foreach ($cekData->getResult() as $data) {
-                        $id = $data->id;
-                        // $count = count($data['id']);
-                        // for ($x = 0; $x < $count; $x++) {
+                        $idData = $data->id;
                         $data = [
                             'assign'    => $assign,
                             'status'    => 2,
                             'id_basket' => $basket,
                         ];
-                        $modelInvoice->update($id, $data);
-                        // }
+                        $modelInvoice->update($idData, $data);
                     }
                 }
                 $status = 1;
