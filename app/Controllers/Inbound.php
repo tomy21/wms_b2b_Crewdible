@@ -55,7 +55,7 @@ class Inbound extends BaseController
                 'created_at'    => $row['created_at'],
                 'datatemp' => $this->ModelInbound->find($nopo),
             ];
-            return view('Warehouse/inbound', $data);
+            return view('warehouse/inbound', $data);
         } else {
             exit('Data Tidak Ada');
         }
