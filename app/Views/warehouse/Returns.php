@@ -14,13 +14,14 @@
                     <div class="col-lg-12">
                         <p>
                             <button class="btn btn-sm btn-danger" type="button"
-                                onclick="location.href=('/ReturnItem/index')"> <i class="fa fa-backspace"></i>
+                                onclick="location.href=('<?= site_url() ?>/ReturnItem/index')"> <i
+                                    class="fa fa-backspace"></i>
                                 Back</button><br>
                         </p>
                         <div class="form-row">
                             <div class="form-group col-md-2">
                                 <label for="">Order ID</label>
-                                <input type="text" class="form-control" placeholder="Masukn Kode Item" id="OrderId"
+                                <input type="text" class="form-control" placeholder="Masukn Order Id" id="OrderId"
                                     name="OrderId" value="">
                             </div>
 
@@ -78,40 +79,51 @@ function play_notifSalah() {
 $('#tambahItem').click(function(e) {
     e.preventDefault();
     let OrderId = $('#OrderId').val();
-    let crsfToken = '<?= csrf_token() ?>';
-    let crsfHash = '<?= csrf_hash() ?>';
-    $.ajax({
-        type: "post",
-        url: "/ReturnItem/simpanData",
-        data: {
-            OrderId: OrderId,
-            [crsfToken]: crsfHash,
-        },
-        dataType: "json",
-        success: function(response) {
-            if (response.sukses) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Return sudah di terima',
-                    text: response.sukses,
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        window.location.href = ('/ReturnItem/index/');
-                    }
-                });
-                play_notif();
+    // let crsfToken = '<?= csrf_token() ?>';
+    // let crsfHash = '<?= csrf_hash() ?>';
+
+    if (OrderId.length === 0) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Order Id Kosong',
+            text: 'Order id tidak boleh kosong',
+        })
+    } else {
+        $.ajax({
+            type: "post",
+            url: "<?= site_url() ?>/ReturnItem/simpanData",
+            data: {
+                OrderId: OrderId,
+                // [crsfToken]: crsfHash,
+            },
+            dataType: "json",
+            success: function(response) {
+                if (response.sukses) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Return sudah di terima',
+                        text: response.sukses,
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = ('<?= site_url() ?>/ReturnItem/index/');
+                        }
+                    });
+                    play_notif();
+                }
+                if (response.error) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Order Tidak Ditemukan',
+                        text: response.error,
+                    })
+                    play_notifSalah();
+                }
             }
-            if (response.error) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Order Tidak Ditemukan',
-                    text: response.error,
-                })
-                play_notifSalah();
-            }
-        }
-    });
+        });
+    }
 });
+
+
 $(document).ready(function() {
     $('#OrderId').keydown(function(e) {
         if (e.keyCode == 13) {

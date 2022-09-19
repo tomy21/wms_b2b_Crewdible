@@ -9,7 +9,7 @@
 <div class="col-lg-12">
     <div class="card">
         <div class="card-header bg-danger">
-            <button class="btn btn-sm btn-info" onclick="location.href=('/ReturnItem/dataReturn')"><i
+            <button class="btn btn-sm btn-info" onclick="location.href=('<?= site_url() ?>/ReturnItem/dataReturn')"><i
                     class="fa fa-plus-circle"></i>&nbsp; Terima Return</button>&nbsp;
 
         </div>
@@ -85,15 +85,15 @@
 </div>
 <div class="viewmodal" style="display: none;"></div>
 <script>
-let crsfToken = '<?= csrf_token() ?>';
-let crsfHash = '<?= csrf_hash() ?>';
+// let crsfToken = '<?= csrf_token() ?>';
+// let crsfHash = '<?= csrf_hash() ?>';
 
 function detail(idItem) {
     $.ajax({
         type: "post",
-        url: "/ReturnItem/detail",
+        url: "<?= site_url() ?>/ReturnItem/detail",
         data: {
-            [crsfToken]: crsfHash,
+            // [crsfToken]: crsfHash,
             idItem: idItem,
         },
         dataType: "json",
