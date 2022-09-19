@@ -89,7 +89,7 @@ class Assign extends BaseController
                 ];
             } else {
                 for ($i = 0; $i < $count; $i++) {
-                    $cekData = $modelInvoice->where(['Item_id' => $id[$i], 'status' => 1, 'warehouse' => $warehouse])->get();
+                    $cekData = $modelInvoice->where(['Item_id' => $id[$i], 'status' => 1, 'stock_location' => $warehouse])->get();
                     // print_r($modelInvoice->getLastQuery()->getQuery());
                     // die;
                     foreach ($cekData->getResult() as $data) {
