@@ -9,9 +9,9 @@
             <thead>
                 <th style="width: 5%;">No</th>
                 <th>Order Id</th>
-                <th>Nama Penerima</th>
-                <th>Alamat</th>
-                <th>Total Quantity</th>
+                <th>Item Id</th>
+                <th>Item Detail</th>
+                <th>Total Item</th>
                 <th>Total Picking</th>
                 <th>Aksi</th>
             </thead>
@@ -23,19 +23,32 @@
                 <tr>
                     <td><?= $nomor++; ?></td>
                     <td><?= $row->Order_id; ?></td>
-                    <td><?= $row->Drop_name; ?></td>
-                    <td><?= $row->Drop_address ?></td>
                     <td>
                         <?php
                             $db = \Config\Database::connect();
                             $jumlah = $db->table('tbl_invoice')->getWhere(['Order_id' => $row->Order_id])->getResult();
-
-                            $total = 0;
-                            foreach ($jumlah as $data) {
-                                $total += $data->quantity;
-                            }
-                            echo $total;
+                            foreach ($jumlah as $data) :
                             ?>
+                        <li><?= $data->Item_id ?></li>
+                        <?php endforeach; ?>
+                    </td>
+                    <td>
+                        <?php
+                            $db = \Config\Database::connect();
+                            $jumlah = $db->table('tbl_invoice')->getWhere(['Order_id' => $row->Order_id])->getResult();
+                            foreach ($jumlah as $data) :
+                            ?>
+                        <li><?= $data->Item_detail ?></li>
+                        <?php endforeach; ?>
+                    </td>
+                    <td>
+                        <?php
+                            $db = \Config\Database::connect();
+                            $jumlah = $db->table('tbl_invoice')->getWhere(['Order_id' => $row->Order_id])->getResult();
+                            foreach ($jumlah as $data) :
+                            ?>
+                        <li><?= $data->quantity ?></li>
+                        <?php endforeach; ?>
                     </td>
                     <td><?= $row->jumlah ?></td>
                     <td>

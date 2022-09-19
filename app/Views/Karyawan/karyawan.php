@@ -41,7 +41,7 @@
                     $data = $data;
                 } else {
                     $db = \Config\Database::connect();
-                    $data = $db->table('tbl_masterbasket')->where('warehouse', user()->warehouse)->get()->getResultArray();
+                    $data = $db->table('tbl_karyawan')->where('warehouse', user()->warehouse)->get()->getResultArray();
                 }
                 foreach ($data as $row) :
                 ?>

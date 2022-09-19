@@ -22,8 +22,10 @@
                     <tr>
                         <th>No</th>
                         <th>Order id</th>
-                        <th>Total Item</th>
-                        <th>Foto</th>
+                        <th>Nama Penerima</th>
+                        <th>Alamat</th>
+                        <th>Foto Before</th>
+                        <th>Foto After</th>
                         <th>Assign</th>
                         <th>Status</th>
                         <th>Tanggal Proses</th>
@@ -39,10 +41,22 @@
                         <td><?= $no++ ?></td>
                         <td><?= $query['order_id'] ?></td>
                         <td>
-                            <?php foreach (json_decode($query['list'], true) as $data) : ?>
-                            <?= $data['Item_id'] ?>
-                            <?php endforeach; ?>
+                            <?php $db = \Config\Database::connect();
+                                $data = $db->table('tbl_order')->where('Order_id', $query['order_id'])->get()->getResult();
+                                foreach ($data as $k) {
+                                    echo $k->Drop_name;
+                                }
+                                ?>
                         </td>
+                        <td>
+                            <?php $db = \Config\Database::connect();
+                                $data = $db->table('tbl_order')->where('Order_id', $query['order_id'])->get()->getResult();
+                                foreach ($data as $k) {
+                                    echo $k->Drop_address;
+                                }
+                                ?>
+                        </td>
+                        <td><img src="<?= base_url() ?>/assets/uploades/<?= $query['foto'] ?>" alt="" width="50"></td>
                         <td><img src="<?= base_url() ?>/assets/uploades/<?= $query['foto'] ?>" alt="" width="50"></td>
                         <td><?= $query['assign'] ?></td>
                         <td>
