@@ -9,10 +9,10 @@ class AddWarehouseInbound extends Migration
     public function up()
     {
         $this->forge->addColumn('tbl_inbound', [
-            'warehouse' => [
+            'estimate_date' => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '255',
-                'after'          => 'nopo'
+                'after'          => 'volume'
             ]
         ]);
     }
@@ -21,6 +21,6 @@ class AddWarehouseInbound extends Migration
 
     public function down()
     {
-        $this->forge->dropColumn('tbl_inbound', 'warehouse');
+        $this->forge->dropColumn('tbl_inbound', 'estimate_date');
     }
 }

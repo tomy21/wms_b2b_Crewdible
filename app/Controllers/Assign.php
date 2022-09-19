@@ -64,7 +64,15 @@ class Assign extends BaseController
         $modelPicking = new PickingModel();
         $modelBasket = new ModelMasterBasket();
 
-        $count = count($id);
+        $cekData = $modelInvoice->whereIn('Item_id', $id)->get();
+        $count = $cekData->getNumRows();
+        // $data['id'] = $cekData->getResultArray();
+        // foreach ($data as $k) {
+        //     $id = $k;
+        // dd($count);
+        // die;
+        // }
+
 
         // $count = $cekCode->getNumRows();
         $cekKap         = $modelBasket->find($basket);
@@ -87,14 +95,16 @@ class Assign extends BaseController
                     'error'     => 'Basket penuh, gunakan basket lain !',
                 ];
             } else {
-                for ($i = 0; $i < $count; $i++) {
-                    $data = [
-                        'assign'    => $assign,
+                foreach ($cekData->getResult() as $data) {
+                    $id = $data->id;
+                    $dataUpdate = [
                         'status'    => 2,
-                        'id_basket' => $basket,
+                        'assign'    => $assign,
+                        'id_basket' => $basket
                     ];
-                    $modelInvoice->update($id[$i], $data);
+                    $modelInvoice->update($id, $dataUpdate);
                 }
+
                 $status = 1;
                 $dataBasket = [
                     'kap_order'     => $jumlahKapasitas,
