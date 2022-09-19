@@ -56,6 +56,15 @@ $('#assign').click(function(e) {
                             position: 'center',
                             icon: 'success',
                             title: 'Berhasil',
+                        });
+                        window.location.reload();
+                        play_notif();
+                    }
+                    if (response.error) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'error',
+                            title: response.error,
                         }).then((result) => {
                             if (result.isConfirmed) {
                                 window.location.reload();
@@ -63,6 +72,7 @@ $('#assign').click(function(e) {
                         });
                         play_notif();
                     }
+
                 },
                 error: function(xhr, ajaxOptions, thrownError) {
                     alert(xhr.status + '\n' + thrownError);

@@ -117,24 +117,31 @@ class Assign extends BaseController
         $modelOrder     = new ModelOrder();
         $tampilData     = $modelInvoice->group_item();
 
-        foreach ($tampilData as $row) {
-            $modelPicking->insert([
-                'id_basket'         => $row['id_basket'],
-                'Item_id'           => $row['Item_id'],
-                'Item_detail'       => $row['Item_detail'],
-                'qty'               => $row['jumlah'],
-                'assign'            => $row['nama_user'],
-                'warehouse'         => user()->warehouse,
-            ]);
-            $cek = $modelInvoice->getWhere(['status' => 2])->getResult();
-            foreach ($cek as $data) {
-                $modelInvoice->update($data->id, ['status' => 3]);
-                $modelOrder->update($data->id, ['status' => 3]);
+        $cek = $modelInvoice->getWhere(['status' => 2])->getResult();
+        if ($cek == null) {
+            $json = [
+                'error'    => 'Belum ada yang di assign'
+            ];
+        } else {
+            foreach ($tampilData as $row) {
+                $modelPicking->insert([
+                    'id_basket'         => $row['id_basket'],
+                    'Item_id'           => $row['Item_id'],
+                    'Item_detail'       => $row['Item_detail'],
+                    'qty'               => $row['jumlah'],
+                    'assign'            => $row['nama_user'],
+                    'warehouse'         => user()->warehouse,
+                ]);
+                $cek = $modelInvoice->getWhere(['status' => 2])->getResult();
+                foreach ($cek as $data) {
+                    $modelInvoice->update($data->id, ['status' => 3]);
+                    $modelOrder->update($data->id, ['status' => 3]);
+                }
             }
+            $json = [
+                'sukses'    => 'Data barhasil di assign'
+            ];
         }
-        $json = [
-            'sukses'    => 'Data barhasil di assign'
-        ];
 
         echo json_encode($json);
     }

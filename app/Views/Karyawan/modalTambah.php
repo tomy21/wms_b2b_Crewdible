@@ -68,8 +68,6 @@
                                 <option value="" selected> - Pilih Jenis -</option>
                                 <option value="picker">Picker</option>
                                 <option value="packer">Packer</option>
-                                <option value="sorter">Sorter</option>
-                                <option value="Multi">Multi</option>
                             </select>
                             <div id="msg-level" class="invalid-feedback">
 

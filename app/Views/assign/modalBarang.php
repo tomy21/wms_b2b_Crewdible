@@ -157,12 +157,12 @@ $(document).ready(function() {
         } else {
             Swal.fire({
                 title: 'Assign Picking',
-                text: `Update ${jlmhData.length} Sekarang`,
+                text: `Assign ${jlmhData.length} Sekarang`,
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Receive Sekarang !'
+                confirmButtonText: 'Assign Sekarang !'
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
