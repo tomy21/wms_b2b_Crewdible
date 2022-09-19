@@ -142,7 +142,7 @@ class Karyawan extends BaseController
         ];
 
         $json = [
-            'data'              => view('karyawan/updateUser', $data)
+            'data'              => view('Karyawan/updateUser', $data)
         ];
 
         echo json_encode($json);

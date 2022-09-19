@@ -119,7 +119,7 @@ function status(users) {
 function edit(users) {
     $.ajax({
         type: "post",
-        url: "<?= site_url() ?>karyawan/updateData",
+        url: "<?= site_url() ?>Karyawan/updateData",
         data: {
             code: users,
         },
