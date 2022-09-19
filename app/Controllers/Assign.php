@@ -60,6 +60,7 @@ class Assign extends BaseController
         $id   = $this->request->getVar('id');
         $assign = $this->request->getVar('picker');
         $basket = $this->request->getVar('basket');
+        $warehouse = $this->request->getVar('warehouse');
         $modelInvoice = new InvoiceModel();
         $modelPicking = new PickingModel();
         $modelBasket = new ModelMasterBasket();
@@ -88,7 +89,7 @@ class Assign extends BaseController
                 ];
             } else {
                 for ($i = 0; $i < $count; $i++) {
-                    $cekData = $modelInvoice->where(['Item_id' => $id[$i], 'status' => 1])->get();
+                    $cekData = $modelInvoice->where(['Item_id' => $id[$i], 'status' => 1, 'warehouse' => $warehouse])->get();
                     // print_r($modelInvoice->getLastQuery()->getQuery());
                     // die;
                     foreach ($cekData->getResult() as $data) {

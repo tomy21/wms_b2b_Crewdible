@@ -13,6 +13,7 @@
                 <?= form_open('Assign/ProsesPick', ['class' => 'formAssignPicker']) ?>
                 <div class="row">
                     <div class="form-group col-md-4">
+                        <input type="hidden" name="warehouse" value="<?= user()->warehouse ?>">
                         <label for="">Basket</label>
                         <div class="input-group col-mb-4">
                             <select name="basket" id="basket" class="form-control" required>
