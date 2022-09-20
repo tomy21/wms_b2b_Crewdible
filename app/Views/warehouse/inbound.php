@@ -65,7 +65,7 @@
                         <td><?= $row['Item_detail']; ?></td>
                         <td><?= $row['quantity']; ?></td>
                         <td style="text-align: center;">
-                            <input type="number" class="nice-number" name="good[]" value="">
+                            <input type="number" id="qty" class="nice-number" name="good[]" value="">
                         </td>
                         <td style="text-align: center;">
                             <input type="number" class="nice-number" name="bad[]" value="">
@@ -164,6 +164,12 @@ function kosong() {
 
 $(document).ready(function() {
     dataTemp();
+
+    $('#sesuai').click(function(e) {
+        $('#qty').val('<?= $row['quantity'] ?>');
+
+    });
+
     $('#tombolcariIn').click(function(e) {
         e.preventDefault();
         $.ajax({

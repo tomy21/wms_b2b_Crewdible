@@ -139,7 +139,7 @@ class Inbound extends BaseController
     }
     public function simpanData()
     {
-
+        $warehouse = $this->request->getVar('warehouse');
         $good = $this->request->getVar('good');
         $bad = $this->request->getVar('bad');
         $itemid = $this->request->getVar('itemid');
@@ -153,6 +153,7 @@ class Inbound extends BaseController
 
         for ($i = 0; $i < $count; $i++) {
             $data = [
+                'warehouse'     => $warehouse,
                 'nopo'          => $nopo,
                 'Item_id'       => $itemid[$i],
                 'Item_detail'   => $itemdetail[$i],
@@ -175,7 +176,7 @@ class Inbound extends BaseController
     public function simpanInbound()
     {
         $good       = $this->request->getVar('qtyGood');
-        $warehouse       = $this->request->getVar('warehouse');
+        $warehouse  = $this->request->getVar('warehouse');
         $bad        = $this->request->getVar('qtyBad');
         $itemid     = $this->request->getVar('itemid');
         $itemdetail = $this->request->getVar('itemdetail');
@@ -194,7 +195,7 @@ class Inbound extends BaseController
         for ($h = 0; $h < $count; $h++) {
             $data5 = [
                 'nopo'          => $nopo,
-                'warehouse'     => $warehouse,
+                'warehouse'     => $warehouse[$h],
                 'Item_id'       => $itemid[$h],
                 'Item_detail'   => $itemdetail[$h],
                 'quantity'      => $qty[$h],
@@ -208,6 +209,7 @@ class Inbound extends BaseController
 
         $dataGagal = [];
         foreach ($cekNopo as $row) {
+            $warehouse = $row['warehouse'];
             $item_id = $row['Item_id'];
             $item_detail = $row['Item_detail'];
             $qty     = $row['stock_good'];
@@ -215,9 +217,11 @@ class Inbound extends BaseController
             $date     = $row['created_at'];
             $kirim      = $row['quantity'];
             $no_po      = $row['nopo'];
-            $cekData   = $modalStock->getWhere(['Item_id' => $item_id])->getResult();
-
+            $cekData   = $modalStock->getWhere(['Item_id' => $item_id, 'warehouse' => $warehouse])->getResult();
+            // var_dump(count($cekData));
+            // die;
             if (count($cekData) > 0) {
+
                 $dataGagal = count($cekData);
                 $getStock = 0;
                 foreach ($cekData as $data) {
@@ -237,7 +241,7 @@ class Inbound extends BaseController
             } else {
                 $data = [
                     'Item_id'           => $item_id,
-                    'warehouse'         => user()->warehouse,
+                    'warehouse'         => $warehouse,
                     'Item_detail'       => $item_detail,
                     'quantity_good'     => $qty,
                     'quantity_reject'   => $qtyBad,

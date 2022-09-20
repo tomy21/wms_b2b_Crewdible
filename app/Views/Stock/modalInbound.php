@@ -21,6 +21,7 @@
 
                             <th style="width: 5%;">No</th>
                             <th>Item Id</th>
+                            <th>Warehouse</th>
                             <th>Item Detail</th>
                             <th>Qty kirim</th>
                             <th>Qty Good</th>
@@ -37,6 +38,7 @@
                             <tr>
                                 <td><?= $no++ ?></td>
                                 <td><?= $row['Item_id']; ?></td>
+                                <td><?= $row['warehouse'] ?></td>
                                 <td><?= $row['Item_detail']; ?></td>
                                 <td><?= $row['quantity']; ?></td>
                                 <td><?= $row['stock_good']; ?></td>
@@ -75,6 +77,7 @@
                             <input type="hidden" name="qtyKirim[]" value="<?= $row['quantity']; ?>">
                             <input type="hidden" name="qtyGood[]" value="<?= $row['stock_good']; ?>">
                             <input type="hidden" name="qtyBad[]" value="<?= $row['stock_bad']; ?>">
+                            <input type="hidden" name="warehouse[]" value="<?= $row['warehouse']; ?>">
                             <input type="hidden" name="selisih[]" value="<?= $stock; ?>">
                             <?php endforeach; ?>
                         </tbody>

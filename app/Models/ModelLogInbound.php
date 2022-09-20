@@ -8,7 +8,7 @@ class ModelLogInbound extends Model
 {
     protected $table            = 'tbl_loginbound';
     protected $primaryKey       = 'nopo';
-    protected $allowedFields    = ['nopo', 'Item_id', 'Item_detail', 'quantity', 'stock_good', 'stock_bad', 'selisih'];
+    protected $allowedFields    = ['nopo', 'Item_id', 'Item_detail', 'quantity', 'stock_good', 'stock_bad', 'selisih', 'warehouse'];
     protected $useTimestamps    = true;
 
 
