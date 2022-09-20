@@ -36,13 +36,15 @@
                     <input type="date" class="form-control" placeholder="No Faktur" name="tglfaktur" id="tglfaktur"
                         value="<?= date('Y-m-d') ?>" readonly>
                 </div>
+                <div class="form-group col-md-6">
+                    <label for="">Warehouse</label>
+                    <input type="text" class="form-control" placeholder="No Faktur" name="warehouse" id="warehouse"
+                        value="<?= user()->warehouse ?>" readonly>
+                </div>
             </div>
-            <p>
-                <button type="submit" class="btn btn-sm btn-outline-info"> Simpan </button>
-            </p>
+
             <table class="table table-sm table-striped table-bordered" style="width: 100%;">
                 <thead>
-
                     <th style="width: 5%;">No</th>
                     <th>Item Id</th>
                     <th>Item Detail</th>
@@ -54,6 +56,7 @@
                 <tbody>
                     <?php
                     $no = 1;
+
                     foreach ($datatemp as $row) :
                     ?>
                     <tr>
@@ -73,8 +76,16 @@
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
-                <?= form_close(); ?>
             </table>
+            <div class="form-group">
+                <button type="submit" class="form-control btn btn-sm btn-success"> Simpan </button>
+
+            </div>
+            <?= form_close(); ?>
+            <div class="form-group">
+                <button id="sesuai" class="form-control btn btn-sm btn-info"> Sudah sesuai </button>
+
+            </div>
         </div>
     </div>
 </div>

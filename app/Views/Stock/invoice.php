@@ -127,7 +127,7 @@
                                     $data = $status;
                                 } else {
                                     $db = \Config\Database::connect();
-                                    $data = $db->table('tbl_invoice')->where('stock_location', user()->warehouse)->get()->getResult();
+                                    $data = $db->table('tbl_order')->where('stock_location', user()->warehouse)->get()->getResult();
                                 }
 
                                 $no = 1;

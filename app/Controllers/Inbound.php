@@ -45,15 +45,15 @@ class Inbound extends BaseController
     function edit($nopo)
     {
 
-        $nopo = $this->ModelInbound->cekFaktur($nopo);
+        $noPo = $this->ModelInbound->cekFaktur($nopo);
 
-        if ($nopo->getNumRows() > 0) {
-            $row = $nopo->getRowArray();
+        if ($noPo->getNumRows() > 0) {
+            $row = $noPo->getRowArray();
 
             $data = [
                 'nopo'      => $row['nopo'],
                 'created_at'    => $row['created_at'],
-                'datatemp' => $this->ModelInbound->find($nopo),
+                'datatemp' => $this->ModelInbound->getWhere(['nopo' => $nopo])->getResultArray(),
             ];
             return view('warehouse/inbound', $data);
         } else {

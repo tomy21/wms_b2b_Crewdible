@@ -19,16 +19,12 @@ class Invoice extends BaseController
     }
     public function index()
     {
-        $warehouse = $this->request->getPost('warehouse');
-        if ($warehouse == null) {
-            $data = [
-                'status'    => $this->invoiceModel->get()->getResult(),
-            ];
-        } else {
-            $data = [
-                'status' => $this->invoiceModel->dataStatus($warehouse)
-            ];
-        }
+
+
+        $data = [
+            'status'    => $this->ModalOrder->get()->getResult(),
+        ];
+
 
         return view('Stock/invoice', $data);
     }

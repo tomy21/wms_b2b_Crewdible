@@ -26,12 +26,12 @@
                         <?php
                         $no = 1;
                         $db = \Config\Database::connect();
-                        if (user()->warehouse = 'Headoffice') {
-                            $inbound = $db->table('tbl_po')->get()->getResultArray();
+                        if (user()->warehouse == 'Headoffice') {
+                            $inbound1 = $db->table('tbl_po')->get()->getResultArray();
                         } else {
-                            $inbound = $db->table('tbl_po')->getWhere(['warehouse' => user()->warehouse])->getResultArray();
+                            $inbound1 = $db->table('tbl_po')->where(['warehouse' => user()->warehouse])->get()->getResultArray();
                         }
-                        foreach ($inbound as $user) :
+                        foreach ($inbound1 as $user) :
                         ?>
                         <td><?= $no++; ?></td>
                         <td><?= $user['no_Po']; ?></td>
@@ -56,7 +56,7 @@
                             <?php elseif ($user['updated_at'] == null) : ?>
 
                             <button type="button" class="btn btn-sm btn-outline-info"
-                                onclick="edit('<?= sha1($user['no_Po']); ?>')"><i class="fa fa-edit"></i>
+                                onclick="edit('<?= $user['no_Po']; ?>')"><i class="fa fa-edit"></i>
                             </button>
                             <?php endif; ?>
 

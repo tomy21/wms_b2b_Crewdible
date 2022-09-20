@@ -26,7 +26,7 @@ class InboundModel extends Model
     public function cekFaktur($nopo)
     {
         return $this->table('tbl_inbound')->getWhere([
-            'sha1(nopo)' => $nopo
+            'nopo' => $nopo
         ]);
     }
     public function getDataCount()
