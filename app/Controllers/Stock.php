@@ -14,10 +14,17 @@ class Stock extends BaseController
     public function index()
     {
         $StatusModel = new StockModel();
-        $warehouse = user()->warehouse;
-        $data = [
-            'data'  => $StatusModel->tampilDataTransaksi($warehouse)
-        ];
+        $warehouse = $this->request->getVar('warehouse');
+        if ($warehouse == null) {
+            $data = [
+                'data'  => $StatusModel->findAll()
+            ];
+        } else {
+            $data = [
+                'data'  => $StatusModel->tampilDataTransaksi($warehouse)
+            ];
+        }
+
         return view('Stock/viewStock', $data);
     }
     public function upload()
