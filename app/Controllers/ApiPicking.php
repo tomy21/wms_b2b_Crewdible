@@ -26,7 +26,7 @@ class ApiPicking extends ResourceController
     public function show($assign = null)
     {
         $model = new PickingModel();
-        $data = $model->where('assign', $assign)->where('status', 0)->groupBy('id_basket')->findAll();
+        $data = $model->where(['assign' => $assign, 'status' => 0])->groupBy('id_basket')->findAll();
         if (!$data) {
             return $this->failNotFound('No Data Found with id ' . $assign);
         } else {
