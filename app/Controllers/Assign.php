@@ -66,52 +66,22 @@ class Assign extends BaseController
         $modelBasket = new ModelMasterBasket();
 
         $count = count($id);
-        // $count = $cekCode->getNumRows();
-        $cekKap         = $modelBasket->find($basket);
+        $cekData = $modelInvoice->whereIn('Item_id', $id)->where('stock_location', $warehouse)->where('status', 1)->get();
 
-        if ($count > $cekKap['kapasitas']) {
-            $json = [
-                'error'     => 'Basket tidak cukup maksimal 15 Pcs, gunakan basket lain !',
+        foreach ($cekData->getResult() as $data) {
+            $idData = $data->id;
+
+            $data1 = [
+                'assign'    => $assign,
+                'status'    => 2,
+                'id_basket' => $basket,
             ];
-        } else {
-            $jumlahKapasitas = 0;
-            $cekBasket = $modelInvoice->getWhere(['id_basket' => $basket])->getResult();
-            foreach ($cekBasket as $row) {
-                $jumlahKapasitas += $row->quantity;
-            }
-            // $cekBasketKap   = $modelBasket->getWhere(['id_basket' => $basket])->getResult();
-            $cekKap         = $modelBasket->find($basket);
-
-            if ($cekKap['kap_order'] > $cekKap['kapasitas']) {
-                $json = [
-                    'error'     => 'Basket penuh, gunakan basket lain !',
-                ];
-            } else {
-                // $id = array($id);
-                $cekData = $modelInvoice->whereIn('Item_id', $id)->where('stock_location', $warehouse)->where('status', 1)->get();
-                $countId = count($cekData->getResult());
-
-                foreach ($cekData->getResult() as $data) {
-                    $idData = $data->id;
-
-                    $data = [
-                        'assign'    => $assign,
-                        'status'    => 2,
-                        'id_basket' => $basket,
-                    ];
-                    $modelInvoice->update($idData, $data);
-                }
-            }
-            $status = 1;
-            $dataBasket = [
-                'kap_order'     => $jumlahKapasitas,
-                'status'        => $status,
-            ];
-            $modelBasket->update($basket, $dataBasket);
-            $json = [
-                'sukses' => "Berhasil Assign Picker "
-            ];
+            $modelInvoice->update($idData, $data1);
         }
+
+        $json = [
+            'sukses' => "Berhasil Assign Picker "
+        ];
 
         echo json_encode($json);
     }
