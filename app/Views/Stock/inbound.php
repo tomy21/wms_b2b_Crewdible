@@ -16,6 +16,8 @@
                     <th>No</th>
                     <th>No_Po</th>
                     <th>Warehouse</th>
+                    <th>Driver</th>
+                    <th>Foto Penerimaan</th>
                     <th>Jumlah Item</th>
                     <th>Quantity Item</th>
                     <th>Selesai Inbound</th>
@@ -33,10 +35,13 @@
                         }
                         foreach ($inbound1 as $user) :
                         ?>
-                        <td><?= $no++; ?></td>
-                        <td><?= $user['no_Po']; ?></td>
-                        <td><?= $user['warehouse'] ?></td>
-                        <td align="center">
+                        <td style="vertical-align: middle ;"><?= $no++; ?></td>
+                        <td style="vertical-align: middle ;"><?= $user['no_Po']; ?></td>
+                        <td style="vertical-align: middle ;"><?= $user['warehouse'] ?></td>
+                        <td style="vertical-align: middle ;"><?= $user['driver'] ?></td>
+                        <td style="vertical-align: middle ;" align="center"><img
+                                src="<?= base_url() ?>/assets/inbound/<?= $user['foto'] ?>" alt="" width="50"></td>
+                        <td style="vertical-align: middle ;" align="center">
                             <?php
                                 $db = \Config\Database::connect();
                                 $jumlah = $db->table('tbl_inbound')->where('nopo', $user['no_Po'])->countAllResults();
@@ -44,17 +49,17 @@
                             <span style="cursor:pointer; font-weight:bold; color:#0000FF;"
                                 onclick="detail('<?= $user['no_Po']; ?>')"><?= $jumlah; ?></span>
                         </td>
-                        <td><?= $user['quantity_item']; ?></td>
-                        <td><?= $user['updated_at'] ?></td>
-                        <td>
+                        <td style="vertical-align: middle ;"><?= $user['quantity_item']; ?></td>
+                        <td style="vertical-align: middle ;"><?= $user['updated_at'] ?></td>
+                        <td style="vertical-align: middle ;">
                             <?php
                                 $resi
                                 ?>
-                            <?php if ($user['updated_at'] != null) : ?>
-                            <span style="font-weight:bold; color:green;" onclick="detail('<?= $user['no_Po']; ?>')"><i
-                                    class="fa fa-check"></i> Done</span>
-                            <?php elseif ($user['updated_at'] == null) : ?>
-
+                            <?php if ($user['status'] == 2) : ?>
+                            <span class="badge badge-success"><i class="fa fa-check"></i> Done</span>
+                            <?php elseif ($user['status'] == 0) : ?>
+                            <span class="badge badge-danger"> Dalam Perjalanan</span>
+                            <?php elseif ($user['status'] == 1) : ?>
                             <button type="button" class="btn btn-sm btn-outline-info"
                                 onclick="edit('<?= $user['no_Po']; ?>')"><i class="fa fa-edit"></i>
                             </button>
