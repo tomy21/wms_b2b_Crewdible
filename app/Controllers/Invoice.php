@@ -96,6 +96,13 @@ class Invoice extends BaseController
                 $Stock_Location     = $row[21];
 
 
+
+
+                if ($slot == 1) {
+                    $date = date('Y-m-d 08:15:00', strtotime('+1 days'));
+                } else {
+                    $date = date('Y-m-d 14:15:00', strtotime('+1 days'));
+                }
                 $data = [
                     'Order_id'          => $Order_ID,
                     'Drop_name'         => $Drop_Name,
@@ -121,9 +128,8 @@ class Invoice extends BaseController
                     'Note'              => $Note,
                     'status'            => 1,
                     'slot'              => $slot,
-                    'created_at'        => isset($slot) == 1 ? $date = date('Y-m-d 08:15:00', strtotime('+1 days')) : $date = date('Y-m-d 14:15:00', strtotime('+1 days')),
+                    'created_at'        => $date,
                 ];
-                $this->invoiceModel->add($data);
                 $data2 = [
                     'Order_id'          => $Order_ID,
                     'Drop_name'         => $Drop_Name,
@@ -142,17 +148,59 @@ class Invoice extends BaseController
                     'stock_location'    => $Stock_Location,
                     'note'              => $Note,
                     'Status'            => 1,
-                    'created_at'        =>
-                    isset($slot) == 1 ? $date = date('Y-m-d 08:15:00', strtotime('+1 days')) : $date = date('Y-m-d 14:15:00', strtotime('+1 days')),
+                    'created_at'        => $date,
+
                 ];
-                $this->ModalOrder->add($data2);
-                $pesan_success = [
-                    'success' => '<div class="alert alert-success alert-dismissible" role="alert">
+
+                $db = \Config\Database::connect();
+                $cekOrder = $db->table('tbl_order')->getWhere(['Order_id' => $Order_ID])->getResult();
+
+                if (count($cekOrder) > 1) {
+                    $pesan_success = [
+                        'error' => '<div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
+                        <h5><i class="icon fas fa-check"></i> Order ' . $Order_ID . ' Sudah ada </h5>
+                        </div>'
+                    ];
+                } else {
+                    $db = \Config\Database::connect();
+                    $cekCode = $db->table('tbl_stock')->getWhere(['Item_id' => $Item_ID, 'warehouse' => $Stock_Location])->getResult();
+
+                    if (count($cekCode) == 0) {
+                        $pesan_success = [
+                            'error' => '<div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
+                        <h5><i class="icon fas fa-check"></i> Item ' . $Item_ID . ' tidak ada di stock </h5>
+                        </div>'
+                        ];
+                        continue;
+                    } else {
+                        $this->invoiceModel->add($data);
+                        $pesan_success = [
+                            'success' => '<div class="alert alert-success alert-dismissible" role="alert">
                         <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
                         <h5><i class="icon fas fa-check"></i> Berhasil </h5>
                         Data Berhasil Di Import
                         </div>'
-                ];
+                        ];
+
+                        $db = \Config\Database::connect();
+                        $cekQty = $db->table('tbl_stock')->getWhere(['Item_id' => $Item_ID, 'warehouse' => $Stock_Location])->getResult();
+                        foreach ($cekQty as $row) {
+                            if ($row->quantity_good == 0) {
+                                $pesan_success = [
+                                    'error' => '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button><h5><i Class="icon fas fa-check"></i> Item ' . $Item_ID . ' tidak ada di stock </h5></div>'
+                                ];
+                            } else {
+                                $this->ModalOrder->add($data2);
+                                $pesan_success = [
+                                    'success' => '<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button><h5><i class="icon fas fa-check"></i> Berhasil </h5>Data Berhasil Di Import</div>'
+                                ];
+                            }
+                        }
+                    }
+                }
+
                 session()->setFlashdata($pesan_success);
             }
             return redirect()->to('/Invoice/index');

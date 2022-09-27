@@ -17,18 +17,23 @@ class ApiKaryawan extends BaseController
 
     public function index()
     {
-        helper(['form']);
+        $email = $this->request->getVar('email');
+        $password = $this->request->getVar('password');
+
         $rules = [
             'email'     => 'required|valid_email',
             'password'  => 'required'
         ];
-        if (!$this->validate($rules)) return $this->fail($this->validator->getError());
         $model = new ModelKaryawan();
-        $user   = $model->where("email", $this->request->getVar('email'))->first();
+
+        if (!$this->validate($rules)) return $this->fail($this->validator->getError());
+        $user   = $model->where("email", $email)->first();
+
         if (!$user) return $this->failNotFound('Email tidak ditemukan');
 
-        $verify = password_verify($this->request->getVar('password'), $user['password']);
+        $verify = password_verify($password, $user['password']);
         if (!$verify) return $this->fail('Password salah !');
+
         $response = [
             "success"   => true,
             "data"      => $user,

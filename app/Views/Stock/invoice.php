@@ -17,6 +17,7 @@
                     </div>
                     <div class="card-body">
                         <?= form_open_multipart('Invoice/upload') ?>
+                        <?= csrf_field() ?>
                         <?= session()->getFlashdata('error'); ?>
                         <?= session()->getFlashdata('success'); ?>
                         <div class="form-group row">
@@ -54,6 +55,7 @@
             </div>
             <div class="col-md-6">
                 <?= form_open('Invoice/index') ?>
+                <?= csrf_field() ?>
                 <div class="card">
                     <div class="card-header bg-danger">
                         <h3 class="card-title">

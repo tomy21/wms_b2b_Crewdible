@@ -27,9 +27,13 @@ class ModelOrder extends Model
     }
     public function cekOrder($order)
     {
-        return $this->table('tbl_order')->getWhere([
+        return $this->db->table('tbl_order')->getWhere([
             'Order_id' => $order
         ]);
+    }
+    public function getData($orderid)
+    {
+        return $this->db->table('tbl_order')->where('Order_id', $orderid)->get()->getRowArray();
     }
     public function countData()
     {
