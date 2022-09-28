@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url() ?>/dist/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= site_url() ?>/dist/img/favicon.png">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
     <title>BMI Project | Crewdible</title>
@@ -13,32 +13,28 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="<?= base_url() ?>/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="<?= site_url() ?>/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
     <link rel="stylesheet"
-        href="<?= base_url() ?>/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+        href="<?= site_url() ?>/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
     <!-- jQuery -->
-    <script src="<?= base_url() ?>/plugins/jquery/jquery.min.js"></script>
-    <link rel="stylesheet" href="<?= base_url() ?>/plugins/sweetalert2/sweetalert2.min.css">
-    <script src="<?= base_url() ?>/plugins/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="<?= site_url() ?>/plugins/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="<?= site_url() ?>/plugins/sweetalert2/sweetalert2.min.css">
+    <script src="<?= site_url() ?>/plugins/sweetalert2/sweetalert2.all.min.js"></script>
     <!-- iCheck -->
-    <link rel="stylesheet" href="<?= base_url() ?>/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="<?= site_url() ?>/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- JQVMap -->
-    <link rel="stylesheet" href="<?= base_url() ?>/plugins/jqvmap/jqvmap.min.css">
+    <link rel="stylesheet" href="<?= site_url() ?>/plugins/jqvmap/jqvmap.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="<?= base_url() ?>/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="<?= site_url() ?>/dist/css/adminlte.min.css">
     <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="<?= base_url() ?>/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="<?= site_url() ?>/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="<?= base_url() ?>/plugins/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="<?= site_url() ?>/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
-    <link rel="stylesheet" href="<?= base_url() ?>/plugins/summernote/summernote-bs4.min.css">
-    <!-- DataTables -->
-    <link rel="stylesheet" href="<?= base_url() ?>/plugins/select2/css/select2.min.css">
-
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="<?= site_url() ?>/plugins/summernote/summernote-bs4.min.css">
 
 </head>
 
@@ -59,7 +55,7 @@
         <aside class="main-sidebar sidebar-light-danger elevation-4">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
-                <img src="<?= base_url() ?>/dist/img/logocrew.png" alt="Logo Crewdible" width="100%"
+                <img src="<?= site_url() ?>/dist/img/logocrew.png" alt="Logo Crewdible" width="100%"
                     style="object-fit:fill;">
             </a>
 
@@ -68,7 +64,7 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="<?= base_url() ?>/dist/img/<?= user()->foto; ?>" class="img-circle elevation-2"
+                        <img src="<?= site_url() ?>/dist/img/<?= user()->foto; ?>" class="img-circle elevation-2"
                             alt="User Image">
                     </div>
                     <div class="info">
@@ -415,37 +411,38 @@
 
 
     <!-- jQuery UI 1.11.4 -->
-    <script src="<?= base_url() ?>/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
+
+    <!-- jQuery UI 1.11.4 -->
+    <script src="<?= site_url() ?>/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
-    // $.widget.bridge('uibutton', $.ui.button)
+    $.widget.bridge('uibutton', $.ui.button)
     </script>
     <!-- Bootstrap 4 -->
-    <script src="<?= base_url() ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= site_url() ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- ChartJS -->
-    <script src="<?= base_url() ?>/plugins/chart.js/Chart.min.js"></script>
+    <script src="<?= site_url() ?>/plugins/chart.js/Chart.min.js"></script>
     <!-- Sparkline -->
-    <script src="<?= base_url() ?>/plugins/sparklines/sparkline.js"></script>
+    <script src="<?= site_url() ?>/plugins/sparklines/sparkline.js"></script>
     <!-- JQVMap -->
-    <script src="<?= base_url() ?>/plugins/jqvmap/jquery.vmap.min.js"></script>
-    <script src="<?= base_url() ?>/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <script src="<?= site_url() ?>/plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="<?= site_url() ?>/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
     <!-- jQuery Knob Chart -->
-    <script src="<?= base_url() ?>/plugins/jquery-knob/jquery.knob.min.js"></script>
+    <script src="<?= site_url() ?>/plugins/jquery-knob/jquery.knob.min.js"></script>
     <!-- daterangepicker -->
-    <script src="<?= base_url() ?>/plugins/moment/moment.min.js"></script>
-    <script src="<?= base_url() ?>/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="<?= site_url() ?>/plugins/moment/moment.min.js"></script>
+    <script src="<?= site_url() ?>/plugins/daterangepicker/daterangepicker.js"></script>
     <!-- Tempusdominus Bootstrap 4 -->
-    <script src="<?= base_url() ?>/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="<?= site_url() ?>/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
     <!-- Summernote -->
-    <script src="<?= base_url() ?>/plugins/summernote/summernote-bs4.min.js"></script>
+    <script src="<?= site_url() ?>/plugins/summernote/summernote-bs4.min.js"></script>
     <!-- overlayScrollbars -->
-    <script src="<?= base_url() ?>/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <script src="<?= site_url() ?>/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="<?= base_url() ?>/dist/js/adminlte.js"></script>
-    <!-- DataTables  & Plugins -->
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
-    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-    <script src="<?= base_url() ?>/plugins/select2/js/select2.full.min.js"></script>
+    <script src="<?= site_url() ?>/dist/js/adminlte.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script>
     // let log_off = new Date();
     // log_off.setSeconds(log_off.getSeconds() + 600)
@@ -454,7 +451,7 @@
     // let int_logoff = setInterval(function() {
     //     let now = new Date();
     //     if (now > log_off) {
-    //         window.location.assign("<?= base_url() ?>/login/keluar");
+    //         window.location.assign("<?= site_url() ?>/login/keluar");
     //         clearInterval(int_logoff);
     //     }
     // }, 30000)

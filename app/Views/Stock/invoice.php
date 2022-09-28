@@ -7,6 +7,11 @@
 <?= $this->endsection('subjudul'); ?>
 <?= $this->section('isi'); ?>
 
+<link rel="stylesheet" href="<?= site_url() ?>/plugins/fontawesome-free/css/all.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="<?= site_url() ?>/dist/css/adminlte.min.css">
+
+
 <div class="section">
     <div class="container-fluid">
         <div class="row">
@@ -17,7 +22,6 @@
                     </div>
                     <div class="card-body">
                         <?= form_open_multipart('Invoice/upload') ?>
-                        <?= csrf_field() ?>
                         <?= session()->getFlashdata('error'); ?>
                         <?= session()->getFlashdata('success'); ?>
                         <div class="form-group row">
@@ -55,7 +59,6 @@
             </div>
             <div class="col-md-6">
                 <?= form_open('Invoice/index') ?>
-                <?= csrf_field() ?>
                 <div class="card">
                     <div class="card-header bg-danger">
                         <h3 class="card-title">
@@ -175,6 +178,12 @@
         <div class="viewmodal" style="display: none;"></div>
     </div>
 </div>
+<!-- jQuery -->
+<script src="<? site_url() ?>/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="<? site_url() ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="<? site_url() ?>/dist/js/adminlte.min.js"></script>
 <script>
 $(document).ready(function() {
     $('#viewStatus').DataTable();

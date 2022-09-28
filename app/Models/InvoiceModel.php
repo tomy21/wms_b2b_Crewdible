@@ -16,7 +16,7 @@ class InvoiceModel extends Model
     ];
     protected $useTimestamps    = true;
 
-    
+
     function tampilDataTransaksi($warehouse)
     {
         return $this->table('tbl_invoice')->getWhere(['status' => 1, 'stock_location' => $warehouse])->getResultArray();
@@ -39,7 +39,7 @@ class InvoiceModel extends Model
     }
     public function add($data)
     {
-        $this->db->table('tbl_invoice')->insert($data);
+        $this->db->table('tbl_invoice')->insertBatch($data);
     }
 
     public function update_set($sku, $data)
@@ -157,5 +157,15 @@ class InvoiceModel extends Model
     public function cariData($cari)
     {
         return $this->table('tbl_invoice')->like('Item_id', $cari);
+    }
+    public function uploadValidate($itemTemp, $updateItem, $orderNow2)
+    {
+        $this->db->transStart();
+        $this->db->table('tbl_invoice')->insertBatch($itemTemp);
+        $this->db->table('tbl_stock')->updateBatch($updateItem, 'Item_id');
+        $this->db->table('tbl_order')->insert($orderNow2);
+        $this->db->transComplete();
+
+        return $this->db->transStatus();
     }
 }

@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\InvoiceModel;
 use App\Models\ModelItem;
 use App\Models\ModelOrder;
+use App\Models\StockModel;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
@@ -15,7 +16,7 @@ class Invoice extends BaseController
     {
         $this->invoiceModel = new InvoiceModel();
         $this->ModalOrder   = new ModelOrder();
-        $this->ModalItem    = new ModelItem();
+        $this->ModelStock    = new StockModel();
     }
     public function index()
     {
@@ -67,10 +68,17 @@ class Invoice extends BaseController
             $spreadsheet = $render->load($file_upload);
             $sheet = $spreadsheet->getActiveSheet()->toArray();
 
+            $itemTemp = [];
+            $orderNow = null;
+            $orderNow2 = null;
+            $countRow = count($sheet);
+            $htmlError = '';
             foreach ($sheet as $x => $row) {
                 if ($x == 0) {
                     continue;
                 }
+                // dd($x = 1);
+                // die;
                 $jumlah = 0;
                 $Order_ID           = $row[0];
                 $Item_ID            = $row[1];
@@ -95,15 +103,82 @@ class Invoice extends BaseController
                 $Note               = $row[20];
                 $Stock_Location     = $row[21];
 
-
-
-
                 if ($slot == 1) {
                     $date = date('Y-m-d 08:15:00', strtotime('+1 days'));
                 } else {
                     $date = date('Y-m-d 14:15:00', strtotime('+1 days'));
                 }
-                $data = [
+                if ($orderNow == null || $orderNow['Order_id'] == $Order_ID) {
+
+                    $itemTemp[] = [
+                        'Order_id'          => $Order_ID,
+                        'Drop_name'         => $Drop_Name,
+                        'Drop_contact'      => $Drop_Contact,
+                        'Drop_address'      => $Drop_Address,
+                        'Drop_city'         => $Drop_City,
+                        'Drop_country'      => $Drop_Country,
+                        'Drop_zipcode'      => $Drop_Zipcode,
+                        'Drop_latitude'     => $Drop_Latitude,
+                        'Drop_longitude'    => $Drop_Longitude,
+                        'Transaction_time'  => $Transaction_date,
+                        'Drop_date'         => $Drop_Date,
+                        'Drop_start_time'   => $Drop_Start_Time,
+                        'Drop_end_time'     => $Drop_End_Time,
+                        'Payment_methode'   => $Payment_Method,
+                        'stock_location'    => $Stock_Location,
+                        'Item_id'           => $Item_ID,
+                        'Item_detail'       => $Item_Detail,
+                        'quantity'          => $Quantity,
+                        'volume'            => $Volume,
+                        'Vehicle_tag'       => $Vehicle,
+                        'Amount'            => $Amount,
+                        'Note'              => $Note,
+                        'status'            => 1,
+                        'slot'              => $slot,
+                        'created_at'        => $date,
+                    ];
+                    if (($x + 1) == $countRow) {
+                        $cekStock = $this->countStock($itemTemp, $orderNow, $orderNow2);
+                        $htmlError .= $cekStock;
+                    }
+                } else if (($x + 1) == $countRow) {
+                    $cekStock = $this->countStock($itemTemp, $orderNow, $orderNow2);
+                    $htmlError .= $cekStock;
+                } else {
+                    $cekStock = $this->countStock($itemTemp, $orderNow, $orderNow2);
+                    $htmlError .= $cekStock;
+
+                    $itemTemp = [];
+                    $itemTemp[] = [
+                        'Order_id'          => $Order_ID,
+                        'Drop_name'         => $Drop_Name,
+                        'Drop_contact'      => $Drop_Contact,
+                        'Drop_address'      => $Drop_Address,
+                        'Drop_city'         => $Drop_City,
+                        'Drop_country'      => $Drop_Country,
+                        'Drop_zipcode'      => $Drop_Zipcode,
+                        'Drop_latitude'     => $Drop_Latitude,
+                        'Drop_longitude'    => $Drop_Longitude,
+                        'Transaction_time'  => $Transaction_date,
+                        'Drop_date'         => $Drop_Date,
+                        'Drop_start_time'   => $Drop_Start_Time,
+                        'Drop_end_time'     => $Drop_End_Time,
+                        'Payment_methode'   => $Payment_Method,
+                        'stock_location'    => $Stock_Location,
+                        'Item_id'           => $Item_ID,
+                        'Item_detail'       => $Item_Detail,
+                        'quantity'          => $Quantity,
+                        'volume'            => $Volume,
+                        'Vehicle_tag'       => $Vehicle,
+                        'Amount'            => $Amount,
+                        'Note'              => $Note,
+                        'status'            => 1,
+                        'slot'              => $slot,
+                        'created_at'        => $date,
+                    ];
+                }
+
+                $orderNow = [
                     'Order_id'          => $Order_ID,
                     'Drop_name'         => $Drop_Name,
                     'Drop_contact'      => $Drop_Contact,
@@ -130,7 +205,8 @@ class Invoice extends BaseController
                     'slot'              => $slot,
                     'created_at'        => $date,
                 ];
-                $data2 = [
+
+                $orderNow2 = [
                     'Order_id'          => $Order_ID,
                     'Drop_name'         => $Drop_Name,
                     'Drop_contact'      => $Drop_Contact,
@@ -148,63 +224,125 @@ class Invoice extends BaseController
                     'stock_location'    => $Stock_Location,
                     'note'              => $Note,
                     'Status'            => 1,
-                    'created_at'        => $date,
+                    'created_at'        => $date
 
                 ];
+                // $db = \Config\Database::connect();
+                // $cekCode = $db->table('tbl_stock')->getWhere(['Item_id' => $Item_ID])->getResult();
+                // if (count($cekCode) == 0) {
+                // $pesan_success = [
+                //     'success' => '<div class="alert alert-success alert-dismissible" role="alert">
+                //     <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
+                //     <h5><i class="icon fas fa-check"></i> item ' . $Item_ID . ' </h5>
+                //     Data Gagal Di Import
+                //     </div>'
+                // ];
+                // } else {
+                //     $data = [
+                //         'Order_id'          => $Order_ID,
+                //         'Drop_name'         => $Drop_Name,
+                //         'Drop_contact'      => $Drop_Contact,
+                //         'Drop_address'      => $Drop_Address,
+                //         'Drop_city'         => $Drop_City,
+                //         'Drop_country'      => $Drop_Country,
+                //         'Drop_zipcode'      => $Drop_Zipcode,
+                //         'Drop_latitude'     => $Drop_Latitude,
+                //         'Drop_longitude'    => $Drop_Longitude,
+                //         'Transaction_time'  => $Transaction_date,
+                //         'Drop_date'         => $Drop_Date,
+                //         'Drop_start_time'   => $Drop_Start_Time,
+                //         'Drop_end_time'     => $Drop_End_Time,
+                //         'Payment_methode'   => $Payment_Method,
+                //         'stock_location'    => $Stock_Location,
+                //         'Item_id'           => $Item_ID,
+                //         'Item_detail'       => $Item_Detail,
+                //         'quantity'          => $Quantity,
+                //         'volume'            => $Volume,
+                //         'Vehicle_tag'       => $Vehicle,
+                //         'Amount'            => $Amount,
+                //         'Note'              => $Note,
+                //         'status'            => 1,
+                //         'slot'              => $slot,
+                //         'created_at'        => $date,
+                //     ];
 
-                $db = \Config\Database::connect();
-                $cekOrder = $db->table('tbl_order')->getWhere(['Order_id' => $Order_ID])->getResult();
+                // //     $this->invoiceModel->add($data);
+                //     $pesan_success = [
+                //             'success' => '<div class="alert alert-success alert-dismissible" role="alert">
+                //             <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
+                //             <h5><i class="icon fas fa-check"></i> Berhasil </h5>
+                //             Data Berhasil Di Import
+                //             </div>'
+                //         ];
+                //     }
 
-                if (count($cekOrder) > 1) {
-                    $pesan_success = [
-                        'error' => '<div class="alert alert-danger alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
-                        <h5><i class="icon fas fa-check"></i> Order ' . $Order_ID . ' Sudah ada </h5>
-                        </div>'
-                    ];
-                } else {
-                    $db = \Config\Database::connect();
-                    $cekCode = $db->table('tbl_stock')->getWhere(['Item_id' => $Item_ID, 'warehouse' => $Stock_Location])->getResult();
+                //     $this->ModalOrder->add($data2);
 
-                    if (count($cekCode) == 0) {
-                        $pesan_success = [
-                            'error' => '<div class="alert alert-danger alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
-                        <h5><i class="icon fas fa-check"></i> Item ' . $Item_ID . ' tidak ada di stock </h5>
-                        </div>'
-                        ];
-                        continue;
-                    } else {
-                        $this->invoiceModel->add($data);
-                        $pesan_success = [
-                            'success' => '<div class="alert alert-success alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
-                        <h5><i class="icon fas fa-check"></i> Berhasil </h5>
-                        Data Berhasil Di Import
-                        </div>'
-                        ];
-
-                        $db = \Config\Database::connect();
-                        $cekQty = $db->table('tbl_stock')->getWhere(['Item_id' => $Item_ID, 'warehouse' => $Stock_Location])->getResult();
-                        foreach ($cekQty as $row) {
-                            if ($row->quantity_good == 0) {
-                                $pesan_success = [
-                                    'error' => '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button><h5><i Class="icon fas fa-check"></i> Item ' . $Item_ID . ' tidak ada di stock </h5></div>'
-                                ];
-                            } else {
-                                $this->ModalOrder->add($data2);
-                                $pesan_success = [
-                                    'success' => '<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button><h5><i class="icon fas fa-check"></i> Berhasil </h5>Data Berhasil Di Import</div>'
-                                ];
-                            }
-                        }
-                    }
-                }
-
-                session()->setFlashdata($pesan_success);
+                // session()->setFlashdata($pesan_success);
             }
+            session()->setFlashdata('error', $htmlError);
             return redirect()->to('/Invoice/index');
         }
+    }
+    function countStock($itemTemp, $orderNow, $orderNow2)
+    {
+        $validate = true;
+        $updateItem = [];
+        $htmlError = '';
+        foreach ($itemTemp as $item) {
+            $db = \Config\Database::connect();
+            $cekCode = $db->table('tbl_stock')->getWhere(['Item_id' => $item['Item_id'], 'warehouse' => $item['stock_location']])->getRow();
+            $cekOrder = $db->table('tbl_order')->getWhere(['Order_id' => $item['Order_id']])->getRow();
+
+            if ($cekOrder != null) {
+                $htmlError .= '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h5><i class="icon fas fa-times"></i> Gagal </h5>
+                            Order ' . $item['Order_id'] . ' Sudah Ada.
+                            </div>';
+                $validate = false;
+                break;
+            } else {
+                if (!is_null($cekCode)) {
+                    $updateItem[] = [
+                        'Item_id'   => $item['Item_id'],
+                        'quantity_good' => intval($cekCode->quantity_good) - intval($item['quantity']),
+
+                    ];
+                    if ($cekCode->quantity_good < $item['quantity']) {
+                        $validate = false;
+                        $htmlError .= '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h5><i class="icon fas fa-times"></i> Gagal </h5>
+                            Order ' . $item['Order_id'] . ' Gagal disimpan. Periksa stock anda
+                            </div>';
+                        break;
+                    }
+                } else {
+                    $validate = false;
+                    $htmlError .= '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h5><i class="icon fas fa-times"></i> Gagal </h5>
+                            Order ' . $item['Order_id'] . ' Gagal disimpan. Stock tidak ada
+                            </div>';
+                    break;
+                }
+            }
+        }
+
+        if ($validate) {
+            $this->invoiceModel->uploadValidate($itemTemp, $updateItem, $orderNow2);
+            // $pesan_success = [
+            //     'success' => '<div class="alert alert-success alert-dismissible" role="alert">
+            //                 <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
+            //                 <h5><i class="icon fas fa-check"></i> Berhasil </h5>
+            //                 Data Berhasil Di Import
+            //                 </div>'
+            // ];
+            // session()->setFlashdata('error', $htmlError);
+        }
+
+        return $htmlError;
     }
     function detail()
     {
