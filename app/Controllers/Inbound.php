@@ -154,21 +154,21 @@ class Inbound extends BaseController
         for ($i = 0; $i < $count; $i++) {
             $data = [
                 'warehouse'     => $warehouse,
-                'nopo'          => $nopo,
+                // 'nopo'          => $nopo,
                 'Item_id'       => $itemid[$i],
                 'Item_detail'   => $itemdetail[$i],
                 'quantity'      => $qty[$i],
                 'stock_good'    => $good[$i],
                 'stock_bad'     => $bad[$i],
             ];
-            $modalStockDumm->insert($data);
+            $modalInbound->insert($data);
         }
-        $data2 = [
-            'dataInbound' => $modalStockDumm->FindAll(),
-            'nopo'        => $nopo,
-        ];
+        // $data2 = [
+        //     'dataInbound' => $modalStockDumm->FindAll(),
+        //     'nopo'        => $nopo,
+        // ];
         $json = [
-            'success'   => view('/stock/modalInbound', $data2),
+            'success'   => 'Berhasil Inbound',
         ];
 
         echo json_encode($json);
