@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\InboundModel;
 use App\Models\PoModel;
 use CodeIgniter\API\ResponseTrait;
 
@@ -27,6 +28,37 @@ class ApiInbound extends BaseController
         }
     }
 
+    public function getId($id = null)
+    {
+        $model = new InboundModel();
+        $id     = $this->request->getVar('id');
+        $data1 = $model->getWhere(['nopo' => $id])->getResult();
+        foreach ($data1 as $row) {
+            $dataJson[] = [
+                'id'        => $row->id,
+                'itemId'    => $row->Item_id,
+                'itemDetail' => $row->Item_detail,
+                'qty'       => $row->quantity,
+                'statusItem'    => $row->status,
+            ];
+        }
+        if ($data1) {
+            $response = [
+                "success"   => true,
+                "data"      => [
+                    'nopo'      => $id,
+                    'warehouse'    => $row->warehouse,
+                    'status'    => $row->status,
+                    'listItem'  => json_encode($dataJson)
+
+                ],
+            ];
+            return $this->respond($response);
+        } else {
+            return $this->failNotFound('No Data Found with id ' . $id);
+        }
+    }
+
     public function show($warehouse = null)
     {
         $modelInbound = new PoModel();
@@ -44,7 +76,44 @@ class ApiInbound extends BaseController
             return $this->respond($respon, 200);
         }
     }
-    public function update($po = null)
+    public function update($id = null)
+    {
+        $model = new InboundModel();
+
+        $id             = $this->request->getVar('id');
+        $qtyCount       = $this->request->getVar('quantity');
+
+        $cekData = $model->getWhere(['id' => $id])->getResult();
+
+        if (!$cekData) {
+            return $this->failNotFound('Data tidak ditemukan');
+        } else {
+            foreach ($cekData as $row) {
+                if ($row->status == 1) {
+                    return $this->failNotFound('Data sudah diterima');
+                } else {
+                    if ($row->quantity < $qtyCount) {
+                        return $this->failNotFound('Quantity lebih');
+                    } else {
+                        $data = [
+                            'qty_received'  => $qtyCount,
+                            'status'        => 1,
+                        ];
+                        $model->update($id, $data);
+                        $response = [
+                            'status'   => 200,
+                            'success'  => true,
+                            'messages' => [
+                                'success' => 'Data Updated'
+                            ]
+                        ];
+                    }
+                }
+            }
+        }
+        return $this->respond($response);
+    }
+    public function updatePo($po = null)
     {
         $modelInbound = new PoModel();
 
