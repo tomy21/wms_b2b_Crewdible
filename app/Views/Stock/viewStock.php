@@ -98,7 +98,7 @@
                                 <td><?= $user['created_at']; ?></td>
                                 <td>
                                     <button href="#" class="btn btn-sm btn-danger"
-                                        onclick="hapusitem('<?= $row['id']; ?>')"><i class="fa fa-trash-alt"></i>
+                                        onclick="hapusitem('<?= $user['Item_id']; ?>')"><i class="fa fa-trash-alt"></i>
                                 </td>
 
                             </tr>
