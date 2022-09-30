@@ -80,7 +80,7 @@ class Stock extends BaseController
                     $dataGagal = count($cekCode);
                     $qtyStock = 0;
                     foreach ($cekCode as $row) {
-                        $qtyStock += intval($row->quantity_good) + $qty;
+                        $qtyStock += intval($row->quantity_good) + intval($qty);
                     }
                     for ($i = 0; $i < $dataGagal; $i++) {
                         $data2 = [
