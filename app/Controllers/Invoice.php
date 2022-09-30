@@ -255,6 +255,7 @@ class Invoice extends BaseController
                     $updateItem[] = [
                         'Item_id'   => $item['Item_id'],
                         'quantity_good' => intval($cekCode->quantity_good) - intval($item['quantity']),
+                        'qty_received' => intval($cekCode->qty_received) + intval($item['quantity']),
 
                     ];
                     if ($cekCode->quantity_good < $item['quantity']) {

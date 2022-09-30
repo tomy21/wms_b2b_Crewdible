@@ -48,11 +48,11 @@ class LogInbound extends Migration
             ]
 
         ]);
-        $this->forge->createTable('tbl_LogInbound');
+        $this->forge->createTable('tbl_loginbound');
     }
 
     public function down()
     {
-        $this->forge->dropTable('tbl_LogInbound');
+        $this->forge->dropTable('tbl_loginbound');
     }
 }

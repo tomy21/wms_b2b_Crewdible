@@ -95,6 +95,7 @@
                                 </td>
                                 <td align="center"><?= $user['quantity_good']; ?></td>
                                 <td align="center"><?= $user['quantity_reject']; ?></td>
+                                <td align="center"><?= $user['qty_received']; ?></td>
                                 <td><?= $user['created_at']; ?></td>
                                 <td>
                                     <button href="#" class="btn btn-sm btn-danger"

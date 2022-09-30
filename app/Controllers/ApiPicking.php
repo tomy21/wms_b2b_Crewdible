@@ -141,7 +141,7 @@ class ApiPicking extends ResourceController
 
                                 $qtyStock = 0;
                                 foreach ($itemId as $x) {
-                                    $qtyStock = intval($x->quantity_good) - intval($qtyCount);
+                                    $qtyStock = intval($x->qty_received) - intval($qtyCount);
                                     $dataStock = [
                                         'quantity_good' => $qtyStock
                                     ];
