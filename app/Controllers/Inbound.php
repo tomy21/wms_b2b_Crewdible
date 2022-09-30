@@ -155,12 +155,12 @@ class Inbound extends BaseController
 
         $cekData = $modalStock->whereIn('Item_id', $itemid)->where('warehouse', $warehouse)->get();
 
-        foreach ($cekData as $x) {
-            if ($cekData == 0) {
+        foreach ($cekData->getResult() as $x) {
+            if ($x->Item_id == 0) {
                 for ($i = 0; $i < $count; $i++) {
                     $data = [
                         'warehouse'     => $warehouse,
-                        'Item_id'       => $itemid[$i],
+                        'Item_id'       => $x->Item_id,
                         'Item_detail'   => $itemdetail[$i],
                         'stock_good'    => $good[$i],
                         'stock_bad'     => $bad[$i],
