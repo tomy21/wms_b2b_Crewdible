@@ -153,7 +153,7 @@ class Inbound extends BaseController
         // $modalStockDumm = new ModelStockDummy();
         $count = count($itemid);
 
-        $cekData = $modalStock->whereIn('Item_id', $itemid)->where('warehouse', $warehouse)->where('status', 1)->get();
+        $cekData = $modalStock->whereIn('Item_id', $itemid)->where('warehouse', $warehouse)->get();
 
         foreach ($cekData as $x) {
             if ($cekData == 0) {
