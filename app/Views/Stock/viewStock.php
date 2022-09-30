@@ -78,6 +78,7 @@
                             <th>Good Items</th>
                             <th>Bad Items</th>
                             <th>Tgl Inbound</th>
+                            <th>Aksi</th>
                         </thead>
                         <tbody>
                             <tr>
@@ -95,8 +96,10 @@
                                 <td align="center"><?= $user['quantity_good']; ?></td>
                                 <td align="center"><?= $user['quantity_reject']; ?></td>
                                 <td><?= $user['created_at']; ?></td>
-
-                            </tr>
+                                <td>
+                                    <button href="#" class="btn btn-sm btn-danger"
+                                        onclick="hapusitem('<?= $row['id']; ?>')"><i class="fa fa-trash-alt"></i>
+                                </td>
 
                             </tr>
                             <?php endforeach; ?>
@@ -110,6 +113,44 @@
     <div class="formCekResi" style="display: none;"></div>
 </div>
 <script>
+function hapusitem(sku) {
+    Swal.fire({
+        title: 'Hapus Item',
+        text: "Yakin hapus SKU ini ? ",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Hapus Dong!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                type: "post",
+                url: "<?= site_url() ?>/Stock/hapusSku",
+                data: {
+                    sku: sku
+                },
+                dataType: "json",
+                success: function(response) {
+                    if (response.sukses) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Stock Sudah di delete',
+                            text: response.sukses,
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.reload();
+                            }
+                        })
+                    }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status + '\n' + thrownError);
+                }
+            });
+        }
+    })
+}
 $(document).ready(function() {
     $('#viewStatus').DataTable();
 });

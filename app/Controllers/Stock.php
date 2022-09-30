@@ -119,4 +119,19 @@ class Stock extends BaseController
             return redirect()->to('/Stock/index');
         }
     }
+    function hapusitem()
+    {
+        if ($this->request->isAJAX()) {
+            $sku = $this->request->getPost('sku');
+            $modelTempResi = new StockModel();
+            $modelTempResi->delete($sku);
+
+            $json = [
+                'sukses' => 'Item Berhasil Dihapus...'
+            ];
+            echo json_encode($json);
+        } else {
+            exit('Maaf tidak bisa dipanggil');
+        }
+    }
 }
