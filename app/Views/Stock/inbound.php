@@ -52,10 +52,18 @@
                         <td style="vertical-align: middle ;"><?= $user['quantity_item']; ?></td>
                         <td style="vertical-align: middle ;"><?= $user['updated_at'] ?></td>
                         <td style="vertical-align: middle ;">
-
+                            <?php
+                                $resi
+                                ?>
+                            <?php if ($user['status'] == 2) : ?>
+                            <span class="badge badge-success"><i class="fa fa-check"></i> Done</span>
+                            <?php elseif ($user['status'] == 0) : ?>
+                            <span class="badge badge-danger"> Dalam Perjalanan</span>
+                            <?php elseif ($user['status'] == 1) : ?>
                             <button type="button" class="btn btn-sm btn-outline-info"
                                 onclick="edit('<?= $user['no_Po']; ?>')"><i class="fa fa-edit"></i>
                             </button>
+                            <?php endif; ?>
 
                         </td>
                     </tr>

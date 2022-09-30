@@ -227,58 +227,6 @@ class Invoice extends BaseController
                     'created_at'        => $date
 
                 ];
-                // $db = \Config\Database::connect();
-                // $cekCode = $db->table('tbl_stock')->getWhere(['Item_id' => $Item_ID])->getResult();
-                // if (count($cekCode) == 0) {
-                // $pesan_success = [
-                //     'success' => '<div class="alert alert-success alert-dismissible" role="alert">
-                //     <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
-                //     <h5><i class="icon fas fa-check"></i> item ' . $Item_ID . ' </h5>
-                //     Data Gagal Di Import
-                //     </div>'
-                // ];
-                // } else {
-                //     $data = [
-                //         'Order_id'          => $Order_ID,
-                //         'Drop_name'         => $Drop_Name,
-                //         'Drop_contact'      => $Drop_Contact,
-                //         'Drop_address'      => $Drop_Address,
-                //         'Drop_city'         => $Drop_City,
-                //         'Drop_country'      => $Drop_Country,
-                //         'Drop_zipcode'      => $Drop_Zipcode,
-                //         'Drop_latitude'     => $Drop_Latitude,
-                //         'Drop_longitude'    => $Drop_Longitude,
-                //         'Transaction_time'  => $Transaction_date,
-                //         'Drop_date'         => $Drop_Date,
-                //         'Drop_start_time'   => $Drop_Start_Time,
-                //         'Drop_end_time'     => $Drop_End_Time,
-                //         'Payment_methode'   => $Payment_Method,
-                //         'stock_location'    => $Stock_Location,
-                //         'Item_id'           => $Item_ID,
-                //         'Item_detail'       => $Item_Detail,
-                //         'quantity'          => $Quantity,
-                //         'volume'            => $Volume,
-                //         'Vehicle_tag'       => $Vehicle,
-                //         'Amount'            => $Amount,
-                //         'Note'              => $Note,
-                //         'status'            => 1,
-                //         'slot'              => $slot,
-                //         'created_at'        => $date,
-                //     ];
-
-                // //     $this->invoiceModel->add($data);
-                //     $pesan_success = [
-                //             'success' => '<div class="alert alert-success alert-dismissible" role="alert">
-                //             <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
-                //             <h5><i class="icon fas fa-check"></i> Berhasil </h5>
-                //             Data Berhasil Di Import
-                //             </div>'
-                //         ];
-                //     }
-
-                //     $this->ModalOrder->add($data2);
-
-                // session()->setFlashdata($pesan_success);
             }
             session()->setFlashdata('error', $htmlError);
             return redirect()->to('/Invoice/index');

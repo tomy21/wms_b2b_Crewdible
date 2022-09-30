@@ -31,7 +31,9 @@ class ApiInbound extends BaseController
     public function getId($id = null)
     {
         $model = new InboundModel();
+        $modelPo = new PoModel();
         $id     = $this->request->getVar('id');
+        $data2  = $modelPo->getWhere(['no_Po' => $id])->getResult();
         $data1 = $model->getWhere(['nopo' => $id])->getResult();
         foreach ($data1 as $row) {
             $dataJson[] = [
@@ -42,13 +44,20 @@ class ApiInbound extends BaseController
                 'statusItem'    => $row->status,
             ];
         }
+        foreach ($data2 as $value) {
+            $data = [
+                'quantityCount' => $value->quantity_count,
+            ];
+        }
         if ($data1) {
+
             $response = [
                 "success"   => true,
                 "data"      => [
                     'nopo'      => $id,
                     'warehouse'    => $row->warehouse,
                     'status'    => $row->status,
+                    'qty'       => $data['quantityCount'],
                     'listItem'  => json_encode($dataJson)
 
                 ],
@@ -120,13 +129,12 @@ class ApiInbound extends BaseController
         $po = $this->request->getPost('nopo');
         $noplat = $this->request->getPost('noplat');
         $driver = $this->request->getPost('driver');
-        $qty = $this->request->getPost('quantity_count');
         $date = $this->request->getPost('date');
         $date = date('Y-m-d', strtotime($date));
-        $foto = $this->request->getFile('foto');
+        $foto = $this->request->getFile('foto1');
         $foto->move('./assets/inbound');
-        $ttd = $this->request->getFile('tandatangan');
-        $ttd->move('./assets/inbound');
+        $foto2 = $this->request->getFile('foto2');
+        $foto2->move('./assets/inbound');
 
         $data = $modelInbound->getWhere(['no_Po' => $po])->getResult();
 
@@ -137,8 +145,7 @@ class ApiInbound extends BaseController
                 'driver'                => $driver,
                 'noplat'                => $noplat,
                 'foto'                  => $foto->getName(),
-                'tandatangan'           => $ttd->getName(),
-                'quantity_count'        => $qty,
+                'tandatangan'           => $foto2->getName(),
                 'waktu_datang'          => $date,
                 'status'                => 1
             ];

@@ -39,7 +39,7 @@
                 <div class="form-group col-md-6">
                     <label for="">Warehouse</label>
                     <input type="text" class="form-control" placeholder="No Faktur" name="warehouse" id="warehouse"
-                        value="<?= user()->warehouse ?>" readonly>
+                        value="<?= $warehouse ?>" readonly>
                 </div>
             </div>
 
@@ -65,7 +65,7 @@
                         <td><?= $row['Item_detail']; ?></td>
                         <td class="qtyGood"><?= $row['quantity']; ?></td>
                         <td style="text-align: center;">
-                            <input type="number" id="qty" class="nice-number" name="good[]" value="">
+                            <input type="number" id="qty" class="nice-number good" name="good[]" value="">
                         </td>
                         <td style="text-align: center;">
                             <input type="number" class="nice-number" name="bad[]" value="">
@@ -199,30 +199,49 @@ $(document).ready(function() {
         let itemid = $('.itemid').val();
         let itemdetail = $('.itemdetail').val();
         let qty = $('.qty').val();
-        let crsfToken = '<?= csrf_token() ?>';
-        let crsfHash = '<?= csrf_hash() ?>';
-        $.ajax({
-            type: "post",
-            url: $(this).attr('action'),
-            data: $(this).serialize(),
-            dataType: "json",
-            success: function(response) {
-                if (response.sukses) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Stock Sudah di Proses',
-                        text: response.sukses,
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            window.location.reload();
+
+        if (good.length === 0) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Quantity',
+                text: 'Quantity Harus Diisi',
+            })
+        } else {
+            Swal.fire({
+                title: 'Input Inbound',
+                text: 'Sudah yakin dengan quantitynya',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'input Sekarang !'
+            }).then((result) => {
+                $.ajax({
+                    type: "post",
+                    url: $(this).attr('action'),
+                    data: $(this).serialize(),
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.sukses) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Stock Sudah di Proses',
+                                text: response.sukses,
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    window.location.reload();
+                                }
+                            })
                         }
-                    })
-                }
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
-                alert(xhr.status + '\n' + thrownError);
-            }
-        });
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        alert(xhr.status + '\n' + thrownError);
+                    }
+                });
+            });
+
+        }
+
 
     });
 
