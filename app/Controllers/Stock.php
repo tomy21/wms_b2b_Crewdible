@@ -72,6 +72,7 @@ class Stock extends BaseController
                 $item_id                = $row[0];
                 $item_detail            = $row[1];
                 $qty                    = $row[2];
+                $warehouse              = $row[3];
                 $db = \Config\Database::connect();
                 $cekCode = $db->table('tbl_stock')->getWhere(['Item_id' => $item_id])->getResult();
 
@@ -101,6 +102,7 @@ class Stock extends BaseController
                         'Item_id'           => $item_id,
                         'Item_detail'       => $item_detail,
                         'quantity_good'     => $qty,
+                        'warehouse'         => $warehouse,
                         'created_at'        => $date
                     ];
                     $this->StockModel->add($data);
