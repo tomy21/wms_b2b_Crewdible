@@ -109,6 +109,16 @@ class ApiInbound extends BaseController
                             'status'        => 1,
                         ];
                         $model->update($id, $data);
+                        $modelPo = new PoModel();
+                        $cekPo = $modelPo->getWhere(['no_Po' => $row->nopo])->getResult();
+                        foreach ($cekPo as $x) {
+                            $y = [
+                                'nopo'  => $id,
+                                'quantity_count' => intval($qtyCount) + intval($x->quantity_count)
+                            ];
+                            $modelPo->update($y);
+                        }
+
                         $response = [
                             'status'   => 200,
                             'success'  => true,

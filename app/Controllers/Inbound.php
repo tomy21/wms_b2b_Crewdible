@@ -149,21 +149,46 @@ class Inbound extends BaseController
         $qty = $this->request->getVar('qty');
         $nopo = $this->request->getVar('nopo');
 
-        $modalInbound = new StockModel();
-        $modalStockDumm = new ModelStockDummy();
+        $modalStock = new StockModel();
+        // $modalStockDumm = new ModelStockDummy();
         $count = count($itemid);
 
-        for ($i = 0; $i < $count; $i++) {
-            $data = [
-                'warehouse'     => $warehouse,
-                'Item_id'       => $itemid[$i],
-                'Item_detail'   => $itemdetail[$i],
-                'quantity'      => $qty[$i],
-                'stock_good'    => $good[$i],
-                'stock_bad'     => $bad[$i],
-            ];
-            $modalInbound->insert($data);
+        $cekData = $modalStock->whereIn('Item_id', $itemid)->where('warehouse', $warehouse)->where('status', 1)->get();
+
+        foreach ($cekData as $x) {
+            if ($cekData == 0) {
+                for ($i = 0; $i < $count; $i++) {
+                    $data = [
+                        'warehouse'     => $warehouse,
+                        'Item_id'       => $itemid[$i],
+                        'Item_detail'   => $itemdetail[$i],
+                        'stock_good'    => $good[$i],
+                        'stock_bad'     => $bad[$i],
+                    ];
+                    $modalStock->insert($data);
+                }
+            } else {
+                $data = [
+                    'Item_id'       => $x->Item_id,
+                    'quantity_good' => intval($x->quantity_good) + intval($good),
+                    'quantity_reject' => intval($x->quantity_reject) + intval($bad),
+                ];
+                $modalStock->update($data);
+            }
         }
+
+
+        // for ($i = 0; $i < $count; $i++) {
+        //     $data = [
+        //         'warehouse'     => $warehouse,
+        //         'Item_id'       => $itemid[$i],
+        //         'Item_detail'   => $itemdetail[$i],
+        //         'quantity'      => $qty[$i],
+        //         'stock_good'    => $good[$i],
+        //         'stock_bad'     => $bad[$i],
+        //     ];
+        //     $modalInbound->insert($data);
+        // }
         // $data2 = [
         //     'dataInbound' => $modalStockDumm->FindAll(),
         //     'nopo'        => $nopo,

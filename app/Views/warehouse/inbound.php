@@ -222,11 +222,11 @@ $(document).ready(function() {
                     data: $(this).serialize(),
                     dataType: "json",
                     success: function(response) {
-                        if (response.sukses) {
+                        if (response.success) {
                             Swal.fire({
                                 icon: 'success',
                                 title: 'Stock Sudah di Proses',
-                                text: response.sukses,
+                                text: response.success,
                             }).then((result) => {
                                 if (result.isConfirmed) {
                                     window.location.reload();

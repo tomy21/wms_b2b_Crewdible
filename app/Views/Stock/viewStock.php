@@ -8,7 +8,7 @@
 <?= $this->section('isi'); ?>
 
 <div class="col-lg-12">
-    <div class="card">
+    <!-- <div class="card">
         <div class="card-header bg-danger">
             <h3 class="card-title">Upload File Transaksi</h3>
         </div>
@@ -36,7 +36,7 @@
             <?= form_close(); ?>
             </p>
         </div>
-    </div>
+    </div> -->
 </div>
 
 <div class="col-lg-12">
