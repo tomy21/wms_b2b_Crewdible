@@ -45,11 +45,11 @@ class TbStockDummy extends Migration
 
         ]);
         $this->forge->addKey('Item_id', true);
-        $this->forge->createTable('tbl_stockDummy');
+        $this->forge->createTable('tbl_stockdummy');
     }
 
     public function down()
     {
-        $this->forge->dropTable('tbl_stockDummy');
+        $this->forge->dropTable('tbl_stockdummy');
     }
 }
