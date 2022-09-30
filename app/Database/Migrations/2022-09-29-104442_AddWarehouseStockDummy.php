@@ -11,7 +11,7 @@ class AddWarehouseStockDummy extends Migration
         $this->forge->addColumn('tbl_stockdummy', [
             'warehouse' => [
                 'type'           => 'VARCHAR',
-                'constraint'     => '255',
+                'constraint'     => '100',
                 'after'          => 'nopo'
             ]
         ]);
