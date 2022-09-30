@@ -43,28 +43,28 @@ class ApiInbound extends BaseController
                 'qty'       => $row->quantity,
                 'statusItem'    => $row->status,
             ];
-        }
-        foreach ($data2 as $value) {
-            $data = [
-                'quantityCount' => $value->quantity_count,
-            ];
-        }
-        if ($data1) {
+            foreach ($data2 as $value) {
+                $data = [
+                    'quantityCount' => $value->quantity_count,
+                ];
+            }
+            if ($data1) {
 
-            $response = [
-                "success"   => true,
-                "data"      => [
-                    'nopo'      => $id,
-                    'warehouse'    => $row->warehouse,
-                    'status'    => $row->status,
-                    'qty'       => $data['quantityCount'],
-                    'listItem'  => json_encode($dataJson)
+                $response = [
+                    "success"   => true,
+                    "data"      => [
+                        'nopo'      => $id,
+                        'warehouse'    => $row->warehouse,
+                        'status'    => $row->status,
+                        'qty'       => $data['quantityCount'],
+                        'listItem'  => json_encode($dataJson)
 
-                ],
-            ];
-            return $this->respond($response);
-        } else {
-            return $this->failNotFound('No Data Found with id ' . $id);
+                    ],
+                ];
+                return $this->respond($response);
+            } else {
+                return $this->failNotFound('No Data Found with id ' . $id);
+            }
         }
     }
 
