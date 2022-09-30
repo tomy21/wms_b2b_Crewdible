@@ -8,7 +8,7 @@ class AddWarehouseStockDummy extends Migration
 {
     public function up()
     {
-        $this->forge->addColumn('tbl_stockdummy', [
+        $this->forge->addColumn('tbl_stockDummy', [
             'warehouse' => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '255',
@@ -21,6 +21,6 @@ class AddWarehouseStockDummy extends Migration
 
     public function down()
     {
-        $this->forge->dropColumn('tbl_stockdummy', 'warehouse');
+        $this->forge->dropColumn('tbl_stockDummy', 'warehouse');
     }
 }

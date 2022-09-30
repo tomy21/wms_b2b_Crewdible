@@ -9,7 +9,6 @@ class Addinbound extends Migration
     public function up()
     {
         $this->forge->addColumn('tbl_inbound', [
-            
             'status' => [
                 'type'           => 'INT',
                 'constraint'     => '5',
