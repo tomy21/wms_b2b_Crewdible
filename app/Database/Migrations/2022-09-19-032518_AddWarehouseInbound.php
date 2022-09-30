@@ -12,7 +12,7 @@ class AddWarehouseInbound extends Migration
             'estimate_date' => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '255',
-                'after'          => 'volume'
+                'after'          => 'quantity'
             ]
         ]);
     }
@@ -21,6 +21,6 @@ class AddWarehouseInbound extends Migration
 
     public function down()
     {
-        $this->forge->dropColumn('tbl_inbound', 'estimate_date');
+        $this->forge->dropColumn('tbl_inbound', 'quantity');
     }
 }

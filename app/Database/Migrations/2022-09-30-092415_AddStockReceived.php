@@ -12,7 +12,7 @@ class AddStockReceived extends Migration
             'qty_received' => [
                 'type'           => 'INT',
                 'constraint'     => '255',
-                'after'          => 'quantity'
+                'after'          => 'quantity_good'
             ]
         ]);
     }
@@ -21,6 +21,6 @@ class AddStockReceived extends Migration
 
     public function down()
     {
-        $this->forge->dropColumn('tbl_stock', 'qty_received');
+        $this->forge->dropColumn('tbl_stock', 'quantity_good');
     }
 }

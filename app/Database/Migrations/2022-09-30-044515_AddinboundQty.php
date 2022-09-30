@@ -12,7 +12,7 @@ class AddinboundQty extends Migration
             'qty_received' => [
                 'type'           => 'INT',
                 'constraint'     => '255',
-                'after'          => 'quantity'
+                'after'          => 'status'
             ]
         ]);
     }
@@ -21,7 +21,7 @@ class AddinboundQty extends Migration
 
     public function down()
     {
-        $this->forge->dropColumn('tbl_inbound', 'qty_received');
+        $this->forge->dropColumn('tbl_inbound', 'status');
     }
 
 }

@@ -8,7 +8,7 @@ class AddWarehouseLogInbound extends Migration
 {
     public function up()
     {
-        $this->forge->addColumn('tbl_LogInbound', [
+        $this->forge->addColumn('tbl_loginbound', [
             'warehouse' => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '255',
@@ -21,6 +21,6 @@ class AddWarehouseLogInbound extends Migration
 
     public function down()
     {
-        $this->forge->dropColumn('tbl_LogInbound', 'warehouse');
+        $this->forge->dropColumn('tbl_loginbound', 'warehouse');
     }
 }

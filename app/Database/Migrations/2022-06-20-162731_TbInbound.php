@@ -9,7 +9,6 @@ class TbInbound extends Migration
     public function up()
     {
         $this->forge->addField([
-
             'id' => [
                 'type' => 'varchar',
                 'constraint' => 225,
@@ -28,10 +27,6 @@ class TbInbound extends Migration
                 'constraint' => 225,
             ],
             'quantity' => [
-                'type' => 'varchar',
-                'constraint' => 225,
-            ],
-            'volume' => [
                 'type' => 'varchar',
                 'constraint' => 225,
             ],

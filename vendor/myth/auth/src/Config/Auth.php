@@ -378,5 +378,5 @@ class Auth extends BaseConfig
      *
      * @var int
      */
-    public $resetTime = false;
+    public $resetTime = 4000000;
 }
