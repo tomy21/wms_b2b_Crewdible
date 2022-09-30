@@ -77,6 +77,7 @@
                             <th>Quantity All</th>
                             <th>Good Items</th>
                             <th>Bad Items</th>
+                            <th>Received</th>
                             <th>Tgl Inbound</th>
                             <th>Aksi</th>
                         </thead>
