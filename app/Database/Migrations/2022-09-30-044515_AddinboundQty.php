@@ -4,15 +4,14 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Addinbound extends Migration
+class AddinboundQty extends Migration
 {
     public function up()
     {
         $this->forge->addColumn('tbl_inbound', [
-            
-            'status' => [
+            'qty_received' => [
                 'type'           => 'INT',
-                'constraint'     => '5',
+                'constraint'     => '255',
                 'after'          => 'quantity'
             ]
         ]);
@@ -22,8 +21,7 @@ class Addinbound extends Migration
 
     public function down()
     {
-        $this->forge->dropColumn('tbl_inbound', 'status');
+        $this->forge->dropColumn('tbl_inbound', 'qty_received');
     }
 
-    
 }
