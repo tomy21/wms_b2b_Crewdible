@@ -53,6 +53,7 @@ class Inbound extends BaseController
             $data = [
                 'nopo'      => $row['nopo'],
                 'created_at'    => $row['created_at'],
+                'warehouse' => $row['warehouse'],
                 'datatemp' => $this->ModelInbound->getWhere(['nopo' => $nopo])->getResultArray(),
             ];
             return view('warehouse/inbound', $data);
@@ -126,6 +127,7 @@ class Inbound extends BaseController
             $modelTemp = new InboundModel();
             $data = [
                 'datatemp' => $modelTemp->getWhere(['nopo' => $nopo]),
+
                 'nopo'  => $nopo
             ];
             $json = [
@@ -147,14 +149,13 @@ class Inbound extends BaseController
         $qty = $this->request->getVar('qty');
         $nopo = $this->request->getVar('nopo');
 
-        $modalInbound = new InboundModel();
+        $modalInbound = new StockModel();
         $modalStockDumm = new ModelStockDummy();
         $count = count($itemid);
 
         for ($i = 0; $i < $count; $i++) {
             $data = [
                 'warehouse'     => $warehouse,
-                // 'nopo'          => $nopo,
                 'Item_id'       => $itemid[$i],
                 'Item_detail'   => $itemdetail[$i],
                 'quantity'      => $qty[$i],
