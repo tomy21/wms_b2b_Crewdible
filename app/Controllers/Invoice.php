@@ -133,7 +133,7 @@ class Invoice extends BaseController
                         'Vehicle_tag'       => $Vehicle,
                         'Amount'            => $Amount,
                         'Note'              => $Note,
-                        'status'            => 0,
+                        'status'            => 1,
                         'slot'              => $slot,
                         'created_at'        => $date,
                     ];
@@ -172,7 +172,7 @@ class Invoice extends BaseController
                         'Vehicle_tag'       => $Vehicle,
                         'Amount'            => $Amount,
                         'Note'              => $Note,
-                        'status'            => 0,
+                        'status'            => 1,
                         'slot'              => $slot,
                         'created_at'        => $date,
                     ];
@@ -201,7 +201,7 @@ class Invoice extends BaseController
                     'Vehicle_tag'       => $Vehicle,
                     'Amount'            => $Amount,
                     'Note'              => $Note,
-                    'status'            => 0,
+                    'status'            => 1,
                     'slot'              => $slot,
                     'created_at'        => $date,
                 ];
@@ -223,7 +223,7 @@ class Invoice extends BaseController
                     'Payment_methode'   => $Payment_Method,
                     'stock_location'    => $Stock_Location,
                     'note'              => $Note,
-                    'Status'            => 0,
+                    'Status'            => 1,
                     'created_at'        => $date
 
                 ];
