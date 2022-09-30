@@ -119,7 +119,7 @@ class Stock extends BaseController
             return redirect()->to('/Stock/index');
         }
     }
-    function hapusitem()
+    function hapusSku()
     {
         if ($this->request->isAJAX()) {
             $sku = $this->request->getPost('sku');
