@@ -23,7 +23,7 @@
                                 if (user()->warehouse == 'Headoffice') {
                                     $basket = $db->table('tbl_masterbasket')->get()->getResult();
                                 } else {
-                                    $basket = $db->table('tbl_masterbasket')->getWhere(['warehouse' => user()->warehouse])->getResult();
+                                    $basket = $db->table('tbl_masterbasket')->getWhere(['warehouse' => user()->warehouse, 'status' => 0])->getResult();
                                 }
 
                                 foreach ($basket as $row) :

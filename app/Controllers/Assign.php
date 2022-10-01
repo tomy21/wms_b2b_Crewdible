@@ -79,6 +79,8 @@ class Assign extends BaseController
             $modelInvoice->update($idData, $data1);
         }
 
+        $modelBasket->update($basket, ['status' => 1]);
+
         $json = [
             'sukses' => "Berhasil Assign Picker "
         ];

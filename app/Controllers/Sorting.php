@@ -42,8 +42,8 @@ class Sorting extends BaseController
         foreach ($cekData as $row) {
             $modalInvoice->update($row->id, ['status' => 4]);
             $modalOrder->update($row->id, ['status' => 4]);
-            $modalBasket->update($row->id, ['kap_order' => 0, 'status' => 0]);
         }
+        $modalBasket->update($id, ['kap_order' => 0, 'status' => 0]);
         $json = [
             'success'   => 'Berhasil discan'
         ];
