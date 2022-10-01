@@ -69,6 +69,10 @@
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <?php if (user()->foto == null) {
+                        session()->destroy();
+                        return redirect()->to('login/index');
+                    } ?>
                     <div class="image">
                         <img src="<?= base_url() ?>/dist/img/<?= user()->foto; ?>" class="img-circle elevation-2"
                             alt="User Image">
