@@ -138,7 +138,7 @@ class TbInvoice extends Migration
                 'default'   => '1'
             ],
             'id_basket' => [
-                'type' => 'int',
+                'type' => 'varchar',
                 'constraint' => 225,
                 'default'   => '0'
             ],

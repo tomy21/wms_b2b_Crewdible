@@ -41,7 +41,7 @@
                                 <option value="" selected disabled> -- pilih picker -- </option>
                                 <?php
                                 $db = \Config\Database::connect();
-                                $basket = $db->table('tbl_karyawan')->getWhere(['warehouse' => user()->warehouse])->getResult();
+                                $basket = $db->table('tbl_karyawan')->getWhere(['warehouse' => user()->warehouse, 'level' => 'picker'])->getResult();
                                 foreach ($basket as $row) :
                                 ?>
                                 <option value="<?= $row->id_user ?>"><?= $row->nama_user ?></option>

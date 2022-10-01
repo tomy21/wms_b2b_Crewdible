@@ -26,10 +26,12 @@ class Filters extends BaseConfig
         'filterAdmin'   => \App\Filters\FilterAdmin::class,
         'filterSeller'  => \App\Filters\filterSeller::class,
         'login'         => \Myth\Auth\Filters\LoginFilter::class,
-//         'login'         => \App\
+        //         'login'         => \App\
         'role'          => \Myth\Auth\Filters\RoleFilter::class,
         'permission'    => \Myth\Auth\Filters\PermissionFilter::class,
         // 'apipicking'     => \App\Filters\ApiPicking::class,
+        'authenticate' => \App\Filters\Authenticate::class, // tambahkan ini
+        'redirectIfAuthenticated' => \App\Filters\RedirectIfAuthenticated::class, // tambahkan ini
     ];
 
     /**
