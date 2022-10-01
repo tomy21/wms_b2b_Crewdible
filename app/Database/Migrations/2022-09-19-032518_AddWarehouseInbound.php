@@ -21,6 +21,6 @@ class AddWarehouseInbound extends Migration
 
     public function down()
     {
-        $this->forge->dropColumn('tbl_inbound', 'quantity');
+        $this->forge->dropColumn('tbl_inbound', 'estimate_date');
     }
 }

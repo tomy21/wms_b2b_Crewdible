@@ -10,7 +10,7 @@ class TbInbound extends Migration
     {
         $this->forge->addField([
             'id' => [
-                'type' => 'varchar',
+                'type' => 'id',
                 'constraint' => 225,
                 'auto_increment' => true,
             ],
@@ -40,7 +40,7 @@ class TbInbound extends Migration
             ]
 
         ]);
-        $this->forge->addKey('Item_id', true);
+        $this->forge->addKey('id', true);
         $this->forge->createTable('tbl_inbound');
     }
 

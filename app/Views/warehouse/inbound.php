@@ -41,6 +41,7 @@
                     <input type="text" class="form-control" placeholder="No Faktur" name="warehouse" id="warehouse"
                         value="<?= $warehouse ?>" readonly>
                 </div>
+                
             </div>
 
             <table class="table table-sm table-striped table-bordered" style="width: 100%;">

@@ -89,7 +89,7 @@
                                 ?>
                                 <td><?= $no++; ?></td>
                                 <td><?= $user['warehouse']; ?></td>
-                                <td><?= $user['Item_id']; ?></td>
+                                <td><?= $user['sku']; ?></td>
                                 <td><?= $user['Item_detail']; ?></td>
                                 <td align="center">
                                     <?= intval($user['quantity_good']) + intval($user['quantity_reject']); ?>

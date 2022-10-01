@@ -21,6 +21,6 @@ class AddStockReceived extends Migration
 
     public function down()
     {
-        $this->forge->dropColumn('tbl_stock', 'quantity_good');
+        $this->forge->dropColumn('tbl_stock', 'qty_received');
     }
 }

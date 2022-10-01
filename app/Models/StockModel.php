@@ -8,7 +8,7 @@ class StockModel extends Model
 {
     protected $table            = 'tbl_stock';
     protected $primaryKey       = 'Item_id';
-    protected $allowedFields    = ['Item_id', 'Item_detail', 'quantity_good', 'quantity_reject', 'qty_received', 'warehouse'];
+    protected $allowedFields    = ['Item_id', 'Item_detail', 'quantity_good', 'quantity_reject', 'qty_received', 'warehouse','sku'];
     protected $useTimestamps    = true;
 
     function tampilDataTransaksi($warehouse)

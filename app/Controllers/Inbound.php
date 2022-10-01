@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\InboundModel;
 use App\Models\ModelLogInbound;
 use App\Models\ModelStockDummy;
+use App\Models\ModelWarehouse;
 use App\Models\PoModel;
 use App\Models\StockModel;
 use App\Models\TempPO;
@@ -150,49 +151,51 @@ class Inbound extends BaseController
         $nopo = $this->request->getVar('nopo');
 
         $modalStock = new StockModel();
+        $modelWh    = new ModelWarehouse();
         // $modalStockDumm = new ModelStockDummy();
         $count = count($itemid);
 
-        $cekData = $modalStock->whereIn('Item_id', $itemid)->where('warehouse', $warehouse)->get();
+        $cekData = $modalStock->whereIn('sku', $itemid)->where('warehouse', $warehouse)->get()->getResult();
+        $cekWh   = $modelWh->getWhere(['warehouse_name' => $warehouse])->getRow();
+        $idwh    = $cekWh->id_warehouse;
 
-        foreach ($cekData->getResult() as $x) {
-            if ($x->Item_id == 0) {
-                for ($i = 0; $i < $count; $i++) {
-                    $data = [
-                        'warehouse'     => $warehouse,
-                        'Item_id'       => $x->Item_id,
-                        'Item_detail'   => $itemdetail[$i],
-                        'stock_good'    => $good[$i],
-                        'stock_bad'     => $bad[$i],
-                    ];
-                    $modalStock->insert($data);
-                }
-            } else {
+        // $cekQty  = $cekData->quantity_good;
+        // var_dump($cekData);
+        // die;
+        if ($cekData == 0) {
+            for ($i = 0; $i < $count; $i++) {
                 $data = [
-                    'Item_id'       => $x->Item_id,
-                    'quantity_good' => intval($x->quantity_good) + intval($good),
-                    'quantity_reject' => intval($x->quantity_reject) + intval($bad),
+                    'Item_id'       => $idwh . $itemid[$i],
+                    'warehouse'     => $warehouse,
+                    'sku'           => $itemid[$i],
+                    'Item_detail'   => $itemdetail[$i],
+                    'quantity_good' => $good[$i],
+                    'quantity_reject'     => $bad[$i],
                 ];
-                $modalStock->update($data);
+                $modalStock->insert($data);
             }
+        } else {
+            for ($i = 0; $i < $count; $i++) {
+                $cekQty = $modalStock->getWhere(['Item_id' => $idwh . $itemid[$i]])->getRow();
+                $idItem   = $idwh . $itemid[$i];
+
+                $data = [
+                    'quantity_good'    => intval($good[$i]) + intval($cekQty->quantity_good),
+                    'quantity_reject'  => intval($bad[$i]) + intval($cekQty->quantity_reject),
+                ];
+                $modalStock->update($idItem, $data);
+            }
+            // foreach ($cekDataPo as $data) {
+            //     $sumCounting += intval($data->stock_good) + intval($data->stock_bad);
+            //     $sumSelisih += intval($data->quantity);
+            // }
         }
-
-
-        // for ($i = 0; $i < $count; $i++) {
-        //     $data = [
-        //         'warehouse'     => $warehouse,
-        //         'Item_id'       => $itemid[$i],
-        //         'Item_detail'   => $itemdetail[$i],
-        //         'quantity'      => $qty[$i],
-        //         'stock_good'    => $good[$i],
-        //         'stock_bad'     => $bad[$i],
-        //     ];
-        //     $modalInbound->insert($data);
-        // }
-        // $data2 = [
-        //     'dataInbound' => $modalStockDumm->FindAll(),
-        //     'nopo'        => $nopo,
-        // ];
+        $data4 = [
+            // 'quantity_count'    => $sumCounting,
+            // 'selisih'           => $sumSelisih - $sumCounting
+            'status'        => 2
+        ];
+        $this->ModelPo->update($nopo, $data4);
         $json = [
             'success'   => 'Berhasil Inbound',
         ];

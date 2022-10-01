@@ -21,7 +21,7 @@ class AddinboundQty extends Migration
 
     public function down()
     {
-        $this->forge->dropColumn('tbl_inbound', 'status');
+        $this->forge->dropColumn('tbl_inbound', 'qty_received');
     }
 
 }

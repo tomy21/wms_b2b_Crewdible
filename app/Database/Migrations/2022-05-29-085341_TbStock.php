@@ -8,9 +8,7 @@ class TbStock extends Migration
 {
     public function up()
     {
-        $this->forge->addField([
-
-            
+        $this->forge->addField([            
             'Item_id' => [
                 'type' => 'varchar',
                 'constraint' => 225,
