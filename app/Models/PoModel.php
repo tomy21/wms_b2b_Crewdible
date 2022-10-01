@@ -8,7 +8,7 @@ class PoModel extends Model
 {
     protected $table            = 'tbl_po';
     protected $primaryKey       = 'no_Po';
-    protected $allowedFields    = ['no_Po', 'driver', 'noplat', 'foto', 'tandatangan', 'jumlah_item', 'quantity_item', 'status', 'quantity_count', 'selisih', 'created_at'];
+    protected $allowedFields    = ['no_Po', 'driver', 'noplat', 'foto', 'tandatangan', 'jumlah_item', 'quantity_item', 'status', 'quantity_count', 'selisih'];
     protected $useTimestamps    = true;
 
     public function add($data)

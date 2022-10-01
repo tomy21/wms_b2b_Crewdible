@@ -97,6 +97,7 @@ class ApiInbound extends BaseController
         if (!$cekData) {
             return $this->failNotFound('Data tidak ditemukan');
         } else {
+            $qty = [];
             foreach ($cekData as $row) {
                 if ($row->status == 1) {
                     return $this->failNotFound('Data sudah diterima');
@@ -110,14 +111,15 @@ class ApiInbound extends BaseController
                         ];
                         $model->update($id, $data);
                         $modelPo = new PoModel();
-                        $cekPo = $modelPo->getWhere(['no_Po' => $row->nopo])->getResult();
-                        foreach ($cekPo as $x) {
-                            $y = [
-                                'nopo'  => $id,
-                                'quantity_count' => intval($qtyCount) + intval($x->quantity_count)
-                            ];
-                            $modelPo->update($y);
-                        }
+                        $cekItem = $model->select('sum(qty_received) as qtyRec')->getWhere(['nopo' => $row->nopo])->getRow();
+                        $cekSelisih = $modelPo->getWhere(['no_Po' => $row->nopo])->getRow();
+
+
+                        $y = [
+                            'quantity_count' => $cekItem->qtyRec,
+                            'selisih'        => intval($cekSelisih->quantity_item) - intval($cekItem->qtyRec)
+                        ];
+                        $modelPo->update($row->nopo, $y);
 
                         $response = [
                             'status'   => 200,

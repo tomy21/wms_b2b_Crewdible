@@ -165,8 +165,10 @@ class Inbound extends BaseController
         for ($i = 0; $i < $count; $i++) {
             $id =  $idwh . $itemid[$i];
             $cekId = $modalStock->getWhere(['Item_id' => $id])->getRow();
-
-            if ($cekId == 0) {
+            $cekItem = $modalStock->getWhere(['Item_id' => $id])->getResult();
+            // var_dump(count($cekItem));
+            // die;
+            if (count($cekItem) == 0) {
                 $data = [
                     'Item_id'       => $idwh . $itemid[$i],
                     'warehouse'     => $warehouse,
@@ -177,16 +179,17 @@ class Inbound extends BaseController
                 ];
                 $modalStock->insert($data);
             } else {
-                for ($i = 0; $i < $count; $i++) {
-                    $cekQty = $modalStock->getWhere(['Item_id' => $idwh . $itemid[$i]])->getRow();
-                    $idItem   = $idwh . $itemid[$i];
 
-                    $data = [
-                        'quantity_good'    => intval($good[$i]) + intval($cekQty->quantity_good),
-                        'quantity_reject'  => intval($bad[$i]) + intval($cekQty->quantity_reject),
-                    ];
-                    $modalStock->update($idItem, $data);
-                }
+                // $cekQty = $modalStock->getWhere(['Item_id' => $idwh . $itemid[$i]])->getRow();
+                $idItem   = $idwh . $itemid[$i];
+                // var_dump($cekQty);
+                // die;
+
+                $data = [
+                    'quantity_good'    => intval($good[$i]) + intval($cekId->quantity_good),
+                    'quantity_reject'  => intval($bad[$i]) + intval($cekId->quantity_reject),
+                ];
+                $modalStock->update($idItem, $data);
             }
         }
 

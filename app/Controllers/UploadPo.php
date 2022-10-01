@@ -86,8 +86,8 @@ class UploadPo extends BaseController
                     'Item_id'       => $item_id,
                     'Item_detail'   => $item_detail,
                     'quantity'      => $qty,
-                    'status'        => 0
-                    // 'estimate_date' => $estimate,
+                    'status'        => 0,
+                    'estimate_date' => $estimate,
                 ];
                 $this->InboundModel->insert($data);
                 $pesan_success = [
@@ -110,7 +110,7 @@ class UploadPo extends BaseController
                 'warehouse'     => $warehouse,
                 'jumlah_item'   => $countItem,
                 'quantity_item' => $subtotal,
-                'created_at'    => $estimate
+                // 'created_at'    => $estimate
             ]);
             return redirect()->to('/UploadPo/index');
         }
