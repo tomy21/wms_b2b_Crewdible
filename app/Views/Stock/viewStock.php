@@ -79,12 +79,18 @@
                             <th>Bad Items</th>
                             <th>Received</th>
                             <th>Tgl Inbound</th>
-                            <th>Aksi</th>
                         </thead>
                         <tbody>
                             <tr>
                                 <?php
                                 $no = 1;
+                                $db = \Config\Database::connect();
+
+                                if (user()->warehouse == 'Headoffice') {
+                                    $data = $db->table('tbl_stock')->get()->getResultArray();
+                                } else {
+                                    $data = $db->table('tbl_stock')->where(['warehouse' => user()->warehouse])->get()->getResultArray();
+                                }
                                 foreach ($data as $user) :
                                 ?>
                                 <td><?= $no++; ?></td>
@@ -98,11 +104,6 @@
                                 <td align="center"><?= $user['quantity_reject']; ?></td>
                                 <td align="center"><?= $user['qty_received']; ?></td>
                                 <td><?= $user['created_at']; ?></td>
-                                <td>
-                                    <button href="#" class="btn btn-sm btn-danger"
-                                        onclick="hapusitem('<?= $user['Item_id']; ?>')"><i class="fa fa-trash-alt"></i>
-                                </td>
-
                             </tr>
                             <?php endforeach; ?>
 

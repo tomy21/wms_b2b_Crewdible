@@ -41,7 +41,7 @@
                     <input type="text" class="form-control" placeholder="No Faktur" name="warehouse" id="warehouse"
                         value="<?= $warehouse ?>" readonly>
                 </div>
-                
+
             </div>
 
             <table class="table table-sm table-striped table-bordered" style="width: 100%;">
@@ -230,7 +230,9 @@ $(document).ready(function() {
                                 text: response.success,
                             }).then((result) => {
                                 if (result.isConfirmed) {
-                                    window.location.reload();
+                                    window.location.href = (
+                                        '<?= site_url('/Inbound/index') ?>'
+                                        )
                                 }
                             })
                         }

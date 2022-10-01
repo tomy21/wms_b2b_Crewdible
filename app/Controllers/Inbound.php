@@ -162,8 +162,11 @@ class Inbound extends BaseController
         // $cekQty  = $cekData->quantity_good;
         // var_dump($cekData);
         // die;
-        if ($cekData == 0) {
-            for ($i = 0; $i < $count; $i++) {
+        for ($i = 0; $i < $count; $i++) {
+            $id =  $idwh . $itemid[$i];
+            $cekId = $modalStock->getWhere(['Item_id' => $id])->getRow();
+
+            if ($cekId == 0) {
                 $data = [
                     'Item_id'       => $idwh . $itemid[$i],
                     'warehouse'     => $warehouse,
@@ -173,26 +176,21 @@ class Inbound extends BaseController
                     'quantity_reject'     => $bad[$i],
                 ];
                 $modalStock->insert($data);
-            }
-        } else {
-            for ($i = 0; $i < $count; $i++) {
-                $cekQty = $modalStock->getWhere(['Item_id' => $idwh . $itemid[$i]])->getRow();
-                $idItem   = $idwh . $itemid[$i];
+            } else {
+                for ($i = 0; $i < $count; $i++) {
+                    $cekQty = $modalStock->getWhere(['Item_id' => $idwh . $itemid[$i]])->getRow();
+                    $idItem   = $idwh . $itemid[$i];
 
-                $data = [
-                    'quantity_good'    => intval($good[$i]) + intval($cekQty->quantity_good),
-                    'quantity_reject'  => intval($bad[$i]) + intval($cekQty->quantity_reject),
-                ];
-                $modalStock->update($idItem, $data);
+                    $data = [
+                        'quantity_good'    => intval($good[$i]) + intval($cekQty->quantity_good),
+                        'quantity_reject'  => intval($bad[$i]) + intval($cekQty->quantity_reject),
+                    ];
+                    $modalStock->update($idItem, $data);
+                }
             }
-            // foreach ($cekDataPo as $data) {
-            //     $sumCounting += intval($data->stock_good) + intval($data->stock_bad);
-            //     $sumSelisih += intval($data->quantity);
-            // }
         }
+
         $data4 = [
-            // 'quantity_count'    => $sumCounting,
-            // 'selisih'           => $sumSelisih - $sumCounting
             'status'        => 2
         ];
         $this->ModelPo->update($nopo, $data4);

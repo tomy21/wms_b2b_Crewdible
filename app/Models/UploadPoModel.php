@@ -17,7 +17,7 @@ class UploadPoModel extends Model
     }
     function tampilDataTransaksi()
     {
-        return $this->table('tbl_inbound')->get();
+        return $this->table('tbl_inbound')->where('status', 0)->get();
     }
     public function tampildata_cari($cari)
     {
