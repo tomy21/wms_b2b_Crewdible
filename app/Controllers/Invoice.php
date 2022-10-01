@@ -239,7 +239,7 @@ class Invoice extends BaseController
         $htmlError = '';
         foreach ($itemTemp as $item) {
             $db = \Config\Database::connect();
-            $cekCode = $db->table('tbl_stock')->getWhere(['Item_id' => $item['Item_id'], 'warehouse' => $item['stock_location']])->getRow();
+            $cekCode = $db->table('tbl_stock')->getWhere(['sku' => $item['Item_id'], 'warehouse' => $item['stock_location']])->getRow();
             $cekOrder = $db->table('tbl_order')->getWhere(['Order_id' => $item['Order_id']])->getRow();
 
             if ($cekOrder != null) {
@@ -253,7 +253,7 @@ class Invoice extends BaseController
             } else {
                 if (!is_null($cekCode)) {
                     $updateItem[] = [
-                        'Item_id'   => $item['Item_id'],
+                        'Item_id'   => $cekCode->Item_id,
                         'quantity_good' => intval($cekCode->quantity_good) - intval($item['quantity']),
                         'qty_received' => intval($cekCode->qty_received) + intval($item['quantity']),
 
