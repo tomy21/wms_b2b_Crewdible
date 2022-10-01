@@ -451,25 +451,25 @@
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="<?= base_url() ?>/plugins/select2/js/select2.full.min.js"></script>
     <script>
-    // let log_off = new Date();
-    // log_off.setSeconds(log_off.getSeconds() + 600)
-    // log_off = new Date(log_off)
+    let log_off = new Date();
+    log_off.setSeconds(log_off.getSeconds() + 600)
+    log_off = new Date(log_off)
 
-    // let int_logoff = setInterval(function() {
-    //     let now = new Date();
-    //     if (now > log_off) {
-    //         window.location.assign("<?= base_url() ?>/login/keluar");
-    //         clearInterval(int_logoff);
-    //     }
-    // }, 30000)
+    let int_logoff = setInterval(function() {
+        let now = new Date();
+        if (now > log_off) {
+            window.location.assign("<?= site_url() ?>/Login/keluar");
+            clearInterval(int_logoff);
+        }
+    }, 30000)
 
 
-    // $('body').on('click', function() {
-    //     log_off = new Date()
-    //     log_off.setSeconds(log_off.getSeconds() + 600)
-    //     log_off = new Date(log_off)
-    //     console.log(log_off)
-    // })
+    $('body').on('click', function() {
+        log_off = new Date()
+        log_off.setSeconds(log_off.getSeconds() + 600)
+        log_off = new Date(log_off)
+        console.log(log_off)
+    })
     </script>
 
 
