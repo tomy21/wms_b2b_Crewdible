@@ -10,7 +10,7 @@ class AddidStock extends Migration
     {
         $this->forge->addColumn('tbl_stock', [
             'sku' => [
-                'type'           => 'int',
+                'type'           => 'varchar',
                 'constraint'     => '255',
                 'after'          => 'Item_id'
             ]
