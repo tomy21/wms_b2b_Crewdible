@@ -250,6 +250,30 @@ class Invoice extends BaseController
                             </div>';
                 $validate = false;
                 break;
+            } else if ($item['Drop_address'] == null) {
+                $htmlError .= '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h5><i class="icon fas fa-times"></i> Gagal </h5>
+                            Order ' . $item['Order_id'] . ' Tidak Ada Alamat .
+                            </div>';
+                $validate = false;
+                break;
+            } else if ($item['quantity'] <= 0) {
+                $htmlError .= '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h5><i class="icon fas fa-times"></i> Gagal </h5>
+                            Order ' . $item['Order_id'] . ' Quantity tidak boleh nol .
+                            </div>';
+                $validate = false;
+                break;
+            } else if ($item['slot'] == null) {
+                $htmlError .= '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h5><i class="icon fas fa-times"></i> Gagal </h5>
+                            Order ' . $item['Order_id'] . ' Slot tidak boleh kosong .
+                            </div>';
+                $validate = false;
+                break;
             } else {
                 if (!is_null($cekCode)) {
                     $updateItem[] = [
