@@ -41,13 +41,8 @@
                                 <option value="" selected disabled> -- pilih picker -- </option>
                                 <?php
                                 $db = \Config\Database::connect();
-                                $basket = $db->table('tbl_karyawan')->getWhere(['warehouse' => user()->warehouse])->getResult();
-                                if ($basket['level'] == 'all') {
-                                    $basket1 = $db->table('tbl_karyawan')->get()->getResult();
-                                } else {
-                                    $basket1 = $db->table('tbl_karyawan')->getWhere(['level' => 'picker'])->getResult();
-                                }
-                                foreach ($basket1 as $row) :
+                                $basket = $db->table('tbl_karyawan')->getWhere(['warehouse' => user()->warehouse, 'level' => 'picker'])->getResult();
+                                foreach ($basket as $row) :
                                 ?>
                                 <option value="<?= $row->id_user ?>"><?= $row->nama_user ?></option>
                                 <?php endforeach; ?>
