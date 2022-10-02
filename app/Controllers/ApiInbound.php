@@ -69,7 +69,7 @@ class ApiInbound extends BaseController
     {
         $modelInbound = new PoModel();
 
-        $data = $modelInbound->getWhere(['warehouse' => $warehouse])->getResult();
+        $data = $modelInbound->getWhere(['warehouse' => $warehouse, 'status' => "0"])->getResult();
 
         if (!$data) {
             return $this->failNotFound('Tidak ada inbound');
