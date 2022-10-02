@@ -1,3 +1,7 @@
+<?php if (user()->foto == null) {
+    session()->destroy();
+    return redirect()->to('login/index');
+} ?>
 <?= $this->extend('Layout/layout'); ?>
 <?= $this->section('judul'); ?>
 <h1>Sorting</h1>

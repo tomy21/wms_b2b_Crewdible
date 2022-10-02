@@ -6,7 +6,10 @@
 
 <?= $this->endsection('subjudul'); ?>
 <?= $this->section('isi'); ?>
-
+<?php if (user()->foto == null) {
+    session()->destroy();
+    return redirect()->to('login/index');
+} ?>
 <div class="section">
     <div class="container-fluid">
         <div class="row">

@@ -6,6 +6,11 @@
 
 <?= $this->endsection('subjudul'); ?>
 <?= $this->section('isi'); ?>
+<?php if (user()->warehouse == null) {
+    session()->destroy();
+    return redirect()->to('login/index');
+} ?>
+
 <div class="col-lg-12">
     <div class="card">
         <div class="card-body">
