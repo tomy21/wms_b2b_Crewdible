@@ -49,6 +49,7 @@ class ApiPicking extends ResourceController
                 'itemId'    => $row->Item_id,
                 'itemDetail' => $row->Item_detail,
                 'qty'       => $row->qty,
+                'status'       => $row->status,
             ];
         }
         if ($data1) {
