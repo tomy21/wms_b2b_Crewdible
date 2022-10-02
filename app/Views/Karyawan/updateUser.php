@@ -61,9 +61,9 @@
                             <label for="jenisbarang">Level</label>
                             <select class="form-control" id="level" name="level">
                                 <option value="<?= $level ?>" selected><?= $level ?></option>
-                                <option value="Admin">Admin</option>
-                                <option value="Officer">Officer</option>
-                                <option value="Manager">Manager</option>
+                                <option value="picker">Picker</option>
+                                <option value="packer">Packer</option>
+                                <option value="all">All</option>
                             </select>
                             <div id="msg-level" class="invalid-feedback">
 
