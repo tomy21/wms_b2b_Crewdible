@@ -33,8 +33,8 @@ class ApiInbound extends BaseController
         $model = new InboundModel();
         $modelPo = new PoModel();
         $id     = $this->request->getVar('id');
-        $data2  = $modelPo->getWhere(['no_Po' => $id])->getResult();
-        $data1 = $model->getWhere(['nopo' => $id])->getResult();
+        $data2  = $modelPo->getWhere(['no_Po' => $id, 'status' => 0])->getResult();
+        $data1 = $model->getWhere(['nopo' => $id, 'status' => 0])->getResult();
         foreach ($data1 as $row) {
             $dataJson[] = [
                 'id'        => $row->id,
