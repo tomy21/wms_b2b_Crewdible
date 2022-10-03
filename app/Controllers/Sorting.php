@@ -95,7 +95,7 @@ class Sorting extends BaseController
         $order = $modelInvoice->find($id);
         // var_dump($order);
         // die;
-        $html =  view('layout/invoice', [
+        $html =  view('Layout/invoice', [
             'date'          => $order['created_at'],
             'noOrder'       => $id,
             'drop_date'     => $order['Drop_date'],
