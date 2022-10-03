@@ -105,8 +105,9 @@ class Sorting extends BaseController
             'data'          => $cekData,
             'barcode'       => $pdf->write2DBarcode($id, 'QRCODE,L', 100, 25, 30, 30, $style),
         ]);
+        $orderId = $order['Order_id'];
         $pdf->writeHTML($html, true, true, true, true, '');
         $this->response->setContentType('application/pdf');
-        $pdf->Output('example_001.pdf', 'I');
+        $pdf->Output('' . $orderId . '.pdf', 'I');
     }
 }
