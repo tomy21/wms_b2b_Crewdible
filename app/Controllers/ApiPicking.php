@@ -150,7 +150,9 @@ class ApiPicking extends ResourceController
             $dataStock = [
                 'qty_received' => $qtyStock
             ];
-            $modelStock->update($x->Item_id, $dataStock);
+            var_dump($x - $itemId);
+            die;
+            // $modelStock->update($x->Item_id, $dataStock);
         }
 
         return $this->respond($response);
