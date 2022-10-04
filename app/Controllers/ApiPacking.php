@@ -85,21 +85,21 @@ class ApiPacking extends ResourceController
             $modelInvoice->update($id, ['status' => 5]);
 
             $modelHandover = new HandoverModel();
-            // foreach ($Order as $row) {
-            //     if (count($Order) == 0) {
-            //         $data = [
-            //             'id_handover'  => $modelHandover->idHandover(),
-            //             'listItem'  => $row['list'],
-            //         ];
-            //         $modelHandover->insert($data);
-            //     } else {
-            //         $data = [
-            //             'id_handover'  => $modelHandover->idHandover(),
-            //             'listItem'  => $row['list'],
-            //         ];
-            //         $modelHandover->insert($data);
-            //     }
-            // }
+            foreach ($Order as $row) {
+                if (count($Order) == 0) {
+                    $data = [
+                        'id_handover'  => $modelHandover->idHandover(),
+                        'listItem'  => $row['list'],
+                    ];
+                    $modelHandover->insert($data);
+                } else {
+                    $data = [
+                        'id_handover'  => $modelHandover->idHandover(),
+                        'listItem'  => $row['list'],
+                    ];
+                    $modelHandover->insert($data);
+                }
+            }
             $respon = [
                 'success'       => true,
                 'data'          => $data

@@ -37,7 +37,7 @@ class Sorting extends BaseController
         $modalInvoice = new InvoiceModel();
         $modalOrder = new ModelOrder();
         $modalBasket = new ModelMasterBasket();
-        $cekData = $modalInvoice->getWhere(['id_basket' => $id])->getResult();
+        $cekData = $modalInvoice->getWhere(['id_basket' => $id, 'status' => 3])->getResult();
 
         foreach ($cekData as $row) {
             $modalInvoice->update($row->id, ['status' => 4]);

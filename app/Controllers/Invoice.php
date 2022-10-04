@@ -144,10 +144,10 @@ class Invoice extends BaseController
                         $Item_ID = $Item_Detail;
                     }
 
-                    if (($x + 1) == $countRow) {
-                        $cekStock = $this->countStock($itemTemp, $orderNow, $orderNow2);
-                        $htmlError .= $cekStock;
-                    }
+                    // if (($x + 1) == $countRow) {
+                    //     $cekStock = $this->countStock($itemTemp, $orderNow, $orderNow2);
+                    //     $htmlError .= $cekStock;
+                    // }
                 } else if (($x + 1) == $countRow) {
                     $cekStock = $this->countStock($itemTemp, $orderNow, $orderNow2);
                     $htmlError .= $cekStock;
@@ -319,7 +319,7 @@ class Invoice extends BaseController
                             Data Berhasil Di Import
                             </div>'
             ];
-            // session()->setFlashdata('error', $htmlError);
+            session()->setFlashdata('error', $pesan_success);
         }
 
         return $htmlError;
