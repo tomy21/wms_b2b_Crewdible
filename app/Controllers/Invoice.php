@@ -137,6 +137,13 @@ class Invoice extends BaseController
                         'slot'              => $slot,
                         'created_at'        => $date,
                     ];
+
+                    if ($Note == null) {
+                        $Note = '-';
+                    } else if ($Item_ID == null) {
+                        $Item_ID = $Item_Detail;
+                    }
+
                     if (($x + 1) == $countRow) {
                         $cekStock = $this->countStock($itemTemp, $orderNow, $orderNow2);
                         $htmlError .= $cekStock;
@@ -305,13 +312,13 @@ class Invoice extends BaseController
 
         if ($validate) {
             $this->invoiceModel->uploadValidate($itemTemp, $updateItem, $orderNow2);
-            // $pesan_success = [
-            //     'success' => '<div class="alert alert-success alert-dismissible" role="alert">
-            //                 <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
-            //                 <h5><i class="icon fas fa-check"></i> Berhasil </h5>
-            //                 Data Berhasil Di Import
-            //                 </div>'
-            // ];
+            $pesan_success = [
+                'success' => '<div class="alert alert-success alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
+                            <h5><i class="icon fas fa-check"></i> Berhasil </h5>
+                            Data Berhasil Di Import
+                            </div>'
+            ];
             // session()->setFlashdata('error', $htmlError);
         }
 
