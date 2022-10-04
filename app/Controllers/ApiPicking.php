@@ -130,10 +130,22 @@ class ApiPicking extends ResourceController
                         'status'        => 1,
                     ];
 
-                    $itemId = $modelStock->getWhere(['sku' => $row->Item_id, 'warehouse' => $warehouse])->getResult();
-
 
                     $model->update($id, $data);
+
+                    $cekStock = $model->getWhere(['id' => $id])->getResult();
+                    foreach ($cekStock as $x) {
+                        $id = $x->Item_id;
+                        $itemId = $modelStock->getWhere(['sku' => $row->Item_id, 'warehouse' => $warehouse])->getResult();
+                        foreach ($itemId as $x) {
+                            $id = $x->Item_id;
+                            $qtyStock = intval($x->qty_received) - intval($qtyCount);
+                            $dataStock = [
+                                'qty_received' => $qtyStock
+                            ];
+                            $modelStock->update($id, $dataStock);
+                        }
+                    }
                     $response = [
                         'status'   => 200,
                         'success'  => true,
@@ -144,16 +156,7 @@ class ApiPicking extends ResourceController
                 }
             }
         }
-        $cekStock = $modelStock->getWhere(['warehouse' => $warehouse, 'sku' => $id])->getResult();
-        foreach ($cekStock as $x) {
-            $qtyStock = intval($x->qty_received) - intval($qtyCount);
-            $dataStock = [
-                'qty_received' => $qtyStock
-            ];
-            var_dump($x - $itemId);
-            die;
-            // $modelStock->update($x->Item_id, $dataStock);
-        }
+
 
         return $this->respond($response);
     }
