@@ -101,11 +101,7 @@
                             </div>
                             <?php
                                 if (session()->getFlashdata('errPass')) {
-                                    echo '
-              <div id="validationServer03Feedback" class="invalid-feedback">
-                ' . session()->getFlashdata('errPass') . '
-              </div>
-              ';
+                                    echo '<div id="validationServer03Feedback" class="invalid-feedback">' . session()->getFlashdata('errPass') . '</div>';
                                 }
                                 ?>
                         </div>

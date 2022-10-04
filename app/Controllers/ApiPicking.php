@@ -116,10 +116,6 @@ class ApiPicking extends ResourceController
                 $qty = intval($row->quantity_pick) + intval($qtyCount);
                 if ($row->qty != $qty) {
                     $qty = intval($row->quantity_pick) - intval($qtyCount);
-                    // foreach ($cekStock as $x) {
-                    //     $qtyStock = intval($x->qty_received) - intval($qtyCount);
-                    //     $modelStock->update($x->Item_id, ['qty_received' => $qtyStock]);
-                    // }
                     $data = [
                         'quantity_pick' => $qty,
                         'status'        => 0,
@@ -135,7 +131,7 @@ class ApiPicking extends ResourceController
                         return $this->fail('Quantity melebihi orderan');
                     } else {
                         $modelStock = new StockModel();
-                        $getStock = $modelStock->getWhere(['Item_id'  => $row->Item_id])->getResult();
+                        $getStock = $modelStock->getWhere(['sku'  => $row->Item_id, 'warehouse' => $warehouse])->getResult();
                         foreach ($getStock as $query) {
                             if ($query->quantity_good < $qtyCount) {
                                 $response = [
@@ -171,9 +167,44 @@ class ApiPicking extends ResourceController
                             }
                         }
                     }
+                } else {
+                    $qty = intval($row->quantity_pick) + intval($qtyCount);
+                    $data = [
+                        'quantity_pick' => $qty,
+                        'status'        => 1,
+                    ];
+                    if ($row->qty < $qty) {
+                        $response = [
+                            'status'   => 500,
+                            'error'    => true,
+                            'messages' => [
+                                'error' => 'Quantity melebihi orderan'
+                            ]
+                        ];
+                    } else {
+                        $itemId = $modelStock->getWhere(['Item_id' => $row->Item_id])->getResult();
+
+                        $qtyStock = 0;
+                        foreach ($itemId as $y) {
+                            $qtyStock = intval($y->quantity_good) - intval($qtyCount);
+                            $dataStock = [
+                                'quantity_good' => $qtyStock
+                            ];
+                            $modelStock->update($y->Item_id, $dataStock);
+                        }
+                        $model->update($id, $data);
+                        $response = [
+                            'status'   => 200,
+                            'success'  => true,
+                            'messages' => [
+                                'success' => 'Data Updated'
+                            ]
+                        ];
+                    }
                 }
             }
         }
+
 
         return $this->respond($response);
     }
