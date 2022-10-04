@@ -112,11 +112,14 @@ class ApiPicking extends ResourceController
             return $this->failNotFound('Data tidak ditemukan');
         } else {
             foreach ($cekData as $row) {
-                $cekStock = $modelStock->getWhere(['warehouse' => $warehouse, 'sku' => $id])->getRow();
+                $cekStock = $modelStock->getWhere(['warehouse' => $warehouse, 'sku' => $id])->getResult();
                 $qty = intval($row->quantity_pick) + intval($qtyCount);
                 if ($row->qty != $qty) {
                     $qty = intval($row->quantity_pick) - intval($qtyCount);
-                    $qtyStock = intval($cekStock->qty_received) - intval($qtyCount);
+                    foreach ($cekStock as $x) {
+                        $qtyStock = intval($x->qty_received) - intval($qtyCount);
+                        $modelStock->update($x->Item_id, ['qty_received' => $qtyStock]);
+                    }
                     $data = [
                         'quantity_pick' => $qty,
                         'status'        => 0,
