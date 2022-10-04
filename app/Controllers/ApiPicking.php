@@ -28,6 +28,10 @@ class ApiPicking extends ResourceController
         $model = new PickingModel();
         $data = $model->where(['assign' => $assign, 'status' => 0])->select('id_basket,sum(qty) as qty, count(Item_id) as item')->groupBy('id_basket')->findAll();
         if (!$data) {
+            $response = [
+                "success"   => false,
+                "data"      => $this->failNotFound('No Data Found with id ' . $assign),
+            ];
             return $this->failNotFound('No Data Found with id ' . $assign);
         } else {
             $response = [
