@@ -131,15 +131,7 @@ class ApiPicking extends ResourceController
                     ];
 
                     $itemId = $modelStock->getWhere(['sku' => $row->Item_id, 'warehouse' => $warehouse])->getResult();
-                    $cekStock = $modelStock->getWhere(['warehouse' => $warehouse, 'sku' => $id])->getResult();
-                    foreach ($cekStock as $x) {
 
-                        $qtyStock = intval($x->qty_received) - intval($qtyCount);
-                        $dataStock = [
-                            'qty_received' => $qtyStock
-                        ];
-                        $modelStock->update($x->Item_id, $dataStock);
-                    }
 
                     $model->update($id, $data);
                     $response = [
@@ -152,7 +144,14 @@ class ApiPicking extends ResourceController
                 }
             }
         }
-
+        $cekStock = $modelStock->getWhere(['warehouse' => $warehouse, 'sku' => $id])->getResult();
+        foreach ($cekStock as $x) {
+            $qtyStock = intval($x->qty_received) - intval($qtyCount);
+            $dataStock = [
+                'qty_received' => $qtyStock
+            ];
+            $modelStock->update($x->Item_id, $dataStock);
+        }
 
         return $this->respond($response);
     }
