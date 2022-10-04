@@ -116,10 +116,10 @@ class ApiPicking extends ResourceController
                 $qty = intval($row->quantity_pick) + intval($qtyCount);
                 if ($row->qty != $qty) {
                     $qty = intval($row->quantity_pick) - intval($qtyCount);
-                    foreach ($cekStock as $x) {
-                        $qtyStock = intval($x->qty_received) - intval($qtyCount);
-                        $modelStock->update($x->Item_id, ['qty_received' => $qtyStock]);
-                    }
+                    // foreach ($cekStock as $x) {
+                    //     $qtyStock = intval($x->qty_received) - intval($qtyCount);
+                    //     $modelStock->update($x->Item_id, ['qty_received' => $qtyStock]);
+                    // }
                     $data = [
                         'quantity_pick' => $qty,
                         'status'        => 0,
@@ -137,7 +137,7 @@ class ApiPicking extends ResourceController
                         $modelStock = new StockModel();
                         $getStock = $modelStock->getWhere(['Item_id'  => $row->Item_id])->getResult();
                         foreach ($getStock as $query) {
-                            if ($query['quantity_good'] < $qtyCount) {
+                            if ($query->quantity_good < $qtyCount) {
                                 $response = [
                                     'status'   => 400,
                                     'error'    => true,
@@ -153,7 +153,7 @@ class ApiPicking extends ResourceController
                                 foreach ($itemId as $x) {
                                     $qtyStock = intval($x->qty_received) - intval($qtyCount);
                                     $dataStock = [
-                                        'quantity_good' => $qtyStock
+                                        'qty_received' => $qtyStock
                                     ];
                                     $modelStock->update($x->Item_id, $dataStock);
                                 }
