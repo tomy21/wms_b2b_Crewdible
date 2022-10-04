@@ -78,20 +78,28 @@ class ApiPacking extends ResourceController
                 'assign'    => $assign,
                 'Status'    => 1,
                 'foto'      => $file->getName(),
-                'foto_after' => $file->getName(),
+                'foto_after' => $file1->getName(),
             ];
             $modelPacking->update($id, $data);
             $modelOrder->update($id, ['status' => 5]);
             $modelInvoice->update($id, ['status' => 5]);
 
             $modelHandover = new HandoverModel();
-            foreach ($Order as $row) {
-                $data = [
-                    'Order_id'  => $row['order_id'],
-                    'listItem'  => $row['list'],
-                ];
-                $modelHandover->insert($data);
-            }
+            // foreach ($Order as $row) {
+            //     if (count($Order) == 0) {
+            //         $data = [
+            //             'id_handover'  => $modelHandover->idHandover(),
+            //             'listItem'  => $row['list'],
+            //         ];
+            //         $modelHandover->insert($data);
+            //     } else {
+            //         $data = [
+            //             'id_handover'  => $modelHandover->idHandover(),
+            //             'listItem'  => $row['list'],
+            //         ];
+            //         $modelHandover->insert($data);
+            //     }
+            // }
             $respon = [
                 'success'       => true,
                 'data'          => $data
