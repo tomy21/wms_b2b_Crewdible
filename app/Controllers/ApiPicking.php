@@ -30,7 +30,7 @@ class ApiPicking extends ResourceController
         if (!$data) {
             $response = [
                 "success"   => false,
-                "data"      => $this->failNotFound('No Data Found with id ' . $assign),
+                "data"      => 'Data not found',
             ];
             return $this->respond($response);
         } else {
