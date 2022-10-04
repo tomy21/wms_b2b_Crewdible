@@ -171,40 +171,6 @@ class ApiPicking extends ResourceController
                             }
                         }
                     }
-                } else {
-                    $qty = intval($row->quantity_pick) + intval($qtyCount);
-                    $data = [
-                        'quantity_pick' => $qty,
-                        'status'        => 1,
-                    ];
-                    if ($row->qty < $qty) {
-                        $response = [
-                            'status'   => 500,
-                            'error'    => true,
-                            'messages' => [
-                                'error' => 'Quantity melebihi orderan'
-                            ]
-                        ];
-                    } else {
-                        $itemId = $modelStock->getWhere(['Item_id' => $row->Item_id])->getResult();
-
-                        $qtyStock = 0;
-                        foreach ($itemId as $y) {
-                            $qtyStock = intval($y->quantity_good) - intval($qtyCount);
-                            $dataStock = [
-                                'quantity_good' => $qtyStock
-                            ];
-                            $modelStock->update($y->Item_id, $dataStock);
-                        }
-                        $model->update($id, $data);
-                        $response = [
-                            'status'   => 200,
-                            'success'  => true,
-                            'messages' => [
-                                'success' => 'Data Updated'
-                            ]
-                        ];
-                    }
                 }
             }
         }
