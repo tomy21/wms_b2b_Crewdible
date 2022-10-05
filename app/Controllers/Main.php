@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\InvoiceModel;
+use App\Models\ModelOrder;
 use App\Models\StockModel;
 
 
@@ -59,5 +60,15 @@ class Main extends BaseController
             // 'config' => config('Auth'),
         ];
         return view('Layout/Dashboard', $data);
+    }
+    public function summary()
+    {
+        $modelInvoice = new InvoiceModel();
+        $modelOrder = new ModelOrder();
+        $cekWarehouse = $modelOrder->get()->getRow();
+        $warehouse = $cekWarehouse->stock_location;
+
+
+        return view('Layout/Dashboard', ['data'  => $modelInvoice->dataSummary($warehouse),]);
     }
 }
