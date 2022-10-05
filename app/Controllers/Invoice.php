@@ -73,6 +73,7 @@ class Invoice extends BaseController
             $orderNow2 = null;
             $countRow = count($sheet);
             $htmlError = '';
+
             foreach ($sheet as $x => $row) {
                 if ($x == 0) {
                     continue;
@@ -137,6 +138,27 @@ class Invoice extends BaseController
                         'slot'              => $slot,
                         'created_at'        => $date,
                     ];
+                    $orderNow2 = [
+                        'Order_id'          => $Order_ID,
+                        'Drop_name'         => $Drop_Name,
+                        'Drop_contact'      => $Drop_Contact,
+                        'Drop_address'      => $Drop_Address,
+                        'Drop_city'         => $Drop_City,
+                        'Drop_country'      => $Drop_Country,
+                        'Drop_zipcode'      => $Drop_Zipcode,
+                        'Drop_latitude'     => $Drop_Latitude,
+                        'Drop_longitude'    => $Drop_Longitude,
+                        'Transaction_time'  => $Transaction_date,
+                        'Drop_date'         => $Drop_Date,
+                        'Drop_start_time'   => $Drop_Start_Time,
+                        'Drop_end_time'     => $Drop_End_Time,
+                        'Payment_methode'   => $Payment_Method,
+                        'stock_location'    => $Stock_Location,
+                        'note'              => $Note,
+                        'Status'            => 1,
+                        'created_at'        => $date
+
+                    ];
 
                     if ($Note == null) {
                         $Note = '-';
@@ -144,10 +166,10 @@ class Invoice extends BaseController
                         $Item_ID = $Item_Detail;
                     }
 
-                    // if (($x + 1) == $countRow) {
-                    //     $cekStock = $this->countStock($itemTemp, $orderNow, $orderNow2);
-                    //     $htmlError .= $cekStock;
-                    // }
+                    if (($x + 1) == $countRow) {
+                        $cekStock = $this->countStock($itemTemp, $orderNow, $orderNow2);
+                        $htmlError .= $cekStock;
+                    }
                 } else if (($x + 1) == $countRow) {
                     $cekStock = $this->countStock($itemTemp, $orderNow, $orderNow2);
                     $htmlError .= $cekStock;
@@ -235,15 +257,17 @@ class Invoice extends BaseController
 
                 ];
             }
+
             session()->setFlashdata('error', $htmlError);
             return redirect()->to('/Invoice/index');
         }
     }
-    function countStock($itemTemp, $orderNow, $orderNow2)
+    function countStock($itemTemp, $updateItem, $orderNow2)
     {
         $validate = true;
         $updateItem = [];
         $htmlError = '';
+        $htmlSuccess = '';
         foreach ($itemTemp as $item) {
             $db = \Config\Database::connect();
             $cekCode = $db->table('tbl_stock')->getWhere(['sku' => $item['Item_id'], 'warehouse' => $item['stock_location']])->getRow();
@@ -257,31 +281,8 @@ class Invoice extends BaseController
                             </div>';
                 $validate = false;
                 break;
-            } else if ($item['Drop_address'] == null) {
-                $htmlError .= '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h5><i class="icon fas fa-times"></i> Gagal </h5>
-                            Order ' . $item['Order_id'] . ' Tidak Ada Alamat .
-                            </div>';
-                $validate = false;
-                break;
-            } else if ($item['quantity'] <= 0) {
-                $htmlError .= '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h5><i class="icon fas fa-times"></i> Gagal </h5>
-                            Order ' . $item['Order_id'] . ' Quantity tidak boleh nol .
-                            </div>';
-                $validate = false;
-                break;
-            } else if ($item['slot'] == null) {
-                $htmlError .= '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h5><i class="icon fas fa-times"></i> Gagal </h5>
-                            Order ' . $item['Order_id'] . ' Slot tidak boleh kosong .
-                            </div>';
-                $validate = false;
-                break;
             } else {
+
                 if (!is_null($cekCode)) {
                     $updateItem[] = [
                         'Item_id'   => $cekCode->Item_id,
@@ -312,14 +313,13 @@ class Invoice extends BaseController
 
         if ($validate) {
             $this->invoiceModel->uploadValidate($itemTemp, $updateItem, $orderNow2);
-            $pesan_success = [
-                'success' => '<div class="alert alert-success alert-dismissible" role="alert">
-                            <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
-                            <h5><i class="icon fas fa-check"></i> Berhasil </h5>
-                            Data Berhasil Di Import
-                            </div>'
-            ];
-            session()->setFlashdata('error', $pesan_success);
+
+            $validate = false;
+            $htmlError .= '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h5> <i class = "fa fa-check"></i></i> Berhasil </h5>
+                            Order berhasil disimpan.
+                            </div>';
         }
 
         return $htmlError;

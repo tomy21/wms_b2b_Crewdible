@@ -163,7 +163,8 @@ class InvoiceModel extends Model
         $this->db->transStart();
         $this->db->table('tbl_invoice')->insertBatch($itemTemp);
         $this->db->table('tbl_stock')->updateBatch($updateItem, 'Item_id');
-        $this->db->table('tbl_order')->insert($orderNow2);
+        $this->db->table('tbl_order')->ignore(true)->insert($orderNow2);
+
         $this->db->transComplete();
 
         return $this->db->transStatus();

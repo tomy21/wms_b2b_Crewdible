@@ -13,9 +13,9 @@ class ModelOrder extends Model
     ];
     protected $useTimestamps = true;
 
-    public function add($data2)
+    public function add($orderNow2)
     {
-        $this->db->table('tbl_order')->ignore(true)->insert($data2);
+        $this->db->table('tbl_order')->ignore(true)->insert($orderNow2);
     }
     public function dataDetail($order)
     {
