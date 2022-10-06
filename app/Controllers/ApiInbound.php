@@ -92,7 +92,14 @@ class ApiInbound extends BaseController
         $cekData = $model->getWhere(['id' => $id])->getResult();
 
         if (!$cekData) {
-            return $this->failNotFound('Data tidak ditemukan');
+            $response = [
+                'status'   => 500,
+                'error'    => true,
+                'messages' => [
+                    'error' => 'Tidak ada Inbound'
+                ]
+            ];
+            return $this->fail('Tidak ada Inbound');
         } else {
             $qty = [];
             foreach ($cekData as $row) {
