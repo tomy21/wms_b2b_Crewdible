@@ -72,7 +72,14 @@ class ApiPacking extends ResourceController
         $Order = $modelPacking->getWhere(['order_id' => $id])->getResultArray();
 
         if (!$Order) {
-            return $this->failNotFound('Data tidak ditemukan');
+            $respon = [
+                'success'       => true,
+                'message'       => [
+                    'error'     => 'data tidak ditemukan'
+                ]
+            ];
+
+            return $this->fail('Quantity melebihi orderan');
         } else {
             $data = [
                 'assign'    => $assign,
@@ -84,22 +91,22 @@ class ApiPacking extends ResourceController
             $modelOrder->update($id, ['status' => 5]);
             $modelInvoice->update($id, ['status' => 5]);
 
-            $modelHandover = new HandoverModel();
-            foreach ($Order as $row) {
-                if (count($Order) == 0) {
-                    $data = [
-                        'id_handover'  => $modelHandover->idHandover(),
-                        'listItem'  => $row['list'],
-                    ];
-                    $modelHandover->insert($data);
-                } else {
-                    $data = [
-                        'id_handover'  => $modelHandover->idHandover(),
-                        'listItem'  => $row['list'],
-                    ];
-                    $modelHandover->insert($data);
-                }
-            }
+            // $modelHandover = new HandoverModel();
+            // foreach ($Order as $row) {
+            //     if (count($Order) == 0) {
+            //         $data = [
+            //             'id_handover'  => $modelHandover->idHandover(),
+            //             'listItem'  => $row['list'],
+            //         ];
+            //         $modelHandover->insert($data);
+            //     } else {
+            //         $data = [
+            //             'id_handover'  => $modelHandover->idHandover(),
+            //             'listItem'  => $row['list'],
+            //         ];
+            //         $modelHandover->insert($data);
+            //     }
+            // }
             $respon = [
                 'success'       => true,
                 'data'          => $data
