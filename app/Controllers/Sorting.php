@@ -39,14 +39,21 @@ class Sorting extends BaseController
         $modalBasket = new ModelMasterBasket();
         $cekData = $modalInvoice->getWhere(['id_basket' => $id, 'status' => 3])->getResult();
 
-        foreach ($cekData as $row) {
-            $modalInvoice->update($row->id, ['status' => 4]);
-            $modalOrder->update($row->id, ['status' => 4]);
+        if ($cekData == null) {
+            $json = [
+                'error' => 'Basket sudah kosong'
+            ];
+        } else {
+            foreach ($cekData as $row) {
+                $modalInvoice->update($row->id, ['status' => 4]);
+                $modalOrder->update($row->id, ['status' => 4]);
+            }
+            $modalBasket->update($id, ['kap_order' => 0, 'status' => 0]);
+            $json = [
+                'success'   => 'Berhasil discan'
+            ];
         }
-        $modalBasket->update($id, ['kap_order' => 0, 'status' => 0]);
-        $json = [
-            'success'   => 'Berhasil discan'
-        ];
+
 
         echo json_encode($json);
     }
