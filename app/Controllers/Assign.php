@@ -76,7 +76,7 @@ class Assign extends BaseController
                 'status'    => 2,
                 'id_basket' => $basket,
             ];
-            $modelInvoice->update($idData,$data1);
+            $modelInvoice->update($idData, $data1);
         }
 
         $modelBasket->update($basket, ['status' => 1]);
@@ -111,7 +111,7 @@ class Assign extends BaseController
                 ]);
                 $cek = $modelInvoice->getWhere(['status' => 2])->getResult();
                 foreach ($cek as $data) {
-                    $modelInvoice->update($data->id, ['status' => 3]);
+                    $modelInvoice->update($data->id, ['status' => 3,]);
                     $modelOrder->update($data->id, ['status' => 3]);
                 }
             }

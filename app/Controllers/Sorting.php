@@ -47,11 +47,18 @@ class Sorting extends BaseController
                 'error' => 'Basket sudah kosong'
             ];
         } else {
-            foreach ($cekStatus as $y) {
-                $cekData2 = $modalInvoice->getWhere(['id_basket' => $y->id_basket, 'Item_id' => $y->Item_id, 'status' => 3])->getResult();
+            if (!is_null($cekStatus)) {
 
-                $modalInvoice->update($y->id, ['status' => 4]);
-                $modalOrder->update($y->id, ['status' => 4]);
+                foreach ($cekStatus as $z) {
+                    $cekData = $modalInvoice->getWhere(['id_basket' => $id, 'status' => 3, 'Item_id' => $z->Item_id])->getRow();
+
+                    $modalInvoice->update($cekData->id, ['status' => 4]);
+                    $modalOrder->update($cekData->id, ['status' => 4]);
+                }
+            } else {
+                $json = [
+                    'error' => 'Basket tidak ada isi'
+                ];
             }
 
             $modalBasket->update($id, ['kap_order' => 0, 'status' => 0]);
