@@ -76,7 +76,7 @@ class Assign extends BaseController
                 'status'    => 2,
                 'id_basket' => $basket,
             ];
-            $modelInvoice->update($idData, $data1);
+            $modelInvoice->update($data1, $idData);
         }
 
         $modelBasket->update($basket, ['status' => 1]);

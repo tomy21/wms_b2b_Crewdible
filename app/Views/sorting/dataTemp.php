@@ -20,39 +20,39 @@
                 $nomor = 1;
                 foreach ($datatemp as $row) :
                 ?>
-                    <tr>
-                        <td style="vertical-align: middle;"><?= $nomor++; ?></td>
-                        <td style="vertical-align: middle;"><?= $row->Order_id; ?></td>
-                        <td style="vertical-align: middle;">
-                            <?php
+                <tr>
+                    <td style="vertical-align: middle;"><?= $nomor++; ?></td>
+                    <td style="vertical-align: middle;"><?= $row->Order_id; ?></td>
+                    <td style="vertical-align: middle;">
+                        <?php
                             $db = \Config\Database::connect();
                             $jumlah = $db->table('tbl_invoice')->getWhere(['Order_id' => $row->Order_id])->getResult();
                             foreach ($jumlah as $data) :
                             ?>
-                                <ol><?= $data->Item_id ?></ol>
-                            <?php endforeach; ?>
-                        </td>
-                        <td style="vertical-align: middle;">
-                            <?php
+                        <ol><?= $data->Item_id ?></ol>
+                        <?php endforeach; ?>
+                    </td>
+                    <td style="vertical-align: middle;">
+                        <?php
                             $db = \Config\Database::connect();
                             $jumlah = $db->table('tbl_invoice')->getWhere(['Order_id' => $row->Order_id])->getResult();
                             foreach ($jumlah as $data) :
                             ?>
-                                <ol><?= $data->Item_detail ?></ol>
-                            <?php endforeach; ?>
-                        </td>
-                        <td style="vertical-align: middle;">
-                            <?php
+                        <ol><?= $data->Item_detail ?></ol>
+                        <?php endforeach; ?>
+                    </td>
+                    <td style="vertical-align: middle;">
+                        <?php
                             $db = \Config\Database::connect();
                             $jumlah = $db->table('tbl_invoice')->getWhere(['Order_id' => $row->Order_id])->getResult();
                             foreach ($jumlah as $data) :
                             ?>
-                                <ol><?= $data->quantity ?></ol>
-                            <?php endforeach; ?>
-                        </td>
-                        <td style=" vertical-align: middle; text-align: center;"><?= $row->jumlah ?></td>
-                        <td style="vertical-align: middle;">
-                            <?php
+                        <ol><?= $data->quantity ?></ol>
+                        <?php endforeach; ?>
+                    </td>
+                    <td style=" vertical-align: middle; text-align: center;"><?= $row->jumlah ?></td>
+                    <td style="vertical-align: middle; text-align: center;">
+                        <?php
                             $db = \Config\Database::connect();
                             $jumlah = $db->table('tbl_invoice')->getWhere(['Order_id' => $row->Order_id])->getResult();
 
@@ -62,15 +62,16 @@
                             }
                             if ($total != $row->jumlah) :
                             ?>
-                                <span class="badge badge-info">On Proses</span>
-                            <?php elseif ($total == $row->jumlah) : ?>
-                                <input type="hidden" id="print" value="<?= $row->Order_id ?>">
-                                <button class="btn btn-sm btn-success-outline print"> <i class="fa fa-print"></i></button>
-                            <?php elseif ($row->status == 5) : ?>
-                                <span class="badge badge-success">Done</span>
-                            <?php endif; ?>
-                        </td>
-                    </tr>
+                        <span class="badge badge-info">On Proses</span>
+                        <?php elseif ($total == $row->jumlah) : ?>
+                        <button type="button" class="btn btn-sm btn-outline-danger"
+                            onclick="edit('<?= $row->Order_id; ?>')"><i class="fa fa-print"></i>
+                        </button>
+                        <?php elseif ($row->status == 5) : ?>
+                        <span class="badge badge-success">Done</span>
+                        <?php endif; ?>
+                    </td>
+                </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
@@ -79,19 +80,12 @@
 </div>
 
 <script>
-    $(document).ready(function() {
-        $('#table1').DataTable();
-    });
+$(document).ready(function() {
+    $('#table1').DataTable();
+});
 
-    $(document).on("click", ".print", function() {
-        var url = "<?= site_url('Sorting/invoice/') ?>"
-        var order = $("#print").val();
-
-        if (order) {
-            url += order;
-        }
-
-        window.open(url, '_blank');
-        window.location.reload();
-    });
+function edit(nopo) {
+    window.open(("<?= site_url('Sorting/invoice/') ?>") + nopo, '_blank');
+    window.location.reload();
+}
 </script>

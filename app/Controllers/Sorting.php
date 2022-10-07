@@ -7,6 +7,7 @@ use App\Models\InvoiceModel;
 use App\Models\ModelMasterBasket;
 use App\Models\ModelOrder;
 use App\Models\PackingModel;
+use App\Models\PickingModel;
 use TCPDF;
 
 class Sorting extends BaseController
@@ -36,18 +37,23 @@ class Sorting extends BaseController
 
         $modalInvoice = new InvoiceModel();
         $modalOrder = new ModelOrder();
+        $modalPicking = new PickingModel();
         $modalBasket = new ModelMasterBasket();
         $cekData = $modalInvoice->getWhere(['id_basket' => $id, 'status' => 3])->getResult();
+        $cekStatus = $modalPicking->getWhere(['id_basket' => $id, 'status' => 1])->getResult();
 
         if ($cekData == null) {
             $json = [
                 'error' => 'Basket sudah kosong'
             ];
         } else {
-            foreach ($cekData as $row) {
-                $modalInvoice->update($row->id, ['status' => 4]);
-                $modalOrder->update($row->id, ['status' => 4]);
+            foreach ($cekStatus as $y) {
+                $cekData2 = $modalInvoice->getWhere(['id_basket' => $y->id_basket, 'Item_id' => $y->Item_id, 'status' => 3])->getResult();
+
+                $modalInvoice->update($y->id, ['status' => 4]);
+                $modalOrder->update($y->id, ['status' => 4]);
             }
+
             $modalBasket->update($id, ['kap_order' => 0, 'status' => 0]);
             $json = [
                 'success'   => 'Berhasil discan'
