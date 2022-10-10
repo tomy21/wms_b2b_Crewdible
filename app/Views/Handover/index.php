@@ -9,7 +9,10 @@
 
 <div class="card">
     <div class="card-header bg-green">
-        List Handover
+        <button class="btn btn-sm btn-info" type="button"
+            onclick="location.href=('<?= site_url('/Handover/buatManifest') ?>')">
+            <i class="fa fa-plus"></i>
+            Tambah Data</button>
     </div>
     <div class="card-body">
 
@@ -68,32 +71,9 @@
                 </div>
             </div>
     </div> -->
-<div class="tambahUsers" style="display: none;"></div>
-<div class="updateUser" style="display: none;"></div>
+<div class="manifest" style="display: none;"></div>
 
 <script>
-function edit(users) {
-    $.ajax({
-        type: "post",
-        url: "<?= site_url() ?>karyawan/updateData",
-        data: {
-            code: users,
-        },
-        dataType: "json",
-        success: function(response) {
-
-            if (response.data) {
-                $('.updateUser').html(response.data).show();
-                $('#updateUser').modal('show');
-
-            }
-        },
-        error: function(xhr, ajaxOptions, thrownError) {
-            alert(xhr.status + '\n' + thrownError);
-        }
-    });
-}
-
 function play_notif() {
     var audio = document.createElement('audio');
     audio.setAttribute('src', '<?= site_url() ?>/dist/img/success.mp3');
@@ -102,63 +82,27 @@ function play_notif() {
     audio.load();
 }
 
-function hapusUser(iduser) {
-    Swal.fire({
-        title: 'Hapus Item',
-        text: "Yakin untuk hapus barang ? ",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Iya, Hapus!'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            $.ajax({
-                type: "post",
-                url: "<?= site_url('/Karyawan/deleteUser'); ?>",
-                data: {
-                    code: iduser
-                },
-                dataType: "json",
-                success: function(response) {
-                    if (response.success) {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Berhasil',
-                            text: response.success,
-                        }).then((result) => {
-                            if (result.isConfirmed) {
-                                window.location.href = (
-                                    '<?= site_url() ?>/Karyawan/index ');
-                            }
-                        });
-                        play_notif();
-                    }
-                },
-                error: function(xhr, ajaxOptions, thrownError) {
-                    alert(xhr.status + '\n' + thrownError);
-                }
-            });
-        }
-    })
+function kosong() {
+    $('#orderId').val('');
+    $('#orderId').focus();
 }
+
+
 $(document).ready(function() {
     $('#table1').DataTable();
-
-    $('.tambahData').click(function(e) {
+    kosong();
+    $('#tombolcariIn').click(function(e) {
         e.preventDefault();
         $.ajax({
-            url: "<?= site_url('/Karyawan/modalTambah'); ?>",
-            // dataType: "json",
+            url: "<?= site_url() ?>/Handover/buatManifest",
+            dataType: "json",
             success: function(response) {
-                $('.tambahUsers').html(response).show();
-                $('#tambahUsers').on('show.bs.modal', function(event) {
-                    $('#users').focus();
-                })
-                $('#tambahUsers').modal('show');
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
-                alert(xhr.status + '\n' + thrownError);
+                if (response.data) {
+                    $('.manifest').html(response.data).show();
+                    $('#manifest').modal('show');
+                    kosong();
+
+                }
             }
         });
     });

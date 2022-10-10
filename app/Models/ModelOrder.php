@@ -8,9 +8,7 @@ class ModelOrder extends Model
 {
     protected $table            = 'tbl_order';
     protected $primaryKey       = 'Order_id';
-    protected $allowedFields    = [
-        'status'
-    ];
+    protected $allowedFields    = ['driver', 'status'];
     protected $useTimestamps = true;
 
     public function add($orderNow2)

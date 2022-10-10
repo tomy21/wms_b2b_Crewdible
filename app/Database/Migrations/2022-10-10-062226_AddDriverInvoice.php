@@ -4,15 +4,15 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class AddInboundDate extends Migration
+class AddDriverInvoice extends Migration
 {
     public function up()
     {
-        $this->forge->addColumn('tbl_inbound', [
-            'estimate_date' => [
+        $this->forge->addColumn('tbl_invoice', [
+            'driver' => [
                 'type'           => 'varchar',
                 'constraint'     => '255',
-                'after'          => 'status'
+                'after'          => 'assign'
             ]
         ]);
     }
@@ -21,6 +21,6 @@ class AddInboundDate extends Migration
 
     public function down()
     {
-        $this->forge->dropColumn('tbl_inbound', 'estimate_date');
+        $this->forge->dropColumn('tbl_invoice', 'driver');
     }
 }
