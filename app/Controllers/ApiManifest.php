@@ -31,14 +31,12 @@ class ApiManifest extends ResourceController
         $modelPacking = new HandoverModel();
         $id = $this->request->getPost('id');
 
-        $Order = $modelPacking->getWhere(['id_handover' => $id])->getResultArray();
-
-        $respon = [
-            'success'       => true,
-            'data'          => $Order[0]
+        $cekOrder = $modelPacking->getWhere(['status' => 1, 'id_handover' => $id])->findAll();
+        $response = [
+            "success"   => true,
+            "data"      => $cekOrder
         ];
-
-        return $this->respond(json_encode($respon), 200);
+        return $this->respond($response, 200);
     }
     public function update($id = null)
     {
@@ -49,7 +47,7 @@ class ApiManifest extends ResourceController
         $file = $this->request->getFile('foto');
         $file->move('./assets/uploades');
         $ttd = $this->request->getPost('tandatangan');
-        // $ttd->move('./assets/uploades');
+        $ttd->move('./assets/uploades');
         $id = $this->request->getPost('id');
         $assign = $this->request->getPost('assign');
         $warehouse = $this->request->getPost('warehouse');
@@ -63,6 +61,7 @@ class ApiManifest extends ResourceController
                 'assign'            => $assign,
                 'status'            => 1,
                 'foto'              => $file->getName(),
+                'tandatangan'       => $file->getName(),
                 'warehouse'         => $warehouse,
             ];
             $modelPacking->update($id, $data);
