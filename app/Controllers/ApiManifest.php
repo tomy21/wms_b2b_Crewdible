@@ -31,12 +31,14 @@ class ApiManifest extends ResourceController
         $modelPacking = new HandoverModel();
         $id = $this->request->getPost('id');
 
-        $cekOrder = $modelPacking->getWhere(['status' => 0, 'id_handover' => $id])->getResult();
-        $response = [
-            "success"   => true,
-            "data"      => $cekOrder
+        $Order = $modelPacking->getWhere(['id_handover' => $id, 'status' => 0])->getResultArray();
+
+        $respon = [
+            'success'       => true,
+            'data'          => $Order[0]
         ];
-        return $this->respond($response, 200);
+
+        return $this->respond(json_encode($respon), 200);
     }
     public function update($id = null)
     {
