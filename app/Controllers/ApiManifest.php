@@ -31,7 +31,7 @@ class ApiManifest extends ResourceController
         $modelPacking = new HandoverModel();
         $id = $this->request->getPost('id');
 
-        $cekOrder = $modelPacking->getWhere(['status' => 1, 'id_handover' => $id])->findAll();
+        $cekOrder = $modelPacking->getWhere(['status' => 0, 'id_handover' => $id])->getResult();
         $response = [
             "success"   => true,
             "data"      => $cekOrder

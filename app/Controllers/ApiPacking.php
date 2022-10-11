@@ -39,7 +39,7 @@ class ApiPacking extends ResourceController
         $modelPacking = new PackingModel();
         $id = $this->request->getPost('id');
 
-        $Order = $modelPacking->getWhere(['order_id' => $id])->getResultArray();
+        $Order = $modelPacking->getWhere(['order_id' => $id, 'status' => 0])->getResultArray();
 
         $respon = [
             'success'       => true,
