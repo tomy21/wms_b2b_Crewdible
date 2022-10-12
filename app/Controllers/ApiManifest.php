@@ -67,21 +67,21 @@ class ApiManifest extends ResourceController
                 'warehouse'         => $warehouse,
             ];
             $modelPacking->update($id, $data);
-            foreach ($Order as $row) {
-                $item = json_decode($row['listItem']);
-                $list = (array)$item;
-                $count = count($item);
-                for ($i = 0; $i < $count; $i++) {
-                    $orderID = $item[$i]->order_id;
+            // foreach ($Order as $row) {
+            //     $item = json_decode($row['listItem']);
+            //     $list = (array)$item;
+            //     $count = count($item);
+            //     for ($i = 0; $i < $count; $i++) {
+            //         $orderID = $item[$i]->order_id;
 
-                    $getId = $modelInvoice->getWhere(['Order_id' => $orderID])->getResult();
-                    foreach ($getId as $data) {
-                        $modelInvoice->update($data->id, ['status' => 7]);
-                    }
+            //         $getId = $modelInvoice->getWhere(['Order_id' => $orderID])->getResult();
+            //         foreach ($getId as $data) {
+            //             $modelInvoice->update($data->id, ['status' => 7]);
+            //         }
 
-                    $modelOrder->update($orderID, ['status' => 7]);
-                }
-            }
+            //         $modelOrder->update($orderID, ['status' => 7]);
+            //     }
+            // }
 
             // $modelHandover = new HandoverModel();
 
