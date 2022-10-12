@@ -63,7 +63,7 @@ class ApiManifest extends ResourceController
                 'assign'            => $assign,
                 'status'            => 1,
                 'foto'              => $file->getName(),
-                'tandatangan'       => $file->getName(),
+                'tandatangan'       => $ttd->getName(),
                 'warehouse'         => $warehouse,
             ];
             $modelPacking->update($id, $data);
