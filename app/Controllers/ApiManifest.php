@@ -46,13 +46,13 @@ class ApiManifest extends ResourceController
         $modelPacking = new HandoverModel();
         $modelInvoice = new InvoiceModel();
         $modelOrder   = new ModelOrder();
-        $file = $this->request->getFile('foto');
-        $file->move('./assets/uploades');
-        $ttd = $this->request->getPost('tandatangan');
-        $ttd->move('./assets/uploades');
         $id = $this->request->getPost('id');
         $assign = $this->request->getPost('assign');
         $warehouse = $this->request->getPost('warehouse');
+        $file = $this->request->getFile('foto');
+        $file->move('./assets/uploades');
+        $ttd = $this->request->getFile('tandatangan');
+        $ttd->move('./assets/uploades');
 
         $Order = $modelPacking->getWhere(['id_handover' => $id])->getResultArray();
 
