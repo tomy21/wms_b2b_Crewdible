@@ -46,7 +46,7 @@ class ApiPicking extends ResourceController
         $model = new PickingModel();
         $id     = $this->request->getVar('id');
         $data = $model->where('status', 0)->find($id);
-        $data1 = $model->getWhere(['id_basket' => $id])->getResult();
+        $data1 = $model->getWhere(['id_basket' => $id, 'status' => 0])->getResult();
         foreach ($data1 as $row) {
             $dataJson[] = [
                 'id'        => $row->id,
