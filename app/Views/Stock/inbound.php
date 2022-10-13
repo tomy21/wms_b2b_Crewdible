@@ -17,7 +17,8 @@
                     <th>No_Po</th>
                     <th>Warehouse</th>
                     <th>Driver</th>
-                    <th>Foto Penerimaan</th>
+                    <th>Foto Barang</th>
+                    <th>Foto Surat Jalan</th>
                     <th>Jumlah Item</th>
                     <th>Quantity Item</th>
                     <th>Selesai Inbound</th>
@@ -41,6 +42,9 @@
                         <td style="vertical-align: middle ;"><?= $user['driver'] ?></td>
                         <td style="vertical-align: middle ;" align="center"><img
                                 src="<?= base_url() ?>/assets/inbound/<?= $user['foto'] ?>" alt="" width="50"></td>
+                        <td style="vertical-align: middle ;" align="center"><img
+                                src="<?= base_url() ?>/assets/inbound/<?= $user['tandatangan'] ?>" alt="" width="50">
+                        </td>
                         <td style="vertical-align: middle ;" align="center">
                             <?php
                                 $db = \Config\Database::connect();
