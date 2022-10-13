@@ -8,7 +8,7 @@ class AddDriverOrder extends Migration
 {
     public function up()
     {
-        $this->forge->addColumn('tbl_order', [
+        $this->forge->addColumn('tbl_invoice', [
             'driver' => [
                 'type'           => 'varchar',
                 'constraint'     => '255',
@@ -21,6 +21,6 @@ class AddDriverOrder extends Migration
 
     public function down()
     {
-        $this->forge->dropColumn('tbl_order', 'driver');
+        $this->forge->dropColumn('tbl_invoice', 'driver');
     }
 }
