@@ -43,12 +43,11 @@ class Handover extends BaseController
         $cekList = $modelListHandover->getWhere(['order_id' => $order, 'id_handover' => $id])->getResult();
 
         if (count($cekOrder1) == 0) {
-
             $json = [
                 'error' => 'Order tidak ada, periksa kembali..!'
             ];
         } else {
-            if ($cekList != null) {
+            if (count($cekList) == 1) {
                 $json = [
                     'error' => 'Orderan ini sudah ada...!'
                 ];
