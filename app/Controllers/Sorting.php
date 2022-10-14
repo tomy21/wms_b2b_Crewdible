@@ -49,12 +49,10 @@ class Sorting extends BaseController
         } else {
             if (!is_null($cekStatus)) {
 
-                foreach ($cekStatus as $cekStatus) {
-                    $cekData = $modalInvoice->getWhere(['id_basket' => $id, 'status' => 3, 'Item_id' => $cekStatus->Item_id])->getRow();
+                $cekData = $modalInvoice->getWhere(['id_basket' => $id, 'status' => 3, 'Item_id' => $cekStatus->Item_id])->getRow();
 
-                    $modalInvoice->update($cekData->id, ['status' => 4]);
-                    $modalOrder->update($cekData->id, ['status' => 4]);
-                }
+                $modalInvoice->update($cekData->id, ['status' => 4]);
+                $modalOrder->update($cekData->id, ['status' => 4]);
             } else {
                 $json = [
                     'error' => 'Basket tidak ada isi'
