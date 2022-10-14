@@ -102,6 +102,7 @@ caption {
                 <td width="40%">
                     <p>Nomor Pesanan <span>(Order number)</span></p>
                     <h3 style="font-weight:1000 ;"><?= $noOrder ?></h3>
+                    <p></p>
                     <img src="<?= $barcode1 ?>" alt="" width="40px">
                 </td>
             </tr>

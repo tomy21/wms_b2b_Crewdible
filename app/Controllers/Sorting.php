@@ -112,8 +112,8 @@ class Sorting extends BaseController
             'module_height' => 2 // height of a single module in points
         );
         $style2 = array(
-            'position' => 'L',
-            'align' => 'L',
+            'position' => '',
+            'align' => 'R',
             'stretch' => false,
             'fitwidth' => false,
             'cellfitalign' => 'L',
@@ -140,8 +140,8 @@ class Sorting extends BaseController
             'address'       => $order['Drop_address'],
             'contact'       => $order['Drop_contact'],
             'data'          => $cekData,
-            'barcode'       => $pdf->write2DBarcode($id, 'QRCODE,L', 100, 25, 30, 30, $style),
-            'barcode1'       => $pdf->write1DBarcode($id, 'C128B', '', 10, '', 20, 0.4, $style2, 'N'),
+            'barcode'       => $pdf->write2DBarcode($id, 'QRCODE,L', 100, 40, 30, 30, $style),
+            'barcode1'      => $pdf->write1DBarcode($id, 'C128B', '', '', '', 20, 0.4, $style2, 'N'),
         ]);
         $orderId = $order['Order_id'];
         $pdf->writeHTML($html, true, true, true, true, '');
