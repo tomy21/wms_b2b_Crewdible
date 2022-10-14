@@ -40,7 +40,7 @@ class Sorting extends BaseController
         $modalPicking = new PickingModel();
         $modalBasket = new ModelMasterBasket();
         $cekData = $modalInvoice->getWhere(['id_basket' => $id, 'status' => 3])->getResult();
-        $cekStatus = $modalPicking->getWhere(['id_basket' => $id, 'status' => 1])->getResult();
+        $cekStatus = $modalPicking->getWhere(['id_basket' => $id, 'status' => 1])->getRow();
 
         if ($cekData == null) {
             $json = [
@@ -49,8 +49,8 @@ class Sorting extends BaseController
         } else {
             if (!is_null($cekStatus)) {
 
-                foreach ($cekStatus as $z) {
-                    $cekData = $modalInvoice->getWhere(['id_basket' => $id, 'status' => 3, 'Item_id' => $z->Item_id])->getResult();
+                foreach ($cekStatus as $cekStatus) {
+                    $cekData = $modalInvoice->getWhere(['id_basket' => $id, 'status' => 3, 'Item_id' => $cekStatus->Item_id])->getRow();
 
                     $modalInvoice->update($cekData->id, ['status' => 4]);
                     $modalOrder->update($cekData->id, ['status' => 4]);

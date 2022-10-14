@@ -64,12 +64,14 @@ class Assign extends BaseController
         $modelInvoice = new InvoiceModel();
         $modelPicking = new PickingModel();
         $modelBasket = new ModelMasterBasket();
+        $modelOrder = new ModelOrder();
 
         $count = count($id);
         $cekData = $modelInvoice->whereIn('Item_id', $id)->where('stock_location', $warehouse)->where('status', 1)->get();
 
         foreach ($cekData->getResult() as $data) {
             $idData = $data->id;
+            $orderId = $data->Order_id;
 
             $data1 = [
                 'assign'    => $assign,
@@ -77,6 +79,7 @@ class Assign extends BaseController
                 'id_basket' => $basket,
             ];
             $modelInvoice->update($idData, $data1);
+            $modelOrder->update($orderId, ['status' => 2]);
         }
 
         $modelBasket->update($basket, ['status' => 1]);
@@ -107,12 +110,11 @@ class Assign extends BaseController
                     'Item_detail'       => $row['Item_detail'],
                     'qty'               => $row['jumlah'],
                     'assign'            => $row['nama_user'],
-                    'warehouse'         => user()->warehouse,
                 ]);
                 $cek = $modelInvoice->getWhere(['status' => 2])->getResult();
                 foreach ($cek as $data) {
                     $modelInvoice->update($data->id, ['status' => 3,]);
-                    $modelOrder->update($data->id, ['status' => 3]);
+                    $modelOrder->update($data->Order_id, ['status' => 3]);
                 }
             }
             $json = [
