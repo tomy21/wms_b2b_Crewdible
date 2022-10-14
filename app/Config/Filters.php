@@ -30,6 +30,11 @@ class Filters extends BaseConfig
         'role'          => \Myth\Auth\Filters\RoleFilter::class,
         'permission'    => \Myth\Auth\Filters\PermissionFilter::class,
         // 'apipicking'     => \App\Filters\ApiPicking::class,
+        // 'apikaryawan'     => \App\Filters\ApiKaryawan::class,
+        // 'apiinbound'     => \App\Filters\ApiInbound::class,
+        // 'apimanifest'     => \App\Filters\ApiManifest::class,
+        // 'apiorder'     => \App\Filters\ApiOrder::class,
+        // 'apipacking'     => \App\Filters\ApiPacking::class,
         'authenticate' => \App\Filters\Authenticate::class, // tambahkan ini
         'redirectIfAuthenticated' => \App\Filters\RedirectIfAuthenticated::class, // tambahkan ini
     ];
@@ -43,8 +48,11 @@ class Filters extends BaseConfig
     public $globals = [
         'before' => [
             // 'apipicking',
-            'honeypot',
-            'login',
+            // 'honeypot',
+            'login' => [
+                'except'    => ['ApiKaryawan', 'ApiInbound', 'ApiManifest', 'ApiOrder', 'ApiPacking', 'ApiPicking']
+            ],
+            // 'apikaryawan',
             // 'csrf',
             // 'filterAdmin' => [
             //     'except'    => ['login/*', 'login', '/']
