@@ -57,7 +57,7 @@
                                 ?>
                         </td>
                         <td><img src="<?= base_url() ?>/assets/uploades/<?= $query['foto'] ?>" alt="" width="50"></td>
-                        <td><img src="<?= base_url() ?>/assets/uploades/<?= $query['foto'] ?>" alt="" width="50"></td>
+                        <td><img src="<?= base_url() ?>/assets/uploades/<?= $query['foto_after'] ?>" alt="" width="50"></td>
                         <td><?= $query['assign'] ?></td>
                         <td>
                             <?php if ($query['Status'] == 1) : ?>
