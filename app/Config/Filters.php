@@ -43,8 +43,8 @@ class Filters extends BaseConfig
     public $globals = [
         'before' => [
             // 'apipicking',
-            // 'honeypot',
-            // 'login',
+            'honeypot',
+            'login',
             // 'csrf',
             // 'filterAdmin' => [
             //     'except'    => ['login/*', 'login', '/']
@@ -87,6 +87,6 @@ class Filters extends BaseConfig
      * @var array
      */
     public $filters = [
-        // 'login' => ['before' => ['Assign','Basket']],
+        'login' => ['before' => ['account/*']],
     ];
 }
