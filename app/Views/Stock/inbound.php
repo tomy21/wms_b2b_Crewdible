@@ -41,9 +41,9 @@
                         <td style="vertical-align: middle ;"><?= $user['warehouse'] ?></td>
                         <td style="vertical-align: middle ;"><?= $user['driver'] ?></td>
                         <td style="vertical-align: middle ;" align="center"><img
-                                src="<?= base_url() ?>/assets/inbound/<?= $user['foto'] ?>" alt="" width="50"></td>
+                                src="<?= site_url() ?>/assets/inbound/<?= $user['foto'] ?>" alt="" width="50"></td>
                         <td style="vertical-align: middle ;" align="center"><img
-                                src="<?= base_url() ?>/assets/inbound/<?= $user['tandatangan'] ?>" alt="" width="50">
+                                src="<?= site_url() ?>/assets/inbound/<?= $user['tandatangan'] ?>" alt="" width="50">
                         </td>
                         <td style="vertical-align: middle ;" align="center">
                             <?php
