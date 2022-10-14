@@ -52,7 +52,7 @@ class Sorting extends BaseController
                 $cekData = $modalInvoice->getWhere(['id_basket' => $id, 'status' => 1, 'Item_id' => $cekStatus->Item_id])->getRow();
 
                 $modalInvoice->update($cekData->id, ['status' => 4]);
-                $modalOrder->update($cekData->id, ['status' => 4]);
+                $modalOrder->update($cekData->Order_id, ['status' => 4]);
             } else {
                 $json = [
                     'error' => 'Basket tidak ada isi'
