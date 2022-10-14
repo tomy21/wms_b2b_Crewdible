@@ -169,8 +169,8 @@ class InvoiceModel extends Model
 
         return $this->db->transStatus();
     }
-    public function dataSummary($warehouse)
+    public function dataSummary()
     {
-        return $this->db->table('tbl_invoice')->where('stock_location', $warehouse)->select('stock_location, Order_id, count(Item_id) as item,sum(quantity) qty, created_at, updated_at')->orderBy('Order_id')->get();
+        return $this->db->table('tbl_invoice')->select('stock_location, Order_id, count(Item_id) as item,sum(quantity) qty, created_at, updated_at')->groupBy('stock_location')->get()->getResult();
     }
 }

@@ -27,4 +27,5 @@ class ModelWarehouse extends Model
         $noId = $awal . $tgl . $batas;
         return $noId;
     }
+    
 }

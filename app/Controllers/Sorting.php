@@ -49,7 +49,6 @@ class Sorting extends BaseController
         } else {
             if (!is_null($cekStatus)) {
                 foreach ($cekData as $x) {
-                    $cekData = $modalInvoice->getWhere(['id_basket' => $id, 'status' => 1, 'Item_id' => $cekStatus->Item_id])->getRow();
                     $modalInvoice->update($x->id, ['status' => 4]);
                     $modalOrder->update($x->Order_id, ['status' => 4]);
                 }

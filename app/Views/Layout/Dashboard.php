@@ -300,25 +300,33 @@
                     </tr>
                 </thead>
                 <tbody>
-
+                    <?php foreach ($warehouse as $x) : ?>
                     <tr>
+                        <td><?= $x->stock_location; ?></td>
                         <td>
+                            <?php
+                                $db = \Config\Database::connect();
+                                $jumlah = $db->table('tbl_order')->where('stock_location', $x->stock_location)->countAllResults();
 
+                                echo $jumlah;
+                                ?>
                         </td>
+                        <td><?= $x->item; ?></td>
+                        <td><?= $x->qty; ?></td>
                         <td>
+                            <?php
+                                $db = \Config\Database::connect();
+                                $jumlah = $db->table('tbl_order')->where('stock_location', $x->stock_location)->get()->getResult();
 
+                                foreach ($jumlah as $value) {
+                                }
+                                ?>
                         </td>
-                        <td>
-
-                        </td>
-                        <td>
-
-                        </td>
-                        <td></td>
                         <td></td>
                         <td></td>
                     </tr>
                 </tbody>
+                <?php endforeach; ?>
             </table>
         </div>
         <!-- /.table-responsive -->

@@ -89,7 +89,9 @@ class ApiPacking extends ResourceController
             ];
             $modelPacking->update($id, $data);
             $modelOrder->update($id, ['status' => 5]);
-            $modelInvoice->update($id, ['status' => 5]);
+
+            $orderInvoice = $modelInvoice->getWhere(['Order_id' => $id])->getRow();
+            $modelInvoice->update($orderInvoice->id, ['status' => 5]);
 
             // $modelHandover = new HandoverModel();
             // foreach ($Order as $row) {
