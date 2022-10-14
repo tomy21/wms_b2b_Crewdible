@@ -8,7 +8,7 @@ class PackingModel extends Model
 {
     protected $table            = 'tbl_packing';
     protected $primaryKey       = 'order_id';
-    protected $allowedFields    = ['order_id', 'list', 'foto', 'assign','warehouse', 'Status'];
+    protected $allowedFields    = ['order_id', 'list', 'foto', 'foto_after', 'assign', 'warehouse', 'Status'];
     protected $useTimestamps    = true;
 
     public function tampilDataTemp($order)
