@@ -48,11 +48,14 @@ class Sorting extends BaseController
             ];
         } else {
             if (!is_null($cekStatus)) {
-
-                $cekData = $modalInvoice->getWhere(['id_basket' => $id, 'status' => 1, 'Item_id' => $cekStatus->Item_id])->getRow();
-
-                $modalInvoice->update($cekData->id, ['status' => 4]);
-                $modalOrder->update($cekData->Order_id, ['status' => 4]);
+                foreach ($cekData as $x) {
+                    $cekData = $modalInvoice->getWhere(['id_basket' => $id, 'status' => 1, 'Item_id' => $cekStatus->Item_id])->getRow();
+                    $modalInvoice->update($x->id, ['status' => 4]);
+                    $modalOrder->update($x->Order_id, ['status' => 4]);
+                }
+                $json = [
+                    'success'   => 'Berhasil discan'
+                ];
             } else {
                 $json = [
                     'error' => 'Basket tidak ada isi'
@@ -64,7 +67,6 @@ class Sorting extends BaseController
                 'success'   => 'Berhasil discan'
             ];
         }
-
 
         echo json_encode($json);
     }
@@ -109,6 +111,23 @@ class Sorting extends BaseController
             'module_width' => 2, // width of a single module in points
             'module_height' => 2 // height of a single module in points
         );
+        $style2 = array(
+            'position' => 'L',
+            'align' => 'L',
+            'stretch' => false,
+            'fitwidth' => false,
+            'cellfitalign' => 'L',
+            'border' => false,
+            'hpadding' => 'auto',
+            'vpadding' => 'auto',
+            'fgcolor' => array(0, 0, 0),
+            'bgcolor' => false,
+            'text' => true,
+            'label' => $id,
+            'font' => 'helvetica',
+            'fontsize' => 8,
+            'stretchtext' => 4
+        );
         $modelInvoice = new ModelOrder();
         $order = $modelInvoice->find($id);
         // var_dump($order);
@@ -122,6 +141,7 @@ class Sorting extends BaseController
             'contact'       => $order['Drop_contact'],
             'data'          => $cekData,
             'barcode'       => $pdf->write2DBarcode($id, 'QRCODE,L', 100, 25, 30, 30, $style),
+            'barcode1'       => $pdf->write1DBarcode($id, 'C128B', '', 10, '', 20, 0.4, $style2, 'N'),
         ]);
         $orderId = $order['Order_id'];
         $pdf->writeHTML($html, true, true, true, true, '');
