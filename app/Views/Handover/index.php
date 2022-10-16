@@ -34,22 +34,22 @@
                 foreach ($data as $row) :
                 ?>
                 <tr>
-                    <td><?= $no++; ?></td>
-                    <td><?= $row['id_handover']; ?></td>
-                    <td><?php
+                    <td style="vertical-align: middle;"><?= $no++; ?></td>
+                    <td style="vertical-align: middle;"><?= $row['id_handover']; ?></td>
+                    <td style="vertical-align: middle;"><?php
                             foreach (json_decode($row['listItem']) as $k) :
                             ?>
                         <ul>
-                            <li><?= $k->order_id ?></li>
+                            <ol><?= $k->order_id ?></ol>
                         </ul>
                         <?php endforeach; ?>
                     </td>
-                    <td><?= $row['driver'] ?></td>
-                    <td><img src="<?= base_url() ?>/assets/uploades/<?= $row['foto'] ?>" alt="" width="50"></td>
-                    <td>
+                    <td style="vertical-align: middle;"><?= $row['driver'] ?></td>
+                    <td style="vertical-align: middle;"><img src="<?= base_url() ?>/assets/uploades/<?= $row['foto'] ?>" alt="" width="50"></td>
+                    <td style="vertical-align: middle;">
                         <img src="<?= base_url() ?>/assets/uploades/<?= $row['tandatangan'] ?>" alt="" width="50">
                     </td>
-                    <td>
+                    <td style="vertical-align: middle;">
                         <?php if ($row['status'] == 1) : ?>
                         <span class="badge badge-success">Done</span>
                         <?php else : ?>

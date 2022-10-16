@@ -23,8 +23,10 @@ class Laporan extends BaseController
         if ($tanggalAwal == null && $tanggalAkhir == null) {
             $order = $modelOrder->where('status', 7)->get();
         } else {
-            $order = $modelOrder->where('created_at>=', $tanggalAwal)->where('created_at<=', $tanggalAkhir)->get();
+            $order = $modelOrder->where('created_at>=', $tanggalAwal)->where('created_at<=', $tanggalAkhir)->where('status', 7)->get();
         }
+
+
 
         $data = [
             'data'  => $order,

@@ -53,29 +53,46 @@
                 <tr>
                     <td><?= $no++ ?></td>
                     <td><?= $row->Order_id ?></td>
-                    <td> 100 </td>
-                    <td><?= $row->stock_location ?></td>
-                    <td>qty order - qty packing </td>
                     <td>
-                        <?php if ($row->slot == 1) {
-                                echo '2022-09-04 08:15';
-                            } else {
-                                echo '2022-09-04 14:15';
-                            } ?>
+                        <?php
+                            $db = \Config\Database::connect();
+                            $jumlah = $db->table('tbl_invoice')->selectSum('quantity')->where(['Order_id' => $row->Order_id])->get()->getRow();
+
+                            echo $jumlah->quantity;
+                            ?>
+                    </td>
+                    <td><?= $row->stock_location ?></td>
+                    <td><?php
+                            $db = \Config\Database::connect();
+                            $jumlah = $db->table('tbl_invoice')->selectSum('quantity')->where(['Order_id' => $row->Order_id])->get()->getRow();
+                            $packing = $db->table('tbl_packing')->where(['Order_id' => $row->Order_id])->get()->getResultArray();
+                            $quantity = 0;
+                            foreach ($packing as $x) {
+                                foreach (json_decode($x['list']) as $y) {
+                                    $quantity += intval($y->quantity);
+                                }
+                            }
+                            echo $quantity - $jumlah->quantity
+                            ?></td>
+                    <td><?= $row->created_at ?></td>
+                    <td>
+                        <?php
+                            $db = \Config\Database::connect();
+                            $packing = $db->table('tbl_packing')->where(['Order_id' => $row->Order_id])->get()->getRow();
+
+                            echo $packing->updated_at;
+                            ?></td>
                     </td>
                     <td>
                         <?php
                             $db = \Config\Database::connect();
-                            $jumlah = $db->table('tbl_packing')->getWhere(['Order_id ' => $row->Order_id])->getResult();
-                            $total = 0;
-                            foreach ($jumlah as $data) {
-                                echo $data->updated_at;
-                            }
+                            $packing = $db->table('tbl_packing')->where(['Order_id' => $row->Order_id])->get()->getRow();
+                            if ($row->created_at < $packing->updated_at) :
                             ?>
-                    </td>
-                    <td>
-
                         <span class="badge badge-danger">Late</span>
+                        <?php else : ?>
+                        <span class="badge badge-success">Meet</span>
+                        <?php endif; ?>
                     </td>
                     <?php endforeach; ?>
                 </tr>
