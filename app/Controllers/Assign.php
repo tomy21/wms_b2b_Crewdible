@@ -110,6 +110,7 @@ class Assign extends BaseController
                     'Item_detail'       => $row['Item_detail'],
                     'qty'               => $row['jumlah'],
                     'assign'            => $row['nama_user'],
+                    'warehouse'         => user()->warehouse,
                 ]);
                 $cek = $modelInvoice->getWhere(['status' => 2])->getResult();
                 foreach ($cek as $data) {
