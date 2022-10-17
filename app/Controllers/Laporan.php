@@ -21,7 +21,7 @@ class Laporan extends BaseController
         $tanggalAkhir = $this->request->getVar('tglAkhir');
 
         if ($tanggalAwal == null && $tanggalAkhir == null) {
-            $order = $modelOrder->where('status', 7)->get();
+            $order = $modelOrder->where('status', 5)->get();
         } else {
             $order = $modelOrder->where('created_at>=', $tanggalAwal)->where('created_at<=', $tanggalAkhir)->where('status', 7)->get();
         }
