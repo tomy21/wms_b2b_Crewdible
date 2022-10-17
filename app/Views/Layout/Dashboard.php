@@ -167,10 +167,13 @@
                             <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
                         </p>
 
+
                         <div class="chart">
                             <!-- Sales Chart Canvas -->
                             <canvas id="salesChart" height="180" style="height: 180px;"></canvas>
                         </div>
+                        <span class="badge" style="background-color:rgba(60,141,188,0.9);">Total Inbound</span>
+                        <span class="badge" style="background-color:rgba(210, 214, 222, 1);">Total Outbound</span>
                         <!-- /.chart-responsive -->
                     </div>
                     <!-- /.col -->
@@ -269,10 +272,77 @@
     </div>
     <!-- /.col -->
 </div>
+
+
 <!-- TABLE: LATEST ORDERS -->
 <div class="card">
     <div class="card-header border-transparent">
         <h3 class="card-title">Summary Outbound</h3>
+
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table m-0">
+                <thead>
+                    <tr>
+                        <th>Warehouse</th>
+                        <th>Count Order</th>
+                        <th>Count Item</th>
+                        <th>Total Quantity</th>
+                        <th>Meet SLA</th>
+                        <th>Over SLA</th>
+                        <th>% MeetSLA (order/meet)</th>
+                        <th>% OverSLA (order/over)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($warehouse as $x) : ?>
+                    <tr>
+                        <td><?= $x->stock_location; ?></td>
+                        <td>
+                            <?php
+                                $db = \Config\Database::connect();
+                                $jumlah = $db->table('tbl_order')->where('stock_location', $x->stock_location)->countAllResults();
+
+                                echo $jumlah;
+                                ?>
+                        </td>
+                        <td><?= $x->item; ?></td>
+                        <td><?= $x->qty; ?></td>
+                        <td>
+                            <?php
+                                $db = \Config\Database::connect();
+                                $jumlah = $db->table('tbl_order')->where('stock_location', $x->stock_location)->get()->getResult();
+
+                                foreach ($jumlah as $value) {
+                                }
+                                ?>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+                <?php endforeach; ?>
+            </table>
+        </div>
+        <!-- /.table-responsive -->
+    </div>
+    <!-- /.card-body -->
+
+    <!-- /.card-footer -->
+</div>
+<div class="card">
+    <div class="card-header border-transparent">
+        <h3 class="card-title">Summary Dock to Stock</h3>
 
         <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -372,4 +442,7 @@
 //     tampilGrafik();
 // });
 </script>
+<script src="<?= site_url() ?>dist/js/adminlte.js"></script>
+<script src="<?= site_url() ?>plugins/jquery-mapael/maps/usa_states.min.js"></script>
+<script src="<?= site_url() ?>dist/js/pages/dashboard2.js"></script>
 <?= $this->endsection('isi'); ?>
