@@ -35,6 +35,8 @@
                 <tbody>
                     <?php
                     $no = 1;
+                    $db = \Config\Database::connect();
+                    $datatemp = $db->table('tbl_packing')->getWhere(['warehouse' => user()->warehouse])->getResultArray();
                     foreach ($datatemp as $query) :
                     ?>
                     <tr>
@@ -56,8 +58,9 @@
                                 }
                                 ?>
                         </td>
-                        <td><img src="<?= base_url() ?>/assets/uploades/<?= $query['foto'] ?>" alt="" width="50"></td>
-                        <td><img src="<?= base_url() ?>/assets/uploades/<?= $query['foto_after'] ?>" alt="" width="50"></td>
+                        <td><img src="<?= site_url() ?>/assets/uploades/<?= $query['foto'] ?>" alt="" width="50"></td>
+                        <td><img src="<?= site_url() ?>/assets/uploades/<?= $query['foto_after'] ?>" alt="" width="50">
+                        </td>
                         <td><?= $query['assign'] ?></td>
                         <td>
                             <?php if ($query['Status'] == 1) : ?>

@@ -17,14 +17,19 @@
         $no = 1;
         foreach ($query as $y) :
         ?>
-            <tr>
-                <td><?= $no++ ?></td>
-                <td><?= $y->order_id ?></td>
-                <td><?= $y->driver ?></td>
-                <td><?= $y->nama_penerima ?></td>
-                <td><?= $y->alamat ?></td>
-                <td><?= $y->no_tlp ?></td>
-            </tr>
+        <tr>
+            <td><?= $no++ ?></td>
+            <td><?= $y->order_id ?></td>
+            <td><?= $y->driver ?></td>
+            <td><?= $y->nama_penerima ?></td>
+            <td><?= $y->alamat ?></td>
+            <td><?= $y->no_tlp ?></td>
+        </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
+<script>
+$(document).ready(function() {
+    $('#viewStatus').DataTable();
+});
+</script>

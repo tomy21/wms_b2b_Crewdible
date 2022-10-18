@@ -35,12 +35,12 @@ class Packing extends BaseController
     public function index()
     {
 
-        $modelTemp = new PackingModel();
+        // $modelTemp = new PackingModel();
 
-        $data = [
-            'datatemp' => $modelTemp->findAll(),
-        ];
+        // $data = [
+        //     'datatemp' => $modelTemp->findAll(),
+        // ];
 
-        return view('warehouse/data', $data);
+        return view('warehouse/data');
     }
 }

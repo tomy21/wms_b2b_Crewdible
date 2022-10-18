@@ -18,7 +18,7 @@ class ApiPacking extends ResourceController
     {
         $modelPacking   = new PackingModel();
 
-        $cekOrder = $modelPacking->where(['status' => 0, 'warehouse' => $warehouse])->findAll();
+        $cekOrder = $modelPacking->where(['warehouse' => $warehouse])->findAll();
         if (!$cekOrder) {
             $response = [
                 "success"   => false,
