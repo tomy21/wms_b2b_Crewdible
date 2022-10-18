@@ -27,6 +27,16 @@ class Stock extends BaseController
 
         return view('Stock/viewStock', $data);
     }
+    function filter()
+    {
+        $StatusModel = new StockModel();
+        $warehouse = $this->request->getVar('warehouse');
+        $data = [
+            'data' => $StatusModel->getWhere(['warehouse' => $warehouse])->getResultArray(),
+        ];
+
+        return view('Stock/viewStock', $data);
+    }
     public function upload()
     {
         $db = \Config\Database::connect();

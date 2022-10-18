@@ -80,24 +80,35 @@ class UploadPo extends BaseController
                 $db = \Config\Database::connect();
                 $cekCode = $db->table('tbl_inbound')->getWhere(['Item_id' => $item_id])->getResult();
 
-                $data = [
-                    'nopo'          => $nopo,
-                    'warehouse'     => $warehouse,
-                    'Item_id'       => $item_id,
-                    'Item_detail'   => $item_detail,
-                    'quantity'      => $qty,
-                    'status'        => 0,
-                    'estimate_date' => $estimate,
-                ];
-                $this->InboundModel->insert($data);
-                $pesan_success = [
-                    'success' => '<div class="alert alert-success alert-dismissible" role="alert">
+                if (strlen($qty) > 5) {
+                    $pesan_success = [
+                        'success' => '<div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
+                        <h5><i class="icon fas fa-check"></i> Gagal </h5>
+                        Quantity tidak valid
+                        </div>'
+                    ];
+                    session()->setFlashdata($pesan_success);
+                } else {
+                    $data = [
+                        'nopo'          => $nopo,
+                        'warehouse'     => $warehouse,
+                        'Item_id'       => $item_id,
+                        'Item_detail'   => $item_detail,
+                        'quantity'      => $qty,
+                        'status'        => 0,
+                        'estimate_date' => $estimate,
+                    ];
+                    $this->InboundModel->insert($data);
+                    $pesan_success = [
+                        'success' => '<div class="alert alert-success alert-dismissible" role="alert">
                         <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
                         <h5><i class="icon fas fa-check"></i> Berhasil </h5>
                         Data Berhasil Di Import
                         </div>'
-                ];
-                session()->setFlashdata($pesan_success);
+                    ];
+                    session()->setFlashdata($pesan_success);
+                }
             }
             $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
             $subtotal = 0;
