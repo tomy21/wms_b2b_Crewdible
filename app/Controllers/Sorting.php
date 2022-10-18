@@ -78,11 +78,12 @@ class Sorting extends BaseController
         $modelInv       = new InvoiceModel();
         $modelPacking   = new PackingModel();
         $order = $modelInvoice->find($id);
-        $cekData = $modelInv->getWhere(['Order_id' => $id]);
+        $cekData = $modelInv->getWhere(['Order_id' => $id])->getRow();
         $listItem = $modelInv->where('Order_id', $id)->select('id,Item_id,Item_detail,quantity')->get()->getResultArray();
         $data = [
             'order_id'  => $id,
-            'list'      => json_encode($listItem)
+            'list'      => json_encode($listItem),
+            'warehouse' => $cekData->stock_location
         ];
         $modelPacking->insert($data);
         foreach ($cekData->getResult() as $row) {

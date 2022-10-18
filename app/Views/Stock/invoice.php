@@ -105,7 +105,6 @@
                         <span class="badge badge-dark">Transaksi Baru</span>
                         <span class="badge badge-info">Assign</span>
                         <span class="badge badge-primary">Picking</span>
-                        <span class="badge badge-secondary">Sorting</span>
                         <span class="badge badge-warning">Packing</span>
                         <span class="badge badge-Fuchsia">Shipping</span>
                         <span class="badge badge-success">Done</span>
@@ -153,14 +152,12 @@
                                     <?php elseif ($user->status == "3") :  ?>
                                     <span class="badge badge-primary">Picking</span>
                                     <?php elseif ($user->status == "4") :  ?>
-                                    <span class="badge badge-secondary">Sorting</span>
-                                    <?php elseif ($user->status == "5") :  ?>
                                     <span class="badge badge-warning">Packing</span>
-                                    <?php elseif ($user->status == "6") :  ?>
+                                    <?php elseif ($user->status == "5") :  ?>
                                     <span class="badge badge-Fuchsia">Shipping</span>
-                                    <?php elseif ($user->status == "7") :  ?>
+                                    <?php elseif ($user->status == "6") :  ?>
                                     <span class="badge badge-success">Done</span>
-                                    <?php elseif ($user->status == "8") :  ?>
+                                    <?php elseif ($user->status == "7") :  ?>
                                     <span class="badge badge-danger">Return</span>
                                     <?php endif; ?>
                                 </td>

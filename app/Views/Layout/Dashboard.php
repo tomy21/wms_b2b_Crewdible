@@ -16,7 +16,7 @@
                         <h3>
                             <?php
                             $db = \Config\Database::connect();
-                            $data = $db->table('tbl_invoice')->where(['stock_location' => user()->warehouse])->countAllResults();
+                            $data = $db->table('tbl_order')->where(['stock_location' => user()->warehouse])->countAllResults();
 
                             ?>
                             <?= user()->warehouse == 'Headoffice' ? "$total" : "$data"; ?>
@@ -35,7 +35,7 @@
                         <h3>
                             <?php
                             $db = \Config\Database::connect();
-                            $data = $db->table('tbl_invoice')->where(['stock_location' => user()->warehouse, 'status' => 1])->countAllResults();
+                            $data = $db->table('tbl_order')->where(['stock_location' => user()->warehouse, 'status' => 1])->countAllResults();
 
                             ?>
                             <?= user()->warehouse == 'Headoffice' ? "$new" : "$data"; ?>
@@ -54,7 +54,7 @@
                         <h3>
                             <?php
                             $db = \Config\Database::connect();
-                            $data = $db->table('tbl_invoice')->where(['stock_location' => user()->warehouse, 'status' => 2])->countAllResults();
+                            $data = $db->table('tbl_order')->where(['stock_location' => user()->warehouse, 'status' => 3])->countAllResults();
 
                             ?>
                             <?= user()->warehouse == 'Headoffice' ? "$picking" : "$data"; ?>
@@ -73,7 +73,7 @@
                         <h3>
                             <?php
                             $db = \Config\Database::connect();
-                            $data = $db->table('tbl_invoice')->where(['stock_location' => user()->warehouse, 'status' => 3])->countAllResults();
+                            $data = $db->table('tbl_order')->where(['stock_location' => user()->warehouse, 'status' => 4])->countAllResults();
 
                             ?>
                             <?= user()->warehouse == 'Headoffice' ? "$packing" : "$data"; ?>
@@ -92,7 +92,25 @@
                         <h3>
                             <?php
                             $db = \Config\Database::connect();
-                            $data = $db->table('tbl_invoice')->where(['stock_location' => user()->warehouse, 'status' => 4])->countAllResults();
+                            $data = $db->table('tbl_order')->where(['stock_location' => user()->warehouse, 'status' => 5])->countAllResults();
+
+                            ?>
+                            <?= user()->warehouse == 'Headoffice' ? "$shipp" : "$data"; ?>
+                        </h3>
+                        <p>Done</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-cube"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <h3>
+                            <?php
+                            $db = \Config\Database::connect();
+                            $data = $db->table('tbl_order')->where(['stock_location' => user()->warehouse, 'status' => 6])->countAllResults();
 
                             ?>
                             <?= user()->warehouse == 'Headoffice' ? "$done" : "$data"; ?>
@@ -108,7 +126,14 @@
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-danger">
                     <div class="inner">
-                        <h3><?= $return ?></h3>
+                        <h3>
+                            <?php
+                            $db = \Config\Database::connect();
+                            $data = $db->table('tbl_order')->where(['stock_location' => user()->warehouse, 'status' => 7])->countAllResults();
+
+                            ?>
+                            <?= user()->warehouse == 'Headoffice' ? "$done" : "$data"; ?>
+                        </h3>
                         <p>Return</p>
                     </div>
                     <div class="icon">
@@ -119,7 +144,14 @@
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-secondary">
                     <div class="inner">
-                        <h3><?= $stockData ?></h3>
+                        <h3>
+                            <?php
+                            $db = \Config\Database::connect();
+                            $data = $db->table('tbl_stock')->where(['warehouse' => user()->warehouse])->countAllResults();
+
+                            ?>
+                            <?= user()->warehouse == 'Headoffice' ? "$done" : "$data"; ?>
+                        </h3>
                         <p>Count Items</p>
                     </div>
                     <div class="icon">

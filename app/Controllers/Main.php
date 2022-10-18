@@ -23,16 +23,16 @@ class Main extends BaseController
         $Totpack = $ModelInvoice->getWhere(['status' => 4]);
         $pack = $Totpack->getNumRows();
 
-        $brand4    = 4;
-        $Totrtn = $ModelInvoice->getWhere(['status' => $brand4]);
-        $rtn = $Totrtn->getNumRows();
+        $shipping = $ModelInvoice->getWhere(['status' => 5]);
+        $shipp = $shipping->getNumRows();
 
-        $brand5    = 6;
-        $Totrtn = $ModelInvoice->getWhere(['status' => $brand5]);
-        $assign = $Totrtn->getNumRows();
+        $done = $ModelInvoice->getWhere(['status' => 6]);
+        $done = $done->getNumRows();
+        $rtnData = $ModelInvoice->getWhere(['status' => 6]);
+        $rtn = $rtnData->getNumRows();
 
-        $Totnew = $ModelInvoice->getWhere(['status' => 5]);
-        $done = $Totnew->getNumRows();
+        $Totnew = $ModelInvoice->getWhere(['status' => 2]);
+        $assign = $Totnew->getNumRows();
 
         $transaksi = $ModelInvoice->findAll();
         $total      = count($transaksi);
@@ -54,6 +54,7 @@ class Main extends BaseController
             'picking'   => $pick,
             'packing'   => $pack,
             'return'    => $rtn,
+            'shipping'  => $shipp,
             'Assign'    => $assign,
             'done'      => $done,
             'stockData' => $StockData,
