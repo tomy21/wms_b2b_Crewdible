@@ -31,23 +31,24 @@
             <tbody>
                 <?php
                 $no = 1;
+                $db = \Config\Database::connect();
+                $data = $db->table('tbl_handover')->getWhere(['warehouse' => user()->warehouse])->getResultArray();
                 foreach ($data as $row) :
                 ?>
                 <tr>
                     <td style="vertical-align: middle;"><?= $no++; ?></td>
                     <td style="vertical-align: middle;"><?= $row['id_handover']; ?></td>
-                    <td style="vertical-align: middle;"><?php
-                            foreach (json_decode($row['listItem']) as $k) :
-                            ?>
+                    <td style="vertical-align: middle;"><?php foreach (json_decode($row['listItem']) as $k) : ?>
                         <ul>
                             <ol><?= $k->order_id ?></ol>
                         </ul>
                         <?php endforeach; ?>
                     </td>
                     <td style="vertical-align: middle;"><?= $row['driver'] ?></td>
-                    <td style="vertical-align: middle;"><img src="<?= base_url() ?>/assets/uploades/<?= $row['foto'] ?>" alt="" width="50"></td>
+                    <td style="vertical-align: middle;"><img src="<?= site_url() ?>/assets/uploades/<?= $row['foto'] ?>"
+                            alt="" width="50"></td>
                     <td style="vertical-align: middle;">
-                        <img src="<?= base_url() ?>/assets/uploades/<?= $row['tandatangan'] ?>" alt="" width="50">
+                        <img src="<?= site_url() ?>/assets/uploades/<?= $row['tandatangan'] ?>" alt="" width="50">
                     </td>
                     <td style="vertical-align: middle;">
                         <?php if ($row['status'] == 1) : ?>

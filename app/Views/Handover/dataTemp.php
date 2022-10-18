@@ -1,7 +1,13 @@
-<p>
-    <button type="button" class="btn btn-success" id="btnSubmit">Submit</button>
-</p>
-<table id="view" class="table table-sm table-striped">
+<!-- DataTables -->
+<link rel="stylesheet" href="<?= site_url() ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="<?= site_url() ?>/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+<!-- DataTables  & Plugins -->
+<script src="<?= site_url() ?>/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= site_url() ?>/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="<?= site_url() ?>/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="<?= site_url() ?>/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+
+<table id="table1" class="table table-sm table-striped">
     <thead>
         <tr>
             <th>No</th>
@@ -15,7 +21,8 @@
     <tbody>
         <?php
         $no = 1;
-        foreach ($query as $y) :
+
+        foreach ($data as $y) :
         ?>
         <tr>
             <td><?= $no++ ?></td>
@@ -30,6 +37,6 @@
 </table>
 <script>
 $(document).ready(function() {
-    $('#viewStatus').DataTable();
+    $('#table1').DataTable();
 });
 </script>

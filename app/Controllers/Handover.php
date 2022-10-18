@@ -24,7 +24,7 @@ class Handover extends BaseController
         $modalList      = new ModelListHandover();
         $data = [
             'idHandover'    => $modalHandover->idHandover(),
-            'query'         => $modalList->getWhere(['status' => 0])->getResult(),
+            // 'query'         => $modalList->getWhere(['status' => 0])->getResult(),
         ];
 
         return view('Handover/buat_manifest', $data);
@@ -32,7 +32,7 @@ class Handover extends BaseController
     function simpanTemResi()
     {
         $order = $this->request->getVar('order');
-        $driver = $this->request->getVar('driver');
+        // $driver = $this->request->getVar('driver');
         $id = $this->request->getVar('idHandover');
 
         $modelOrder = new ModelOrder();
@@ -58,14 +58,14 @@ class Handover extends BaseController
                     'alamat'        => $cekOrder->Drop_address,
                     'no_tlp'        => $cekOrder->Drop_contact,
                     'status'        => 0,
-                    'driver'        => $driver,
+                    // 'driver'        => $driver,
                     'id_handover'   => $id
                 ];
                 $modelListHandover->insert($data);
 
-                $modelOrder->update($order, ['driver' => $driver]);
+                // $modelOrder->update($order, ['driver' => $driver]);
                 $json = [
-                    'sukses'    => 'Data berhasil di update'
+                    'data' => view('Handover/dataTemp', $data)
                 ];
             }
         }
@@ -74,6 +74,7 @@ class Handover extends BaseController
     function simpanData()
     {
         $id = $this->request->getVar('id');
+        $driver = $this->request->getVar('driver');
 
         $modelListHandover = new ModelListHandover();
         $cek = $modelListHandover->getWhere(['id_handover' => $id])->getRow();
@@ -85,6 +86,7 @@ class Handover extends BaseController
                 'id_handover'   => $q->id_handover,
                 'order_id'  => $q->order_id,
                 'nama_penerima' => $q->nama_penerima,
+                'driver'        => $driver,
                 'alamat'        => $q->alamat,
                 'no_tlp'        => $q->no_tlp,
             ];
@@ -100,7 +102,7 @@ class Handover extends BaseController
             $query = [
                 'id_handover'       => $id,
                 'listItem'          => json_encode($datajson),
-                'driver'            => $cek->driver,
+                'driver'            => $driver,
             ];
             $modelHandover->insert($query);
 

@@ -22,15 +22,12 @@
                     <input type="text" id="idHandover" class="form-control" value="<?= $idHandover; ?>" readonly>
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="">Masukan Driver</label>
-                    <input type="text" id="driver" class="form-control">
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-md-4">
                     <label for="">Masukan No Order</label>
                     <input type="text" id="orderId" class="form-control">
                 </div>
+            </div>
+            <div class="row">
+
 
             </div>
 
@@ -42,11 +39,19 @@
     </div>
     <div class="card">
         <div class="card-header bg-white">
-            <h5 class="float-left">Table Manifest</h5>
-            <button class="btn btn-success float-sm-right" title="Simpan Manifest" id="simpanResi"><i
-                    class="fa fa-save"></i> Selesai</button>
+            <h5 class="float-left">Table Manifest</h5></br>
         </div>
         <div class="card-body">
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <input type="text" id="driver" class="form-control" placeholder="Masukan nama driver">
+                </div>
+                <div class="form-group col-md-4">
+                    <button class="btn btn-success" title="Simpan Manifest" id="btnSubmit"><i class="fa fa-save"></i>
+                        Selesai</button>
+                </div>
+            </div>
+
             <div class="row" id="tampilDataManifest">
             </div>
         </div>
@@ -97,9 +102,11 @@ function play_notifSalah() {
     audio.load();
 }
 $(document).ready(function() {
+    $('#orderId').focus();
     $('#btnSubmit').click(function(e) {
         e.preventDefault();
         let id = $('#idHandover').val();
+        let driver = $('#driver').val();
         Swal.fire({
             title: 'Apakah sudah selesai ?',
             text: "Yakin sudah mau menyimpan manifest",
@@ -115,7 +122,8 @@ $(document).ready(function() {
                     url: "<?= site_url() ?>/Handover/simpanData",
                     dataType: "json",
                     data: {
-                        id: id
+                        id: id,
+                        driver: driver,
                     },
                     success: function(response) {
                         if (response.error) {
@@ -133,7 +141,7 @@ $(document).ready(function() {
                             }).then((result) => {
                                 if (result.isConfirmed) {
                                     $('#driver').val('#driver');
-                                    
+
                                 }
                             })
                         }
