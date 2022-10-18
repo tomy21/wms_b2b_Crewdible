@@ -45,6 +45,7 @@
             <div class="row">
                 <div class="form-group col-md-8">
                     <input type="text" id="driver" class="form-control" placeholder="Masukan nama driver">
+                    <input type="hidden" id="warehouse" value="<?= user()->warehouse ?>">
                 </div>
                 <div class="form-group col-md-4">
                     <button class="btn btn-success" title="Simpan Manifest" id="btnSubmit"><i class="fa fa-save"></i>
@@ -52,7 +53,7 @@
                 </div>
             </div>
             <div class="row" id="tampilDataManifest">
-    
+
             </div>
         </div>
     </div>
@@ -110,6 +111,7 @@ $(document).ready(function() {
         e.preventDefault();
         let id = $('#idHandover').val();
         let driver = $('#driver').val();
+        let warehouse = $('#warehouse').val();
         Swal.fire({
             title: 'Apakah sudah selesai ?',
             text: "Yakin sudah mau menyimpan manifest",
@@ -127,6 +129,7 @@ $(document).ready(function() {
                     data: {
                         id: id,
                         driver: driver,
+                        warehouse: warehouse,
                     },
                     success: function(response) {
                         if (response.error) {
@@ -160,7 +163,6 @@ $(document).ready(function() {
         if (e.keyCode == 13) {
             e.preventDefault();
             let order = $('#orderId').val();
-            let driver = $('#driver').val();
             let idHandover = $('#idHandover').val();
             if (order.length === 0) {
                 Swal.fire({
@@ -195,9 +197,9 @@ $(document).ready(function() {
                                 showConfirmButton: false,
                                 timer: 1000
                             });
-                            window.location.reload();
                             kosong();
                             play_notif();
+                            window.location.reload();
                         }
                         if (response.error) {
                             Swal.fire({

@@ -93,6 +93,7 @@ class Handover extends BaseController
     {
         $id = $this->request->getVar('id');
         $driver = $this->request->getVar('driver');
+        $warehouse = $this->request->getVar('warehouse');
 
         $modelListHandover = new ModelListHandover();
         $cek = $modelListHandover->getWhere(['id_handover' => $id])->getRow();
@@ -100,9 +101,9 @@ class Handover extends BaseController
 
         foreach ($cek2 as $q) {
             $datajson[] = [
-                'id'        => $q->id,
+                'id'            => $q->id,
                 'id_handover'   => $q->id_handover,
-                'order_id'  => $q->order_id,
+                'order_id'      => $q->order_id,
                 'nama_penerima' => $q->nama_penerima,
                 'driver'        => $driver,
                 'alamat'        => $q->alamat,
@@ -121,6 +122,7 @@ class Handover extends BaseController
                 'id_handover'       => $id,
                 'listItem'          => json_encode($datajson),
                 'driver'            => $driver,
+                'warehouse'            => $warehouse,
             ];
             $modelHandover->insert($query);
 

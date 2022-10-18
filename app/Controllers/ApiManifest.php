@@ -15,10 +15,10 @@ use CodeIgniter\API\ResponseTrait;
 class ApiManifest extends ResourceController
 {
     use ResponseTrait;
-    public function index($warehouse = null)
+    public function index()
     {
         $modelPacking = new HandoverModel();
-        $order = $modelPacking->getWhere(['status' => 0, 'warehouse' => $warehouse])->getResult();
+        $order = $modelPacking->getWhere(['status' => 0])->getResult();
 
         if (!$order) {
             $response = [
