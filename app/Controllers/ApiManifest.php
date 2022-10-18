@@ -34,6 +34,25 @@ class ApiManifest extends ResourceController
             return $this->respond($response);
         }
     }
+    public function detail($warehouse = null)
+    {
+        $modelManifest = new HandoverModel();
+        $order = $modelManifest->getWhere(['status' => 0, 'warehouse' => $warehouse])->getResult();
+
+        if (!$order) {
+            $response = [
+                "success"   => false,
+                "data"      => 'Data not found',
+            ];
+            return $this->respond($response);
+        } else {
+            $response = [
+                "success"   => true,
+                "data"      => $order
+            ];
+            return $this->respond($response);
+        }
+    }
     public function show($assign = null)
     {
         $modelPacking = new HandoverModel();

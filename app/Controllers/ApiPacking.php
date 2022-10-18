@@ -36,12 +36,20 @@ class ApiPacking extends ResourceController
     public function detail($warehouse = null)
     {
         $modelPacking   = new PackingModel();
-        $cekOrder = $modelPacking->where(['status' => 1, 'warehouse' => $warehouse])->findAll();
-        $response = [
-            "success"   => true,
-            "data"      => $cekOrder
-        ];
-        return $this->respond($response, 200);
+        $cekOrder = $modelPacking->where(['Status' => 0, 'warehouse' => $warehouse])->findAll();
+        if (!$cekOrder) {
+            $response = [
+                "success"   => false,
+                "data"      => 'Data not found',
+            ];
+            return $this->respond($response);
+        } else {
+            $response = [
+                "success"   => true,
+                "data"      => $cekOrder
+            ];
+            return $this->respond($response);
+        }
     }
     public function show($assign = null)
     {
