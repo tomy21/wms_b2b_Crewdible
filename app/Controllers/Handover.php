@@ -13,7 +13,7 @@ class Handover extends BaseController
 {
     public function index()
     {
-        $modelHandover = new HandoverModel();
+        $modelHandover = new ModelListHandover();
 
         return view('Handover/dataTemp', ['data' => $modelHandover->findAll()]);
     }
