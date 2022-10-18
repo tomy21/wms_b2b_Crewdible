@@ -15,7 +15,7 @@ class Handover extends BaseController
     {
         $modelHandover = new ModelListHandover();
 
-        return view('Handover/dataTemp', ['data' => $modelHandover->findAll()]);
+        return view('Handover/index');
     }
     public function buatManifest()
     {
@@ -28,6 +28,24 @@ class Handover extends BaseController
         ];
 
         return view('Handover/buat_manifest', $data);
+    }
+    public function Manifest_Temp()
+    {
+        if ($this->request->isAJAX()) {
+            $noAwb = $this->request->getPost('noAwb');
+            $modelTemp = new ModelListHandover();
+
+
+            $data = [
+                'datatemp'      => $modelTemp->getWhere(['status' => 0])->getResult(),
+            ];
+            $json = [
+                'data' => view('Handover/dataTemp', $data)
+            ];
+            echo json_encode($json);
+        } else {
+            exit('Maaf tidak bisa dipanggil');
+        }
     }
     function simpanTemResi()
     {

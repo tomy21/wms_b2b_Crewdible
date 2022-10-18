@@ -86,6 +86,8 @@ function manifestTemp() {
     });
 }
 
+
+
 function play_notif() {
     var audio = document.createElement('audio');
     audio.setAttribute('src', '<?= base_url() ?>/dist/img/success.mp3');
