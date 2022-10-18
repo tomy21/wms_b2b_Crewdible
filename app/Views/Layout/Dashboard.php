@@ -95,9 +95,9 @@
                             $data = $db->table('tbl_order')->where(['stock_location' => user()->warehouse, 'status' => 5])->countAllResults();
 
                             ?>
-                            <?= user()->warehouse == 'Headoffice' ? "$shipp" : "$data"; ?>
+                            <?= user()->warehouse == 'Headoffice' ? "$shipping" : "$data"; ?>
                         </h3>
-                        <p>Done</p>
+                        <p>Shipping</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-cube"></i>
