@@ -32,7 +32,7 @@ class Handover extends BaseController
     public function Manifest_Temp()
     {
         if ($this->request->isAJAX()) {
-            $noAwb = $this->request->getPost('noAwb');
+            $driver = $this->request->getPost('driver');
             $modelTemp = new ModelListHandover();
 
 

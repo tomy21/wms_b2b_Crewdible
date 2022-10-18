@@ -43,7 +43,7 @@
         </div>
         <div class="card-body">
             <div class="row">
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-8">
                     <input type="text" id="driver" class="form-control" placeholder="Masukan nama driver">
                 </div>
                 <div class="form-group col-md-4">
@@ -51,8 +51,8 @@
                         Selesai</button>
                 </div>
             </div>
-
             <div class="row" id="tampilDataManifest">
+    
             </div>
         </div>
     </div>
@@ -65,14 +65,14 @@ function kosong() {
 }
 
 function manifestTemp() {
-    let manifest = $('#noAwb').val();
-    let logistic = $('#logistic').val();
+    let driver = $('#driver').val();
+    // let logistic = $('#logistic').val();
     $.ajax({
         type: "post",
-        url: "<?= site_url() ?>/manifest/Manifest_Temp",
+        url: "<?= site_url() ?>/Handover/Manifest_Temp",
         data: {
-            manifest: manifest,
-            logistic: logistic
+            driver: driver,
+            // logistic: logistic
         },
         dataType: "json",
         success: function(response) {
