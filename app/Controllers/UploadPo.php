@@ -108,20 +108,21 @@ class UploadPo extends BaseController
                         </div>'
                     ];
                     session()->setFlashdata($pesan_success);
+
+                    $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
+                    $subtotal = 0;
+                    $countItem = $dataTem->getNumRows();
+                    foreach ($dataTem->getResultArray() as $row) :
+                        $subtotal += intval($row['quantity']);
+                    endforeach;
+                    $this->PoModel->add([
+                        'no_Po'         => $nopo,
+                        'warehouse'     => $warehouse,
+                        'jumlah_item'   => $countItem,
+                        'quantity_item' => $subtotal,
+                        // 'created_at'    => $estimate
+                    ]);
                 }
-                $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
-                $subtotal = 0;
-                $countItem = $dataTem->getNumRows();
-                foreach ($dataTem->getResultArray() as $row) :
-                    $subtotal += intval($row['quantity']);
-                endforeach;
-                $this->PoModel->add([
-                    'no_Po'         => $nopo,
-                    'warehouse'     => $warehouse,
-                    'jumlah_item'   => $countItem,
-                    'quantity_item' => $subtotal,
-                    // 'created_at'    => $estimate
-                ]);
             }
 
             return redirect()->to('/UploadPo/index');

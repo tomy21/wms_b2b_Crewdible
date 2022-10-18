@@ -122,7 +122,7 @@ class Handover extends BaseController
                 'id_handover'       => $id,
                 'listItem'          => json_encode($datajson),
                 'driver'            => $driver,
-                'warehouse'            => $warehouse,
+                'warehouse'         => $warehouse,
             ];
             $modelHandover->insert($query);
 
