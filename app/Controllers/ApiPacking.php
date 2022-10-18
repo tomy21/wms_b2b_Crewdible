@@ -14,20 +14,20 @@ class ApiPacking extends ResourceController
 {
     use ResponseTrait;
 
-    public function index()
+    public function index($warehouse = null)
     {
         $modelPacking   = new PackingModel();
-        $cekOrder = $modelPacking->where('status', 0)->findAll();
+        $cekOrder = $modelPacking->where(['status' => 0, 'warehouse' => $warehouse])->findAll();
         $response = [
             "success"   => true,
             "data"      => $cekOrder
         ];
         return $this->respond($response, 200);
     }
-    public function detail()
+    public function detail($warehouse = null)
     {
         $modelPacking   = new PackingModel();
-        $cekOrder = $modelPacking->where('status', 1)->findAll();
+        $cekOrder = $modelPacking->where(['status' => 1, 'warehouse' => $warehouse])->findAll();
         $response = [
             "success"   => true,
             "data"      => $cekOrder
@@ -38,9 +38,8 @@ class ApiPacking extends ResourceController
     {
         $modelPacking = new PackingModel();
         $id = $this->request->getPost('id');
-        $warehouse = $this->request->getPost('wareahouse');
 
-        $Order = $modelPacking->getWhere(['order_id' => $id, 'status' => 0, 'warehouse' => $warehouse])->getResultArray();
+        $Order = $modelPacking->getWhere(['order_id' => $id, 'status' => 0])->getResultArray();
 
         $respon = [
             'success'       => true,
