@@ -15,7 +15,7 @@ class Handover extends BaseController
     {
         $modelHandover = new HandoverModel();
 
-        return view('Handover/index', ['data' => $modelHandover->findAll()]);
+        return view('Handover/dataTemp', ['data' => $modelHandover->findAll()]);
     }
     public function buatManifest()
     {
