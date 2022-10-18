@@ -123,6 +123,15 @@ class ApiPicking extends ResourceController
                         ]
                     ];
                     return $this->fail('Quantity melebihi orderan');
+                } else if ($row->qty > $qty) {
+                    $response = [
+                        'status'   => 500,
+                        'error'    => true,
+                        'messages' => [
+                            'error' => 'Quantity kurang dari orderan'
+                        ]
+                    ];
+                    return $this->fail('Quantity kurang dari orderan');
                 } else {
                     // $qty = intval($row->quantity_pick) + intval($qtyCount);
                     $data = [

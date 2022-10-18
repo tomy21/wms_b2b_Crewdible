@@ -30,8 +30,9 @@ class ApiManifest extends ResourceController
     {
         $modelPacking = new HandoverModel();
         $id = $this->request->getPost('id');
+        $warehouse = $this->request->getPost('warehouse');
 
-        $Order = $modelPacking->getWhere(['id_handover' => $id, 'status' => 0])->getResultArray();
+        $Order = $modelPacking->getWhere(['id_handover' => $id, 'status' => 0, 'warehouse' => $warehouse])->getResultArray();
 
         $respon = [
             'success'       => true,

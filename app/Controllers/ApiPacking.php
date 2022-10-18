@@ -38,8 +38,9 @@ class ApiPacking extends ResourceController
     {
         $modelPacking = new PackingModel();
         $id = $this->request->getPost('id');
+        $warehouse = $this->request->getPost('wareahouse');
 
-        $Order = $modelPacking->getWhere(['order_id' => $id, 'status' => 0])->getResultArray();
+        $Order = $modelPacking->getWhere(['order_id' => $id, 'status' => 0, 'warehouse' => $warehouse])->getResultArray();
 
         $respon = [
             'success'       => true,

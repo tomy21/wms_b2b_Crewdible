@@ -18,7 +18,10 @@
             <tbody>
                 <?php
                 $nomor = 1;
-                foreach ($datatemp as $row) :
+                $db = \Config\Database::connect();
+                $getData = $db->table('tbl_invoice')->where(['status' => 4, 'warehouse' => user()->warehouse])->select(' Order_id,Drop_name,Drop_address,Drop_contact,Drop_city,stock_location,status,sum(quantity) as jumlah,')
+                    ->groupBy('Order_id')->get()->getResult();
+                foreach ($getData as $row) :
                 ?>
                 <tr>
                     <td style="vertical-align: middle;"><?= $nomor++; ?></td>
