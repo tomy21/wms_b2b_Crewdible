@@ -169,15 +169,6 @@ $(document).ready(function() {
                 });
                 kosong()
                 play_notifSalah();
-            } else if (driver.length < 1) {
-                Swal.fire({
-                    position: 'center',
-                    icon: 'error',
-                    title: 'Driver harus di isi',
-                    showConfirmButton: false,
-                    timer: 1000
-                });
-                play_notifSalah();
             } else {
                 $.ajax({
                     type: "post",
