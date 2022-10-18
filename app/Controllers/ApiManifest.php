@@ -15,16 +15,24 @@ use CodeIgniter\API\ResponseTrait;
 class ApiManifest extends ResourceController
 {
     use ResponseTrait;
-    public function index()
+    public function index($warehouse = null)
     {
         $modelPacking = new HandoverModel();
-        $order = $modelPacking->getWhere(['status' => 0])->getResult();
+        $order = $modelPacking->getWhere(['status' => 0, 'warehouse' => $warehouse])->getResult();
 
-        $data = [
-            'success'   => true,
-            'data'      => $order
-        ];
-        return $this->respond($data);
+        if (!$order) {
+            $response = [
+                "success"   => false,
+                "data"      => 'Data not found',
+            ];
+            return $this->respond($response);
+        } else {
+            $response = [
+                "success"   => true,
+                "data"      => $order
+            ];
+            return $this->respond($response);
+        }
     }
     public function show($assign = null)
     {
