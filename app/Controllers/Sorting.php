@@ -83,7 +83,7 @@ class Sorting extends BaseController
         $data = [
             'order_id'  => $id,
             'list'      => json_encode($listItem),
-            'warehouse' => $cekData->stock_location
+            'warehouse' => $order['stock_location']
         ];
         $modelPacking->insert($data);
         foreach ($cekData->getResult() as $row) {
