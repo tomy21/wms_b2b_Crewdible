@@ -180,7 +180,6 @@ $(document).ready(function() {
                     url: "<?= site_url() ?>/Handover/simpanTemResi",
                     data: {
                         order: order,
-                        driver: driver,
                         idHandover: idHandover
                     },
                     dataType: "json",
