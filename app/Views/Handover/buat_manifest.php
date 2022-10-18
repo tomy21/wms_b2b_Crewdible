@@ -147,8 +147,10 @@ $(document).ready(function() {
                             }).then((result) => {
                                 if (result.isConfirmed) {
                                     $('#driver').val('#driver');
-
                                 }
+                                window.location.href = (
+                                    '<?= site_url('/Handover/index') ?>'
+                                    )
                             })
                         }
                     },
