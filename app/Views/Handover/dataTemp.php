@@ -21,7 +21,6 @@
     <tbody>
         <?php
         $no = 1;
-
         foreach ($data as $y) :
         ?>
         <tr>

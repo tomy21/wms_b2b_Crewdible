@@ -65,7 +65,7 @@ class Handover extends BaseController
 
                 // $modelOrder->update($order, ['driver' => $driver]);
                 $json = [
-                    'data' => view('Handover/dataTemp', $data)
+                    'sukses' => 'item berhasil ditambah'
                 ];
             }
         }
