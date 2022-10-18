@@ -104,6 +104,7 @@ function play_notifSalah() {
     audio.load();
 }
 $(document).ready(function() {
+    manifestTemp();
     $('#orderId').focus();
     $('#btnSubmit').click(function(e) {
         e.preventDefault();
