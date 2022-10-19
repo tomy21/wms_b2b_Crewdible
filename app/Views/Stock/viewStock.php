@@ -51,7 +51,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-lg-12">
-                    <?php if (user()->warehouse == 'Headoffice') : ?>
+                    <!-- <?php if (user()->warehouse == 'Headoffice') : ?>
                     <div class="input-group col-lg-3 float-lg-right" style="margin-bottom: 30px;">
                         <select name="warehouse" id="warehouse"
                             class=" form-control <?php if (session('errors.warehouse')) : ?>is-invalid<?php endif ?>">
@@ -60,7 +60,7 @@
                                 $db = \Config\Database::connect();
                                 $basket = $db->table('tbl_warehouse')->get()->getResult();
                                 foreach ($basket as $row) :
-                                ?>
+                            ?>
                             <option value="<?= $row->warehouse_name ?>"><?= $row->warehouse_name ?></option>
                             <?php endforeach; ?>
                         </select>
@@ -68,7 +68,7 @@
                             <button type="submit" class="btn btn-sm btn-success"> Pilih </button>
                         </div>
                     </div>
-                    <?php endif; ?>
+                    <?php endif; ?> -->
                     <table id="viewStatus" class="table table-striped" style="width: 100%;">
                         <thead>
                             <th>No</th>
