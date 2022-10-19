@@ -300,4 +300,8 @@ class Inbound extends BaseController
 
         echo json_encode($json);
     }
+    public function history()
+    {
+        return view('warehouse/historyInbound');
+    }
 }

@@ -400,4 +400,8 @@ class Invoice extends BaseController
 
         $writer->save('php://output');
     }
+    public function history()
+    {
+        return view('Laporan/historyOutbound');
+    }
 }

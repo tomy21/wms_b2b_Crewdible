@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\HandoverModel;
 use App\Models\InvoiceModel;
+use App\Models\ModelListHandover;
 use App\Models\ModelOrder;
 use App\Models\PackingModel;
 
@@ -108,6 +109,11 @@ class ApiManifest extends ResourceController
 
                     $modelOrder->update($orderID, ['status' => 6]);
                 }
+            }
+            $modelListHandover = new ModelListHandover();
+            $getListHandover = $modelListHandover->getWhere(['id_handover' => $id])->getResult();
+            foreach ($getListHandover as $p) {
+                $modelListHandover->update($p->id, ['status' => 2]);
             }
 
             $modelHandover = new HandoverModel();
