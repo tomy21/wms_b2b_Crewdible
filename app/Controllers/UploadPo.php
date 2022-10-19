@@ -125,7 +125,6 @@ class UploadPo extends BaseController
                         break;
                     }
                 }
-
                 $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
                 $subtotal = 0;
                 $countItem = $dataTem->getNumRows();
