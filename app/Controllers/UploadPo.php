@@ -89,7 +89,6 @@ class UploadPo extends BaseController
                         </div>'
                     ];
                     session()->setFlashdata($pesan_success);
-                    return redirect()->to('/UploadPo/index');;
                 } else {
                     $data = [
                         'nopo'          => $nopo,
