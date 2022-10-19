@@ -28,10 +28,13 @@ class TbPacking extends Migration
             'assign' => [
                 'type' => 'varchar',
                 'constraint' => 225,
+                'default'   => '-',
+                'null' => true,
             ],
             'Status' => [
                 'type' => 'varchar',
                 'constraint' => 225,
+                'default'   => 0,
             ],
             'created_at' => [
                 'type' => 'datetime',

@@ -23,7 +23,11 @@ class App extends BaseConfig
      *
      * @var string
      */
+<<<<<<< HEAD
     public $baseURL = 'http:localhost/wms-b2b/public/';
+=======
+    public $baseURL = 'https://wms-b2b.crewdible.co.id';
+>>>>>>> main
 
     /**
      * --------------------------------------------------------------------------
@@ -55,7 +59,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $uriProtocol = 'PATH_INFO';
+    public $uriProtocol = 'REQUEST_URI';
 
     /**
      * --------------------------------------------------------------------------
