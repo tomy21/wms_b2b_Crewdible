@@ -4,33 +4,42 @@
         List Transaksi
     </div>
     <div class="card-body">
-        <button class="btn btn-info float-right" style="margin-bottom: 20px;" id="assign">Assign Sekarang</button>
-        <table id="table1" class="table table-sm table-striped table-bordered" style="width: 100%;">
-            <thead>
-                <th style="width: 5%;">No</th>
-                <th>id_basket</th>
-                <th>Item ID</th>
-                <th>Item Name</th>
-                <th>Quantity</th>
-                <th>Assign</th>
-            </thead>
-            <tbody>
-                <?php
-                $nomor = 1;
-                foreach ($datatemp as $row) :
-                ?>
-                <tr>
-                    <td><?= $nomor++; ?></td>
-                    <td><?= $row['id_basket']; ?></td>
-                    <td><?= $row['Item_id']; ?></td>
-                    <td><?= $row['Item_detail']; ?></td>
-                    <td><?= $row['jumlah']; ?></td>
-                    <td><?= $row['nama_user']; ?></td>
-                </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+        <div class="row">
+            <div class="form-group col-md-8">
+                <button class="btn btn-info float-right" style="margin-bottom: 20px;" id="assign">Assign
+                    Sekarang</button>
+            </div>
+        </div>
 
+        <div class="row">
+            <div class="form-hroup col-md-12">
+                <table id="table1" class="table table-sm table-striped table-bordered" style="width: 100%;">
+                    <thead>
+                        <th style="width: 5%;">No</th>
+                        <th>id_basket</th>
+                        <th>Item ID</th>
+                        <th>Item Name</th>
+                        <th>Quantity</th>
+                        <th>Assign</th>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $nomor = 1;
+                        foreach ($datatemp as $row) :
+                        ?>
+                        <tr>
+                            <td><?= $nomor++; ?></td>
+                            <td><?= $row['id_basket']; ?></td>
+                            <td><?= $row['Item_id']; ?></td>
+                            <td><?= $row['Item_detail']; ?></td>
+                            <td><?= $row['jumlah']; ?></td>
+                            <td><?= $row['nama_user']; ?></td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
 

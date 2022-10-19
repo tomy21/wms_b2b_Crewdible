@@ -26,10 +26,6 @@ class Filters extends BaseConfig
         'filterAdmin'   => \App\Filters\FilterAdmin::class,
         'filterSeller'  => \App\Filters\filterSeller::class,
         'login'         => \Myth\Auth\Filters\LoginFilter::class,
-<<<<<<< HEAD
-        //         'login'         => \App\
-=======
->>>>>>> main
         'role'          => \Myth\Auth\Filters\RoleFilter::class,
         'permission'    => \Myth\Auth\Filters\PermissionFilter::class,
         // 'apipicking'     => \App\Filters\ApiPicking::class,
