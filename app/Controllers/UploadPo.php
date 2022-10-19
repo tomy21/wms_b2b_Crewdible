@@ -89,42 +89,40 @@ class UploadPo extends BaseController
                         </div>'
                     ];
                     session()->setFlashdata($pesan_success);
-                    break;
-                } else {
-                    $data = [
-                        'nopo'          => $nopo,
-                        'warehouse'     => $warehouse,
-                        'Item_id'       => $item_id,
-                        'Item_detail'   => $item_detail,
-                        'quantity'      => $qty,
-                        'status'        => 0,
-                        'estimate_date' => $estimate,
-                    ];
-                    $this->InboundModel->insert($data);
-                    $pesan_success = [
-                        'success' => '<div class="alert alert-success alert-dismissible" role="alert">
+                    return redirect()->to('/UploadPo/index');
+                }
+                $data = [
+                    'nopo'          => $nopo,
+                    'warehouse'     => $warehouse,
+                    'Item_id'       => $item_id,
+                    'Item_detail'   => $item_detail,
+                    'quantity'      => $qty,
+                    'status'        => 0,
+                    'estimate_date' => $estimate,
+                ];
+                $this->InboundModel->insert($data);
+                $pesan_success = [
+                    'success' => '<div class="alert alert-success alert-dismissible" role="alert">
                         <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
                         <h5><i class="icon fas fa-check"></i> Berhasil </h5>
                         Data Berhasil Di Import
                         </div>'
-                    ];
-                    session()->setFlashdata($pesan_success);
-                }
-                $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
-                $subtotal = 0;
-                $countItem = $dataTem->getNumRows();
-                foreach ($dataTem->getResultArray() as $row) :
-                    $subtotal += intval($row['quantity']);
-                endforeach;
-                $this->PoModel->add([
-                    'no_Po'         => $nopo,
-                    'warehouse'     => $warehouse,
-                    'jumlah_item'   => $countItem,
-                    'quantity_item' => $subtotal,
-                    // 'created_at'    => $estimate
-                ]);
+                ];
+                session()->setFlashdata($pesan_success);
             }
-
+            $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
+            $subtotal = 0;
+            $countItem = $dataTem->getNumRows();
+            foreach ($dataTem->getResultArray() as $row) :
+                $subtotal += intval($row['quantity']);
+            endforeach;
+            $this->PoModel->add([
+                'no_Po'         => $nopo,
+                'warehouse'     => $warehouse,
+                'jumlah_item'   => $countItem,
+                'quantity_item' => $subtotal,
+                // 'created_at'    => $estimate
+            ]);
             return redirect()->to('/UploadPo/index');
         }
     }
