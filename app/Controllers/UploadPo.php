@@ -123,9 +123,9 @@ class UploadPo extends BaseController
                         'quantity_item' => $subtotal,
                         // 'created_at'    => $estimate
                     ]);
-                    return redirect()->to('/UploadPo/index');
                 }
             }
+            return redirect()->to('/UploadPo/index');
         }
     }
     public function download()

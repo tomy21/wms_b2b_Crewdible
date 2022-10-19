@@ -146,7 +146,7 @@ class ApiInbound extends BaseController
         $noplat = $this->request->getPost('noplat');
         $driver = $this->request->getPost('driver');
         $date = $this->request->getPost('date');
-        $date = date('Y-m-d H:mm:dd', strtotime($date));
+        // $date = date('Y-m-d H:mm:dd', strtotime($date));
         $foto = $this->request->getFile('foto1');
         $foto->move('./assets/inbound');
         $foto2 = $this->request->getFile('foto2');
