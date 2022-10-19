@@ -70,59 +70,75 @@ class UploadPo extends BaseController
             $spreadsheet = $render->load($file_upload);
             $sheet = $spreadsheet->getActiveSheet()->toArray();
 
-            foreach ($sheet as $x => $row) {
-                if ($x == 0) {
-                    continue;
-                }
-                $item_id                = $row[0];
-                $item_detail            = $row[1];
-                $qty                    = $row[2];
-                $db = \Config\Database::connect();
-                $cekCode = $db->table('tbl_inbound')->getWhere(['Item_id' => $item_id])->getResult();
+            $db = \Config\Database::connect();
+            $cekCode = $db->table('tbl_po')->getWhere(['no_Po' => $nopo])->getResult();
 
-                if (strlen($qty) > 5) {
-                    $pesan_success = [
-                        'success' => '<div class="alert alert-danger alert-dismissible" role="alert">
+            if ($cekCode > 0) {
+                $pesan_success = [
+                    'success' => '<div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
+                        <h5><i class="icon fas fa-times"></i> Gagal </h5>
+                        No Po sudah Ada 
+                        </div>'
+                ];
+                session()->setFlashdata($pesan_success);
+            } else {
+
+                foreach ($sheet as $x => $row) {
+                    if ($x == 0) {
+                        continue;
+                    }
+                    $item_id                = $row[0];
+                    $item_detail            = $row[1];
+                    $qty                    = $row[2];
+                    $db = \Config\Database::connect();
+                    $cekCode = $db->table('tbl_po')->getWhere(['no_Po' => $nopo])->getResult();
+
+                    if (!is_int($qty)) {
+                        $pesan_success = [
+                            'success' => '<div class="alert alert-danger alert-dismissible" role="alert">
                         <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
                         <h5><i class="icon fas fa-check"></i> Gagal </h5>
                         Quantity tidak valid
                         </div>'
-                    ];
-                    session()->setFlashdata($pesan_success);
-                    return redirect()->to('/UploadPo/index');
-                }
-                $data = [
-                    'nopo'          => $nopo,
-                    'warehouse'     => $warehouse,
-                    'Item_id'       => $item_id,
-                    'Item_detail'   => $item_detail,
-                    'quantity'      => $qty,
-                    'status'        => 0,
-                    'estimate_date' => $estimate,
-                ];
-                $this->InboundModel->insert($data);
-                $pesan_success = [
-                    'success' => '<div class="alert alert-success alert-dismissible" role="alert">
+                        ];
+                        session()->setFlashdata($pesan_success);
+                        break;
+                    } else {
+                        $data = [
+                            'nopo'          => $nopo,
+                            'warehouse'     => $warehouse,
+                            'Item_id'       => $item_id,
+                            'Item_detail'   => $item_detail,
+                            'quantity'      => $qty,
+                            'status'        => 0,
+                            'estimate_date' => $estimate,
+                        ];
+                        $this->InboundModel->insert($data);
+                        $pesan_success = [
+                            'success' => '<div class="alert alert-success alert-dismissible" role="alert">
                         <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
                         <h5><i class="icon fas fa-check"></i> Berhasil </h5>
                         Data Berhasil Di Import
                         </div>'
-                ];
-                session()->setFlashdata($pesan_success);
+                        ];
+                        session()->setFlashdata($pesan_success);
+                    }
+                }
+                $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
+                $subtotal = 0;
+                $countItem = $dataTem->getNumRows();
+                foreach ($dataTem->getResultArray() as $row) :
+                    $subtotal += intval($row['quantity']);
+                endforeach;
+                $this->PoModel->add([
+                    'no_Po'         => $nopo,
+                    'warehouse'     => $warehouse,
+                    'jumlah_item'   => $countItem,
+                    'quantity_item' => $subtotal,
+                    // 'created_at'    => $estimate
+                ]);
             }
-            $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
-            $subtotal = 0;
-            $countItem = $dataTem->getNumRows();
-            foreach ($dataTem->getResultArray() as $row) :
-                $subtotal += intval($row['quantity']);
-            endforeach;
-            $this->PoModel->add([
-                'no_Po'         => $nopo,
-                'warehouse'     => $warehouse,
-                'jumlah_item'   => $countItem,
-                'quantity_item' => $subtotal,
-                // 'created_at'    => $estimate
-            ]);
             return redirect()->to('/UploadPo/index');
         }
     }
