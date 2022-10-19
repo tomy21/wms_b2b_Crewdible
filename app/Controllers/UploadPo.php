@@ -30,9 +30,10 @@ class UploadPo extends BaseController
 
     public function Upload()
     {
-        $warehouse = $this->request->getPost('warehouse');
-        $estimate = $this->request->getPost('estimate');
-        $estimate = date('Y-m-d', strtotime($estimate));
+        $nopo       = $this->request->getPost('noPo');
+        $warehouse  = $this->request->getPost('warehouse');
+        $estimate   = $this->request->getPost('estimate');
+        $estimate   = date('Y-m-d', strtotime($estimate));
         $db = \Config\Database::connect();
         $validation = \Config\Services::validation();
         $valid = $this->validate([
@@ -59,7 +60,6 @@ class UploadPo extends BaseController
         } else {
             $file_upload = $this->request->getFile('fileimport');
             // $date = $this->request->getPost('tglupload');
-            $nopo = $this->request->getPost('noPo');
             $ext = $file_upload->getClientExtension();
 
             if ($ext == 'xls') {
@@ -83,7 +83,6 @@ class UploadPo extends BaseController
                 ];
                 session()->setFlashdata($pesan_success);
             } else {
-
                 foreach ($sheet as $x => $row) {
                     if ($x == 0) {
                         continue;
@@ -123,8 +122,10 @@ class UploadPo extends BaseController
                         </div>'
                         ];
                         session()->setFlashdata($pesan_success);
+                        break;
                     }
                 }
+
                 $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
                 $subtotal = 0;
                 $countItem = $dataTem->getNumRows();
