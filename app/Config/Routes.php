@@ -31,18 +31,17 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-<<<<<<< HEAD
+
 $routes->get('/', 'Login::index');
 $routes->get('/home', 'Main::index');
 // $routes->get('/uploadpo', 'UploadPO::index');
 // $routes->resource("ApiPicking");
 // $routes->resource("apikaryawan");
-=======
 // $routes->get('/', 'Login::index');
 $routes->get('/', 'Main::index');
 $routes->resource("ApiPicking");
 $routes->resource("apikaryawan");
->>>>>>> main
+
 
 /*
  * --------------------------------------------------------------------
