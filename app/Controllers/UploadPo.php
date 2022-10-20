@@ -99,6 +99,14 @@ class UploadPo extends BaseController
                         'Item_detail'   => $item_detail,
                         'quantity'      => $qty,
                     ];
+                    $itemTemp1 = [
+                        'Item_id'       => $item_id,
+                        'Item_detail'   => $item_detail,
+                        'quantity'      => $qty,
+                    ];
+                    $this->InboundModel->insert($itemTemp1);
+
+
 
                     // if (($x + 1) == $countRow) {
                     //     $cekStock = $this->countStock($itemTemp);
@@ -146,10 +154,6 @@ class UploadPo extends BaseController
         }
 
         if ($validate) {
-            var_dump($itemTemp);
-            die;
-            $this->InboundModel->insertBatch($itemTemp);
-
             $validate = false;
             $htmlError .= '<div class="alert alert-success alert-dismissible fade show" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
