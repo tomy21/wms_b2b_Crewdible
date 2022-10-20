@@ -82,7 +82,6 @@ class UploadPo extends BaseController
                         </div>'
                 ];
                 session()->setFlashdata($pesan_success);
-                break;
             } else {
                 $data = null;
                 $htmlError = '';
