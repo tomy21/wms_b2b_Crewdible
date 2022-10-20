@@ -164,7 +164,8 @@ class ApiInbound extends BaseController
                 'foto'                  => $foto->getName(),
                 'tandatangan'           => $foto2->getName(),
                 'waktu_datang'          => $date,
-                'status'                => 1
+                'status'                => 1,
+                'created_at'            => date("Y-m-d H:i:s")
             ];
             $modelInbound->update($po, $data);
             $respon = [

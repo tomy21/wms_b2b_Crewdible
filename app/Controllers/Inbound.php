@@ -304,4 +304,27 @@ class Inbound extends BaseController
     {
         return view('warehouse/historyInbound');
     }
+    public function detailInboound()
+    {
+        if ($this->request->isAjax()) {
+            $po = $this->request->getPost('po');
+
+            $modelInvoice = new PoModel();
+            $ambilData = $modelInvoice->find($po);
+            $data = [
+                'nopo'        => $po,
+                'datang'      => $ambilData['waktu_datang'],
+                'diterima'    => $ambilData['created_at'],
+                'selving'     => $ambilData['updated_at'],
+                'fotobarang'  => $ambilData['foto'],
+                'fotosjl'     => $ambilData['tandatangan'],
+                'driver'      => $ambilData['driver'],
+                'plat'        => $ambilData['plat'],
+            ];
+            $json = [
+                'data'  => view('warehouse/modalDetail', $data)
+            ];
+            echo json_encode($json);
+        }
+    }
 }
