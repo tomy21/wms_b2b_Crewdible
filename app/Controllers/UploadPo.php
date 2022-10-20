@@ -94,7 +94,7 @@ class UploadPo extends BaseController
                     $item_detail            = $row[1];
                     $qty                    = $row[2];
 
-                    $itemTemp[] = [
+                    $itemTemp = [
                         'Item_id'       => $item_id,
                         'Item_detail'   => $item_detail,
                         'quantity'      => $qty,
@@ -104,6 +104,7 @@ class UploadPo extends BaseController
                         $cekStock = $this->countStock($itemTemp);
                         $htmlError .= $cekStock;
                     }
+                    $this->InboundModel->insertBatch($itemTemp);
                 }
                 $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
                 $subtotal = 0;
@@ -146,7 +147,7 @@ class UploadPo extends BaseController
         }
 
         if ($validate) {
-            $this->InboundModel->insertBatch($itemTemp);
+
 
             $validate = false;
             $htmlError .= '<div class="alert alert-success alert-dismissible fade show" role="alert">
