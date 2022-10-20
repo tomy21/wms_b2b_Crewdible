@@ -84,39 +84,40 @@ class UploadPo extends BaseController
                 $qty                    = $row[2];
 
 
-                if ($orderNow == null || $orderNow['nopo'] == $nopo) {
-                    $itemTemp = [];
-                    $itemTemp[] = [
-                        'Item_id'       => $item_id,
-                        'Item_detail'   => $item_detail,
-                        'quantity'      => $qty,
-                    ];
+
+                $itemTemp = [];
+                $itemTemp[] = [
+                    'Item_id'       => $item_id,
+                    'Item_detail'   => $item_detail,
+                    'quantity'      => $qty,
+                ];
 
 
-                    if (($x + 1) == $countRow) {
-                        $cekStock = $this->countStock($itemTemp, $orderNow);
-                        $htmlError .= $cekStock;
-                    }
-                } else if (($x + 1) == $countRow) {
+                if (($x + 1) == $countRow) {
                     $cekStock = $this->countStock($itemTemp, $orderNow);
                     $htmlError .= $cekStock;
-                } else {
-                    $cekStock = $this->countStock($itemTemp, $orderNow);
-                    $htmlError .= $cekStock;
-
-                    $itemTemp = [];
-                    $itemTemp[] = [
-                        'Item_id'       => $item_id,
-                        'Item_detail'   => $item_detail,
-                        'quantity'      => $qty,
-                    ];
                 }
-                $orderNow = [];
-                $orderNow[] = [
-                    'nopo'  => $nopo,
-                    'warehouse' => $warehouse,
+            }
+            if (($x + 1) == $countRow) {
+                $cekStock = $this->countStock($itemTemp, $orderNow);
+                $htmlError .= $cekStock;
+            } else {
+                $cekStock = $this->countStock($itemTemp, $orderNow);
+                $htmlError .= $cekStock;
+
+                $itemTemp = [];
+                $itemTemp[] = [
+                    'Item_id'       => $item_id,
+                    'Item_detail'   => $item_detail,
+                    'quantity'      => $qty,
                 ];
             }
+            $orderNow = [];
+            $orderNow[] = [
+                'nopo'  => $nopo,
+                'warehouse' => $warehouse,
+            ];
+
             session()->setFlashdata('error', $htmlError);
             return redirect()->to('/UploadPo/index');
         }
