@@ -84,27 +84,42 @@ class UploadPo extends BaseController
                             </div>';
                 session()->setFlashdata('error', $htmlError);
                 return redirect()->to('/UploadPo/index');
+            } else {
+                foreach ($sheet as $x => $row) {
+                    if ($x == 0) {
+                        continue;
+                    }
+                    $item_id                = $row[0];
+                    $item_detail            = $row[1];
+                    $qty                    = $row[2];
+
+                    $itemTemp[] = [
+                        'Item_id'       => $item_id,
+                        'Item_detail'   => $item_detail,
+                        'quantity'      => $qty,
+                    ];
+
+                    if (($x + 1) == $countRow) {
+                        $cekStock = $this->countStock($itemTemp);
+                        $htmlError .= $cekStock;
+                    }
+                }
+                $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
+                $subtotal = 0;
+                $countItem = $dataTem->getNumRows();
+                foreach ($dataTem->getResultArray() as $row) :
+                    $subtotal += intval($row['quantity']);
+                endforeach;
+                $this->PoModel->insert([
+                    'no_Po'         => $nopo,
+                    'warehouse'     => $warehouse,
+                    'jumlah_item'   => $countItem,
+                    'quantity_item' => $subtotal,
+                    // 'created_at'    => $estimate
+                ]);
             }
 
-            foreach ($sheet as $x => $row) {
-                if ($x == 0) {
-                    continue;
-                }
-                $item_id                = $row[0];
-                $item_detail            = $row[1];
-                $qty                    = $row[2];
 
-                $itemTemp[] = [
-                    'Item_id'       => $item_id,
-                    'Item_detail'   => $item_detail,
-                    'quantity'      => $qty,
-                ];
-
-                if (($x + 1) == $countRow) {
-                    $cekStock = $this->countStock($itemTemp);
-                    $htmlError .= $cekStock;
-                }
-            }
             session()->setFlashdata('error', $htmlError);
             return redirect()->to('/UploadPo/index');
         }
