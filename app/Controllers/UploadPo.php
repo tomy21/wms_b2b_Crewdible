@@ -100,7 +100,7 @@ class UploadPo extends BaseController
                     $this->InboundModel->insert($itemTemp);
                 }
             }
-            $dataTem = $this->InboundModel->getWhere(['no_po' => $nopo]);
+            $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
             $subtotal = 0;
             $countItem = $dataTem->getNumRows();
             foreach ($dataTem->getResultArray() as $row) :
