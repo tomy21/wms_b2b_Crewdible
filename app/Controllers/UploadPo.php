@@ -97,7 +97,7 @@ class UploadPo extends BaseController
                         'item_name'    => $item_detail,
                         'quantity'     => $qty,
                     ];
-                    $this->InboundModel->insertBatch($itemTemp);
+                    $this->InboundModel->insert($itemTemp);
                 }
             }
             $dataTem = $this->InboundModel->getWhere(['no_po' => $nopo]);
