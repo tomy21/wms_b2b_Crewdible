@@ -148,7 +148,7 @@ class UploadPo extends BaseController
             $this->InboundModel->insertBatch($itemTemp);
 
             foreach ($dataInbound as $y) {
-                $this->PoModel->insert([
+                $this->PoModel->add([
                     'no_Po'         => $y['no_Po'],
                     'warehouse'     => $y['warehouse'],
                     'jumlah_item'   => $y['jumlah_item'],

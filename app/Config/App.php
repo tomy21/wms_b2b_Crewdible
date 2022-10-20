@@ -23,6 +23,7 @@ class App extends BaseConfig
      *
      * @var string
      */
+
     // public $baseURL = 'http:localhost/wms-b2b/public/';
     public $baseURL = 'https://wms-b2b.crewdible.com';
 
