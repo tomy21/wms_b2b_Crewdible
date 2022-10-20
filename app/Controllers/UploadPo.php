@@ -85,7 +85,7 @@ class UploadPo extends BaseController
 
 
                 if ($orderNow == null || $orderNow['nopo'] == $nopo) {
-
+                    $itemTemp = [];
                     $itemTemp[] = [
                         'Item_id'       => $item_id,
                         'Item_detail'   => $item_detail,
@@ -111,7 +111,8 @@ class UploadPo extends BaseController
                         'quantity'      => $qty,
                     ];
                 }
-                $orderNow = [
+                $orderNow = [];
+                $orderNow[] = [
                     'nopo'  => $nopo,
                     'warehouse' => $warehouse,
                 ];
