@@ -304,7 +304,7 @@ class Inbound extends BaseController
     {
         return view('warehouse/historyInbound');
     }
-    public function detailInboound()
+    public function detailInbound()
     {
         if ($this->request->isAjax()) {
             $po = $this->request->getPost('po');
