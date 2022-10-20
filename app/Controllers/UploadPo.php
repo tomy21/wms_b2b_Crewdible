@@ -94,39 +94,26 @@ class UploadPo extends BaseController
                     $item_detail            = $row[1];
                     $qty                    = $row[2];
 
-                    $itemTemp[] = [
-                        'Item_id'       => $item_id,
-                        'Item_detail'   => $item_detail,
-                        'quantity'      => $qty,
-                    ];
-                    $itemTemp1 = [
-                        'Item_id'       => $item_id,
-                        'Item_detail'   => $item_detail,
-                        'quantity'      => $qty,
-                    ];
-                    $this->InboundModel->insert($itemTemp1);
+                    if (($x + 1) == $countRow) {
+                        $cekStock = $this->countStock($itemTemp, $dataInbound);
+                        $htmlError .= $cekStock;
+                    } else {
+                        $cekStock = $this->countStock($itemTemp, $dataInbound);
+                        $htmlError .= $cekStock;
 
-
-
-                    // if (($x + 1) == $countRow) {
-                    //     $cekStock = $this->countStock($itemTemp);
-                    //     $htmlError .= $cekStock;
-                    // }
+                        $itemTemp = [];
+                        $itemTemp[] = [
+                            'Item_id'       => $item_id,
+                            'Item_detail'   => $item_detail,
+                            'quantity'      => $qty,
+                        ];
+                    }
                 }
-                $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
-                $subtotal = 0;
-                $countItem = $dataTem->getNumRows();
-                foreach ($dataTem->getResultArray() as $row) :
-                    $subtotal += intval($row['quantity']);
-                endforeach;
+
                 $dataInbound = [
-                    'no_Po'         => $nopo,
-                    'warehouse'     => $warehouse,
-                    'jumlah_item'   => $countItem,
-                    'quantity_item' => $subtotal,
-                    // 'created_at'    => $estimate
+                    'nopo'      => $nopo,
+                    'warehouse' => $warehouse,
                 ];
-                $this->PoModel->add($dataInbound);
             }
 
 
@@ -135,7 +122,7 @@ class UploadPo extends BaseController
         }
     }
 
-    public function countStock($itemTemp)
+    public function countStock($itemTemp, $dataInbound)
     {
         $validate = true;
         $updateItem = [];
@@ -154,6 +141,24 @@ class UploadPo extends BaseController
         }
 
         if ($validate) {
+            $this->InboundModel->insertBatch($itemTemp);
+
+            foreach ($dataInbound as $y) {
+                $dataTem = $this->InboundModel->getWhere(['nopo' => $y['nopoo']]);
+                $subtotal = 0;
+                $countItem = $dataTem->getNumRows();
+                foreach ($dataTem->getResultArray() as $row) :
+                    $subtotal += intval($row['quantity']);
+                endforeach;
+                $this->PoModel->insert([
+                    'no_Po'         => $y['nopo'],
+                    'warehouse'     => $y['warehouse'],
+                    'jumlah_item'   => $countItem,
+                    'quantity_item' => $subtotal,
+                    // 'created_at'    => $estimate
+                ]);
+            }
+
             $validate = false;
             $htmlError .= '<div class="alert alert-success alert-dismissible fade show" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
