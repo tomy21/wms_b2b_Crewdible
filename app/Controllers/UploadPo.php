@@ -93,8 +93,8 @@ class UploadPo extends BaseController
                 } else {
                     $data = [
                         'nopo'         => $nopo,
-                        'item_id'      => $item_id,
-                        'item_name'    => $item_detail,
+                        'Item_id'      => $item_id,
+                        'Item_detail'    => $item_detail,
                         'quantity'     => $qty,
                     ];
                     $this->InboundModel->add($data);
