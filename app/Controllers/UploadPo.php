@@ -70,60 +70,58 @@ class UploadPo extends BaseController
             $spreadsheet = $render->load($file_upload);
             $sheet = $spreadsheet->getActiveSheet()->toArray();
 
-
-
+            $itemTemp = [];
+            $orderNow = null;
             $countRow = count($sheet);
-            $dataInbound = [];
             $htmlError = '';
-            $db = \Config\Database::connect();
-            $cekData = $db->table('tbl_po')->getWhere(['no_Po' => $nopo])->getResult();
-            if (is_null($cekData)) {
-                $htmlError .= '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h5><i class="icon fas fa-times"></i> Gagal </h5>
-                            Order ' . $nopo . ' Sudah Ada.
-                            </div>';
-                session()->setFlashdata('error', $htmlError);
-                return redirect()->to('/UploadPo/index');
-            } else {
-                $itemTemp = [];
-                foreach ($sheet as $x => $row) {
-                    if ($x == 0) {
-                        continue;
-                    }
-                    $item_id                = $row[0];
-                    $item_detail            = $row[1];
-                    $qty                    = $row[2];
+
+            foreach ($sheet as $x => $row) {
+                if ($x == 0) {
+                    continue;
+                }
+                $item_id                = $row[0];
+                $item_detail            = $row[1];
+                $qty                    = $row[2];
+
+
+                if ($orderNow == null || $orderNow['nopo'] == $nopo) {
+
+                    $itemTemp[] = [
+                        'Item_id'       => $item_id,
+                        'Item_detail'   => $item_detail,
+                        'quantity'      => $qty,
+                    ];
+
 
                     if (($x + 1) == $countRow) {
-                        $cekStock = $this->countStock($itemTemp, $dataInbound);
+                        $cekStock = $this->countStock($itemTemp, $orderNow);
                         $htmlError .= $cekStock;
-                    } else {
-                        $cekStock = $this->countStock($itemTemp, $dataInbound);
-                        $htmlError .= $cekStock;
-
-                        $itemTemp = [];
-                        $itemTemp[] = [
-                            'Item_id'       => $item_id,
-                            'Item_detail'   => $item_detail,
-                            'quantity'      => $qty,
-                        ];
                     }
-                }
+                } else if (($x + 1) == $countRow) {
+                    $cekStock = $this->countStock($itemTemp, $orderNow);
+                    $htmlError .= $cekStock;
+                } else {
+                    $cekStock = $this->countStock($itemTemp, $orderNow);
+                    $htmlError .= $cekStock;
 
-                $dataInbound = [
-                    'nopo'      => $nopo,
+                    $itemTemp = [];
+                    $itemTemp[] = [
+                        'Item_id'       => $item_id,
+                        'Item_detail'   => $item_detail,
+                        'quantity'      => $qty,
+                    ];
+                }
+                $orderNow = [
+                    'nopo'  => $nopo,
                     'warehouse' => $warehouse,
                 ];
             }
-
-
             session()->setFlashdata('error', $htmlError);
             return redirect()->to('/UploadPo/index');
         }
     }
 
-    public function countStock($itemTemp, $dataInbound)
+    public function countStock($itemTemp, $orderNow)
     {
         $validate = true;
         $updateItem = [];
@@ -144,8 +142,8 @@ class UploadPo extends BaseController
         if ($validate) {
             $this->InboundModel->insertBatch($itemTemp);
 
-            foreach ($dataInbound as $y) {
-                $dataTem = $this->InboundModel->getWhere(['nopo' => $y['nopoo']]);
+            foreach ($orderNow as $y) {
+                $dataTem = $this->InboundModel->getWhere(['nopo' => $y['nopo']]);
                 $subtotal = 0;
                 $countItem = $dataTem->getNumRows();
                 foreach ($dataTem->getResultArray() as $row) :
