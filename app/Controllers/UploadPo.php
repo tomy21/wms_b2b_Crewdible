@@ -81,12 +81,6 @@ class UploadPo extends BaseController
                 $item_id                = $row[0];
                 $item_detail            = $row[1];
                 $qty                    = $row[2];
-
-                $itemTemp[] = [
-                    'Item_id'       => $item_id,
-                    'Item_detail'   => $item_detail,
-                    'quantity'      => $qty,
-                ];
                 if (!is_int($qty)) {
                     $htmlError = [
                         'error' => '<div class="alert alert-danger alert-dismissible" role="alert">
@@ -97,10 +91,16 @@ class UploadPo extends BaseController
                     ];
                     break;
                 } else {
+                    $itemTemp = [
+                        'no_po'         => $nopo,
+                        'item_id'      => $item_id,
+                        'item_name'    => $item_detail,
+                        'quantity'     => $qty,
+                    ];
                     $this->InboundModel->insertBatch($itemTemp);
                 }
             }
-            $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
+            $dataTem = $this->InboundModel->getWhere(['no_po' => $nopo]);
             $subtotal = 0;
             $countItem = $dataTem->getNumRows();
             foreach ($dataTem->getResultArray() as $row) :
