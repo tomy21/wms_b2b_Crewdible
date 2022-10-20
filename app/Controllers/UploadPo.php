@@ -82,7 +82,7 @@ class UploadPo extends BaseController
                 $item_detail            = $row[1];
                 $qty                    = $row[2];
 
-                $itemTemp = [
+                $itemTemp[] = [
                     'Item_id'       => $item_id,
                     'Item_detail'   => $item_detail,
                     'quantity'      => $qty,
