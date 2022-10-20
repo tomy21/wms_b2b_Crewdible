@@ -73,7 +73,7 @@ class UploadPo extends BaseController
             $db = \Config\Database::connect();
             $cekCode = $db->table('tbl_po')->getWhere(['no_Po' => $nopo])->getResult();
 
-            if ($cekCode > 0) {
+            if ($cekCode != null) {
                 $pesan_success = [
                     'success' => '<div class="alert alert-danger alert-dismissible" role="alert">
                         <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
