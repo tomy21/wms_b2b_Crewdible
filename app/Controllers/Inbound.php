@@ -319,7 +319,7 @@ class Inbound extends BaseController
                 'fotobarang'  => $ambilData['foto'],
                 'fotosjl'     => $ambilData['tandatangan'],
                 'driver'      => $ambilData['driver'],
-                'plat'        => $ambilData['plat'],
+                'plat'        => $ambilData['noplat'],
             ];
             $json = [
                 'data'  => view('warehouse/modalDetail', $data)
