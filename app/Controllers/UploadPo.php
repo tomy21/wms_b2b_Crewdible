@@ -74,7 +74,6 @@ class UploadPo extends BaseController
             $orderNow = null;
             $countRow = count($sheet);
             $htmlError = '';
-
             foreach ($sheet as $x => $row) {
                 if ($x == 0) {
                     continue;
@@ -83,92 +82,87 @@ class UploadPo extends BaseController
                 $item_detail            = $row[1];
                 $qty                    = $row[2];
 
-
-
-                $itemTemp = [];
-                $itemTemp[] = [
+                $itemTemp = [
                     'Item_id'       => $item_id,
                     'Item_detail'   => $item_detail,
                     'quantity'      => $qty,
                 ];
-
-
-                if (($x + 1) == $countRow) {
-                    $cekStock = $this->countStock($itemTemp, $orderNow, $nopo);
-                    $htmlError .= $cekStock;
+                if (!is_int($qty)) {
+                    $htmlError .= '<div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
+                        <h5><i class="icon fas fa-check"></i> Gagal </h5>
+                        Quantity tidak valid
+                        </div>';
+                    break;
+                } else {
+                    $this->InboundModel->insertBatch($itemTemp);
                 }
             }
-            if (($x + 1) == $countRow) {
-                $cekStock = $this->countStock($itemTemp, $orderNow, $nopo);
-                $htmlError .= $cekStock;
-            } else {
-                $cekStock = $this->countStock($itemTemp, $orderNow, $nopo);
-                $htmlError .= $cekStock;
-
-                $itemTemp = [];
-                $itemTemp[] = [
-                    'Item_id'       => $item_id,
-                    'Item_detail'   => $item_detail,
-                    'quantity'      => $qty,
-                ];
-            }
-            $orderNow = [];
-            $orderNow[] = [
-                'nopo'  => $nopo,
-                'warehouse' => $warehouse,
-            ];
+            $dataTem = $this->InboundModel->getWhere(['no_Po' => $nopo]);
+            $subtotal = 0;
+            $countItem = $dataTem->getNumRows();
+            foreach ($dataTem->getResultArray() as $row) :
+                $subtotal += intval($row['quantity']);
+            endforeach;
+            $this->PoModel->insert([
+                'no_Po'         => $nopo,
+                'warehouse'     => $warehouse,
+                'jumlah_item'   => $countItem,
+                'quantity_item' => $subtotal,
+                // 'created_at'    => $estimate
+            ]);
 
             session()->setFlashdata('error', $htmlError);
             return redirect()->to('/UploadPo/index');
         }
     }
 
-    public function countStock($itemTemp, $orderNow, $nopo)
-    {
-        $validate = true;
-        $updateItem = [];
-        $htmlError = '';
-        $htmlSuccess = '';
-        foreach ($itemTemp as $item) {
-            if (!is_int($item['quantity'])) {
-                $validate = false;
-                $htmlError .= '<div class="alert alert-danger alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
-                        <h5><i class="icon fas fa-check"></i> Gagal </h5>
-                        Quantity tidak valid
-                        </div>';
-                break;
-            }
-        }
+    // public function countStock($itemTemp, $orderNow, $nopo)
+    // {
+    //     $validate = true;
+    //     $updateItem = [];
+    //     $htmlError = '';
+    //     $htmlSuccess = '';
+    //     foreach ($itemTemp as $item) {
+    //         if (!is_int($item['quantity'])) {
+    //             $validate = false;
+    //             $htmlError .= '<div class="alert alert-danger alert-dismissible" role="alert">
+    //                     <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
+    //                     <h5><i class="icon fas fa-check"></i> Gagal </h5>
+    //                     Quantity tidak valid
+    //                     </div>';
+    //             break;
+    //         }
+    //     }
 
-        if ($validate) {
-            $this->InboundModel->insertBatch($itemTemp);
+    //     if ($validate) {
+    //         $this->InboundModel->insertBatch($itemTemp);
 
-            foreach ($orderNow as $y) {
-                $dataTem = $this->InboundModel->getWhere(['no_Po' => $nopo]);
-                $subtotal = 0;
-                $countItem = $dataTem->getNumRows();
-                foreach ($dataTem->getResultArray() as $row) :
-                    $subtotal += intval($row['quantity']);
-                endforeach;
-                $this->PoModel->insert([
-                    'no_Po'         => $y['nopo'],
-                    'warehouse'     => $y['warehouse'],
-                    'jumlah_item'   => $countItem,
-                    'quantity_item' => $subtotal,
-                    // 'created_at'    => $estimate
-                ]);
-            }
+    //         foreach ($orderNow as $y) {
+    //             $dataTem = $this->InboundModel->getWhere(['no_Po' => $nopo]);
+    //             $subtotal = 0;
+    //             $countItem = $dataTem->getNumRows();
+    //             foreach ($dataTem->getResultArray() as $row) :
+    //                 $subtotal += intval($row['quantity']);
+    //             endforeach;
+    //             $this->PoModel->insert([
+    //                 'no_Po'         => $y['nopo'],
+    //                 'warehouse'     => $y['warehouse'],
+    //                 'jumlah_item'   => $countItem,
+    //                 'quantity_item' => $subtotal,
+    //                 // 'created_at'    => $estimate
+    //             ]);
+    //         }
 
-            $validate = false;
-            $htmlError .= '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h5> <i class = "fa fa-check"></i></i> Berhasil </h5>
-                            PO berhasil disimpan.
-                            </div>';
-        }
-        return $htmlError;
-    }
+    //         $validate = false;
+    //         $htmlError .= '<div class="alert alert-success alert-dismissible fade show" role="alert">
+    //                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    //                         <h5> <i class = "fa fa-check"></i></i> Berhasil </h5>
+    //                         PO berhasil disimpan.
+    //                         </div>';
+    //     }
+    //     return $htmlError;
+    // }
     public function download()
     {
         $spreadsheet = new Spreadsheet();
