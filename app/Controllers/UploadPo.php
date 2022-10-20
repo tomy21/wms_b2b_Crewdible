@@ -134,7 +134,7 @@ class UploadPo extends BaseController
             $htmlError .= '<div class="alert alert-success alert-dismissible fade show" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             <h5> <i class = "fa fa-check"></i></i> Berhasil </h5>
-                            Order berhasil disimpan.
+                            PO berhasil disimpan.
                             </div>';
         }
         return $htmlError;
