@@ -146,7 +146,7 @@ class UploadPo extends BaseController
         }
 
         if ($validate) {
-            $this->InboundModel->insert($itemTemp);
+            $this->InboundModel->insertBatch($itemTemp);
 
             $validate = false;
             $htmlError .= '<div class="alert alert-success alert-dismissible fade show" role="alert">
