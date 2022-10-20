@@ -94,15 +94,15 @@ class UploadPo extends BaseController
 
 
                 if (($x + 1) == $countRow) {
-                    $cekStock = $this->countStock($itemTemp, $orderNow);
+                    $cekStock = $this->countStock($itemTemp, $orderNow, $nopo);
                     $htmlError .= $cekStock;
                 }
             }
             if (($x + 1) == $countRow) {
-                $cekStock = $this->countStock($itemTemp, $orderNow);
+                $cekStock = $this->countStock($itemTemp, $orderNow, $nopo);
                 $htmlError .= $cekStock;
             } else {
-                $cekStock = $this->countStock($itemTemp, $orderNow);
+                $cekStock = $this->countStock($itemTemp, $orderNow, $nopo);
                 $htmlError .= $cekStock;
 
                 $itemTemp = [];
@@ -123,7 +123,7 @@ class UploadPo extends BaseController
         }
     }
 
-    public function countStock($itemTemp, $orderNow)
+    public function countStock($itemTemp, $orderNow, $nopo)
     {
         $validate = true;
         $updateItem = [];
@@ -145,7 +145,7 @@ class UploadPo extends BaseController
             $this->InboundModel->insertBatch($itemTemp);
 
             foreach ($orderNow as $y) {
-                $dataTem = $this->InboundModel->getWhere(['no_Po' => $y['nopo']]);
+                $dataTem = $this->InboundModel->getWhere(['no_Po' => $nopo]);
                 $subtotal = 0;
                 $countItem = $dataTem->getNumRows();
                 foreach ($dataTem->getResultArray() as $row) :
