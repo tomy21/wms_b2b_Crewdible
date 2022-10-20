@@ -100,10 +100,10 @@ class UploadPo extends BaseController
                         'quantity'      => $qty,
                     ];
 
-                    if (($x + 1) == $countRow) {
-                        $cekStock = $this->countStock($itemTemp);
-                        $htmlError .= $cekStock;
-                    }
+                    // if (($x + 1) == $countRow) {
+                    //     $cekStock = $this->countStock($itemTemp);
+                    //     $htmlError .= $cekStock;
+                    // }
                 }
                 $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
                 $subtotal = 0;
@@ -146,6 +146,8 @@ class UploadPo extends BaseController
         }
 
         if ($validate) {
+            var_dump($itemTemp);
+            die;
             $this->InboundModel->insertBatch($itemTemp);
 
             $validate = false;
