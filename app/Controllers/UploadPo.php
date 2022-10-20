@@ -96,6 +96,8 @@ class UploadPo extends BaseController
                         'nopo'          => $nopo,
                         'Item_id'       => $item_id,
                         'Item_detail'   => $item_detail,
+                        'status'        => 0,
+                        'estimate_date' => $estimate,
                         'quantity'      => $qty,
                         'warehouse'     => $warehouse,
                     ];
