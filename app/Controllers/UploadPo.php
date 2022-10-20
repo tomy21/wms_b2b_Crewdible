@@ -114,7 +114,7 @@ class UploadPo extends BaseController
                 // 'created_at'    => $estimate
             ]);
             $htmlError = [
-                'success' => '<div class="alert alert-danger alert-dismissible" role="alert">
+                'success' => '<div class="alert alert-success alert-dismissible" role="alert">
                         <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
                         <h5><i class="icon fas fa-check"></i> Sukses </h5>
                         Berhasil submit data
