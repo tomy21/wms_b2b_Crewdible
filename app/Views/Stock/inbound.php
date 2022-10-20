@@ -21,6 +21,7 @@
                     <th>Foto Surat Jalan</th>
                     <th>Jumlah Item</th>
                     <th>Quantity Item</th>
+                    <th>Selisih</th>
                     <th>Selesai Inbound</th>
                     <th>#</th>
                 </thead>
@@ -54,6 +55,7 @@
                                 onclick="detail('<?= $user['no_Po']; ?>')"><?= $jumlah; ?></span>
                         </td>
                         <td style="vertical-align: middle ;"><?= $user['quantity_item']; ?></td>
+                        <td style="vertical-align: middle ;"><?= $user['selisih']; ?></td>
                         <td style="vertical-align: middle ;"><?= $user['updated_at'] ?></td>
                         <td style="vertical-align: middle ;">
                             <?php
