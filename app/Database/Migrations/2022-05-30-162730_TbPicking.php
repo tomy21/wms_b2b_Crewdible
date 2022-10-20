@@ -21,22 +21,13 @@ class TbPicking extends Migration
             'assign' => [
                 'type' => 'varchar',
                 'constraint' => 225,
-<<<<<<< HEAD
                 'default'   => '-',
                 'null'      => true,
-=======
-                'null' => true
->>>>>>> main
             ],
             'Item_id' => [
                 'type' => 'varchar',
                 'constraint' => 225,
-<<<<<<< HEAD
                 'default'   => '001'
-=======
-                'default'   => 1,
-                'null' => true,
->>>>>>> main
             ],
             'Item_detail' => [
                 'type' => 'varchar',
