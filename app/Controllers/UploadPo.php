@@ -102,7 +102,7 @@ class UploadPo extends BaseController
 
                 if (($x + 1) == $countRow) {
                     $cekStock = $this->countStock($itemTemp);
-                        $htmlError .= $cekStock;
+                    $htmlError .= $cekStock;
                 }
             }
             session()->setFlashdata('error', $htmlError);
