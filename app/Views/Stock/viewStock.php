@@ -69,7 +69,7 @@
                         </div>
                     </div>
                     <?php endif; ?> -->
-                    <table id="viewStatus" class="table table-striped" style="width: 100%;">
+                    <table id="example1" class="table table-striped" style="width: 100%;">
                         <thead>
                             <th>No</th>
                             <th>Warehouse</th>
