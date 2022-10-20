@@ -101,7 +101,7 @@ class UploadPo extends BaseController
                     ];
 
                     if (($x + 1) == $countRow) {
-                        $cekStock = $this->countStock($itemTemp, $dataInbound);
+                        $cekStock = $this->countStock($itemTemp);
                         $htmlError .= $cekStock;
                     }
                 }
@@ -111,13 +111,14 @@ class UploadPo extends BaseController
                 foreach ($dataTem->getResultArray() as $row) :
                     $subtotal += intval($row['quantity']);
                 endforeach;
-                $dataInbound[] = [
+                $dataInbound = [
                     'no_Po'         => $nopo,
                     'warehouse'     => $warehouse,
                     'jumlah_item'   => $countItem,
                     'quantity_item' => $subtotal,
                     // 'created_at'    => $estimate
                 ];
+                $this->PoModel->add($dataInbound);
             }
 
 
@@ -126,7 +127,7 @@ class UploadPo extends BaseController
         }
     }
 
-    public function countStock($itemTemp, $dataInbound)
+    public function countStock($itemTemp)
     {
         $validate = true;
         $updateItem = [];
@@ -147,14 +148,6 @@ class UploadPo extends BaseController
         if ($validate) {
             $this->InboundModel->insertBatch($itemTemp);
 
-            foreach ($dataInbound as $y) {
-                $this->PoModel->add([
-                    'no_Po'         => $y['no_Po'],
-                    'warehouse'     => $y['warehouse'],
-                    'jumlah_item'   => $y['jumlah_item'],
-                    'quantity_item' => $y['quantity_item'],
-                ]);
-            }
             $validate = false;
             $htmlError .= '<div class="alert alert-success alert-dismissible fade show" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
