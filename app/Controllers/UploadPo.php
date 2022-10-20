@@ -102,7 +102,6 @@ class UploadPo extends BaseController
                         </div>'
                         ];
                         session()->setFlashdata($pesan_success);
-                        return redirect()->to('/UploadPo/index');
                     }
                     $data = [
                         'nopo'          => $nopo,
@@ -122,7 +121,6 @@ class UploadPo extends BaseController
                         </div>'
                     ];
                     session()->setFlashdata($pesan_success);
-                    break;
                 }
                 $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
                 $subtotal = 0;

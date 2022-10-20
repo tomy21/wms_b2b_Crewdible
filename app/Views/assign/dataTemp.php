@@ -5,7 +5,7 @@
     </div>
     <div class="card-body">
         <div class="row">
-            <div class="form-group col-md-8">
+            <div class="form-group col-md-12">
                 <button class="btn btn-info float-right" style="margin-bottom: 20px;" id="assign">Assign
                     Sekarang</button>
             </div>
