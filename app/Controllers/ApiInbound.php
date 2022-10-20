@@ -88,6 +88,7 @@ class ApiInbound extends BaseController
 
         $id             = $this->request->getVar('id');
         $qtyCount       = $this->request->getVar('quantity');
+        $status         = $this->request->getVar('status');
 
         $cekData = $model->getWhere(['id' => $id])->getResult();
 
@@ -111,7 +112,7 @@ class ApiInbound extends BaseController
                     } else {
                         $data = [
                             'qty_received'  => $qtyCount,
-                            'status'        => 1,
+                            'status'        => $status,
                         ];
                         $model->update($id, $data);
                         $modelPo = new PoModel();
