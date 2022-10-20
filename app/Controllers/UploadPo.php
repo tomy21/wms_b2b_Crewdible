@@ -70,82 +70,74 @@ class UploadPo extends BaseController
             $spreadsheet = $render->load($file_upload);
             $sheet = $spreadsheet->getActiveSheet()->toArray();
 
+
+            $itemTemp = [];
+            $countRow = count($sheet);
+            $htmlError = '';
             $db = \Config\Database::connect();
-            $cekCode = $db->table('tbl_po')->getWhere(['no_Po' => $nopo])->getResult();
-
-            if ($cekCode != null) {
-                $pesan_success = [
-                    'success' => '<div class="alert alert-danger alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
-                        <h5><i class="icon fas fa-times"></i> Gagal </h5>
-                        No Po sudah Ada 
-                        </div>'
-                ];
-                session()->setFlashdata($pesan_success);
+            $cekData = $db->table('tbl_po')->getWhere(['no_Po' => $nopo])->getResult();
+            if (is_null($cekData)) {
+                $htmlError .= '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h5><i class="icon fas fa-times"></i> Gagal </h5>
+                            Order ' . $nopo . ' Sudah Ada.
+                            </div>';
+                session()->setFlashdata('error', $htmlError);
                 return redirect()->to('/UploadPo/index');
-            } else {
-                $data = null;
-                $htmlError = '';
-                foreach ($sheet as $x => $row) {
-                    if ($x == 0) {
-                        continue;
-                    }
-                    $item_id                = $row[0];
-                    $item_detail            = $row[1];
-                    $qty                    = $row[2];
-                    $db = \Config\Database::connect();
-                    $cekCode = $db->table('tbl_po')->getWhere(['no_Po' => $nopo])->getResult();
+            }
 
-                    $data = [
-                        'nopo'          => $nopo,
-                        'warehouse'     => $warehouse,
-                        'Item_id'       => $item_id,
-                        'Item_detail'   => $item_detail,
-                        'quantity'      => $qty,
-                        'status'        => 0,
-                        'estimate_date' => $estimate,
-                    ];
+            foreach ($sheet as $x => $row) {
+                if ($x == 0) {
+                    continue;
+                }
+                $item_id                = $row[0];
+                $item_detail            = $row[1];
+                $qty                    = $row[2];
 
-                    if (!is_int($qty)) {
-                        $pesan_success = [
-                            'success' => '<div class="alert alert-danger alert-dismissible" role="alert">
+                $itemTemp[] = [
+                    'Item_id'       => $item_id,
+                    'Item_detail'   => $item_detail,
+                    'quantity'      => $qty,
+                ];
+
+                if (($x + 1) == $countRow) {
+                    $cekStock = $this->countStock($itemTemp);
+                        $htmlError .= $cekStock;
+                }
+            }
+            session()->setFlashdata('error', $htmlError);
+            return redirect()->to('/UploadPo/index');
+        }
+    }
+
+    public function countStock($itemTemp)
+    {
+        $validate = true;
+        $updateItem = [];
+        $htmlError = '';
+        $htmlSuccess = '';
+        foreach ($itemTemp as $item) {
+            if (!is_int($item['quantity'])) {
+                $validate = false;
+                $htmlError .= '<div class="alert alert-danger alert-dismissible" role="alert">
                         <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
                         <h5><i class="icon fas fa-check"></i> Gagal </h5>
                         Quantity tidak valid
-                        </div>'
-                        ];
-                        session()->setFlashdata($pesan_success);
-                        break;
-                    } else {
-                        $this->InboundModel->insert($data);
-                        $pesan_success = [
-                            'success' => '<div class="alert alert-success alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
-                        <h5><i class="icon fas fa-check"></i> Berhasil </h5>
-                        Data Berhasil Di Import
-                        </div>'
-                        ];
-                        session()->setFlashdata($pesan_success);
-                        break;
-                    }
-                }
-
-                $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
-                $subtotal = 0;
-                $countItem = $dataTem->getNumRows();
-                foreach ($dataTem->getResultArray() as $row) :
-                    $subtotal += intval($row['quantity']);
-                endforeach;
-                $this->PoModel->insert([
-                    'no_Po'         => $nopo,
-                    'warehouse'     => $warehouse,
-                    'jumlah_item'   => $countItem,
-                    'quantity_item' => $subtotal,
-                    // 'created_at'    => $estimate
-                ]);
+                        </div>';
+                break;
             }
-            return redirect()->to('/UploadPo/index');
         }
+
+        if ($validate) {
+            $this->InboundModel->insertBatch($itemTemp);
+            $validate = false;
+            $htmlError .= '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h5> <i class = "fa fa-check"></i></i> Berhasil </h5>
+                            Order ' . $item['Order_id'] . ' berhasil disimpan.
+                            </div>';
+        }
+        return $htmlError;
     }
     public function download()
     {
