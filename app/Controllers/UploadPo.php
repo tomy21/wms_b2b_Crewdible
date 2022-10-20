@@ -91,13 +91,13 @@ class UploadPo extends BaseController
                     ];
                     break;
                 } else {
-                    $itemTemp = [
-                        'no_po'         => $nopo,
+                    $data = [
+                        'nopo'         => $nopo,
                         'item_id'      => $item_id,
                         'item_name'    => $item_detail,
                         'quantity'     => $qty,
                     ];
-                    $this->InboundModel->insert($itemTemp);
+                    $this->InboundModel->add($data);
                 }
             }
             $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
