@@ -88,11 +88,13 @@ class UploadPo extends BaseController
                     'quantity'      => $qty,
                 ];
                 if (!is_int($qty)) {
-                    $htmlError .= '<div class="alert alert-danger alert-dismissible" role="alert">
+                    $htmlError = [
+                        'error' => '<div class="alert alert-danger alert-dismissible" role="alert">
                         <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
-                        <h5><i class="icon fas fa-check"></i> Gagal </h5>
+                        <h5><i class="icon fas fa-times"></i> Gagal </h5>
                         Quantity tidak valid
-                        </div>';
+                        </div>'
+                    ];
                     break;
                 } else {
                     $this->InboundModel->insertBatch($itemTemp);
@@ -111,8 +113,15 @@ class UploadPo extends BaseController
                 'quantity_item' => $subtotal,
                 // 'created_at'    => $estimate
             ]);
+            $htmlError = [
+                'success' => '<div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
+                        <h5><i class="icon fas fa-check"></i> Sukses </h5>
+                        Berhasil submit data
+                        </div>'
+            ];
 
-            session()->setFlashdata('error', $htmlError);
+            session()->setFlashdata($htmlError);
             return redirect()->to('/UploadPo/index');
         }
     }
