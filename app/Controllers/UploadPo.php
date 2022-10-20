@@ -92,10 +92,11 @@ class UploadPo extends BaseController
                     break;
                 } else {
                     $data = [
-                        'nopo'         => $nopo,
-                        'Item_id'      => $item_id,
-                        'Item_detail'    => $item_detail,
-                        'quantity'     => $qty,
+                        'nopo'          => $nopo,
+                        'Item_id'       => $item_id,
+                        'Item_detail'   => $item_detail,
+                        'quantity'      => $qty,
+                        'warehouse'     => $warehouse,
                     ];
                     $this->InboundModel->add($data);
                 }
