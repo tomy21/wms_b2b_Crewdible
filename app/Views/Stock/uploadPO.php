@@ -75,7 +75,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-lg-12">
-                    <table id="viewStatus" class="table table-striped" style="width: 100%;">
+                    <table id="example1" class="table table-striped" style="width: 100%;">
                         <thead>
                             <th>No</th>
                             <th>Warehouse</th>
@@ -98,7 +98,7 @@
                                 <td><?= $user['Item_id']; ?></td>
                                 <td><?= $user['Item_detail']; ?></td>
                                 <td><?= $user['quantity']; ?></td>
-                                
+
 
                             </tr>
 
@@ -118,12 +118,15 @@
 
 
 <script>
-$(document).ready(function() {
-    $('#viewStatus').DataTable();
+$(function() {
+    $("#example1").DataTable({
+        "responsive": true,
+        "lengthChange": false,
+        "autoWidth": true,
+        "buttons": ["excel", "pdf", "print"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
 });
-// $(function() {
-//     $("#estimate").datepicker();
-// });
 </script>
 
 <?= $this->endsection('isi'); ?>

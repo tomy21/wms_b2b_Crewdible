@@ -147,13 +147,14 @@ class UploadPo extends BaseController
         if ($validate) {
             $this->InboundModel->insertBatch($itemTemp);
 
-            $this->PoModel->insert([
-                'no_Po'         => $dataInbound['no_Po'],
-                'warehouse'     => $dataInbound['warehouse'],
-                'jumlah_item'   => $dataInbound['jumlah_item'],
-                'quantity_item' => $dataInbound['quantity_item'],
-            ]);
-
+            foreach ($dataInbound as $y) {
+                $this->PoModel->insert([
+                    'no_Po'         => $y['no_Po'],
+                    'warehouse'     => $y['warehouse'],
+                    'jumlah_item'   => $y['jumlah_item'],
+                    'quantity_item' => $y['quantity_item'],
+                ]);
+            }
             $validate = false;
             $htmlError .= '<div class="alert alert-success alert-dismissible fade show" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
