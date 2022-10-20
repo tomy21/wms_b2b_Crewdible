@@ -157,7 +157,12 @@ function hapusitem(sku) {
 }
 
 $(document).ready(function() {
-    $('#viewStatus').DataTable();
+    $("#example1").DataTable({
+        "responsive": true,
+        "lengthChange": false,
+        "autoWidth": true,
+        "buttons": ["excel", "pdf", "print"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     $('#warehouse').change(function() {
         // let a = $(this).val();
         // console.log(a);
