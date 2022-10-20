@@ -71,7 +71,7 @@ class UploadPo extends BaseController
             $sheet = $spreadsheet->getActiveSheet()->toArray();
 
 
-            $itemTemp = [];
+
             $countRow = count($sheet);
             $dataInbound = [];
             $htmlError = '';
@@ -86,6 +86,7 @@ class UploadPo extends BaseController
                 session()->setFlashdata('error', $htmlError);
                 return redirect()->to('/UploadPo/index');
             } else {
+                $itemTemp = [];
                 foreach ($sheet as $x => $row) {
                     if ($x == 0) {
                         continue;
