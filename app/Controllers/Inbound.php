@@ -55,7 +55,7 @@ class Inbound extends BaseController
                 'nopo'      => $row['nopo'],
                 'created_at'    => $row['created_at'],
                 'warehouse' => $row['warehouse'],
-                'datatemp' => $this->ModelInbound->getWhere(['nopo' => $nopo])->getResultArray(),
+                'datatemp' => $this->ModelInbound->getWhere(['nopo' => $nopo, 'status' => 1])->getResultArray(),
             ];
             return view('warehouse/inbound', $data);
         } else {
