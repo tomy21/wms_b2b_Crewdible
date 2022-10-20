@@ -87,7 +87,6 @@
                         </thead>
                         <tbody>
                             <tr>
-                            <tr>
                                 <?php
                                 $no = 1;
                                 foreach ($data->getResultArray() as $user) :
@@ -98,14 +97,8 @@
                                 <td><?= $user['Item_id']; ?></td>
                                 <td><?= $user['Item_detail']; ?></td>
                                 <td><?= $user['quantity']; ?></td>
-
-
-                            </tr>
-
                             </tr>
                             <?php endforeach; ?>
-
-                            </tr>
 
                         </tbody>
                     </table>
