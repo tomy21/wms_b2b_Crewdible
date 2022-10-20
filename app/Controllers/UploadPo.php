@@ -89,7 +89,8 @@ class UploadPo extends BaseController
                         Quantity tidak valid
                         </div>'
                     ];
-                    break;
+                    session()->setFlashdata($htmlError);
+                    return redirect()->to('/UploadPo/index');
                 } else {
                     $data = [
                         'nopo'          => $nopo,
