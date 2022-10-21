@@ -55,7 +55,7 @@ class Handover extends BaseController
 
         $modelOrder = new ModelOrder();
         $cekOrder = $modelOrder->getWhere(['Order_id' => $order, 'status' => 5])->getRow();
-        $cekOrder1 = $modelOrder->getWhere(['Order_id' => $order])->getResult();
+        $cekOrder1 = $modelOrder->getWhere(['Order_id' => $order, 'status' => 5])->getResult();
 
         $modelListHandover = new ModelListHandover();
         $cekList = $modelListHandover->getWhere(['order_id' => $order, 'id_handover' => $id])->getResult();
@@ -70,6 +70,7 @@ class Handover extends BaseController
                     'error' => 'Orderan ini sudah ada...!'
                 ];
             } else {
+
                 $data = [
                     'order_id'      => $order,
                     'nama_penerima' => $cekOrder->Drop_name,

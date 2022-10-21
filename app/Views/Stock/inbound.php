@@ -31,11 +31,12 @@
                         $no = 1;
                         $db = \Config\Database::connect();
                         if (user()->warehouse == 'Headoffice') {
-                            $inbound1 = $db->table('tbl_po')->get()->getResultArray();
+                            $admin = $db->table('tbl_po')->get()->getResultArray();
                         } else {
-                            $inbound1 = $db->table('tbl_po')->where(['warehouse' => user()->warehouse])->get()->getResultArray();
+                            $warehouse = $db->table('tbl_po')->where(['warehouse' => user()->warehouse])->get()->getResultArray();
                         }
-                        foreach ($inbound1 as $user) :
+                        user()->warehouse == 'Headoffice' ? $inbound = $admin : $inbound = $warehouse;
+                        foreach ($inbound as $user) :
                         ?>
                         <td style="vertical-align: middle ;"><?= $no++; ?></td>
                         <td style="vertical-align: middle ;"><?= $user['no_Po']; ?></td>
