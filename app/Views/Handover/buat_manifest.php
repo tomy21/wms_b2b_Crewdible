@@ -112,54 +112,63 @@ $(document).ready(function() {
         let id = $('#idHandover').val();
         let driver = $('#driver').val();
         let warehouse = $('#warehouse').val();
-        Swal.fire({
-            title: 'Apakah sudah selesai ?',
-            text: "Yakin sudah mau menyimpan manifest",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, Simpan !'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                $.ajax({
-                    type: 'post',
-                    url: "<?= site_url() ?>/Handover/simpanData",
-                    dataType: "json",
-                    data: {
-                        id: id,
-                        driver: driver,
-                        warehouse: warehouse,
-                    },
-                    success: function(response) {
-                        if (response.error) {
-                            Swal.fire({
-                                title: 'Error',
-                                icon: 'error',
-                                text: response.error
-                            });
-                        }
-                        if (response.sukses) {
-                            Swal.fire({
-                                title: 'Berhasil',
-                                icon: 'success',
-                                text: response.sukses
-                            }).then((result) => {
-                                if (result.isConfirmed) {
-                                    $('#driver').val('#driver');
-                                }
-                                window.location.href = (
-                                    '<?= site_url('/Handover/index') ?>'
+        if (driver.length == 0) {
+            Swal.fire({
+                title: 'Error',
+                icon: 'error',
+                text: 'Nama driver tidak boleh kosong !'
+            });
+        } else {
+            Swal.fire({
+                title: 'Apakah sudah selesai ?',
+                text: "Yakin sudah mau menyimpan manifest",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, Simpan !'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: 'post',
+                        url: "<?= site_url() ?>/Handover/simpanData",
+                        dataType: "json",
+                        data: {
+                            id: id,
+                            driver: driver,
+                            warehouse: warehouse,
+                        },
+                        success: function(response) {
+                            if (response.error) {
+                                Swal.fire({
+                                    title: 'Error',
+                                    icon: 'error',
+                                    text: response.error
+                                });
+                            }
+                            if (response.sukses) {
+                                Swal.fire({
+                                    title: 'Berhasil',
+                                    icon: 'success',
+                                    text: response.sukses
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        $('#driver').val('#driver');
+                                    }
+                                    window.location.href = (
+                                        '<?= site_url('/Handover/index') ?>'
                                     )
-                            })
+                                })
+                            }
+                        },
+                        error: function(xhr, ajaxOptions, thrownError) {
+                            alert(xhr.status + '\n' + thrownError);
                         }
-                    },
-                    error: function(xhr, ajaxOptions, thrownError) {
-                        alert(xhr.status + '\n' + thrownError);
-                    }
-                });
-            }
-        })
+                    });
+                }
+            })
+        }
+
     });
     $('#orderId').keydown(function(e) {
         if (e.keyCode == 13) {
