@@ -203,14 +203,14 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="<?= site_url('ReturnItem/index'); ?>" class="nav-link">
                                 <i class="nav-icon fas fa-file-archive"></i>
                                 <p>
                                     Return Order
                                 </p>
                             </a>
-                        </li>
+                        </li> -->
 
                         <li class="nav-header">Utility</li>
                         <li class="nav-item">
@@ -328,14 +328,14 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="<?= site_url('ReturnItem/index'); ?>" class="nav-link">
                                 <i class="nav-icon fas fa-file-archive"></i>
                                 <p>
                                     Return Order
                                 </p>
                             </a>
-                        </li>
+                        </li> -->
 
                         <li class="nav-item">
                             <a href="<?= site_url('Karyawan/index'); ?>" class="nav-link">
