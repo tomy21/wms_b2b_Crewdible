@@ -213,13 +213,17 @@ $(document).ready(function() {
                         }
                         if (response.error) {
                             Swal.fire({
-                                position: 'center',
-                                icon: 'error',
-                                title: response.error,
-                            });
-                            kosong();
-                            play_notifSalah();
-                            window.location.reload();
+                                icon: 'success',
+                                title: 'Stock Sudah di delete',
+                                text: response.sukses,
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    kosong();
+                                    play_notifSalah();
+                                    window.location.reload();
+                                }
+                            })
+
                         }
                     },
                     error: function(xhr, ajaxOptions, thrownError) {
