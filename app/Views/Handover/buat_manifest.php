@@ -216,8 +216,6 @@ $(document).ready(function() {
                                 position: 'center',
                                 icon: 'error',
                                 title: response.error,
-                                showConfirmButton: false,
-                                timer: 1000
                             });
                             kosong();
                             play_notifSalah();
