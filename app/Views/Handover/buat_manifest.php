@@ -213,9 +213,9 @@ $(document).ready(function() {
                         }
                         if (response.error) {
                             Swal.fire({
-                                icon: 'success',
-                                title: 'Stock Sudah di delete',
-                                text: response.sukses,
+                                icon: 'error',
+                                title: 'Order id tidak ada',
+                                text: response.error,
                             }).then((result) => {
                                 if (result.isConfirmed) {
                                     kosong();
