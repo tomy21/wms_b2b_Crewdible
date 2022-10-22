@@ -219,9 +219,9 @@ $(document).ready(function() {
                                 showConfirmButton: false,
                                 timer: 1000
                             });
-                            window.location.reload();
                             kosong();
                             play_notifSalah();
+                            window.location.reload();
                         }
                     },
                     error: function(xhr, ajaxOptions, thrownError) {
