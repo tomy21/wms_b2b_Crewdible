@@ -109,7 +109,7 @@ class Stock extends BaseController
                 } else {
 
                     $data = [
-                        'Item_id'           => $item_id,
+                        'sku'               => $item_id,
                         'Item_detail'       => $item_detail,
                         'quantity_good'     => $qty,
                         'warehouse'         => $warehouse,
