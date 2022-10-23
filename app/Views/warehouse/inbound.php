@@ -217,30 +217,32 @@ $(document).ready(function() {
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'input Sekarang !'
             }).then((result) => {
-                $.ajax({
-                    type: "post",
-                    url: $(this).attr('action'),
-                    data: $(this).serialize(),
-                    dataType: "json",
-                    success: function(response) {
-                        if (response.success) {
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Stock Sudah di Proses',
-                                text: response.success,
-                            }).then((result) => {
-                                if (result.isConfirmed) {
-                                    window.location.href = (
-                                        '<?= site_url('/Inbound/index') ?>'
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: "post",
+                        url: $(this).attr('action'),
+                        data: $(this).serialize(),
+                        dataType: "json",
+                        success: function(response) {
+                            if (response.success) {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Stock Sudah di Proses',
+                                    text: response.success,
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        window.location.href = (
+                                            '<?= site_url('/Inbound/index') ?>'
                                         )
-                                }
-                            })
+                                    }
+                                })
+                            }
+                        },
+                        error: function(xhr, ajaxOptions, thrownError) {
+                            alert(xhr.status + '\n' + thrownError);
                         }
-                    },
-                    error: function(xhr, ajaxOptions, thrownError) {
-                        alert(xhr.status + '\n' + thrownError);
-                    }
-                });
+                    });
+                };
             });
 
         }
