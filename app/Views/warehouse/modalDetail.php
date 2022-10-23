@@ -25,7 +25,7 @@
                         <h3 class="d-inline-block d-sm-none"><?= $nopo ?></h3>
                         <div class="col-12">
                             <img src="<?= site_url() ?>/assets/inbound/<?= $fotobarang ?>" class="product-image"
-                                alt="Product Image" width="100%" height="50%">
+                                alt="Product Image" style="height: 60%; width: 100% ;">
                         </div>
                         <div class="col-12 product-image-thumbs">
                             <div class="product-image-thumb active"><img
@@ -40,7 +40,7 @@
                         <hr>
                         <h4>Nama Driver</h4>
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <?= $driver ?>
+                            <h4><?= $driver ?></h4>
                         </div>
                         <hr>
 
