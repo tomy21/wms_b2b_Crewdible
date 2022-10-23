@@ -25,9 +25,11 @@
                         <h3 class="d-inline-block d-sm-none"><?= $nopo ?></h3>
                         <div class="col-12">
                             <img src="<?= site_url() ?>/assets/inbound/<?= $fotobarang ?>" class="product-image"
-                                alt="Product Image">
+                                alt="Product Image" sizes="40">
                         </div>
                         <div class="col-12 product-image-thumbs">
+                            <div class="product-image-thumb active"><img
+                                    src="<?= site_url() ?>/assets/inbound/<?= $fotobarang ?>" alt="Product Image"></div>
                             <div class="product-image-thumb active"><img
                                     src="<?= site_url() ?>/assets/inbound/<?= $fotosjl ?>" alt="Product Image"></div>
                         </div>
@@ -42,24 +44,27 @@
                         </div>
                         <hr>
 
-                        <h4 class="mt-3">No Plat Kendaraan</small></h4>
+                        <h5 class="mt-3">No Plat Kendaraan></h5>
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <?= $plat ?>
+                            <h4><?= $plat ?></h4>
                         </div>
+                        <hr>
 
-                        <h4>Tanggal Kedatangan</h4>
+                        <h5>Tanggal Kedatangan</h5>
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <?= $datang ?>
+                            <h4><?= $datang ?></h4>
                         </div>
                         <hr>
-                        <h4>Tanggal Bongkar</h4>
+
+                        <h5>Tanggal Bongkar</h5>
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <?= $diterima ?>
+                            <h4><?= $diterima ?></h4>
                         </div>
                         <hr>
-                        <h4>Tanggal Inputr Stock</h4>
+
+                        <h5>Tanggal Input Stock</h5>
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <?= $selving ?>
+                            <h4><?= $selving ?></h4>
                         </div>
                         <hr>
                     </div>
