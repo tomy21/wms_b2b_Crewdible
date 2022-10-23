@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="<?= site_url() ?>/plugins/fontawesome-free/css/all.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="<?= site_url() ?>/dist/css/adminlte.min.css">
+
 <div class="modal fade" id="modalDetail" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -196,3 +200,22 @@
         </div>
     </div>
 </div>
+
+<!-- jQuery -->
+<script src="<?= site_url() ?>/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="<?= site_url() ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="<?= site_url() ?>/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="<?= site_url() ?>/dist/js/demo.js"></script>
+<script>
+$(document).ready(function() {
+    $('.product-image-thumb').on('click', function() {
+        var $image_element = $(this).find('img')
+        $('.product-image').prop('src', $image_element.attr('src'))
+        $('.product-image-thumb.active').removeClass('active')
+        $(this).addClass('active')
+    })
+})
+</script>
