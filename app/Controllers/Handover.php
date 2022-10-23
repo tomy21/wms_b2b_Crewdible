@@ -174,7 +174,7 @@ class Handover extends BaseController
                 'no_tlp'            => $ambilData->Drop_contact,
             ];
             $json = [
-                'data'  => view('warehouse/modalDetail', $data)
+                'data'  => view('Laporan/dataTemp', $data)
             ];
             echo json_encode($json);
         }
