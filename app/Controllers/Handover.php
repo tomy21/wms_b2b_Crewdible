@@ -96,6 +96,7 @@ class Handover extends BaseController
         $driver = $this->request->getVar('driver');
         $warehouse = $this->request->getVar('warehouse');
 
+        $modelOrder     = new ModelOrder();
         $modelListHandover = new ModelListHandover();
         $cek = $modelListHandover->getWhere(['id_handover' => $id])->getRow();
         $cek2 = $modelListHandover->getWhere(['id_handover' => $id])->getResult();
@@ -111,8 +112,10 @@ class Handover extends BaseController
                 'no_tlp'        => $q->no_tlp,
             ];
             $modelListHandover->update($q->id, ['status' => 1]);
+
+            $modelOrder->update($q->order_id, ['driver' => $driver]);
         }
-        $modelHandover = new HandoverModel();
+        $modelHandover  = new HandoverModel();
         $cekId = $modelHandover->getWhere(['id_handover' => $id])->getResult();
         if (count($cekId) > 0) {
             $json = [

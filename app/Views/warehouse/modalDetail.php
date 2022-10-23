@@ -25,7 +25,7 @@
                         <h3 class="d-inline-block d-sm-none"><?= $nopo ?></h3>
                         <div class="col-12">
                             <img src="<?= site_url() ?>/assets/inbound/<?= $fotobarang ?>" class="product-image"
-                                alt="Product Image" sizes="40">
+                                alt="Product Image" width="100%" height="50%">
                         </div>
                         <div class="col-12 product-image-thumbs">
                             <div class="product-image-thumb active"><img
@@ -44,7 +44,7 @@
                         </div>
                         <hr>
 
-                        <h5 class="mt-3">No Plat Kendaraan></h5>
+                        <h5 class="mt-3">No Plat Kendaraan</h5>
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                             <h4><?= $plat ?></h4>
                         </div>
