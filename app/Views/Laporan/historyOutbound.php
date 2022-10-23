@@ -84,7 +84,7 @@
         </div>
     </div>
 </div>
-
+<div class="viewmodal" style="display: none;"></div>
 
 <script>
 $(function() {
