@@ -30,8 +30,8 @@
                     <?php
                     $no = 1;
                     $db = \Config\Database::connect();
-                    $warehouse = $db->table('tbl_order')->getWhere(['stock_location' => user()->warehouse, 'status' => 6])->getResultArray();
-                    $head = $db->table('tbl_order')->getWhere(['status' => 6])->getResultArray();
+                    $warehouse = $db->table('tbl_invoice')->getWhere(['stock_location' => user()->warehouse, 'status' => 6])->getResultArray();
+                    $head = $db->table('tbl_invoice')->getWhere(['status' => 6])->getResultArray();
                     user()->warehouse == 'Headoffice' ? $data = $head : $data = $warehouse;
                     foreach ($data as $query) :
                     ?>
@@ -73,25 +73,13 @@
                             <?php endif; ?>
                         </td>
                         <td style="text-align:center;">
-                            <i class="fa fa-eye"></i>
+                            <button class="btn btn-sm btn-info" type="button"
+                                onclick="detail('<?= $query['id']; ?>')"><i class="fa fa-eye"></i></button>
                         </td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Warehouse</th>
-                        <th>Order Id</th>
-                        <th>Nama Driver</th>
-                        <th>Nama Penerima</th>
-                        <th>Jam Slot</th>
-                        <th>Selesai Packing</th>
-                        <th>Selesai Handover</th>
-                        <th>Keterangan</th>
-                        <th>Detail</th>
-                    </tr>
-                </tfoot>
+
             </table>
         </div>
     </div>
@@ -108,6 +96,27 @@ $(function() {
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
 });
+
+function detail(id) {
+    $.ajax({
+        type: "post",
+        url: "<?= site_url('/Handover/detailHandover') ?>",
+        data: {
+            id: id,
+        },
+        dataType: "json",
+        success: function(response) {
+            if (response.data) {
+                $('.viewmodal').html(response.data).show();
+                $('#modalDetail').modal('show');
+
+            }
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            alert(xhr.status + '\n' + thrownError);
+        }
+    });
+}
 </script>
 
 <?= $this->endsection('isi'); ?>

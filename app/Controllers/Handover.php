@@ -4,8 +4,10 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\HandoverModel;
+use App\Models\InvoiceModel;
 use App\Models\ModelListHandover;
 use App\Models\ModelOrder;
+use App\Models\PackingModel;
 
 use function PHPUnit\Framework\isNull;
 
@@ -137,5 +139,40 @@ class Handover extends BaseController
             ];
         }
         echo json_encode($json);
+    }
+    function detailHandover()
+    {
+        if ($this->request->isAjax()) {
+            $po = $this->request->getPost('id');
+
+            $modelInvoice = new InvoiceModel();
+            $getOrderId = $modelInvoice->getWhere(['id' => $po])->getRow();
+
+            $modelPo = new ModelOrder();
+            $modelPacking = new PackingModel();
+            $modelListHandover = new ModelListHandover();
+            $modelHandover = new HandoverModel();
+            $ambilData = $modelPo->find($getOrderId->Order_id);
+            $ambilData2 = $modelListHandover->find($getOrderId->Order_id);
+            $ambilData1 = $modelPacking->find($getOrderId->Order_id);
+            $ambilData3 = $modelHandover->find($ambilData2['id_handover']);
+            $data = [
+                'Order_id'          => $getOrderId->Order_id,
+                'time_slot'         => $ambilData['created_at'],
+                'time_packing'      => $ambilData1['updated_at'],
+                'foto_before'       => $ambilData1['foto'],
+                'foto_after'        => $ambilData1['foto_after'],
+                'foto_handover'     => $ambilData3['foto'],
+                'tandatangan'       => $ambilData3['tandatangan'],
+                'driver'            => $ambilData3['driver'],
+                'penerima'          => $ambilData['Drop_name'],
+                'alamat'            => $ambilData['Drop_address'],
+                'no_tlp'            => $ambilData['Drop_contact'],
+            ];
+            $json = [
+                'data'  => view('warehouse/modalDetail', $data)
+            ];
+            echo json_encode($json);
+        }
     }
 }
