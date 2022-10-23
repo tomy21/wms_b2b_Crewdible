@@ -158,7 +158,7 @@ class Handover extends BaseController
             $ambilData2 = $modelListHandover->getWhere(['order_id' => $getOrderId->Order_id])->getRow();
 
             $modelHandover = new HandoverModel();
-            $ambilData3 = $modelHandover->getWhere(['Order_id' => $ambilData2->id_handover])->getRow();
+            $ambilData3 = $modelHandover->getWhere(['id_handover' => $ambilData2->id_handover])->getRow();
 
             $data = [
                 'Order_id'          => $getOrderId->Order_id,
