@@ -28,10 +28,12 @@
                                 alt="Product Image" style="height: 60%; width: 100% ;">
                         </div>
                         <div class="col-12 product-image-thumbs">
+                            <div class="product-image-thumb active" style="height: 60%; width: 100% ;"><img
+                                    src="<?= site_url() ?>/assets/inbound/<?= $fotobarang ?>" alt="Product Image"
+                                    style="height: 60%; width: 100% ;"></div>
                             <div class="product-image-thumb active"><img
-                                    src="<?= site_url() ?>/assets/inbound/<?= $fotobarang ?>" alt="Product Image"></div>
-                            <div class="product-image-thumb active"><img
-                                    src="<?= site_url() ?>/assets/inbound/<?= $fotosjl ?>" alt="Product Image"></div>
+                                    src="<?= site_url() ?>/assets/inbound/<?= $fotosjl ?>" alt="Product Image"
+                                    style="height: 60%; width: 100% ;"></div>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">

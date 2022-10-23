@@ -149,25 +149,29 @@ class Handover extends BaseController
             $getOrderId = $modelInvoice->getWhere(['id' => $po])->getRow();
 
             $modelPo = new ModelOrder();
+            $ambilData = $modelPo->getWhere(['Order_id' => $getOrderId->Order_id])->getRow();
+
             $modelPacking = new PackingModel();
+            $ambilData1 = $modelPacking->getWhere(['order_id' => $getOrderId->Order_id])->getRow();
+
             $modelListHandover = new ModelListHandover();
+            $ambilData2 = $modelListHandover->getWhere(['order_id' => $getOrderId->Order_id])->getRow();
+
             $modelHandover = new HandoverModel();
-            $ambilData = $modelPo->find($getOrderId->Order_id);
-            $ambilData2 = $modelListHandover->find($getOrderId->Order_id);
-            $ambilData1 = $modelPacking->find($getOrderId->Order_id);
-            $ambilData3 = $modelHandover->find($ambilData2['id_handover']);
+            $ambilData3 = $modelHandover->getWhere(['Order_id' => $ambilData2->id_handover])->getRow();
+
             $data = [
                 'Order_id'          => $getOrderId->Order_id,
-                'time_slot'         => $ambilData['created_at'],
-                'time_packing'      => $ambilData1['updated_at'],
-                'foto_before'       => $ambilData1['foto'],
-                'foto_after'        => $ambilData1['foto_after'],
-                'foto_handover'     => $ambilData3['foto'],
-                'tandatangan'       => $ambilData3['tandatangan'],
-                'driver'            => $ambilData3['driver'],
-                'penerima'          => $ambilData['Drop_name'],
-                'alamat'            => $ambilData['Drop_address'],
-                'no_tlp'            => $ambilData['Drop_contact'],
+                'time_slot'         => $ambilData->created_at,
+                'time_packing'      => $ambilData1->updated_at,
+                'foto_before'       => $ambilData1->foto,
+                'foto_after'        => $ambilData1->foto_after,
+                'foto_handover'     => $ambilData3->foto,
+                'tandatangan'       => $ambilData3->tandatangan,
+                'driver'            => $ambilData3->driver,
+                'penerima'          => $ambilData->Drop_name,
+                'alamat'            => $ambilData->Drop_address,
+                'no_tlp'            => $ambilData->Drop_contact,
             ];
             $json = [
                 'data'  => view('warehouse/modalDetail', $data)
