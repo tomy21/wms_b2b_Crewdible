@@ -129,7 +129,7 @@
                                     $db = \Config\Database::connect();
                                     $date = date('d-m-Y H:i:s');
                                     $orderDone = 6;
-                                    $data1 = $db->table('tbl_invoice')->select('stock_location, Drop_name, Drop_contact, Drop_city, count(Order_id) as Order_id')->groupBy('Drop_name')->getWhere(['stock_location' => user()->warehouse, 'status<' => $orderDone])->getResult();
+                                    $data1 = $db->table('tbl_invoice')->where(['stock_location' => user()->warehouse, 'status<' => $orderDone])->select('stock_location, Drop_name, Drop_contact, Drop_city, count(Order_id) as Order_id')->groupBy('Drop_name')->get()->getResult();
                                 }
                                 $data = user()->warehouse == 'Headoffice' ? $data2 : $data1;
                                 $no = 1;
