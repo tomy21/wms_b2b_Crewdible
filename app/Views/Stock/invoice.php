@@ -163,11 +163,11 @@
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-info"
-                                        onclick="detail('<?= $user->Order_id; ?>')"><i class="fa fa-eyes"></i></button>
+                                        onclick="detail('<?= $user->Order_id; ?>')"><i class="fa fa-eye"></i></button>
                                     <?php
                                         if (user()->warehouse == 'Headoffice') :
                                         ?>
-                                    <button type="button" class="btn btn-sm btn-warening"
+                                    <button type="button" class="btn btn-sm btn-warning"
                                         onclick="edit('<?= sha1($user->Order_id); ?>')"><i
                                             class="fa fa-edit"></i></button>
                                     <?php endif; ?>
@@ -214,7 +214,7 @@ $('#warehouse').change(function(e) {
 });
 
 function edit(orderId) {
-    window.location.href = (<?= site_url() ?> '/Packing/edit/') + orderId;
+    window.location.href = (<?= site_url() ?> '/Invoice/edit/') + orderId;
 }
 
 
