@@ -111,7 +111,7 @@
                         <span class="badge badge-danger">Return</span>
 
                     </p>
-                    <table id="viewStatus" class="table table-striped" style="width: 100%;">
+                    <table id="example1" class="table table-striped" style="width: 100%;">
                         <thead>
                             <th>No</th>
                             <th>Date Upload</th>
@@ -189,7 +189,12 @@
 <script src="<? site_url() ?>/dist/js/adminlte.min.js"></script>
 <script>
 $(document).ready(function() {
-    $('#viewStatus').DataTable();
+    $("#example1").DataTable({
+        "responsive": true,
+        "lengthChange": true,
+        "autoWidth": true,
+        "buttons": ["excel", "pdf", "print"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
 });
 
