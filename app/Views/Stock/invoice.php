@@ -160,13 +160,8 @@
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-info"
-                                        onclick="detail('<?= $user->Order_id; ?>')"><i class="fa fa-eyes"></i></button>
-                                    <?php
-                                        if (user()->warehouse == 'Headoffice') :
-                                        ?>
-                                    <button type="button" class="btn btn-sm btn-warening"
-                                        onclick="edit('<?= $user->Order_id; ?>')"><i class="fa fa-edit"></i></button>
-                                    <?php endif; ?>
+                                        onclick="detail('<?= $user->Order_id; ?>')"><i class="fa fa-eye"></i></button>
+
                                 </td>
                             </tr>
                             <?php endforeach; ?>
