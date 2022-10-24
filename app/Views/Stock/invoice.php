@@ -111,7 +111,8 @@
                             <th>No</th>
                             <th>Date Upload</th>
                             <th>Warehouse</th>
-                            <th>Order ID</th>
+                            <th><?php if (user()->warehouse == 'Headoffice') : ?> Order ID <?php else : ?> Jumlah
+                                Invoice <?php endif; ?></th>
                             <th>Nama Penerima</th>
                             <th>No Tlp</th>
                             <th>Kota</th>
@@ -123,14 +124,14 @@
                                 <?php
 
                                 if (user()->warehouse == 'Headoffice') {
-                                    $data = $status;
+                                    $data2 = $status;
                                 } else {
                                     $db = \Config\Database::connect();
                                     $date = date('d-m-Y H:i:s');
                                     $orderDone = 6;
-                                    $data = $db->table('tbl_order')->getWhere(['stock_location' => user()->warehouse, 'status<' => $orderDone])->getResult();
+                                    $data1 = $db->table('tbl_invoice')->select('stock_location, Drop_name, Drop_contact, Drop_city, count(Order_id) as Order_id')->groupBy('Drop_name')->getWhere(['stock_location' => user()->warehouse, 'status<' => $orderDone])->getResult();
                                 }
-
+                                $data = user()->warehouse == 'Headoffice' ? $data2 : $data1;
                                 $no = 1;
                                 foreach ($data as $user) :
                                 ?>
