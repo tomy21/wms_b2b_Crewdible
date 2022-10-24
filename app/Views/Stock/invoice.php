@@ -163,7 +163,14 @@
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-info"
-                                        onclick="detail('<?= $user->Order_id; ?>')"><i class="fa fa-inbox"></i></button>
+                                        onclick="detail('<?= $user->Order_id; ?>')"><i class="fa fa-eyes"></i></button>
+                                    <?php
+                                        if (user()->warehouse == 'Headoffice') :
+                                        ?>
+                                    <button type="button" class="btn btn-sm btn-warening"
+                                        onclick="edit('<?= sha1($user->Order_id); ?>')"><i
+                                            class="fa fa-edit"></i></button>
+                                    <?php endif; ?>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
@@ -206,14 +213,16 @@ $('#warehouse').change(function(e) {
 
 });
 
+function edit(orderId) {
+    window.location.href = (<?= site_url() ?> '/Packing/edit/') + orderId;
+}
+
+
 function detail(order) {
-    let crsfToken = '<?= csrf_token() ?>';
-    let crsfHash = '<?= csrf_hash() ?>';
     $.ajax({
         type: "post",
         url: "<?= site_url('/Invoice/detail') ?>",
         data: {
-            [crsfToken]: crsfHash,
             order: order,
         },
         dataType: "json",

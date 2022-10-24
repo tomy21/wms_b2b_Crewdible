@@ -42,7 +42,7 @@ input[type=checkbox] {
                     <th>Item Id</th>
                     <th>Item Detail</th>
                     <th>Quantity</th>
-                    <th>Check Item</th>
+                    <th>Aksi</th>
                 </thead>
                 <tbody>
                     <?php
@@ -52,26 +52,11 @@ input[type=checkbox] {
                     ?>
                     <tr>
                         <td><?= $nomor++; ?></td>
-                        <input type="hidden" name="item[]" id="item" value="<?= $row['Item_id']; ?>">
-                        <input type="hidden" name="detail[]" id="detail" value="<?= $row['Item_detail']; ?>">
-                        <input type="hidden" name="quantity[]" id="quantity" value="<?= $row['quantity']; ?>">
                         <td><?= $row['Item_id']; ?></td>
                         <td><?= $row['Item_detail']; ?></td>
                         <td><?= $row['quantity']; ?></td>
-                        <td style="text-align:center;">
-                            <?php
-                                $db = \Config\Database::connect();
-                                $order = $db->table('tbl_packing')->getWhere(['id' => $row['id']])->getResult();
-
-                                ?>
-                            <?php if (count($order) == 0) : ?>
-                            <button class="btn btn-sm btn-info" onclick="detail(<?= $row['id'] ?>)"><i
-                                    class="fa fa-plus"></i></button>
-                            <?php else : ?>
-                            <input type="checkbox" name="id[]" class="centangId" value="<?= $row['id']; ?>"
-                                checked="checked" disabled>
-                            <?php endif; ?>
-                        </td>
+                        <td><button type="button" class="btn btn-sm btn-danger" onclick="hapus('<?= $user->id; ?>')"><i
+                                    class="fa fa-trash-alt"></i></button></td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -85,50 +70,43 @@ input[type=checkbox] {
 <?= $this->section('isi'); ?>
 
 <script>
-function detail(id) {
-    let crsfToken = '<?= csrf_token() ?>';
-    let crsfHash = '<?= csrf_hash() ?>';
+function hapus(id) {
     Swal.fire({
-        title: 'Proses Packing',
-        text: 'Apakah barang ada ? ',
+        title: 'Hapus Item',
+        text: "Yakin hapus SKU ini ? ",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Proses Sekarang !'
+        confirmButtonText: 'Yes, Hapus Dong!'
     }).then((result) => {
         if (result.isConfirmed) {
             $.ajax({
                 type: "post",
-                url: "<?= base_url('Packing/potongStock') ?>",
+                url: "<?= site_url() ?>/Invoice/hapusSku",
                 data: {
-                    [crsfToken]: crsfHash,
-                    id: id,
+                    id: id
                 },
                 dataType: "json",
                 success: function(response) {
-                    if (response.success) {
+                    if (response.sukses) {
+                        manifestTemp();
                         Swal.fire({
+                            position: 'center',
                             icon: 'success',
-                            title: 'success',
-                            text: 'Packing Success'
-                        });
+                            title: 'Berhasil',
+                            showConfirmButton: false,
+                            timer: 1000
+                        })
                         window.location.reload();
-                        play_notif()
                     }
-                    if (response.error) {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Gagal Packing',
-                            text: 'Item Belum Terpicking'
-                        });
-                        window.location.reload();
-                        play_notifSalah()
-                    }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status + '\n' + thrownError);
                 }
             });
         }
-    });
+    })
 }
 
 function play_notif() {

@@ -16,7 +16,7 @@
                 <div class="row">
                     <div class="col-12 col-sm-6">
                         <h3 class="d-inline-block d-sm-none"><?= $nopo ?></h3>
-                        <div class="col-9">
+                        <div class="col-12">
                             <img src="<?= site_url() ?>/assets/inbound/<?= $fotobarang ?>" class="product-image"
                                 alt="Product Image" style="height: 60%;">
                         </div>

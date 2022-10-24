@@ -20,13 +20,9 @@ class Invoice extends BaseController
     }
     public function index()
     {
-
-
         $data = [
             'status'    => $this->ModalOrder->get()->getResult(),
         ];
-
-
         return view('Stock/invoice', $data);
     }
     public function upload()
@@ -403,5 +399,42 @@ class Invoice extends BaseController
     public function history()
     {
         return view('Laporan/historyOutbound');
+    }
+    function edit($orderId)
+    {
+        $modelBarangMasuk = new InvoiceModel();
+        $cekFaktur = $modelBarangMasuk->cekTransaksi($orderId);
+
+        if ($cekFaktur->getNumRows() > 0) {
+            $row = $cekFaktur->getRowArray();
+
+            $data = [
+                'assign'          => $row['assign'],
+                'Order_id'          => $row['Order_id'],
+                'created_at'        => $row['created_at'],
+                'Drop_name'         => $row['Drop_name'],
+                'Drop_contact'      => $row['Drop_contact'],
+                'Drop_address'      => $row['Drop_address'],
+                'data'              => $cekFaktur,
+            ];
+            return view('warehouse/prosesPacking', $data);
+        } else {
+            exit('Data Tidak Ada');
+        }
+    }
+    function hapusSku()
+    {
+        if ($this->request->isAJAX()) {
+            $resi = $this->request->getPost('id');
+            $modelTempResi = new InvoiceModel();
+            $modelTempResi->delete($resi);
+
+            $json = [
+                'sukses' => 'Item Berhasil Dihapus...'
+            ];
+            echo json_encode($json);
+        } else {
+            exit('Maaf tidak bisa dipanggil');
+        }
     }
 }
