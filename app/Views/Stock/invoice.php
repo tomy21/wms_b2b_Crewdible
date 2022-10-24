@@ -160,9 +160,14 @@
                                     <?php endif; ?>
                                 </td>
                                 <td>
+                                    <?php if (user()->warehouse == 'Headoffice') : ?>
                                     <button type="button" class="btn btn-sm btn-info"
                                         onclick="detail('<?= $user->Order_id; ?>')"><i class="fa fa-eye"></i></button>
-
+                                    <?php else : ?>
+                                    <button type="button" class="btn btn-sm btn-info"
+                                        onclick="detailwarehouse('<?= $user->Drop_name; ?>')"><i
+                                            class="fa fa-eye"></i></button>
+                                    <?php endif; ?>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
@@ -218,6 +223,28 @@ function detail(order) {
         url: "<?= site_url('/Invoice/detail') ?>",
         data: {
             order: order,
+        },
+        dataType: "json",
+        success: function(response) {
+
+            if (response.data) {
+                $('.viewmodal').html(response.data).show();
+                $('#modalitem').modal('show');
+
+            }
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            alert(xhr.status + '\n' + thrownError);
+        }
+    });
+}
+
+function detail(penerima) {
+    $.ajax({
+        type: "post",
+        url: "<?= site_url('/Invoice/detailWarehouse') ?>",
+        data: {
+            penerima: penerima,
         },
         dataType: "json",
         success: function(response) {

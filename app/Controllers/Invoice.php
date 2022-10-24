@@ -333,6 +333,22 @@ class Invoice extends BaseController
             echo json_encode($json);
         }
     }
+    function detailWarehouse()
+    {
+        if ($this->request->isAjax()) {
+            $orderid = $this->request->getPost('penerima');
+
+            $modelInvoice = new InvoiceModel();
+            $ambilData = $modelInvoice->find($orderid);
+            $data = [
+                'isidata'        => $modelInvoice->where(['Drop_name' => $orderid])->select('Item_id, Item_detail, sum(quantity) as quantity')->get()->getResultArray(),
+            ];
+            $json = [
+                'data'  => view('Stock/modalStockWarehouse', $data)
+            ];
+            echo json_encode($json);
+        }
+    }
     public function download()
     {
         $spreadsheet = new Spreadsheet();

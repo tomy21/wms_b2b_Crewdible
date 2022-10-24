@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-success">
-                <h5 class="modal-title" id="staticBackdropLabel">Detail Item Return</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Detail Item</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
