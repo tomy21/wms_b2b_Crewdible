@@ -258,7 +258,7 @@
                         <li class="nav-header">Warehouse</li>
                         <li class="nav-item">
                             <a href="<?= site_url('Invoice/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-upload"></i>
+                                <i class="nav-icon fas fa-list"></i>
                                 <p>
                                     List Transaksi
                                 </p>
