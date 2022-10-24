@@ -148,6 +148,14 @@
 
                         <li class="nav-header">Warehouse</li>
                         <li class="nav-item">
+                            <a href="<?= site_url('UploadPo/index'); ?>" class="nav-link">
+                                <i class="nav-icon fas fa-upload"></i>
+                                <p>
+                                    List Transaksi
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="<?= site_url('Inbound/index'); ?>" class="nav-link">
                                 <i class="nav-icon fas fa-warehouse"></i>
                                 <p>

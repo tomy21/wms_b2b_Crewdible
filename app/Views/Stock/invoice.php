@@ -11,7 +11,7 @@
 <!-- Theme style -->
 <link rel="stylesheet" href="<?= site_url() ?>/dist/css/adminlte.min.css">
 
-
+<?php if (user()->wareshouse == 'Headofficce') : ?>
 <div class="section">
     <div class="container-fluid">
         <div class="row">
@@ -29,11 +29,6 @@
                                 <label for="fileimport">Upload Data</label>
                                 <input type="file" class="form-control" name="fileimport" accept=".xls,.xlsx " required>
                             </div>
-                            <!-- <div class="form-group col-md-4">
-                    <label for="fileimport">Created Date</label>
-                    <input type="datetime" class="form-control" name="tglupload" id="tglManifest"
-                        value="<?= date('Y-m-d H:i:s') ?>" readonly>
-                </div> -->
                             <div class="form-group col-md-6">
                                 <label for="">Slot</label>
                                 <select name="slot" id="slot" class="form-control" required>
@@ -70,10 +65,10 @@
                             class="form-control <?php if (session('errors.warehouse')) : ?>is-invalid<?php endif ?>">
                             <option value="" selected> -- Pilih Warehouse -- </option>
                             <?php
-                            $db = \Config\Database::connect();
-                            $basket = $db->table('tbl_warehouse')->get()->getResult();
-                            foreach ($basket as $row) :
-                            ?>
+                                $db = \Config\Database::connect();
+                                $basket = $db->table('tbl_warehouse')->get()->getResult();
+                                foreach ($basket as $row) :
+                                ?>
                             <option value="<?= $row->warehouse_name ?>"><?= $row->warehouse_name ?></option>
                             <?php endforeach; ?>
                         </select>
@@ -86,7 +81,7 @@
         </div>
     </div>
 </div>
-
+<?php endif; ?>
 <div class="col-lg-12">
 
 </div>
@@ -131,7 +126,8 @@
                                     $data = $status;
                                 } else {
                                     $db = \Config\Database::connect();
-                                    $data = $db->table('tbl_order')->where('stock_location', user()->warehouse)->get()->getResult();
+                                    $date = date('d-m-Y H:i:s');
+                                    $data = $db->table('tbl_order')->getWhere(['stock_location' => user()->warehouse, 'status' < 6, 'updated_at' >= $date])->getResult();
                                 }
 
                                 $no = 1;
