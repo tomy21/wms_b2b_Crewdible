@@ -13,7 +13,7 @@ class PickingModel extends Model
 
     function tampilDataTransaksi($warehouse)
     {
-        return $this->table('tbl_picking')->getWhere(['warehouse' => $warehouse])->getResultArray();
+        return $this->table('tbl_picking')->getWhere(['warehouse' => $warehouse, 'created_at>' => date('Y-m-d')])->getResultArray();
     }
     public function getPickCount()
     {

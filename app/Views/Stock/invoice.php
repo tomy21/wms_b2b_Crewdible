@@ -109,7 +109,7 @@
                     <table id="example1" class="table table-striped" style="width: 100%;">
                         <thead>
                             <th>No</th>
-                            <th>Date Upload</th>
+                            <th>Slot Time</th>
                             <th>Warehouse</th>
                             <th><?php if (user()->warehouse == 'Headoffice') : ?> Order ID <?php else : ?> Jumlah
                                 Invoice <?php endif; ?></th>

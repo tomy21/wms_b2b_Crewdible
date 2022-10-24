@@ -32,8 +32,8 @@
                 <?php
                 $no = 1;
                 $db = \Config\Database::connect();
-                $data1 = $db->table('tbl_handover')->getWhere(['warehouse' => user()->warehouse])->getResultArray();
-                $data2 = $db->table('tbl_handover')->get()->getResultArray();
+                $data1 = $db->table('tbl_handover')->getWhere(['warehouse' => user()->warehouse, 'created_at>' => date('Y-m-d')])->getResultArray();
+                $data2 = $db->table('tbl_handover')->getWhere(['created_at>' => date('Y-m-d')])->getResultArray();
                 $data = user()->warehouse == 'Headoffice' ? $data2 : $data1;
                 foreach ($data as $row) :
                 ?>
