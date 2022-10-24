@@ -127,7 +127,8 @@
                                 } else {
                                     $db = \Config\Database::connect();
                                     $date = date('d-m-Y H:i:s');
-                                    $data = $db->table('tbl_order')->getWhere(['stock_location' => user()->warehouse, 'status' => 1, 2, 3, 4, 5])->getResult();
+                                    $orderDone = 6;
+                                    $data = $db->table('tbl_order')->getWhere(['stock_location' => user()->warehouse, 'status<' => $orderDone])->getResult();
                                 }
 
                                 $no = 1;
