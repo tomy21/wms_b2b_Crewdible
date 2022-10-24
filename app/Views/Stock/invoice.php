@@ -11,7 +11,7 @@
 <!-- Theme style -->
 <link rel="stylesheet" href="<?= site_url() ?>/dist/css/adminlte.min.css">
 
-<?php if (user()->wareshouse == 'Headofficce') : ?>
+<?php if (user()->wareshouse == 'Headoffice') : ?>
 <div class="section">
     <div class="container-fluid">
         <div class="row">
