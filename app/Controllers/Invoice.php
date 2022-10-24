@@ -403,7 +403,10 @@ class Invoice extends BaseController
     function edit($orderId)
     {
         $modelBarangMasuk = new InvoiceModel();
-        $cekFaktur = $modelBarangMasuk->cekTransaksi($orderId);
+        $modelOrder = new ModelOrder();
+        $cek = $modelOrder->getWhere(['Order_id' => $orderId])->getRow();
+        $order = $cek->id;
+        $cekFaktur = $modelBarangMasuk->cekTransaksi($order);
 
         if ($cekFaktur->getNumRows() > 0) {
             $row = $cekFaktur->getRowArray();
