@@ -17,8 +17,10 @@
                         <th>No</th>
                         <th>Warehouse</th>
                         <th>Order Id</th>
-                        <th>Nama Driver</th>
-                        <th>Nama Penerima</th>
+                        <th>Sum Qty Order</th>
+                        <th>Sum Qty Packing</th>
+                        <th>Count Items Order</th>
+                        <th>Count Items Packing</th>
                         <th>Jam Slot</th>
                         <th>Selesai Packing</th>
                         <th>Selesai Handover</th>
@@ -39,13 +41,8 @@
                         <td><?= $no++ ?></td>
                         <td><?= $query['stock_location'] ?></td>
                         <td><?= $query['Order_id'] ?></td>
-                        <td><?php
-                                $db = \Config\Database::connect();
-                                $warehouse = $db->table('tbl_listhandover')->getWhere(['order_id' => $query['Order_id']])->getRow();
-                                $driver = $db->table('tbl_handover')->getWhere(['id_handover' => $warehouse->id_handover])->getRow();
-                                echo $driver->driver;
-                                ?></td>
-                        <td><?= $query['Drop_name'] ?></td>
+                        <td></td>
+                        <td></td>
                         <td><?= $query['created_at'] ?></td>
                         <td>
                             <?php
