@@ -11,7 +11,7 @@
 <!-- Theme style -->
 <link rel="stylesheet" href="<?= site_url() ?>/dist/css/adminlte.min.css">
 
-<?php if (user()->wareshouse == 'Headoffice') : ?>
+<?php if (user()->warehouse == 'Headoffice') : ?>
 <div class="section">
     <div class="container-fluid">
         <div class="row">
@@ -127,7 +127,7 @@
                                 } else {
                                     $db = \Config\Database::connect();
                                     $date = date('d-m-Y H:i:s');
-                                    $data = $db->table('tbl_order')->getWhere(['stock_location' => user()->warehouse, 'status' => [1, 2, 3, 4, 5]])->getResult();
+                                    $data = $db->table('tbl_order')->getWhere(['stock_location' => user()->warehouse, 'status' => 1, 2, 3, 4, 5])->getResult();
                                 }
 
                                 $no = 1;
