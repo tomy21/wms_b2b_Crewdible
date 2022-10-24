@@ -35208,7 +35208,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 
 .product-image-thumb img {
   max-width: 100%;
-  height: auto;
+  height: 60%;
   -ms-flex-item-align: center;
   align-self: center;
 }

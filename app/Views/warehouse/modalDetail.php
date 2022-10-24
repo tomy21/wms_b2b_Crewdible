@@ -18,12 +18,12 @@
                         <h3 class="d-inline-block d-sm-none"><?= $nopo ?></h3>
                         <div class="col-12">
                             <img src="<?= site_url() ?>/assets/inbound/<?= $fotobarang ?>" class="product-image"
-                                alt="Product Image" style="height: 50%;">
+                                alt="Product Image">
                         </div>
-                        <div class="col-12 product-image-thumbs" style="height: 60%; width: 100% ;">
-                            <div class="product-image-thumb active" style="height: 60%; width: 100% ;"><img
+                        <div class="col-12 product-image-thumbs">
+                            <div class="product-image-thumb active"><img
                                     src="<?= site_url() ?>/assets/inbound/<?= $fotobarang ?>" alt="Product Image"></div>
-                            <div class="product-image-thumb active" style="height: 60%; width: 100% ;"><img
+                            <div class="product-image-thumb active"><img
                                     src="<?= site_url() ?>/assets/inbound/<?= $fotosjl ?>" alt="Product Image"></div>
                         </div>
                     </div>
