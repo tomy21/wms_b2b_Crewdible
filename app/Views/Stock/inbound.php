@@ -31,9 +31,9 @@
                         $no = 1;
                         $db = \Config\Database::connect();
                         if (user()->warehouse == 'Headoffice') {
-                            $admin = $db->table('tbl_po')->get()->getResultArray();
+                            $admin = $db->table('tbl_po')->getWhere(['created_at>' => date('Y-m-d')])->getResultArray();
                         } else {
-                            $warehouse = $db->table('tbl_po')->where(['warehouse' => user()->warehouse])->get()->getResultArray();
+                            $warehouse = $db->table('tbl_po')->where(['warehouse' => user()->warehouse, 'created_at>' => date('Y-m-d')])->get()->getResultArray();
                         }
                         user()->warehouse == 'Headoffice' ? $inbound = $admin : $inbound = $warehouse;
                         foreach ($inbound as $user) :
