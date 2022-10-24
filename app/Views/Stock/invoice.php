@@ -124,7 +124,8 @@
                                 <?php
 
                                 if (user()->warehouse == 'Headoffice') {
-                                    $data2 = $status;
+                                    $data2 =
+                                        $db->table('tbl_invoice')->where(['created_at' => date('Y-m-d'), 'status<' => $orderDone])->get()->getResult();;
                                 } else {
                                     $db = \Config\Database::connect();
                                     $date = date('d-m-Y H:i:s');
