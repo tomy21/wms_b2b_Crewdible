@@ -168,8 +168,7 @@
                                         if (user()->warehouse == 'Headoffice') :
                                         ?>
                                     <button type="button" class="btn btn-sm btn-warning"
-                                        onclick="edit('<?= sha1($user->Order_id); ?>')"><i
-                                            class="fa fa-edit"></i></button>
+                                        onclick="edit('<?= sha1($user->id); ?>')"><i class="fa fa-edit"></i></button>
                                     <?php endif; ?>
                                 </td>
                             </tr>
@@ -213,7 +212,7 @@ $('#warehouse').change(function(e) {
 
 });
 
-function edit(orderId) {
+function edit(id) {
     window.location.href = (<?= site_url() ?> '/Invoice/edit/') + orderId;
 }
 
