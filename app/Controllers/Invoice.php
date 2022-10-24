@@ -412,7 +412,7 @@ class Invoice extends BaseController
             $row = $cekFaktur->getRowArray();
 
             $data = [
-                'assign'          => $row['assign'],
+                'assign'            => $row['assign'],
                 'Order_id'          => $row['Order_id'],
                 'created_at'        => $row['created_at'],
                 'Drop_name'         => $row['Drop_name'],
