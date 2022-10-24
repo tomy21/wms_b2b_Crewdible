@@ -39,7 +39,12 @@
                         <td><?= $no++ ?></td>
                         <td><?= $query['stock_location'] ?></td>
                         <td><?= $query['Order_id'] ?></td>
-                        <td><?= $query['driver'] ?></td>
+                        <td><?php
+                                $db = \Config\Database::connect();
+                                $warehouse = $db->table('tbl_listhandover')->getWhere(['order_id' => $query['Order_id']])->getRow();
+                                $driver = $db->table('tbl_handover')->getWhere(['id_handover' => $warehouse->id_handover])->getRow();
+                                echo $driver->driver;
+                                ?></td>
                         <td><?= $query['Drop_name'] ?></td>
                         <td><?= $query['created_at'] ?></td>
                         <td>
