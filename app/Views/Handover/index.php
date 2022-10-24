@@ -32,7 +32,9 @@
                 <?php
                 $no = 1;
                 $db = \Config\Database::connect();
-                $data = $db->table('tbl_handover')->getWhere(['warehouse' => user()->warehouse])->getResultArray();
+                $data1 = $db->table('tbl_handover')->getWhere(['warehouse' => user()->warehouse])->getResultArray();
+                $data2 = $db->table('tbl_handover')->get()->getResultArray();
+                $data = user()->warehouse == 'Headoffice' ? $data2 : $data1;
                 foreach ($data as $row) :
                 ?>
                 <tr>
