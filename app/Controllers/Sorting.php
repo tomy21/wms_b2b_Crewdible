@@ -91,7 +91,7 @@ class Sorting extends BaseController
             $modelInvoice->update($row->id, ['status' => 5]);
         }
 
-        $pdf = new TCPDF('P', PDF_UNIT, 'A4', true, 'UTF-8', false);
+        $pdf = new TCPDF('P', PDF_UNIT, 'A6', true, 'UTF-8', false);
         $pdf->SetCreator(PDF_CREATOR);
         $pdf->SetAuthor('Invoice BMI ');
         $pdf->SetTitle("Invoice $id ");
