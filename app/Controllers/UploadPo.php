@@ -112,6 +112,13 @@ class UploadPo extends BaseController
                         'warehouse'     => $warehouse,
                     ];
                     $this->InboundModel->add($data);
+                    $htmlError = [
+                        'success' => '<div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
+                        <h5><i class="icon fas fa-check"></i> Sukses </h5>
+                        Berhasil submit data
+                        </div>'
+                    ];
                 }
             }
             $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
