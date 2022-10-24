@@ -90,7 +90,7 @@
 $(function() {
     $("#example1").DataTable({
         "responsive": true,
-        "lengthChange": false,
+        "lengthChange": true,
         "autoWidth": true,
         "buttons": ["excel", "pdf", "print"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
