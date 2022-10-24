@@ -339,9 +339,8 @@ class Invoice extends BaseController
             $orderid = $this->request->getPost('penerima');
 
             $modelInvoice = new InvoiceModel();
-            $ambilData = $modelInvoice->find($orderid);
             $data = [
-                'isidata'        => $modelInvoice->where(['Drop_name' => $orderid])->select('Item_id, Item_detail, sum(quantity) as quantity')->get()->getResultArray(),
+                'isidata'        => $modelInvoice->where(['Drop_name' => $orderid])->select('Item_id, Item_detail, sum(quantity) as quantity')->groupBy('Item_id')->get()->getResultArray(),
             ];
             $json = [
                 'data'  => view('Stock/modalStockWarehouse', $data)
