@@ -91,7 +91,7 @@ class Sorting extends BaseController
             $modelInvoice->update($row->id, ['status' => 5]);
         }
 
-        $pdf = new TCPDF('P', PDF_UNIT, 'A6', true, 'UTF-8', false);
+        $pdf = new TCPDF('P', PDF_UNIT, 'A4', true, 'UTF-8', false);
         $pdf->SetCreator(PDF_CREATOR);
         $pdf->SetAuthor('Invoice BMI ');
         $pdf->SetTitle("Invoice $id ");
@@ -113,7 +113,7 @@ class Sorting extends BaseController
         );
         $style2 = array(
             'position' => '',
-            'align' => 'R',
+            'align' => 'L',
             'stretch' => false,
             'fitwidth' => false,
             'cellfitalign' => 'L',
@@ -140,7 +140,7 @@ class Sorting extends BaseController
             'address'       => $order['Drop_address'],
             'contact'       => $order['Drop_contact'],
             'data'          => $cekData,
-            'barcode'       => $pdf->write2DBarcode($id, 'QRCODE,L', 100, 40, 30, 30, $style),
+            'barcode'       => $pdf->write2DBarcode($id, 'QRCODE,L', 80, 8, 30, 30, $style),
             'barcode1'      => $pdf->write1DBarcode($id, 'C128B', '', '', '', 20, 0.4, $style2, 'N'),
         ]);
         $orderId = $order['Order_id'];

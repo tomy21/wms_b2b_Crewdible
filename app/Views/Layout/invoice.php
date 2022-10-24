@@ -11,7 +11,7 @@ body {
 
 p {
     color: grey;
-    font-size: 9px;
+    font-size: 12px;
 }
 
 span {
@@ -20,7 +20,7 @@ span {
 
 h3 {
     margin-bottom: 30px;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 table {
@@ -32,7 +32,7 @@ table {
 
 .table {
     border-collapse: collapse;
-    font-size: 10px;
+    font-size: 12px;
     width: 100%;
     text-align: left;
 }
@@ -82,64 +82,57 @@ caption {
 <body>
     <table border="0">
         <thead>
+
+            <img src="<?= $barcode ?>" alt="">
+            <img src="<?= $barcode1 ?>" alt="" width="40px">
+
             <tr>
-                <td width="40%">
+                <td width="60%">
                     <p>Tanggal Pesanan <span>(Order date)</span></p>
-                    <h3 style="font-weight:1000 ;"><?= $date ?></h3>
+                    <h3 style="font-weight:bolder ;"><?= $date ?></h3>
                 </td>
                 <td rowspan="3" align="center">
                     <p></p>
                     <p></p>
-                    <img src="<?= $barcode ?>" alt="">
-                </td>
-                <td rowspan="3" align="center">
-                    <p></p>
-                    <p></p>
-                    <img src="./dist/img/kingkong.png" alt="" width="120px">
+                    <img src="./dist/img/kingkong.png" alt="" width="180px">
                 </td>
             </tr>
             <tr>
-                <td width="40%">
+                <td width="60%">
                     <p>Nomor Pesanan <span>(Order number)</span></p>
-                    <h3 style="font-weight:1000 ;"><?= $noOrder ?></h3>
-                    <p></p>
-                    <img src="<?= $barcode1 ?>" alt="" width="40px">
+                    <h3 style="font-weight:bolder ;"><?= $noOrder ?></h3>
                 </td>
             </tr>
             <tr>
-                <td width="40%">
+                <td width="60%">
                     <p>Tanggal Pengiriman <span>(Schedule Delivery Time)</span></p>
-                    <h3 style="font-weight:900 ;"><?= $drop_date ?></h3>
+                    <h3 style="font-weight:bolder;"><?= $drop_date ?></h3>
                 </td>
             </tr>
         </thead>
     </table>
-    <p></p>
-
-
-    <hr>
     <br>
     <hr>
     <table>
         <tr>
-            <td>
+            <td width="40%">
                 <p>Penerima <span>(Recipient)</span></p>
                 <h3 style="font-weight:1000 ;"><?= $penerima ?></h3>
             </td>
-            <td width="50%">
+            <td width="60%">
                 <p>Alamat Pengiriman <span>(Delivery address)</span></p>
                 <h3 style="font-weight:1000 ;"><?= $address ?></h3>
             </td>
 
         </tr>
         <tr>
-            <td>
+            <td width="40%">
                 <p>Nomor Telepon <span>(Phone Number)</span></p>
-                <h3 style="font-weight:1000 ;">+ <?= $contact ?></h3>
+                <h3 style="font-weight:bolder;">+ <?= $contact ?></h3>
             </td>
-            <td width="50%">
+            <td width="60%">
                 <p>Detail Alamat <span>(Address Detail)</span></p>
-                <h3 style="font-weight:1000 ;">-</h3>
+                <h3 style="font-weight:bolder ;">-</h3>
             </td>
         </tr>
     </table>
@@ -169,11 +162,11 @@ caption {
                 foreach ($data->getResultArray() as $row) :
                 ?>
                 <tr>
-                    <td width="7%"><?= $no++ ?></td>
-                    <td width="47%"><?= $row['Item_detail'] ?></td>
-                    <td width="15%"><?= $row['Item_id'] ?></td>
-                    <td width="15%"><?= $row['quantity'] ?></td>
-                    <td width="15%">-</td>
+                    <td width="7%" style="font-weight:bolder ;"><?= $no++ ?></td>
+                    <td width="47%" style="font-weight:bolder ;"><?= $row['Item_detail'] ?></td>
+                    <td width="15%" style="font-weight:bolder ;"><?= $row['Item_id'] ?></td>
+                    <td width="15%" style="font-weight:bolder ;"><?= $row['quantity'] ?></td>
+                    <td width="15%" style="font-weight:bolder ;">-</td>
                 </tr>
             </tbody>
             <?php endforeach; ?>
