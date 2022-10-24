@@ -35182,7 +35182,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 
 .product-image {
   max-width: 100%;
-  height: auto;
+  height: 60%;
   width: 100%;
 }
 
