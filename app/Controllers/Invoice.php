@@ -20,10 +20,10 @@ class Invoice extends BaseController
     }
     public function index()
     {
-        $data = [
-            'status'    => $this->ModalOrder->get()->getResult(),
-        ];
-        return view('Stock/invoice', $data);
+        // $data = [
+        //     'status'    => $this->ModalOrder->get()->getResult(),
+        // ];
+        return view('Stock/invoice');
     }
     public function upload()
     {
