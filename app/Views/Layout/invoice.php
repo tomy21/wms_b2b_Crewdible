@@ -115,22 +115,27 @@ caption {
     <hr>
     <table>
         <tr>
-            <td width="40%">
+            <td width="30%">
                 <p>Penerima <span>(Recipient)</span></p>
                 <h3 style="font-weight:1000 ;"><?= $penerima ?></h3>
             </td>
-            <td width="60%">
+            <td width="30%">
+                <p>Note</p>
+                <h3 style="font-weight:bolder;"><?= $note ?></h3>
+            </td>
+            <td width="40%">
                 <p>Alamat Pengiriman <span>(Delivery address)</span></p>
                 <h3 style="font-weight:1000 ;"><?= $address ?></h3>
             </td>
 
         </tr>
         <tr>
-            <td width="40%">
+            <td width="30%">
                 <p>Nomor Telepon <span>(Phone Number)</span></p>
-                <h3 style="font-weight:bolder;">+ <?= $contact ?></h3>
+                <h3 style="font-weight:bolder;">0<?= $contact ?></h3>
             </td>
-            <td width="60%">
+
+            <td width="50%">
                 <p>Detail Alamat <span>(Address Detail)</span></p>
                 <h3 style="font-weight:bolder ;">-</h3>
             </td>
@@ -165,10 +170,27 @@ caption {
                     <td width="7%" style="font-weight:bolder ;"><?= $no++ ?></td>
                     <td width="47%" style="font-weight:bolder ;"><?= $row['Item_detail'] ?></td>
                     <td width="15%" style="font-weight:bolder ;"><?= $row['Item_id'] ?></td>
-                    <td width="15%" style="font-weight:bolder ;"><?= $row['quantity'] ?></td>
+                    <td width="15%" style="font-weight:bolder; text-align:center"><?= $row['quantity'] ?></td>
                     <td width="15%" style="font-weight:bolder ;">-</td>
                 </tr>
             </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="3" align="center">Total</th>
+                    <th align="center">
+                        <?php
+                        $db = \Config\Database::connect();
+                        $data = $db->table('tbl_invoice')->where(['Order_id' => $row['Order_id']])->get()->getResult();
+                        $sum = 0;
+                        foreach ($data as $z) {
+                            $sum += $z->quantity;
+                        }
+                        echo $sum;
+                        ?>
+                    </th>
+                    <th>-</th>
+                </tr>
+            </tfoot>
             <?php endforeach; ?>
         </table>
     </div>

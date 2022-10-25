@@ -139,6 +139,7 @@ class Sorting extends BaseController
             'penerima'      => $order['Drop_name'],
             'address'       => $order['Drop_address'],
             'contact'       => $order['Drop_contact'],
+            'note'          => $order['note'],
             'data'          => $cekData,
             'barcode'       => $pdf->write2DBarcode($id, 'QRCODE,L', 80, 8, 30, 30, $style),
             'barcode1'      => $pdf->write1DBarcode($id, 'C128B', '', '', '', 20, 0.4, $style2, 'N'),
