@@ -80,11 +80,11 @@ class ApiPacking extends ResourceController
         $modelOrder     = new ModelOrder();
         // $file = $this->request->getFile('foto');
         // $file->move('./assets/uploades');
-        // $file1 = $this->request->getFile('fotoAfter');
-        // $file1->move('./assets/uploades');
+        $file1 = $this->request->getFile('fotoAfter');
+        $file1->move('./assets/uploades');
 
         $id = $this->request->getPost('id');
-        // $assign = $this->request->getPost('assign');
+        $assign = $this->request->getPost('assign');
 
         $Order = $modelPacking->getWhere(['order_id' => $id])->getResultArray();
 
@@ -99,10 +99,10 @@ class ApiPacking extends ResourceController
             return $this->fail('Quantity melebihi orderan');
         } else {
             $data = [
-                // 'assign'    => $assign,
+                'assign'    => $assign,
                 'Status'    => 2,
                 // 'foto'      => $file->getName(),
-                // 'foto_after' => $file1->getName(),
+                'foto_after' => $file1->getName(),
             ];
             $modelPacking->update($id, $data);
             $modelOrder->update($id, ['status' => 5]);
