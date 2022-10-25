@@ -11,7 +11,6 @@
             <div class="modal-body">
                 <table id="viewStatus" class="table table-striped" style="width: 100%;">
                     <thead>
-
                         <th>No</th>
                         <th>Item Id</th>
                         <th>Item Detail</th>
@@ -23,8 +22,8 @@
                             $no = 1;
                             foreach ($isidata->getResultArray() as $row) :
                             ?>
-                            <td><?= $no++ ?></td>
-                            <td><?= $row['Item_id'] ?></td>
+                            <td>1</td>
+                            <td>2</td>
                             <td><?= $row['Item_detail'] ?></td>
                             <td><?= $row['quantity'] ?></td>
 

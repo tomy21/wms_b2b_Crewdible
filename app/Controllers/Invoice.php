@@ -323,9 +323,9 @@ class Invoice extends BaseController
             $orderid = $this->request->getPost('order');
 
             $modelInvoice = new InvoiceModel();
-            $ambilData = $modelInvoice->find($orderid);
+            $ambilData = $modelInvoice->getWhere(['Order_id' => $orderid])->getRow();
             $data = [
-                'isidata'        => $modelInvoice->getWhere(['Order_id' => $orderid]),
+                'isidata'        => $modelInvoice->getWhere(['id' => $ambilData->id]),
             ];
             $json = [
                 'data'  => view('Stock/modalDetailOrder', $data)
