@@ -79,7 +79,7 @@ class Sorting extends BaseController
         $modelPacking   = new PackingModel();
         $order = $modelInvoice->find($id);
         $cekData = $modelInv->getWhere(['Order_id' => $id]);
-        $listItem = $modelInv->where('Order_id', $id)->select('id,Item_id,Item_detail,quantity')->get()->getResultArray();
+        $listItem = $modelInv->where('Order_id', $id)->select('id,Item_id,Item_detail,quantity,Drop_name')->get()->getResultArray();
         $data = [
             'order_id'  => $id,
             'list'      => json_encode($listItem),
