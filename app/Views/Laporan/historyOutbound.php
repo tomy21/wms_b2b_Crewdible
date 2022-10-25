@@ -78,7 +78,7 @@
                                 $warehouse = $db->table('tbl_packing')->getWhere(['order_id' => $query['Order_id']])->getRow();
                                 $listItem = $warehouse->list;
 
-                                echo count($listItem);
+                                echo count(json_decode($listItem));
                                 ?>
                         </td>
                         <td><?= $query['created_at'] ?></td>
