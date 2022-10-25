@@ -36,7 +36,7 @@ class ApiPacking extends ResourceController
     public function detail($warehouse = null)
     {
         $modelPacking   = new PackingModel();
-        $cekOrder = $modelPacking->where(['Status' => 0, 'warehouse' => $warehouse])->findAll();
+        $cekOrder = $modelPacking->where(['Status<' => 2, 'warehouse' => $warehouse])->findAll();
         if (!$cekOrder) {
             $response = [
                 "success"   => false,
@@ -56,7 +56,7 @@ class ApiPacking extends ResourceController
         $modelPacking = new PackingModel();
         $id = $this->request->getPost('id');
 
-        $Order = $modelPacking->getWhere(['order_id' => $id, 'status' => 0])->getResultArray();
+        $Order = $modelPacking->getWhere(['order_id' => $id, 'Status<' => 2])->getResultArray();
 
         $respon = [
             'success'       => true,
@@ -100,7 +100,7 @@ class ApiPacking extends ResourceController
         } else {
             $data = [
                 'assign'    => $assign,
-                'Status'    => 1,
+                'Status'    => 2,
                 'foto'      => $file->getName(),
                 'foto_after' => $file1->getName(),
             ];
@@ -126,6 +126,49 @@ class ApiPacking extends ResourceController
             //         $modelHandover->insert($data);
             //     }
             // }
+            $respon = [
+                'success'       => true,
+                'data'          => $data
+            ];
+
+            return $this->respond(json_encode($respon), 200);
+        }
+        // }
+    }
+    public function updateFoto($id = null)
+    {
+        // $rules = [
+        //     'foto'  => 'uploaded[foto]|max_size[foto, 1024]|is_image[foto]'
+        // ];
+
+        // if ($this->validate($rules)) {
+        //     return $this->fail($this->validator->getErrors());
+        // } else {
+        //     if ($file->isValid()) return $this->fail($this->validator->getErrors());
+        $modelPacking   = new PackingModel();
+        $file = $this->request->getFile('foto');
+        $file->move('./assets/uploades');
+
+        $id = $this->request->getPost('id');
+
+        $Order = $modelPacking->getWhere(['order_id' => $id])->getResultArray();
+
+        if (!$Order) {
+            $respon = [
+                'success'       => true,
+                'message'       => [
+                    'error'     => 'data tidak ditemukan'
+                ]
+            ];
+
+            return $this->fail('' . $id . ' tidak ada');
+        } else {
+            $data = [
+                'Status'    => 1,
+                'foto'      => $file->getName(),
+            ];
+            $modelPacking->update($id, $data);
+
             $respon = [
                 'success'       => true,
                 'data'          => $data
