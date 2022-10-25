@@ -52,9 +52,35 @@
                                 echo $sumData;
                                 ?>
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>
+                            <?php
+                                $db = \Config\Database::connect();
+                                $warehouse = $db->table('tbl_packing')->getWhere(['order_id' => $query['Order_id']])->getRow();
+
+                                $sumQty = 0;
+                                $listItem = $warehouse->list;
+                                foreach ($listItem as $t) {
+                                    $sumQty += intval($t->quantity);
+                                }
+                                echo $sumQty;
+                                ?>
+                        </td>
+                        <td>
+                            <?php
+                                $db = \Config\Database::connect();
+                                $data = $db->table('tbl_invoice')->where(['Order_id' => $query['Order_id']])->countAllResults();
+                                echo $data;
+                                ?>
+                        </td>
+                        <td>
+                            <?php
+                                $db = \Config\Database::connect();
+                                $warehouse = $db->table('tbl_packing')->getWhere(['order_id' => $query['Order_id']])->getRow();
+                                $listItem = $warehouse->list;
+
+                                echo count($listItem);
+                                ?>
+                        </td>
                         <td><?= $query['created_at'] ?></td>
                         <td>
                             <?php
