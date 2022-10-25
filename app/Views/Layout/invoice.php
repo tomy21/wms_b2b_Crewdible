@@ -174,24 +174,24 @@ caption {
                     <td width="15%" style="font-weight:bolder ;">-</td>
                 </tr>
             </tbody>
+            <?php endforeach; ?>
             <tfoot>
                 <tr>
                     <th colspan="3" align="center">Total</th>
                     <th align="center">
                         <?php
-                        $db = \Config\Database::connect();
-                        $data = $db->table('tbl_invoice')->where(['Order_id' => $row['Order_id']])->get()->getResult();
-                        $sum = 0;
-                        foreach ($data as $z) {
-                            $sum += $z->quantity;
-                        }
-                        echo $sum;
-                        ?>
+                    $db = \Config\Database::connect();
+                    $data = $db->table('tbl_invoice')->where(['Order_id' => $row['Order_id']])->get()->getResult();
+                    $sum = 0;
+                    foreach ($data as $z) {
+                        $sum += $z->quantity;
+                    }
+                    echo $sum;
+                    ?>
                     </th>
                     <th>-</th>
                 </tr>
             </tfoot>
-            <?php endforeach; ?>
         </table>
     </div>
 
