@@ -43,6 +43,8 @@
                         <td><?= $query['Order_id'] ?></td>
                         <td></td>
                         <td></td>
+                        <td></td>
+                        <td></td>
                         <td><?= $query['created_at'] ?></td>
                         <td>
                             <?php
