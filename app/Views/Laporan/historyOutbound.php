@@ -41,7 +41,17 @@
                         <td><?= $no++ ?></td>
                         <td><?= $query['stock_location'] ?></td>
                         <td><?= $query['Order_id'] ?></td>
-                        <td></td>
+                        <td>
+                            <?php
+                                $db = \Config\Database::connect();
+                                $warehouse = $db->table('tbl_invoice')->getWhere(['Order_id' => $query['Order_id']])->getResult();
+                                $sumData = 0;
+                                foreach ($warehouse as $g) {
+                                    $sumData += intval($g->quantity);
+                                }
+                                echo $sumData;
+                                ?>
+                        </td>
                         <td></td>
                         <td></td>
                         <td></td>
