@@ -86,7 +86,7 @@
                             <td><?= $row->stock_location ?></td>
                             <td><?= $row->Item_id; ?></td>
                             <td><?= $row->Item_detail; ?></td>
-                            <td><?= $row->created_at > date('Y-m-d 08:15:00') ? 'slot 2' : 'slot 1' ?></td>
+                            <td><?= $row->created_at > date('Y-m-d 08:15:00') ? 'slot 1' : 'slot 2' ?></td>
                             <td><?= $row->quantity; ?></td>
                             <?php endforeach; ?>
                         </tr>
