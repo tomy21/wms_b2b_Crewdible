@@ -49,7 +49,7 @@ class Filters extends BaseConfig
             // 'apipicking',
             // 'honeypot',
             'login' => [
-                'except'    => ['ApiKaryawan', 'ApiInbound', 'ApiManifest', 'ApiOrder', 'ApiPacking', 'ApiPicking', 'ApiKaryawan/*', 'ApiInbound/*', 'ApiManifest/*', 'ApiOrder/*', 'ApiPacking/*', 'ApiPicking/*']
+                'except'    => ['ApiKaryawan', 'ApiInbound', 'ApiManifest', 'ApiOrder', 'ApiPacking', 'ApiPicking', 'assets', 'assets/*', 'ApiKaryawan/*', 'ApiInbound/*', 'ApiManifest/*', 'ApiOrder/*', 'ApiPacking/*', 'ApiPicking/*']
             ],
             // 'apikaryawan',
             // 'csrf',
