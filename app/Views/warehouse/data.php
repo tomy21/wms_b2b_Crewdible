@@ -36,7 +36,7 @@
                     <?php
                     $no = 1;
                     $db = \Config\Database::connect();
-                    $datatemp1 = $db->table('tbl_packing')->getWhere(['warehouse' => user()->warehouse, 'created_at>' => date('Y-m-d')])->getResultArray();
+                    $datatemp1 = $db->table('tbl_packing')->getWhere(['warehouse' => user()->warehouse, 'created_at>' => date('Y-m-d 22:00:00')])->getResultArray();
                     $datatemp2 = $db->table('tbl_packing')->getWhere(['created_at>' => date('Y-m-d')])->getResultArray();
                     $datatemp = user()->warehouse == 'Headoffice' ? $datatemp2 : $datatemp1;
                     foreach ($datatemp as $query) :
@@ -65,7 +65,7 @@
                         </td>
                         <td><?= $query['assign'] ?></td>
                         <td>
-                            <?php if ($query['Status'] == 1) : ?>
+                            <?php if ($query['Status'] == 2) : ?>
                             <span class="badge badge-success">Done</span>
                             <?php else : ?>
                             <span class="badge badge-danger">Proses</span>
