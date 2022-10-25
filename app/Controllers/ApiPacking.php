@@ -83,7 +83,7 @@ class ApiPacking extends ResourceController
         // $file1 = $this->request->getFile('fotoAfter');
         // $file1->move('./assets/uploades');
 
-        // $id = $this->request->getPost('id');
+        $id = $this->request->getPost('id');
         // $assign = $this->request->getPost('assign');
 
         $Order = $modelPacking->getWhere(['order_id' => $id])->getResultArray();
