@@ -124,6 +124,7 @@
                                 <?php
 
                                 if (user()->warehouse == 'Headoffice') {
+                                    $db = \Config\Database::connect();
                                     $data2 =
                                         $db->table('tbl_invoice')->where(['created_at' => date('Y-m-d'), 'status<' => 6])->get()->getResult();
                                 } else {
