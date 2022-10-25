@@ -59,7 +59,7 @@
 
                                 $sumQty = 0;
                                 $listItem = $warehouse->list;
-                                foreach ($listItem as $t) {
+                                foreach (json_decode($listItem) as $t) {
                                     $sumQty += intval($t->quantity);
                                 }
                                 echo $sumQty;
