@@ -91,16 +91,6 @@ class UploadPo extends BaseController
                     ];
                     session()->setFlashdata($htmlError);
                     return redirect()->to('/UploadPo/index');
-                } else if (strlen($item_id) > 10) {
-                    $htmlError = [
-                        'error' => '<div class="alert alert-danger alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
-                        <h5><i class="icon fas fa-times"></i> Gagal </h5>
-                        Item id tidak valid
-                        </div>'
-                    ];
-                    session()->setFlashdata($htmlError);
-                    return redirect()->to('/UploadPo/index');
                 } else {
                     $data = [
                         'nopo'          => $nopo,
