@@ -29,13 +29,14 @@
                     <?php
                     $no = 1;
                     $db = \Config\Database::connect();
+
                     $date = date('d-m-Y');
                     $hari = 1;
                     $hariKemarin = date('Y-m-d', strtotime('-$hari day', strtotime($date)));
 
-                    $data1 = $db->table('tbl_picking')->where('warehouse', user()->warehouse)->orderBy('updated_at', 'DESC')->get()->getResultArray();
+                    $data1 = $db->table('tbl_picking')->where(['warehouse' => user()->warehouse, 'updated_at>=' => $hariKemarin])->orderBy('created_at', 'DESC')->get()->getResultArray();
 
-                    $data2 = $db->table('tbl_picking')->orderBy('updated_at', 'DESC')->get()->getResultArray();
+                    $data2 = $db->table('tbl_picking')->where(['updated_at>=' => $hariKemarin])->orderBy('created_at', 'DESC')->get()->getResultArray();
 
                     $data = user()->warehouse == 'Headoffice' ? $data2 : $data1;
                     foreach ($data as $query) :
