@@ -90,43 +90,41 @@ class UploadPo extends BaseController
                         Quantity tidak valid
                         </div>'
                     ];
-                    $validate = false;
-                    return;
-                } else {
-                    $data = [
-                        'nopo'          => $nopo,
-                        'Item_id'       => $item_id,
-                        'Item_detail'   => $item_detail,
-                        'status'        => 0,
-                        'estimate_date' => $estimate,
-                        'quantity'      => $qty,
-                        'warehouse'     => $warehouse,
-                    ];
-                    $this->InboundModel->add($data);
+                    session()->setFlashdata($htmlError);
+                    return redirect()->to('/UploadPo/index');
                 }
-            }
-            if ($validate) {
-                $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
-                $subtotal = 0;
-                $countItem = $dataTem->getNumRows();
-                foreach ($dataTem->getResultArray() as $row) :
-                    $subtotal += intval($row['quantity']);
-                endforeach;
-                $this->PoModel->insert([
-                    'no_Po'         => $nopo,
+                $data = [
+                    'nopo'          => $nopo,
+                    'Item_id'       => $item_id,
+                    'Item_detail'   => $item_detail,
+                    'status'        => 0,
+                    'estimate_date' => $estimate,
+                    'quantity'      => $qty,
                     'warehouse'     => $warehouse,
-                    'jumlah_item'   => $countItem,
-                    'quantity_item' => $subtotal,
-                    'created_at'    => $estimate
-                ]);
-                $htmlError = [
-                    'success' => '<div class="alert alert-success alert-dismissible" role="alert">
+                ];
+                $this->InboundModel->add($data);
+            }
+            $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
+            $subtotal = 0;
+            $countItem = $dataTem->getNumRows();
+            foreach ($dataTem->getResultArray() as $row) :
+                $subtotal += intval($row['quantity']);
+            endforeach;
+            $this->PoModel->insert([
+                'no_Po'         => $nopo,
+                'warehouse'     => $warehouse,
+                'jumlah_item'   => $countItem,
+                'quantity_item' => $subtotal,
+                'created_at'    => $estimate
+            ]);
+            $htmlError = [
+                'success' => '<div class="alert alert-success alert-dismissible" role="alert">
                         <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
                         <h5><i class="icon fas fa-check"></i> Sukses </h5>
                         Berhasil submit data
                         </div>'
-                ];
-            }
+            ];
+
 
 
             session()->setFlashdata($htmlError);
