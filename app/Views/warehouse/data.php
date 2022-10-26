@@ -39,8 +39,8 @@
                     $date = date('d-m-Y H:i:s');
                     $hari = 1;
                     $hariKemarin = date('Y-m-d', strtotime('-$hari day', strtotime($date)));
-                    $datatemp1 = $db->table('tbl_packing')->where(['warehouse' => user()->warehouse, 'created_at' => $hariKemarin])->orderBy('created_at', 'DESC')->get()->getResultArray();
-                    $datatemp2 = $db->table('tbl_packing')->where(['created_at' => $hariKemarin])->orderBy('created_at', 'DESC')->get()->getResultArray();
+                    $datatemp1 = $db->table('tbl_packing')->where(['warehouse' => user()->warehouse, 'updated_at' => $hariKemarin])->orderBy('created_at', 'DESC')->get()->getResultArray();
+                    $datatemp2 = $db->table('tbl_packing')->where(['updated_at' => $hariKemarin])->orderBy('created_at', 'DESC')->get()->getResultArray();
                     $datatemp = user()->warehouse == 'Headoffice' ? $datatemp2 : $datatemp1;
                     foreach ($datatemp as $query) :
                     ?>
