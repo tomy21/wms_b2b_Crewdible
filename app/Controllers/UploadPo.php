@@ -81,57 +81,49 @@ class UploadPo extends BaseController
                 $item_id                = $row[0];
                 $item_detail            = $row[1];
                 $qty                    = $row[2];
-                if (!is_int($qty)) {
-                    $htmlError = [
-                        'error' => '<div class="alert alert-danger alert-dismissible" role="alert">
+
+                $itemTemp[] = [
+                    'nopo'          => $nopo,
+                    'Item_id'       => $item_id,
+                    'Item_detail'   => $item_detail,
+                    'status'        => 0,
+                    'estimate_date' => $estimate,
+                    'quantity'      => $qty,
+                    'warehouse'     => $warehouse,
+                ];
+            }
+
+            if (!is_int($itemTemp['quantity'])) {
+                $htmlError = [
+                    'error' => '<div class="alert alert-danger alert-dismissible" role="alert">
                         <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
                         <h5><i class="icon fas fa-times"></i> Gagal </h5>
                         Quantity tidak valid
                         </div>'
-                    ];
-                    session()->setFlashdata($htmlError);
-                    return redirect()->to('/UploadPo/index');
-                } else {
-                    $data = [
-                        'nopo'          => $nopo,
-                        'Item_id'       => $item_id,
-                        'Item_detail'   => $item_detail,
-                        'status'        => 0,
-                        'estimate_date' => $estimate,
-                        'quantity'      => $qty,
-                        'warehouse'     => $warehouse,
-                    ];
-                    $this->InboundModel->add($data);
-                    $htmlError = [
-                        'success' => '<div class="alert alert-success alert-dismissible" role="alert">
+                ];
+            } else {
+                $this->InboundModel->add($itemTemp);
+                $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
+                $subtotal = 0;
+                $countItem = $dataTem->getNumRows();
+                foreach ($dataTem->getResultArray() as $row) :
+                    $subtotal += intval($row['quantity']);
+                endforeach;
+                $this->PoModel->insert([
+                    'no_Po'         => $nopo,
+                    'warehouse'     => $warehouse,
+                    'jumlah_item'   => $countItem,
+                    'quantity_item' => $subtotal,
+                    // 'created_at'    => $estimate
+                ]);
+                $htmlError = [
+                    'success' => '<div class="alert alert-success alert-dismissible" role="alert">
                         <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
                         <h5><i class="icon fas fa-check"></i> Sukses </h5>
                         Berhasil submit data
                         </div>'
-                    ];
-                }
+                ];
             }
-            $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
-            $subtotal = 0;
-            $countItem = $dataTem->getNumRows();
-            foreach ($dataTem->getResultArray() as $row) :
-                $subtotal += intval($row['quantity']);
-            endforeach;
-            $this->PoModel->insert([
-                'no_Po'         => $nopo,
-                'warehouse'     => $warehouse,
-                'jumlah_item'   => $countItem,
-                'quantity_item' => $subtotal,
-                // 'created_at'    => $estimate
-            ]);
-            $htmlError = [
-                'success' => '<div class="alert alert-success alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
-                        <h5><i class="icon fas fa-check"></i> Sukses </h5>
-                        Berhasil submit data
-                        </div>'
-            ];
-
             session()->setFlashdata($htmlError);
             return redirect()->to('/UploadPo/index');
         }
