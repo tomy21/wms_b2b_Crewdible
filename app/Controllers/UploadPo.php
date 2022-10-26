@@ -74,6 +74,7 @@ class UploadPo extends BaseController
             $orderNow = null;
             $countRow = count($sheet);
             $htmlError = '';
+            $validate = true;
             foreach ($sheet as $x => $row) {
                 if ($x == 0) {
                     continue;
@@ -89,6 +90,8 @@ class UploadPo extends BaseController
                         Quantity tidak valid
                         </div>'
                     ];
+                    $validate = false;
+                    return;
                 } else {
                     $data = [
                         'nopo'          => $nopo,
@@ -100,28 +103,30 @@ class UploadPo extends BaseController
                         'warehouse'     => $warehouse,
                     ];
                     $this->InboundModel->add($data);
-
-                    $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
-                    $subtotal = 0;
-                    $countItem = $dataTem->getNumRows();
-                    foreach ($dataTem->getResultArray() as $row) :
-                        $subtotal += intval($row['quantity']);
-                    endforeach;
-                    $this->PoModel->insert([
-                        'no_Po'         => $nopo,
-                        'warehouse'     => $warehouse,
-                        'jumlah_item'   => $countItem,
-                        'quantity_item' => $subtotal,
-                        // 'created_at'    => $estimate
-                    ]);
-                    $htmlError = [
-                        'success' => '<div class="alert alert-success alert-dismissible" role="alert">
+                }
+            }
+            if ($validate) {
+                $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
+                $subtotal = 0;
+                $countItem = $dataTem->getNumRows();
+                foreach ($dataTem->getResultArray() as $row) :
+                    $subtotal += intval($row['quantity']);
+                endforeach;
+                $this->PoModel->insert([
+                    'no_Po'         => $nopo,
+                    'warehouse'     => $warehouse,
+                    'jumlah_item'   => $countItem,
+                    'quantity_item' => $subtotal,
+                    'created_at'    => $estimate
+                ]);
+                $validate = false;
+                $htmlError = [
+                    'success' => '<div class="alert alert-success alert-dismissible" role="alert">
                         <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
                         <h5><i class="icon fas fa-check"></i> Sukses </h5>
                         Berhasil submit data
                         </div>'
-                    ];
-                }
+                ];
             }
 
 
