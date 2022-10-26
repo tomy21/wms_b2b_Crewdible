@@ -126,12 +126,12 @@
                                 if (user()->warehouse == 'Headoffice') {
                                     $db = \Config\Database::connect();
                                     $data2 =
-                                        $db->table('tbl_order')->where(['status<' => 6])->get()->getResult();
+                                        $db->table('tbl_order')->where(['created_at' => date('Y-m-d', strtotime('-1 days'))])->orderBy('status', 'ASC')->get()->getResult();
                                 } else {
                                     $db = \Config\Database::connect();
                                     $date = date('d-m-Y H:i:s');
                                     $orderDone = 6;
-                                    $data1 = $db->table('tbl_order')->where(['stock_location' => user()->warehouse, 'status<' => $orderDone])->select('status,created_at,stock_location, Drop_name, Drop_contact, Drop_city, count(Order_id) as Order_id')->groupBy('Drop_name')->get()->getResult();
+                                    $data1 = $db->table('tbl_order')->where(['stock_location' => user()->warehouse, 'created_at' => date('Y-m-d', strtotime('-1 days'))])->select('status,created_at,stock_location, Drop_name, Drop_contact, Drop_city, count(Order_id) as Order_id')->groupBy('Drop_name', 'created_at', 'ASC')->get()->getResult();
                                 }
                                 $data = user()->warehouse == 'Headoffice' ? $data2 : $data1;
                                 $no = 1;

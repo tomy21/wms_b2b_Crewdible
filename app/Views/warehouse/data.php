@@ -36,8 +36,8 @@
                     <?php
                     $no = 1;
                     $db = \Config\Database::connect();
-                    $datatemp1 = $db->table('tbl_packing')->getWhere(['warehouse' => user()->warehouse])->getResultArray();
-                    $datatemp2 = $db->table('tbl_packing')->getWhere(['updated_at' => date('Y-m-d')])->getResultArray();
+                    $datatemp1 = $db->table('tbl_packing')->where(['warehouse' => user()->warehouse, 'created_at' => date('Y-m-d', strtotime('-1 days'))])->orderBy('created_at', 'DESC')->get()->getResultArray();
+                    $datatemp2 = $db->table('tbl_packing')->where(['created_at' => date('Y-m-d', strtotime('-1 days'))])->orderBy('created_at', 'DESC')->get()->getResultArray();
                     $datatemp = user()->warehouse == 'Headoffice' ? $datatemp2 : $datatemp1;
                     foreach ($datatemp as $query) :
                     ?>
