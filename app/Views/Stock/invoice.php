@@ -125,15 +125,16 @@
 
                                 if (user()->warehouse == 'Headoffice') {
                                     $db = \Config\Database::connect();
+                                    $date = date('d-m-Y H:i:s');
                                     $hari = 1;
-                                    $hariKemarin = date('Y-m-d', strtotime('-$hari day', strtotime($tanggal)));
+                                    $hariKemarin = date('Y-m-d', strtotime('-$hari day', strtotime($date)));
                                     $data2 =
                                         $db->table('tbl_order')->where(['created_at' => $hariKemarin])->orderBy('status', 'ASC')->get()->getResult();
                                 } else {
                                     $db = \Config\Database::connect();
                                     $date = date('d-m-Y H:i:s');
                                     $hari = 1;
-                                    $hariKemarin = date('Y-m-d', strtotime('-$hari day', strtotime($tanggal)));
+                                    $hariKemarin = date('Y-m-d', strtotime('-$hari day', strtotime($date)));
                                     $orderDone = 6;
                                     $data1 = $db->table('tbl_order')->where(['stock_location' => user()->warehouse, 'created_at' => $hariKemarin])->select('status,created_at,stock_location, Drop_name, Drop_contact, Drop_city, count(Order_id) as Order_id')->groupBy('Drop_name', 'created_at', 'ASC')->get()->getResult();
                                 }
