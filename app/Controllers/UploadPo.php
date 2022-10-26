@@ -81,19 +81,7 @@ class UploadPo extends BaseController
                 $item_id                = $row[0];
                 $item_detail            = $row[1];
                 $qty                    = $row[2];
-
-                $itemTemp[] = [
-                    'nopo'          => $nopo,
-                    'Item_id'       => $item_id,
-                    'Item_detail'   => $item_detail,
-                    'status'        => 0,
-                    'estimate_date' => $estimate,
-                    'quantity'      => $qty,
-                    'warehouse'     => $warehouse,
-                ];
-            }
-            foreach ($itemTemp as $item) {
-                if (!is_int($item['quantity'])) {
+                if (!is_int($qty)) {
                     $htmlError = [
                         'error' => '<div class="alert alert-danger alert-dismissible" role="alert">
                         <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
@@ -102,7 +90,17 @@ class UploadPo extends BaseController
                         </div>'
                     ];
                 } else {
-                    $this->InboundModel->add($itemTemp);
+                    $data = [
+                        'nopo'          => $nopo,
+                        'Item_id'       => $item_id,
+                        'Item_detail'   => $item_detail,
+                        'status'        => 0,
+                        'estimate_date' => $estimate,
+                        'quantity'      => $qty,
+                        'warehouse'     => $warehouse,
+                    ];
+                    $this->InboundModel->add($data);
+
                     $dataTem = $this->InboundModel->getWhere(['nopo' => $nopo]);
                     $subtotal = 0;
                     $countItem = $dataTem->getNumRows();
@@ -125,6 +123,7 @@ class UploadPo extends BaseController
                     ];
                 }
             }
+
 
             session()->setFlashdata($htmlError);
             return redirect()->to('/UploadPo/index');
