@@ -36,8 +36,11 @@
                     <?php
                     $no = 1;
                     $db = \Config\Database::connect();
-                    $datatemp1 = $db->table('tbl_packing')->where(['warehouse' => user()->warehouse, 'created_at' => date('Y-m-d', strtotime('-1 days'))])->orderBy('created_at', 'DESC')->get()->getResultArray();
-                    $datatemp2 = $db->table('tbl_packing')->where(['created_at' => date('Y-m-d', strtotime('-1 days'))])->orderBy('created_at', 'DESC')->get()->getResultArray();
+                    $date = date('d-m-Y H:i:s');
+                    $hari = 1;
+                    $hariKemarin = date('Y-m-d', strtotime('-$hari day', strtotime($date)));
+                    $datatemp1 = $db->table('tbl_packing')->where(['warehouse' => user()->warehouse, 'created_at' => $hariKemarin])->orderBy('created_at', 'DESC')->get()->getResultArray();
+                    $datatemp2 = $db->table('tbl_packing')->where(['created_at' => $hariKemarin])->orderBy('created_at', 'DESC')->get()->getResultArray();
                     $datatemp = user()->warehouse == 'Headoffice' ? $datatemp2 : $datatemp1;
                     foreach ($datatemp as $query) :
                     ?>
