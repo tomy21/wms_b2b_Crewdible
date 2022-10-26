@@ -25,10 +25,10 @@ class Picking extends BaseController
     {
         $warehouse = user()->warehouse;
 
-        $data = [
-            'data'      => $this->modelPicking->tampilDataTransaksi($warehouse)
+        // $data = [
+        //     'data'      => $this->modelPicking->tampilDataTransaksi($warehouse)
 
-        ];
-        return view('picking/picking', $data);
+        // ];
+        return view('picking/picking');
     }
 }
