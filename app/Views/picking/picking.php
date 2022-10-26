@@ -29,8 +29,8 @@
                     <?php
                     $no = 1;
                     $db = \Config\Database::connect();
-                    $data1 = $db->table('tbl_picking')->getWhere(['warehouse' => user()->warehouse, 'update_at<' => date('Y-m-d')])->getResultArray();
-                    $data2 = $db->table('tbl_picking')->getWhere(['update_at<' => date('Y-m-d')])->getResultArray();
+                    $data1 = $db->table('tbl_picking')->getWhere(['warehouse' => user()->warehouse, 'updated_at<' => date('Y-m-d')])->getResultArray();
+                    $data2 = $db->table('tbl_picking')->getWhere(['updated_at<' => date('Y-m-d')])->getResultArray();
                     $data = user()->warehouse == 'Headoffice' ? $data2 : $data1;
                     foreach ($data as $query) :
                     ?>
