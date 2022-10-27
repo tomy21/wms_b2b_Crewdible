@@ -5,15 +5,29 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-<<<<<<< HEAD
-        'reference' => 'f61daebba3a38f905969b6a1198d64e0d224e191',
-=======
-        'reference' => 'e84939235686e647a063d893b8d9f3199a9e55de',
->>>>>>> main
+        'reference' => '23546ec276bcfe9b8093617f2386cf879c36d6ca',
         'name' => 'codeigniter4/appstarter',
         'dev' => true,
     ),
     'versions' => array(
+        'aws/aws-crt-php' => array(
+            'pretty_version' => 'v1.0.2',
+            'version' => '1.0.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../aws/aws-crt-php',
+            'aliases' => array(),
+            'reference' => '3942776a8c99209908ee0b287746263725685732',
+            'dev_requirement' => false,
+        ),
+        'aws/aws-sdk-php' => array(
+            'pretty_version' => '3.240.3',
+            'version' => '3.240.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../aws/aws-sdk-php',
+            'aliases' => array(),
+            'reference' => '2080f747489b2d4ca291dcfb8078db60dbb6c255',
+            'dev_requirement' => false,
+        ),
         'bacon/bacon-qr-code' => array(
             'pretty_version' => '2.0.7',
             'version' => '2.0.7.0',
@@ -29,11 +43,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-<<<<<<< HEAD
-            'reference' => 'f61daebba3a38f905969b6a1198d64e0d224e191',
-=======
-            'reference' => 'e84939235686e647a063d893b8d9f3199a9e55de',
->>>>>>> main
+            'reference' => '23546ec276bcfe9b8093617f2386cf879c36d6ca',
             'dev_requirement' => false,
         ),
         'codeigniter4/authentication-implementation' => array(
@@ -114,6 +124,33 @@
             'reference' => '018dfc4e1da92ad8a1b90adc4893f476a3b41cb8',
             'dev_requirement' => false,
         ),
+        'guzzlehttp/guzzle' => array(
+            'pretty_version' => '7.5.0',
+            'version' => '7.5.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../guzzlehttp/guzzle',
+            'aliases' => array(),
+            'reference' => 'b50a2a1251152e43f6a37f0fa053e730a67d25ba',
+            'dev_requirement' => false,
+        ),
+        'guzzlehttp/promises' => array(
+            'pretty_version' => '1.5.2',
+            'version' => '1.5.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../guzzlehttp/promises',
+            'aliases' => array(),
+            'reference' => 'b94b2807d85443f9719887892882d0329d1e2598',
+            'dev_requirement' => false,
+        ),
+        'guzzlehttp/psr7' => array(
+            'pretty_version' => '2.4.3',
+            'version' => '2.4.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../guzzlehttp/psr7',
+            'aliases' => array(),
+            'reference' => '67c26b443f348a51926030c83481b85718457d3d',
+            'dev_requirement' => false,
+        ),
         'kint-php/kint' => array(
             'pretty_version' => '4.2.0',
             'version' => '4.2.0.0',
@@ -176,6 +213,15 @@
             'aliases' => array(),
             'reference' => '17d16a85e6c26ce1f3e2fa9ceeacdc2855db1e9f',
             'dev_requirement' => true,
+        ),
+        'mtdowling/jmespath.php' => array(
+            'pretty_version' => '2.6.1',
+            'version' => '2.6.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../mtdowling/jmespath.php',
+            'aliases' => array(),
+            'reference' => '9b87907a81b87bc76d19a7fb2d61e61486ee9edb',
+            'dev_requirement' => false,
         ),
         'myclabs/deep-copy' => array(
             'pretty_version' => '1.11.0',
@@ -339,6 +385,12 @@
             'reference' => '2dfb5f6c5eff0e91e20e913f8c5452ed95b86621',
             'dev_requirement' => false,
         ),
+        'psr/http-client-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.0',
+            ),
+        ),
         'psr/http-factory' => array(
             'pretty_version' => '1.0.1',
             'version' => '1.0.1.0',
@@ -348,6 +400,12 @@
             'reference' => '12ac7fcd07e5b077433f5f2bee95b3a771bf61be',
             'dev_requirement' => false,
         ),
+        'psr/http-factory-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.0',
+            ),
+        ),
         'psr/http-message' => array(
             'pretty_version' => '1.0.1',
             'version' => '1.0.1.0',
@@ -356,6 +414,12 @@
             'aliases' => array(),
             'reference' => 'f6561bf28d520154e4b0ec72be95418abe6d9363',
             'dev_requirement' => false,
+        ),
+        'psr/http-message-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.0',
+            ),
         ),
         'psr/log' => array(
             'pretty_version' => '1.1.4',
@@ -373,6 +437,15 @@
             'install_path' => __DIR__ . '/../psr/simple-cache',
             'aliases' => array(),
             'reference' => '8707bf3cea6f710bf6ef05491234e3ab06f6432a',
+            'dev_requirement' => false,
+        ),
+        'ralouphie/getallheaders' => array(
+            'pretty_version' => '3.0.3',
+            'version' => '3.0.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../ralouphie/getallheaders',
+            'aliases' => array(),
+            'reference' => '120b605dfeb996808c31b6477290a714d356e822',
             'dev_requirement' => false,
         ),
         'sabberworm/php-css-parser' => array(
@@ -535,7 +608,7 @@
             'install_path' => __DIR__ . '/../symfony/deprecation-contracts',
             'aliases' => array(),
             'reference' => '07f1b9cc2ffee6aaafcf4b710fbc38ff736bd918',
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'symfony/polyfill-mbstring' => array(
             'pretty_version' => 'v1.26.0',
