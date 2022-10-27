@@ -169,7 +169,7 @@ class ApiPacking extends ResourceController
         }
 
         // For this, I would generate a unqiue random string for the key name. But you can do whatever.
-        $keyName = 'test_example/' . basename($_FILES["foto"]['tmp_name'][$id]);
+        $keyName = 'test_example/' . $file;
         $pathInS3 = 'https://s3.us-east-2.amazonaws.com/' . $bucketName . '/' . $keyName;
 
         // Add it to S3
