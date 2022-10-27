@@ -141,8 +141,8 @@ class Sorting extends BaseController
             'contact'       => $order['Drop_contact'],
             'note'          => $order['note'],
             'data'          => $cekData,
-            'barcode'       => $pdf->write2DBarcode($id, 'QRCODE,L', 80, 8, 30, 30, $style),
-            'barcode1'      => $pdf->write1DBarcode($id, 'C128B', '', '', '', 20, 0.4, $style2, 'N'),
+            'barcode'       => $pdf->write2DBarcode($id, 'QRCODE,L', 160, 100, 50, 30, $style),
+            'barcode1'      => $pdf->write1DBarcode($id, 'C128B', '', '', '', 40, 1.5, $style2, 'N'),
         ]);
         $orderId = $order['Order_id'];
         $pdf->writeHTML($html, true, true, true, true, '');
