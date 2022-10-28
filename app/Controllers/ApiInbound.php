@@ -5,7 +5,10 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\InboundModel;
 use App\Models\PoModel;
+use Aws\S3\Exception\S3Exception;
+use Aws\S3\S3Client;
 use CodeIgniter\API\ResponseTrait;
+use CodeIgniter\Files\File;
 
 class ApiInbound extends BaseController
 {
@@ -149,11 +152,76 @@ class ApiInbound extends BaseController
         $date = $this->request->getPost('date');
         // $date = date('Y-m-d H:mm:dd', strtotime($date));
         $foto = $this->request->getFile('foto1');
-        $foto->move('./assets/inbound');
         $foto2 = $this->request->getFile('foto2');
-        $foto2->move('./assets/inbound');
 
         $data = $modelInbound->getWhere(['no_Po' => $po])->getResult();
+
+        $bucketName = 'crewdible-sandbox-asset';
+        $keyID      = 'AKIAUDN4SHKM45YIKVNS';
+        $keyScret   = 'Ne+n1vBDXP+DnAzZAAzqD3wh0KN7Jq2Snsk7KiW1';
+
+        $validationRule = [
+            'foto1' => [
+                'label' => 'Image File',
+                'rules' => 'uploaded[foto1]'
+                    . '|is_image[foto1]'
+                    . '|mime_in[foto1,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
+                    . '|max_size[foto1,1000]'
+                    . '|max_dims[foto1,1024,768]',
+            ],
+            'foto2' => [
+                'label' => 'Image File',
+                'rules' => 'uploaded[foto2]'
+                    . '|is_image[foto2]'
+                    . '|mime_in[foto2,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
+                    . '|max_size[foto2,1000]'
+                    . '|max_dims[foto2,1024,768]',
+            ],
+        ];
+
+        if (!$this->validate($validationRule)) {
+            $respon = [
+                'success'       => true,
+                'message'       => [
+                    'error'     => 'data tidak ditemukan'
+                ]
+            ];
+
+            return $this->fail('' . $po . ' tidak ada');
+        }
+
+        if (!$foto->hasMoved() && !$foto2->hasMoved()) {
+            $filepath = WRITEPATH . 'uploads/' . $foto->store();
+            $filepath1 = WRITEPATH . 'uploads/' . $foto2->store();
+
+            $data = ['uploaded_flleinfo' => new File($filepath)];
+
+            // Inisiasi helper S3
+            $s3Client = new S3Client([
+                'version' => 'latest',
+                'region' => 'ap-southeast-1',
+                'url' => 'https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com' . $bucketName . '/',
+                'use_path_style_endpoint' => true,
+                'endpoint' => 'https://s3.ap-southeast-1.amazonaws.com',
+                'credentials' => [
+                    'key' => $keyID,
+                    'secret' => $keyScret
+                ]
+            ]);
+
+
+            $key = basename($filepath);
+            $key1 = basename($filepath1);
+
+            try {
+                // Proses upload ke object storage dengan permission file public
+                $result = $s3Client->upload($bucketName, 'aws-b2b/' . $key . '', fopen($filepath, 'r'), 'public-read');
+                $result = $s3Client->upload($bucketName, 'aws-b2b/' . $key1 . '', fopen($filepath1, 'r'), 'public-read');
+                $data = ['result' => $result->toArray()];
+            } catch (S3Exception $e) {
+                $data = ['errors' => $e->getMessage()];
+            }
+        }
 
         if (!$data) {
             return $this->failNotFound('Data tidak ditemukan');

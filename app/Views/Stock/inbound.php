@@ -43,9 +43,11 @@
                         <td style="vertical-align: middle ;"><?= $user['warehouse'] ?></td>
                         <td style="vertical-align: middle ;"><?= $user['driver'] ?></td>
                         <td style="vertical-align: middle ;" align="center"><img
-                                src="<?= site_url() ?>/assets/inbound/<?= $user['foto'] ?>" alt="" width="50"></td>
+                                src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $user['foto'] ?>"
+                                alt="" width="50"></td>
                         <td style="vertical-align: middle ;" align="center"><img
-                                src="<?= site_url() ?>/assets/inbound/<?= $user['tandatangan'] ?>" alt="" width="50">
+                                src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $user['tandatangan'] ?>"
+                                alt="" width="50">
                         </td>
                         <td style="vertical-align: middle ;" align="center">
                             <?php

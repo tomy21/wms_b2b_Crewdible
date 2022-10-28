@@ -47,10 +47,12 @@
                         <?php endforeach; ?>
                     </td>
                     <td style="vertical-align: middle;"><?= $row['driver'] ?></td>
-                    <td style="vertical-align: middle;"><img src="<?= site_url() ?>/assets/uploades/<?= $row['foto'] ?>"
+                    <td style="vertical-align: middle;"><img
+                            src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $row['foto'] ?>"
                             alt="" width="50"></td>
                     <td style="vertical-align: middle;">
-                        <img src="<?= site_url() ?>/assets/uploades/<?= $row['tandatangan'] ?>" alt="" width="50">
+                        <img src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $row['tandatangan'] ?>"
+                            alt="" width="50">
                     </td>
                     <td style="vertical-align: middle;">
                         <?php if ($row['status'] == 1) : ?>
