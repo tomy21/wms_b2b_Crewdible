@@ -12,7 +12,7 @@ use CodeIgniter\API\ResponseTrait;
 use Aws\S3\S3Client;
 use Aws\S3\Exception\S3Exception;
 use App\Controllers\Exception;
-
+use CodeIgniter\Files\File;
 
 class ApiPacking extends ResourceController
 {
@@ -71,26 +71,69 @@ class ApiPacking extends ResourceController
     }
     public function update($id = null)
     {
-        // $rules = [
-        //     'foto'  => 'uploaded[foto]|max_size[foto, 1024]|is_image[foto]'
-        // ];
-
-        // if ($this->validate($rules)) {
-        //     return $this->fail($this->validator->getErrors());
-        // } else {
-        //     if ($file->isValid()) return $this->fail($this->validator->getErrors());
         $modelPacking   = new PackingModel();
         $modelInvoice   = new InvoiceModel();
         $modelOrder     = new ModelOrder();
-        // $file = $this->request->getFile('foto');
-        // $file->move('./assets/uploades');
         $file1 = $this->request->getFile('fotoAfter');
-        $file1->move('./assets/uploades');
-
         $id = $this->request->getPost('id');
         $assign = $this->request->getPost('assign');
-
         $Order = $modelPacking->getWhere(['order_id' => $id])->getResultArray();
+        $bucketName = 'crewdible-sandbox-asset';
+        $keyID      = 'AKIAUDN4SHKM45YIKVNS';
+        $keyScret   = 'Ne+n1vBDXP+DnAzZAAzqD3wh0KN7Jq2Snsk7KiW1';
+
+        $validationRule = [
+            'fotoAfter' => [
+                'label' => 'Image File',
+                'rules' => 'uploaded[fotoAfter]'
+                    . '|is_image[fotoAfter]'
+                    . '|mime_in[fotoAfter,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
+                    . '|max_size[fotoAfter,1000]'
+                    . '|max_dims[fotoAfter,1024,768]',
+            ],
+        ];
+
+        if (!$this->validate($validationRule)) {
+            $respon = [
+                'success'       => true,
+                'message'       => [
+                    'error'     => 'data tidak ditemukan'
+                ]
+            ];
+
+            return $this->fail('' . $id . ' tidak ada');
+        }
+
+        if (!$file1->hasMoved()) {
+            $filepath = WRITEPATH . 'uploads/' . $file1->store();
+
+            $data = ['uploaded_flleinfo' => new File($filepath)];
+
+            // Inisiasi helper S3
+            $s3Client = new S3Client([
+                'version' => 'latest',
+                'region' => 'ap-southeast-1',
+                'url' => 'https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com' . $bucketName . '/',
+                'use_path_style_endpoint' => true,
+                'endpoint' => 'https://s3.ap-southeast-1.amazonaws.com',
+                'credentials' => [
+                    'key' => $keyID,
+                    'secret' => $keyScret
+                ]
+            ]);
+
+
+            $key = basename($filepath);
+
+            try {
+                // Proses upload ke object storage dengan permission file public
+                $result = $s3Client->upload($bucketName, 'aws-b2b/' . $key . '', fopen($filepath, 'r'), 'public-read');
+                $data = ['result' => $result->toArray()];
+            } catch (S3Exception $e) {
+                $data = ['errors' => $e->getMessage()];
+            }
+        }
+
 
         if (!$Order) {
             $respon = [
@@ -105,7 +148,6 @@ class ApiPacking extends ResourceController
             $data = [
                 'assign'    => $assign,
                 'Status'    => 2,
-                // 'foto'      => $file->getName(),
                 'foto_after' => $file1->getName(),
             ];
             $modelPacking->update($id, $data);
@@ -132,6 +174,7 @@ class ApiPacking extends ResourceController
             // }
             $respon = [
                 'success'       => true,
+                'url'           => ['result' => $result->toArray()],
                 'data'          => $data
             ];
 
@@ -142,12 +185,67 @@ class ApiPacking extends ResourceController
     public function updateFoto($id = null)
     {
         $modelPacking   = new PackingModel();
-        $file = $this->request->getFile('foto');
-        $file->move('./assets/uploades');
-
+        $modelInvoice   = new InvoiceModel();
+        $modelOrder     = new ModelOrder();
+        $file1 = $this->request->getFile('foto');
         $id = $this->request->getPost('id');
-
         $Order = $modelPacking->getWhere(['order_id' => $id])->getResultArray();
+        $bucketName = 'crewdible-sandbox-asset';
+        $keyID      = 'AKIAUDN4SHKM45YIKVNS';
+        $keyScret   = 'Ne+n1vBDXP+DnAzZAAzqD3wh0KN7Jq2Snsk7KiW1';
+
+        $validationRule = [
+            'foto' => [
+                'label' => 'Image File',
+                'rules' => 'uploaded[foto]'
+                    . '|is_image[foto]'
+                    . '|mime_in[foto,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
+                    . '|max_size[foto,1000]'
+                    . '|max_dims[foto,1024,768]',
+            ],
+        ];
+
+        if (!$this->validate($validationRule)) {
+            $respon = [
+                'success'       => true,
+                'message'       => [
+                    'error'     => 'data tidak ditemukan'
+                ]
+            ];
+
+            return $this->fail('' . $id . ' tidak ada');
+        }
+
+        if (!$file1->hasMoved()) {
+            $filepath = WRITEPATH . 'uploads/' . $file1->store();
+
+            $data = ['uploaded_flleinfo' => new File($filepath)];
+
+            // Inisiasi helper S3
+            $s3Client = new S3Client([
+                'version' => 'latest',
+                'region' => 'ap-southeast-1',
+                'url' => 'https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/' . $bucketName . '/',
+                'use_path_style_endpoint' => true,
+                'endpoint' => 'https://s3.ap-southeast-1.amazonaws.com',
+                'credentials' => [
+                    'key' => $keyID,
+                    'secret' => $keyScret
+                ]
+            ]);
+
+
+            $key = basename($filepath);
+
+            try {
+                // Proses upload ke object storage dengan permission file public
+                $result = $s3Client->upload($bucketName, 'aws-b2b/' . $key . '', fopen($filepath, 'r'), 'public-read');
+                $data = ['result' => $result->toArray()];
+            } catch (S3Exception $e) {
+                $data = ['errors' => $e->getMessage()];
+            }
+        }
+
 
         if (!$Order) {
             $respon = [
@@ -157,16 +255,37 @@ class ApiPacking extends ResourceController
                 ]
             ];
 
-            return $this->fail('' . $id . ' tidak ada');
+            return $this->fail('Quantity melebihi orderan');
         } else {
             $data = [
                 'Status'    => 1,
-                'foto'      => $file->getName(),
+                'foto' => $file1->getName(),
             ];
             $modelPacking->update($id, $data);
+            $modelOrder->update($id, ['status' => 5]);
 
+            $orderInvoice = $modelInvoice->getWhere(['Order_id' => $id])->getRow();
+            $modelInvoice->update($orderInvoice->id, ['status' => 5]);
+
+            // $modelHandover = new HandoverModel();
+            // foreach ($Order as $row) {
+            //     if (count($Order) == 0) {
+            //         $data = [
+            //             'id_handover'  => $modelHandover->idHandover(),
+            //             'listItem'  => $row['list'],
+            //         ];
+            //         $modelHandover->insert($data);
+            //     } else {
+            //         $data = [
+            //             'id_handover'  => $modelHandover->idHandover(),
+            //             'listItem'  => $row['list'],
+            //         ];
+            //         $modelHandover->insert($data);
+            //     }
+            // }
             $respon = [
                 'success'       => true,
+                'url'           => ['result' => $result->toArray()],
                 'data'          => $data
             ];
 
