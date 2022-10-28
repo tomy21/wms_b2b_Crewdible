@@ -63,8 +63,10 @@
                                 }
                                 ?>
                         </td>
-                        <td><img src="<?= site_url() ?>/assets/uploades/<?= $query['foto'] ?>" alt="" width="50"></td>
-                        <td><img src="<?= site_url() ?>/assets/uploades/<?= $query['foto_after'] ?>" alt="" width="50">
+                        <td><img src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $query['foto'] ?>"
+                                alt="" width="50"></td>
+                        <td><img src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $query['foto_after'] ?>"
+                                alt="" width="50">
                         </td>
                         <td><?= $query['assign'] ?></td>
                         <td>
