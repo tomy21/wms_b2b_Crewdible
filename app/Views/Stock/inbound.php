@@ -30,10 +30,12 @@
                         <?php
                         $no = 1;
                         $db = \Config\Database::connect();
+                        $hari = 1;
+                        $hariKemarin = date('Y-m-d', strtotime('-$hari day', strtotime($date)));
                         if (user()->warehouse == 'Headoffice') {
-                            $admin = $db->table('tbl_po')->getWhere(['created_at>' => date('Y-m-d')])->getResultArray();
+                            $admin = $db->table('tbl_po')->where(['warehouse' => user()->warehouse, 'updated_at>=' => $hariKemarin])->orderBy('updated_at', 'DESC')->get()->getResultArray();
                         } else {
-                            $warehouse = $db->table('tbl_po')->where(['warehouse' => user()->warehouse, 'created_at>' => date('Y-m-d')])->get()->getResultArray();
+                            $warehouse = $db->table('tbl_po')->where(['warehouse' => user()->warehouse, 'updated_at>=' => $hariKemarin])->orderBy('updated_at', 'DESC')->get()->getResultArray();
                         }
                         user()->warehouse == 'Headoffice' ? $inbound = $admin : $inbound = $warehouse;
                         foreach ($inbound as $user) :
