@@ -30,6 +30,7 @@
                         <?php
                         $no = 1;
                         $db = \Config\Database::connect();
+                        $date = date('d-m-Y');
                         $hari = 1;
                         $hariKemarin = date('Y-m-d', strtotime('-$hari day', strtotime($date)));
                         if (user()->warehouse == 'Headoffice') {
