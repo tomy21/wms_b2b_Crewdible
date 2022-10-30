@@ -90,7 +90,6 @@ class UploadPo extends BaseController
                         Quantity tidak valid
                         </div>'
                     ];
-                    break;
                 } else {
                     $data = [
                         'nopo'          => $nopo,
