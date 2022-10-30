@@ -22,6 +22,7 @@
                         <th>Kedatangan Driver</th>
                         <th>Tanggal Diterima</th>
                         <th>Tanggal Input to stock</th>
+                        <th>Keterangan</th>
                         <th>Detail</th>
                     </tr>
                 </thead>
@@ -43,6 +44,13 @@
                         <td><?= $query['waktu_datang'] ?></td>
                         <td><?= $query['updated_at'] ?></td>
                         <td><?= $query['updated_at'] ?></td>
+                        <td>
+                            <?php if ($query['waktu_datang'] < date('Y-m-d 18:00:00') && $query['updated_at'] > date('Y-m-d 23:59:00')) : ?>
+                            <span class="badge badge-danger"> Over SLA</span>
+                            <?php else : ?>
+                            <span class="badge badge-success"> Meet SLA</span>
+                            <?php endif; ?>
+                        </td>
                         <td style="text-align:center;">
                             <button class="btn btn-sm btn-info" type="button"
                                 onclick="detail('<?= $query['no_Po']; ?>')"><i class="fa fa-eye"></i></button>

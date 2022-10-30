@@ -17,14 +17,16 @@
                     <div class="col-12 col-sm-6">
                         <h3 class="d-inline-block d-sm-none"><?= $nopo ?></h3>
                         <div class="col-12">
-                            <img src="<?= site_url() ?>/assets/inbound/<?= $fotobarang ?>" class="product-image"
-                                alt="Product Image" style="height: 60%;">
+                            <img src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $fotobarang ?>"
+                                class="product-image" alt="Product Image" style="height: 60%;">
                         </div>
                         <div class="col-12 product-image-thumbs">
                             <div class="product-image-thumb active"><img
-                                    src="<?= site_url() ?>/assets/inbound/<?= $fotobarang ?>" alt="Product Image"></div>
+                                    src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $fotobarang ?>"
+                                    alt="Product Image"></div>
                             <div class="product-image-thumb active"><img
-                                    src="<?= site_url() ?>/assets/inbound/<?= $fotosjl ?>" alt="Product Image"></div>
+                                    src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $fotosjl ?>"
+                                    alt="Product Image"></div>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">

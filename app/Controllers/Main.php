@@ -14,24 +14,24 @@ class Main extends BaseController
     {
         $ModelInvoice = new ModelOrder();
         $ModelStock = new StockModel();
-        $Totnew = $ModelInvoice->getWhere(['status' => 1]);
+        $Totnew = $ModelInvoice->getWhere(['status' => 1, 'created_at' => date('Y-m-d')]);
         $new = $Totnew->getNumRows();
 
-        $Totpick = $ModelInvoice->getWhere(['status' => 3]);
+        $Totpick = $ModelInvoice->getWhere(['status' => 3, 'created_at' => date('Y-m-d')]);
         $pick = $Totpick->getNumRows();
 
-        $Totpack = $ModelInvoice->getWhere(['status' => 4]);
+        $Totpack = $ModelInvoice->getWhere(['status' => 4, 'created_at' => date('Y-m-d')]);
         $pack = $Totpack->getNumRows();
 
-        $shipping = $ModelInvoice->getWhere(['status' => 5]);
+        $shipping = $ModelInvoice->getWhere(['status' => 5, 'created_at' => date('Y-m-d')]);
         $shipp = $shipping->getNumRows();
 
-        $done = $ModelInvoice->getWhere(['status' => 6]);
+        $done = $ModelInvoice->getWhere(['status' => 6, 'created_at' => date('Y-m-d')]);
         $done = $done->getNumRows();
-        $rtnData = $ModelInvoice->getWhere(['status' => 6]);
+        $rtnData = $ModelInvoice->getWhere(['status' => 7, 'created_at' => date('Y-m-d')]);
         $rtn = $rtnData->getNumRows();
 
-        $Totnew = $ModelInvoice->getWhere(['status' => 2]);
+        $Totnew = $ModelInvoice->getWhere(['status' => 2, 'created_at' => date('Y-m-d')]);
         $assign = $Totnew->getNumRows();
 
         $transaksi = $ModelInvoice->findAll();

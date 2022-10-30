@@ -17,21 +17,25 @@
                     <div class="col-12 col-sm-6">
                         <h3 class="d-inline-block d-sm-none"><?= $Order_id ?></h3>
                         <div class="col-12">
-                            <img src=" <?= site_url() ?>/assets/uploades/<?= $foto_before ?>" class="product-image"
-                                alt="Product Image">
+                            <img src=" https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $foto_before ?>"
+                                class="product-image" alt="Product Image">
                         </div>
                         <div class="col-12 product-image-thumbs">
                             <div class=" product-image-thumb active"><img
-                                    src="<?= site_url() ?>/assets/uploades/<?= $foto_before ?>" alt="Product Image">
+                                    src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $foto_before ?>"
+                                    alt="Product Image">
                             </div>
                             <div class="product-image-thumb active"><img
-                                    src="<?= site_url() ?>/assets/uploades/<?= $foto_after ?>" alt="Product Image">
+                                    src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $foto_after ?>"
+                                    alt="Product Image">
                             </div>
                             <div class="product-image-thumb active"><img
-                                    src="<?= site_url() ?>/assets/uploades/<?= $foto_handover ?>" alt="Product Image">
+                                    src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $foto_handover ?>"
+                                    alt="Product Image">
                             </div>
                             <div class="product-image-thumb active"><img
-                                    src="<?= site_url() ?>/assets/uploades/<?= $tandatangan ?>" alt="Product Image">
+                                    src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $tandatangan ?>"
+                                    alt="Product Image">
                             </div>
                         </div>
                     </div>

@@ -16,7 +16,7 @@
                         <h3>
                             <?php
                             $db = \Config\Database::connect();
-                            $data = $db->table('tbl_order')->where(['stock_location' => user()->warehouse])->countAllResults();
+                            $data = $db->table('tbl_order')->where(['stock_location' => user()->warehouse, 'created_at' => date('Y-m-d')])->countAllResults();
 
                             ?>
                             <?= user()->warehouse == 'Headoffice' ? "$total" : "$data"; ?>
