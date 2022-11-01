@@ -34,9 +34,9 @@
                         $hari = 1;
                         $hariKemarin = date('Y-m-d', strtotime('-$hari day', strtotime($date)));
                         if (user()->warehouse == 'Headoffice') {
-                            $admin = $db->table('tbl_po')->where(['created_at>=' => $hariKemarin])->orderBy('created_at', 'DESC')->get()->getResultArray();
+                            $admin = $db->table('tbl_po')->where(['updated_at>=' => $hariKemarin])->orderBy('updated_at', 'DESC')->get()->getResultArray();
                         } else {
-                            $warehouse = $db->table('tbl_po')->where(['warehouse' => user()->warehouse, 'created_at>=' => $hariKemarin])->orderBy('created_at', 'DESC')->get()->getResultArray();
+                            $warehouse = $db->table('tbl_po')->where(['warehouse' => user()->warehouse, 'updated_at>=' => $hariKemarin])->orderBy('updated_at', 'DESC')->get()->getResultArray();
                         }
                         user()->warehouse == 'Headoffice' ? $inbound = $admin : $inbound = $warehouse;
                         foreach ($inbound as $user) :
@@ -62,7 +62,15 @@
                         </td>
                         <td style="vertical-align: middle ;"><?= $user['quantity_item']; ?></td>
                         <td style="vertical-align: middle ;"><?= $user['selisih']; ?></td>
-                        <td style="vertical-align: middle ;"><?= $user['updated_at'] ?></td>
+                        <td style="vertical-align: middle ;">
+                            <?php
+                                if ($user['status'] < 2) {
+                                    echo '-';
+                                } else {
+                                    echo $user['updated_at'];
+                                }
+                                ?>
+                        </td>
                         <td style="vertical-align: middle ;">
                             <?php
                                 $resi
