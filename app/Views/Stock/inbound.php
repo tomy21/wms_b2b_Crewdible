@@ -19,8 +19,9 @@
                     <th>Driver</th>
                     <th>Foto Barang</th>
                     <th>Foto Surat Jalan</th>
-                    <th>Jumlah Item</th>
-                    <th>Quantity Item</th>
+                    <th>Jumlah Order</th>
+                    <th>Quantity Order</th>
+                    <th>Quantity Counting</th>
                     <th>Selisih</th>
                     <th>Selesai Inbound</th>
                     <th>#</th>
@@ -61,6 +62,7 @@
                                 onclick="detail('<?= $user['no_Po']; ?>')"><?= $jumlah; ?></span>
                         </td>
                         <td style="vertical-align: middle ;"><?= $user['quantity_item']; ?></td>
+                        <td style="vertical-align: middle ;"><?= $user['quantity_count']; ?></td>
                         <td style="vertical-align: middle ;"><?= $user['selisih']; ?></td>
                         <td style="vertical-align: middle ;">
                             <?php
