@@ -97,10 +97,14 @@ class Invoice extends BaseController
                 $Note               = $row[20];
                 $Stock_Location     = $row[21];
 
-                if ($slot == 1) {
-                    $date = date('Y-m-d 08:15:00', strtotime('+1 days'));
+                if ($slot == '1') {
+                    if ($Stock_Location == 'Hub Sawangan' && $Stock_Location == 'Hub Crewdible Bogor') {
+                        $date = date('Y-m-d 10:15:00', strtotime('+1 days'));
+                    } else {
+                        $date = date('Y-m-d 08:15:00', strtotime('+1 days'));
+                    }
                 } else {
-                    $date = date('Y-m-d 14:15:00', strtotime('+1 days'));
+                    $date = date('Y-m-d 13:15:00', strtotime('+1 days'));
                 }
                 if ($orderNow == null || $orderNow['Order_id'] == $Order_ID) {
 
@@ -325,7 +329,7 @@ class Invoice extends BaseController
             $modelInvoice = new InvoiceModel();
             $ambilData = $modelInvoice->getWhere(['Order_id' => $orderid])->getRow();
             $data = [
-                'isidata'        => $modelInvoice->getWhere(['id' => $ambilData->id]),
+                'isidata'        => $modelInvoice->getWhere(['id' => $ambilData->id])->getResult(),
             ];
             $json = [
                 'data'  => view('Stock/modalDetailOrder', $data)

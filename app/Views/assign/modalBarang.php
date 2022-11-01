@@ -71,9 +71,9 @@
                         $no = 1;
                         $db = \Config\Database::connect();
                         if (user()->warehouse == 'Headoffice') {
-                            $listBarang = $db->table('tbl_invoice')->where(['status' => 1])->select('id, Item_id,Item_detail, sum(quantity) as quantity,stock_location')->groupBy('Item_id,Item_detail,stock_location')->get()->getResult();
+                            $listBarang = $db->table('tbl_invoice')->where(['status' => 1])->select('id, Item_id,Item_detail, sum(quantity) as quantity,stock_location')->groupBy('Item_id,Item_detail,stock_location,slot')->get()->getResult();
                         } else {
-                            $listBarang = $db->table('tbl_invoice')->where(['stock_location' => user()->warehouse, 'status' => 1])->select('id, Item_id,Item_detail, sum(quantity) as quantity,stock_location,created_at')->groupBy('Item_id,Item_detail,stock_location')->get()->getResult();
+                            $listBarang = $db->table('tbl_invoice')->where(['stock_location' => user()->warehouse, 'status' => 1])->select('id, Item_id,Item_detail, sum(quantity) as quantity,stock_location,created_at,slot')->groupBy('Item_id,Item_detail,stock_location')->get()->getResult();
                         }
                         foreach ($listBarang as $row) :
                         ?>
@@ -86,7 +86,7 @@
                             <td><?= $row->stock_location ?></td>
                             <td><?= $row->Item_id; ?></td>
                             <td><?= $row->Item_detail; ?></td>
-                            <td><?= $row->created_at > date('Y-m-d 08:15:00') ? 'slot 1' : 'slot 2' ?></td>
+                            <td>Slot <?= $row->slot ?></td>
                             <td><?= $row->quantity; ?></td>
                             <?php endforeach; ?>
                         </tr>

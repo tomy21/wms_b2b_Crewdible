@@ -21,6 +21,8 @@
         </thead>
         <tbody>
             <?php
+            $db = \Config\Database::connect();
+            $dataTemp = $db->table('tbl_listhandover')->getWhere(['status' => 0, user()->warehouse])->getResult();
             $no = 1;
             foreach ($datatemp as $y) :
             ?>

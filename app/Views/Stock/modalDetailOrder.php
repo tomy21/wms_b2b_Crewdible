@@ -17,15 +17,16 @@
                         <th>Quantity</th>
                     </thead>
                     <tbody>
+
                         <tr>
                             <?php
                             $no = 1;
-                            foreach ($isidata->getResultArray() as $row) :
+                            foreach ($isidata as $row) :
                             ?>
-                            <td>1</td>
-                            <td>2</td>
-                            <td><?= $row['Item_detail'] ?></td>
-                            <td><?= $row['quantity'] ?></td>
+                            <td><?= $no++ ?></td>
+                            <td><?= $row->Item_id ?></td>
+                            <td><?= $row->Item_detail ?></td>
+                            <td><?= $row->quantity ?></td>
 
                         </tr>
                         <?php endforeach; ?>

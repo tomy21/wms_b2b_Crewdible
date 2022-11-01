@@ -247,7 +247,7 @@ function detail(order) {
     });
 }
 
-function detail(penerima) {
+function detailwarehouse(penerima) {
     $.ajax({
         type: "post",
         url: "<?= site_url('/Invoice/detailWarehouse') ?>",

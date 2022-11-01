@@ -20,6 +20,7 @@
             <thead>
                 <tr>
                     <th>No</th>
+                    <th>Date</th>
                     <th>ID Handover</th>
                     <th>List Order</th>
                     <th>Driver</th>
@@ -33,12 +34,13 @@
                 $no = 1;
                 $db = \Config\Database::connect();
                 $data1 = $db->table('tbl_handover')->getWhere(['warehouse' => user()->warehouse, 'created_at>' => date('Y-m-d')])->getResultArray();
-                $data2 = $db->table('tbl_handover')->getWhere(['created_at>' => date('Y-m-d')])->getResultArray();
+                $data2 = $db->table('tbl_handover')->getWhere(['created_at>=' => date('Y-m-d')])->getResultArray();
                 $data = user()->warehouse == 'Headoffice' ? $data2 : $data1;
                 foreach ($data as $row) :
                 ?>
                 <tr>
                     <td style="vertical-align: middle;"><?= $no++; ?></td>
+                    <td style="vertical-align: middle;"><?= $row['created_at']; ?></td>
                     <td style="vertical-align: middle;"><?= $row['id_handover']; ?></td>
                     <td style="vertical-align: middle;"><?php foreach (json_decode($row['listItem']) as $k) : ?>
                         <ul>
