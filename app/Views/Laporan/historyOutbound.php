@@ -11,18 +11,7 @@
 <div class="col-lg-12">
     <div class="card">
         <div class="card-body">
-            <table border="0" cellspacing="5" cellpadding="5">
-                <tbody>
-                    <tr>
-                        <td>Start date:</td>
-                        <td><input type="text" id="min" name="min"></td>
-                    </tr>
-                    <tr>
-                        <td>End date:</td>
-                        <td><input type="text" id="max" name="max"></td>
-                    </tr>
-                </tbody>
-            </table><br>
+
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
