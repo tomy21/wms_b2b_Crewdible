@@ -52,7 +52,7 @@ class Handover extends BaseController
     function simpanTemResi()
     {
         $order = $this->request->getVar('order');
-        // $driver = $this->request->getVar('driver');
+        $warehouse = $this->request->getVar('warehouse');
         $id = $this->request->getVar('idHandover');
 
         $modelOrder = new ModelOrder();
@@ -60,7 +60,7 @@ class Handover extends BaseController
         $cekOrder1 = $modelOrder->getWhere(['Order_id' => $order, 'status' => 5])->getResult();
 
         $modelListHandover = new ModelListHandover();
-        $cekList = $modelListHandover->getWhere(['order_id' => $order, 'id_handover' => $id])->getResult();
+        $cekList = $modelListHandover->getWhere(['order_id' => $order])->getResult();
 
         if (count($cekOrder1) == 0) {
             $json = [
@@ -79,10 +79,14 @@ class Handover extends BaseController
                     'alamat'        => $cekOrder->Drop_address,
                     'no_tlp'        => $cekOrder->Drop_contact,
                     'status'        => 0,
-                    // 'driver'        => $driver,
+                    'warehouse'     => $warehouse,
                     'id_handover'   => $id
                 ];
                 $modelListHandover->insert($data);
+
+                $modelPacking   = new PackingModel();
+                $getId          = $modelPacking->getWhere(['order_id' => $order])->getRow();
+                $modelPacking->update($getId->id, ['Status' => 3]);
 
                 // $modelOrder->update($order, ['driver' => $driver]);
                 $json = [
@@ -131,8 +135,6 @@ class Handover extends BaseController
                 'warehouse'         => $warehouse,
             ];
             $modelHandover->insert($query);
-
-
 
             $json = [
                 'sukses'    => 'Berhasil membuat manifest',

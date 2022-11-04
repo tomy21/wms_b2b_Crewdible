@@ -15,8 +15,31 @@ class InvoiceModel extends Model
         'stock_location', 'status', 'assign', 'id_basket', 'created_at'
     ];
     protected $useTimestamps    = true;
+    protected $column_order     = array(null, 'stock_location', 'Order_id', null, null, null, null, 'created_at', null, null, null, null);
+    protected $column_search    = array('created_at', 'stock_location', 'Order_id');
+    protected $order            = array('created_at' => 'desc');
+    protected $request;
+    protected $dt;
+    protected $db;
 
+    function tampilDataInvoice($katakunci = null, $start = 0, $length = 0)
+    {
+        $builder = $this->table('tbl_order');
+        if ($katakunci) {
+            $arr = explode(" ", $katakunci);
+            for ($i = 0; $i < count($arr); $i++) {
+                $builder = $builder->orLike('stock_location', $arr[$i]);
+                $builder = $builder->orLike('Order_id', $arr[$i]);
+                $builder = $builder->orLike('created_at', $arr[$i]);
+            }
+        }
 
+        if ($start != 0  or $length != 0) {
+            $builder = $builder->limit($length, $start);
+        }
+
+        return $builder->orderBy('created_at', 'desc')->get()->getResult();
+    }
 
     function tampilDataTransaksi($warehouse)
     {

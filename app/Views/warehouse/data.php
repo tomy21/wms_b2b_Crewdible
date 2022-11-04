@@ -22,6 +22,7 @@
                     <tr>
                         <th>No</th>
                         <th>Order id</th>
+                        <th>Warehouse</th>
                         <th>Nama Penerima</th>
                         <th>Alamat</th>
                         <th>Foto Before</th>
@@ -47,6 +48,7 @@
                     <tr>
                         <td><?= $no++ ?></td>
                         <td><?= $query['order_id'] ?></td>
+                        <td><?= $query['warehouse'] ?></td>
                         <td>
                             <?php $db = \Config\Database::connect();
                                 $data = $db->table('tbl_order')->where('Order_id', $query['order_id'])->get()->getResult();

@@ -21,6 +21,7 @@
                 <tr>
                     <th>No</th>
                     <th>Date</th>
+                    <th>warehouse</th>
                     <th>ID Handover</th>
                     <th>List Order</th>
                     <th>Driver</th>
@@ -41,10 +42,12 @@
                 <tr>
                     <td style="vertical-align: middle;"><?= $no++; ?></td>
                     <td style="vertical-align: middle;"><?= $row['created_at']; ?></td>
+                    <td style="vertical-align: middle;"><?= $row['warehouse']; ?></td>
                     <td style="vertical-align: middle;"><?= $row['id_handover']; ?></td>
-                    <td style="vertical-align: middle;"><?php foreach (json_decode($row['listItem']) as $k) : ?>
+                    <td style="vertical-align: middle;">
+                        <?php foreach (json_decode($row['listItem'], true) as $k) : ?>
                         <ul>
-                            <ol><?= $k->order_id ?></ol>
+                            <ol><?= $k['order_id'] ?></ol>
                         </ul>
                         <?php endforeach; ?>
                     </td>

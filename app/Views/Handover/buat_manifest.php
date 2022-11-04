@@ -24,6 +24,7 @@
                 <div class="form-group col-md-4">
                     <label for="">Masukan No Order</label>
                     <input type="text" id="orderId" class="form-control">
+                    <input type="hidden" id="warehouse" class="form-control" value="<?= user()->warehouse ?>">
                 </div>
             </div>
             <div class="row">
@@ -175,6 +176,7 @@ $(document).ready(function() {
             e.preventDefault();
             let order = $('#orderId').val();
             let idHandover = $('#idHandover').val();
+            let warehouse = $('#warehouse').val();
             if (order.length === 0) {
                 Swal.fire({
                     position: 'center',
@@ -191,7 +193,8 @@ $(document).ready(function() {
                     url: "<?= site_url() ?>/Handover/simpanTemResi",
                     data: {
                         order: order,
-                        idHandover: idHandover
+                        idHandover: idHandover,
+                        warehouse: warehouse
                     },
                     dataType: "json",
                     beforeSend: function() {
