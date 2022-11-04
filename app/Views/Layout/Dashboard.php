@@ -370,10 +370,10 @@
                                 ?>
                         </td>
                         <td>
-                            <?= round(intval($meetSLA) / intval($jumlah), 2) ?> %
+                            <?= round((intval($meetSLA) / intval($jumlah) * 100), 2) ?> %
                         </td>
                         <td>
-                            <?= round(intval($overSLA) / intval($jumlah), 2) ?> %
+                            <?= round((intval($overSLA) / intval($jumlah) * 100), 2) ?> %
                         </td>
                     </tr>
                 </tbody>
