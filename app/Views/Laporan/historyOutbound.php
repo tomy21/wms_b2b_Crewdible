@@ -11,6 +11,18 @@
 <div class="col-lg-12">
     <div class="card">
         <div class="card-body">
+            <table border="0" cellspacing="5" cellpadding="5">
+                <tbody>
+                    <tr>
+                        <td>Start date:</td>
+                        <td><input type="text" id="min" name="min"></td>
+                    </tr>
+                    <tr>
+                        <td>End date:</td>
+                        <td><input type="text" id="max" name="max"></td>
+                    </tr>
+                </tbody>
+            </table><br>
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
@@ -105,12 +117,15 @@
                             <?php $db = \Config\Database::connect();
                                 $warehouse = $db->table('tbl_packing')->getWhere(['order_id' => $query['Order_id']])->getRow();
                                 $date = $warehouse->updated_at;
-                                if ($date > $query['created_at']) :
+                                if ($date > $query['created_at']) {
+                                    $sla = 'Over SLA';
+                                } else {
+                                    $sla = 'Meet SLA';
+                                }
                                 ?>
-                            <span class="badge badge-danger"> Over SLA</span>
-                            <?php else : ?>
-                            <span class="badge badge-success"> Meet SLA</span>
-                            <?php endif; ?>
+                            <span class="badge <?= $sla == 'Over SLA' ? 'badge-danger' : 'badge-success' ?>">
+                                <?= $sla == 'Over SLA' ? 'Over SLA' : 'Meet SLA' ?></span>
+
                         </td>
                         <td style="text-align:center;">
                             <button class="btn btn-sm btn-info" type="button"

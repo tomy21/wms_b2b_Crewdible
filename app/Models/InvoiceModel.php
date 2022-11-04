@@ -17,6 +17,7 @@ class InvoiceModel extends Model
     protected $useTimestamps    = true;
 
 
+
     function tampilDataTransaksi($warehouse)
     {
         return $this->table('tbl_invoice')->getWhere(['status' => 1, 'stock_location' => $warehouse])->getResultArray();

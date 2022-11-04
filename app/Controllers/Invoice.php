@@ -9,6 +9,7 @@ use App\Models\ModelOrder;
 use App\Models\StockModel;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use Config\Services;
 
 class Invoice extends BaseController
 {
@@ -20,10 +21,63 @@ class Invoice extends BaseController
     }
     public function index()
     {
-        // $data = [
-        //     'status'    => $this->ModalOrder->get()->getResult(),
-        // ];
+
         return view('Stock/invoice');
+    }
+    function dataAjax()
+    {
+        $request = Services::request();
+        $modelInvoice = new ModelOrder();
+        $param['draw'] = isset($_REQUEST['draw']) ? $_REQUEST['draw'] : '';
+        $katakunci = isset($_REQUEST['search']['value']) ? $_REQUEST['search']['value'] : '';
+        $start = isset($_REQUEST['start']) ? $_REQUEST['start'] : '';
+        $length = isset($_REQUEST['length']) ? $_REQUEST['length'] : '';
+
+        $tampilData = $modelInvoice->tampilDataInvoice($katakunci, $start, $length);
+
+        $jumlahData = $modelInvoice->tampilDataInvoice($katakunci);
+        $no         = $start;
+        $data       = [];
+
+        foreach ($tampilData as $list) {
+            $no++;
+            $row = [];
+
+            if ($list->status == 1) {
+                $status = "<span class=\"badge badge-dark\">Transaksi Baru</span>";
+            } else if ($list->status == 2) {
+                $status = "<span class=\"badge badge-info\">Assign</span>";
+            } else if ($list->status == 3) {
+                $status = "<span class=\"badge badge-primary\">Picking</span>";
+            } else if ($list->status == 4) {
+                $status = "<span class=\"badge badge-warning\">Packing</span>";
+            } else if ($list->status == 5) {
+                $status = "<span class=\"badge badge-Fuchsia\">Shipping</span>";
+            } else if ($list->status == 6) {
+                $status = "<span class=\"badge badge-success\">Done</span>";
+            } else {
+                $status = "<span class=\"badge badge-danger\">Return</span>";
+            }
+
+            $row[] = $no;
+            $row[] = $list->created_at;
+            $row[] = $list->stock_location;
+            $row[] = $list->Order_id;
+            $row[] = $list->Drop_name;
+            $row[] = $list->Drop_contact;
+            $row[] = $list->Drop_city;
+            $row[] = $status;
+            $row[] = "<button class=\"btn btn-sm btn-info\" onclick=\"detail('$list->Order_id')\"><i class=\"fa fa-eye\"></i></button>";
+            $data[] = $row;
+        }
+        $output = array(
+            'draw'              => intval($param['draw']),
+            'recordsTotal'      => count($jumlahData),
+            'recordsFiltered'   => count($jumlahData),
+            'data'              => $data,
+        );
+
+        echo json_encode($output);
     }
     public function upload()
     {
@@ -104,7 +158,7 @@ class Invoice extends BaseController
                         $date = date('Y-m-d 08:15:00', strtotime('+1 days'));
                     }
                 } else {
-                    $date = date('Y-m-d 13:15:00', strtotime('+1 days'));
+                    $date = date('Y-m-d 13:15:00');
                 }
                 if ($orderNow == null || $orderNow['Order_id'] == $Order_ID) {
 

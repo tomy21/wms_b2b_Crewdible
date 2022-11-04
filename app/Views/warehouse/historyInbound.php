@@ -20,9 +20,8 @@
                         <th>Nama Driver</th>
                         <th>No Pelat Kendaraan</th>
                         <th>Kedatangan Driver</th>
-                        <th>Tanggal Diterima</th>
                         <th>Tanggal Input to stock</th>
-                        <th>Keterangan</th>
+                        <th>SLA</th>
                         <th>Detail</th>
                     </tr>
                 </thead>
@@ -43,13 +42,19 @@
                         <td><?= $query['noplat'] ?></td>
                         <td><?= $query['waktu_datang'] ?></td>
                         <td><?= $query['updated_at'] ?></td>
-                        <td><?= $query['updated_at'] ?></td>
                         <td>
-                            <?php if ($query['waktu_datang'] < date('Y-m-d 18:00:00') && $query['updated_at'] > date('Y-m-d 23:59:00')) : ?>
-                            <span class="badge badge-danger"> Over SLA</span>
-                            <?php else : ?>
-                            <span class="badge badge-success"> Meet SLA</span>
-                            <?php endif; ?>
+                            <?php
+                                $date2 = date_create($query['waktu_datang']);
+                                $dateFormat1 = date_format($date2, 'Y-m-d 23:59:00');
+                                $dateFormat2 = date_format($date2, 'Y-m-d 18:00:00');
+                                if ($query['waktu_datang'] <= $dateFormat2 && $query['updated_at'] > $dateFormat1) {
+                                    $sla = 'Over SLA';
+                                } else {
+                                    $sla = 'Meet SLA';
+                                }
+                                ?>
+                            <span
+                                class="badge <?= $sla == 'Over SLA' ? 'badge-danger' : 'badge-success' ?>"><?= $sla == 'Over SLA' ? 'Over SLA' : 'Meet SLA' ?></span>
                         </td>
                         <td style="text-align:center;">
                             <button class="btn btn-sm btn-info" type="button"

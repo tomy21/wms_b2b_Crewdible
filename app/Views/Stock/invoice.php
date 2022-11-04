@@ -119,67 +119,7 @@
                             <th>Status</th>
                             <th>Detail</th>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <?php
 
-                                if (user()->warehouse == 'Headoffice') {
-                                    $db = \Config\Database::connect();
-                                    $date = date('d-m-Y H:i:s');
-                                    $hari = 1;
-                                    $hariKemarin = date('Y-m-d', strtotime('-$hari day', strtotime($date)));
-                                    $data2 =
-                                        $db->table('tbl_order')->where(['created_at>=' => $hariKemarin])->orderBy('created_at', 'DESC')->get()->getResult();
-                                } else {
-                                    $db = \Config\Database::connect();
-                                    $date = date('d-m-Y H:i:s');
-                                    $hari = 1;
-                                    $hariKemarin = date('Y-m-d', strtotime('-$hari day', strtotime($date)));
-                                    $orderDone = 6;
-
-                                    $data1 = $db->table('tbl_order')->where(['stock_location' => user()->warehouse, 'created_at>=' => $hariKemarin])->select('status,created_at,stock_location, Drop_name, Drop_contact, Drop_city, count(Order_id) as Order_id')->groupBy('Drop_name')->orderBy('created_at', 'DESC')->get()->getResult();
-                                }
-                                $data = user()->warehouse == 'Headoffice' ? $data2 : $data1;
-                                $no = 1;
-                                foreach ($data as $user) :
-                                ?>
-                                <td><?= $no++; ?></td>
-                                <td><?= $user->created_at ?></td>
-                                <td><?= $user->stock_location ?></td>
-                                <td><?= $user->Order_id ?></td>
-                                <td><?= $user->Drop_name ?></td>
-                                <td><?= $user->Drop_contact ?></td>
-                                <td><?= $user->Drop_city ?></td>
-                                <td>
-                                    <?php if ($user->status == "1") : ?>
-                                    <span class="badge badge-dark">Transaksi Baru</span>
-                                    <?php elseif ($user->status == "2") :  ?>
-                                    <span class="badge badge-info">Assign</span>
-                                    <?php elseif ($user->status == "3") :  ?>
-                                    <span class="badge badge-primary">Picking</span>
-                                    <?php elseif ($user->status == "4") :  ?>
-                                    <span class="badge badge-warning">Packing</span>
-                                    <?php elseif ($user->status == "5") :  ?>
-                                    <span class="badge badge-Fuchsia">Shipping</span>
-                                    <?php elseif ($user->status == "6") :  ?>
-                                    <span class="badge badge-success">Done</span>
-                                    <?php elseif ($user->status == "7") :  ?>
-                                    <span class="badge badge-danger">Return</span>
-                                    <?php endif; ?>
-                                </td>
-                                <td>
-                                    <?php if (user()->warehouse == 'Headoffice') : ?>
-                                    <button type="button" class="btn btn-sm btn-info"
-                                        onclick="detail('<?= $user->Order_id; ?>')"><i class="fa fa-eye"></i></button>
-                                    <?php else : ?>
-                                    <button type="button" class="btn btn-sm btn-info"
-                                        onclick="detailwarehouse('<?= $user->Drop_name; ?>')"><i
-                                            class="fa fa-eye"></i></button>
-                                    <?php endif; ?>
-                                </td>
-                            </tr>
-                            <?php endforeach; ?>
-                        </tbody>
                     </table>
                 </div>
             </div>
@@ -194,14 +134,30 @@
 <!-- AdminLTE App -->
 <script src="<? site_url() ?>/dist/js/adminlte.min.js"></script>
 <script>
+// $(document).ready(function() {
+//     $("#example1").DataTable({
+//         "responsive": true,
+//         "lengthChange": true,
+//         "autoWidth": true,
+//         "buttons": ["excel", "pdf", "print"]
+//     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+// });
+
 $(document).ready(function() {
-    $("#example1").DataTable({
+    $('#example1').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "order": [],
+        "ajax": {
+            "url": '<?= site_url('Invoice/dataAjax') ?>',
+            "type": 'POST',
+        },
         "responsive": true,
         "lengthChange": true,
         "autoWidth": true,
         "buttons": ["excel", "pdf", "print"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-
 });
 
 $('#warehouse').change(function(e) {

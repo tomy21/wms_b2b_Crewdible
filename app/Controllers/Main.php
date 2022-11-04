@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\InvoiceModel;
 use App\Models\ModelOrder;
+use App\Models\PoModel;
 use App\Models\StockModel;
 
 
@@ -14,28 +15,22 @@ class Main extends BaseController
     {
         $ModelInvoice = new ModelOrder();
         $ModelStock = new StockModel();
-        $Totnew = $ModelInvoice->getWhere(['status' => 1, 'created_at' => date('Y-m-d')]);
-        $new = $Totnew->getNumRows();
+        $Totnew = $ModelInvoice->where(['status' => 1, 'created_at>=' => date('Y-m-d')])->countAllResults();
 
-        $Totpick = $ModelInvoice->getWhere(['status' => 3, 'created_at' => date('Y-m-d')]);
-        $pick = $Totpick->getNumRows();
+        $Totpick = $ModelInvoice->where(['status' => 3, 'created_at>=' => date('Y-m-d')])->countAllResults();
 
-        $Totpack = $ModelInvoice->getWhere(['status' => 4, 'created_at' => date('Y-m-d')]);
-        $pack = $Totpack->getNumRows();
+        $Totpack = $ModelInvoice->where(['status' => 4, 'created_at>=' => date('Y-m-d')])->countAllResults();
 
-        $shipping = $ModelInvoice->getWhere(['status' => 5, 'created_at' => date('Y-m-d')]);
-        $shipp = $shipping->getNumRows();
+        $shipping = $ModelInvoice->where(['status' => 5, 'created_at>=' => date('Y-m-d')])->countAllResults();
 
-        $done = $ModelInvoice->getWhere(['status' => 6, 'created_at' => date('Y-m-d')]);
-        $done = $done->getNumRows();
-        $rtnData = $ModelInvoice->getWhere(['status' => 7, 'created_at' => date('Y-m-d')]);
-        $rtn = $rtnData->getNumRows();
+        $done = $ModelInvoice->where(['status' => 6, 'created_at>=' => date('Y-m-d')])->countAllResults();
 
-        $Totnew = $ModelInvoice->getWhere(['status' => 2, 'created_at' => date('Y-m-d')]);
-        $assign = $Totnew->getNumRows();
+        $rtnData = $ModelInvoice->where(['status' => 7, 'created_at>=' => date('Y-m-d')])->countAllResults();
 
-        $transaksi = $ModelInvoice->findAll();
-        $total      = count($transaksi);
+        $assign = $ModelInvoice->where(['status' => 2, 'created_at>=' => date('Y-m-d')])->countAllResults();
+
+        $transaksi = $ModelInvoice->where(['created_at>=' => date('Y-m-d')])->countAllResults();
+
 
         $Stock = $ModelStock->findAll();
         $StockData = count($Stock);
@@ -45,16 +40,17 @@ class Main extends BaseController
 
         $modelInvoice = new InvoiceModel();
         $modelOrder = new ModelOrder();
-        $cekWarehouse = $modelOrder->findAll();
+
+        // $countSLA = count($sla);
 
         $data = [
-            'total'     => $total,
+            'total'     => $transaksi,
             // 'data'      => $ModelInvoice->getDataCount(),
-            'new'       => $new,
-            'picking'   => $pick,
-            'packing'   => $pack,
-            'return'    => $rtn,
-            'shipping'  => $shipp,
+            'new'       => $Totnew,
+            'picking'   => $Totpick,
+            'packing'   => $Totpack,
+            'return'    => $rtnData,
+            'shipping'  => $shipping,
             'Assign'    => $assign,
             'done'      => $done,
             'stockData' => $StockData,

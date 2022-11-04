@@ -326,6 +326,7 @@
             <table class="table m-0">
                 <thead>
                     <tr>
+                        <th>No</th>
                         <th>Warehouse</th>
                         <th>Count Order</th>
                         <th>Count Item</th>
@@ -337,8 +338,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($warehouse as $x) : ?>
+                    <?php $no = 1;
+                    foreach ($warehouse as $x) : ?>
                     <tr>
+                        <td><?= $no++ ?></td>
                         <td><?= $x->stock_location; ?></td>
                         <td>
                             <?php
@@ -353,14 +356,25 @@
                         <td>
                             <?php
                                 $db = \Config\Database::connect();
-                                $jumlah = $db->table('tbl_order')->where('stock_location', $x->stock_location)->get()->getResult();
+                                $meetSLA = $db->table('tbl_packing')->where(['warehouse' => $x->stock_location, 'updated_at<=' => $x->created_at])->countAllResults();
 
-                                foreach ($jumlah as $value) {
-                                }
+                                echo $meetSLA;
                                 ?>
                         </td>
-                        <td></td>
-                        <td></td>
+                        <td>
+                            <?php
+                                $db = \Config\Database::connect();
+                                $overSLA = $db->table('tbl_packing')->where(['warehouse' => $x->stock_location, 'updated_at>=' => $x->created_at])->countAllResults();
+
+                                echo $overSLA;
+                                ?>
+                        </td>
+                        <td>
+                            <?= round(intval($meetSLA) / intval($jumlah), 2) ?> %
+                        </td>
+                        <td>
+                            <?= round(intval($overSLA) / intval($jumlah), 2) ?> %
+                        </td>
                     </tr>
                 </tbody>
                 <?php endforeach; ?>
