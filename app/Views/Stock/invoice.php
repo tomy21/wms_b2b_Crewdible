@@ -146,18 +146,19 @@
 
 $(document).ready(function() {
     $('#example1').DataTable({
-        "processing": true,
-        "serverSide": true,
-        "order": [],
-        "ajax": {
-            "url": '<?= site_url('Invoice/dataAjax') ?>',
-            "type": 'POST',
+        processing: true,
+        serverSide: true,
+        ajax: {
+            url: '<?= site_url('Invoice/dataAjax') ?>',
+            type: 'POST',
         },
-        "responsive": true,
-        "lengthChange": true,
-        "autoWidth": true,
-        "buttons": ["excel", "pdf", "print"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        responsive: true,
+        lengthChange: true,
+        autoWidth: true,
+        Sort: true,
+        // "buttons": ["excel", "pdf", "print"],
+
+    })
 });
 
 $('#warehouse').change(function(e) {

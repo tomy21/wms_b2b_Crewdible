@@ -60,7 +60,7 @@ class Invoice extends BaseController
                 $status = "<span class=\"badge badge-danger\">Return</span>";
             }
 
-            $row[] = $no;
+            $data = $row[] = $no;
             $row[] = $list->created_at;
             $row[] = $list->stock_location;
             $row[] = $list->Order_id;
@@ -72,7 +72,7 @@ class Invoice extends BaseController
             $data[] = $row;
         }
         $output = array(
-            'draw'              => intval($param['draw']),
+            'draw'              => isset($_POST['draw']) ? intval($_POST['draw']) : 0,
             'recordsTotal'      => count($jumlahData),
             'recordsFiltered'   => count($jumlahData),
             'data'              => $data,
