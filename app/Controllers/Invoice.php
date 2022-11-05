@@ -60,7 +60,7 @@ class Invoice extends BaseController
                 $status = "<span class=\"badge badge-danger\">Return</span>";
             }
 
-            $data = $row[] = $no;
+            $row[] = $no;
             $row[] = $list->created_at;
             $row[] = $list->stock_location;
             $row[] = $list->Order_id;
