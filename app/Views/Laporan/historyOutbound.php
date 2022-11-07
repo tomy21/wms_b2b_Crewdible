@@ -60,10 +60,7 @@
                 "ajax": {
                     "url": "<?php echo site_url('Handover/detailHandover') ?>",
                     "type": "POST",
-                    "data": {
-                        start_date: start_date,
-                        end_date: end_date
-                    }
+                    
 
                 },
                 dom: 'lBftip', // Add the Copy, Print and export to CSV, Excel and PDF buttons
