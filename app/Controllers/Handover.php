@@ -192,6 +192,10 @@ class Handover extends BaseController
 
                 $buttonDetail = "<button class=\"btn btn-sm btn-info\" type=\"button\" 
                 onclick=\"detail('$idInv')\"><i class=\"fa fa-eye\"></i></button>";
+                $btnEdit = "<button class=\"btn btn-sm btn-warning\" type=\"button\" onclick=\"edit('$list->Order_id')\"><i class=\"fa fa-edit\"></i></button>";
+                // date('Y-m-d H:i:s') < date('Y-m-d 17:21:00') ? $btn :
+
+                $btn = "$buttonDetail &nbsp $btnEdit";
 
                 $row[] = $no;
                 $row[] = $list->stock_location;
@@ -203,9 +207,8 @@ class Handover extends BaseController
                 $row[] = $list->created_at;
                 $row[] = $datePacking == null ? '-' : $datePacking;
                 $row[] = $updatedHandover == null ? '-' : $updatedHandover;
-                $row[] = $list->created_at <= $datePacking ? "<span class=\" badge badge-danger\">Over SLA</span>" : "<span
-        class=\"badge badge-success\">Meet SLA</span>";
-                $row[] = $buttonDetail;
+                $row[] = $list->created_at <= $datePacking ? "<span class=\" badge badge-danger\">Over SLA</span>" : "<span class=\"badge badge-success\">Meet SLA</span>";
+                $row[] =  $btn;
                 $data[] = $row;
             }
 
@@ -233,7 +236,7 @@ class Handover extends BaseController
             $Drop_name = null;
             $Drop_address = null;
             $Drop_contact = null;
-            foreach($ambilData as $a){
+            foreach ($ambilData as $a) {
                 $created_at = $a->created_at;
                 $Drop_name = $a->Drop_name;
                 $Drop_address = $a->Drop_address;
@@ -245,7 +248,7 @@ class Handover extends BaseController
             $foto = null;
             $updated_at = null;
             $foto_after = null;
-            foreach($ambilData1 as $a1){
+            foreach ($ambilData1 as $a1) {
                 $foto = $a1->foto;
                 $updated_at = $a1->updated_at;
                 $foto_after = $a1->foto_after;
@@ -254,7 +257,7 @@ class Handover extends BaseController
             $modelListHandover = new ModelListHandover();
             $ambilData2 = $modelListHandover->getWhere(['order_id' => $getOrderId->Order_id])->getResult();
             $idHandover = null;
-            foreach($ambilData2 as $y){
+            foreach ($ambilData2 as $y) {
                 $idHandover = $y->id_handover;
             }
 
@@ -263,13 +266,13 @@ class Handover extends BaseController
             $foto1 = null;
             $tandatangan = null;
             $driver = null;
-            foreach($ambilData3 as $a3){
+            foreach ($ambilData3 as $a3) {
                 $foto1 = $a3->foto;
                 $tandatangan = $a3->tandatangan;
                 $driver = $a3->driver;
             }
 
-            
+
             $data = [
                 'Order_id' => $getOrderId->Order_id,
                 'time_slot' => $created_at,
@@ -288,5 +291,51 @@ class Handover extends BaseController
             ];
             echo json_encode($json);
         }
+    }
+    function editData()
+    {
+        $po = $this->request->getPost('id');
+
+        $modelInvoice = new PackingModel();
+        $getOrderId = $modelInvoice->getWhere(['order_id' => $po])->getResult();
+        $updated_at = null;
+        foreach ($getOrderId as $y) {
+            $updated_at = $y->updated_at;
+        }
+        $data = [
+            'Order_id' => $po,
+            'updated_at' => $updated_at,
+        ];
+
+        $json = [
+            'data'  => view('Laporan/editData', $data),
+        ];
+
+        echo json_encode($json);
+    }
+    function UpdateDate()
+    {
+        $id     = $this->request->getVar('orderId');
+        $date   = $this->request->getVar('date');
+        $estimate   = strtotime($date);
+
+
+        $modalPacking   = new PackingModel();
+        $getData        = $modalPacking->getWhere(['Order_id' => $id])->getResult();
+        $idInv = null;
+        foreach ($getData as $i) {
+            $idInv = $i->id;
+        }
+        
+        $data = [
+            'updated_at'     => date('Y-m-d H:i:s', $estimate)
+        ];
+        $modalPacking->update($idInv,['updated_at'     => date('Y-m-d H:i:s', $estimate)]);
+
+        $json = [
+            'success' => 'Data berhasil di update'
+        ];
+
+        echo json_encode($json);
     }
 }

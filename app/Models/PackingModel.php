@@ -7,8 +7,8 @@ use CodeIgniter\Model;
 class PackingModel extends Model
 {
     protected $table            = 'tbl_packing';
-    protected $primaryKey       = 'order_id';
-    protected $allowedFields    = ['order_id', 'list', 'foto', 'foto_after', 'assign', 'warehouse', 'Status'];
+    protected $primaryKey       = 'id';
+    protected $allowedFields    = ['order_id', 'list', 'foto', 'foto_after', 'assign', 'warehouse', 'Status','updated_at'];
     protected $useTimestamps    = true;
 
     public function tampilDataTemp($order)

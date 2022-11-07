@@ -42,6 +42,14 @@ class ModelHistoryOutbound extends Model
             }
             $i++;
         }
+
+        $mulai = $this->request->getPost('start_date');
+        $akhir = $this->request->getPost('end_date');
+
+        if($mulai != '' && $akhir != '' ){
+            $this->dt->getWhere(['created_at>=' => $mulai,'created_at<='=>$akhir]);
+        }
+        
         if ($this->request->getPost('order')) {
             $this->dt->orderBy($this->column_order[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
         } else if (isset($this->order)) {
