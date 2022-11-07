@@ -321,15 +321,7 @@ class Handover extends BaseController
 
 
         $modalPacking   = new PackingModel();
-        $getData        = $modalPacking->getWhere(['Order_id' => $id])->getResult();
-        $idInv = null;
-        foreach ($getData as $i) {
-            $idInv = $i->id;
-        }
         
-        $data = [
-            'updated_at'     => date('Y-m-d H:i:s', $estimate)
-        ];
         $modalPacking->update($id,['updated_at'     => date('Y-m-d H:i:s', $estimate)]);
 
         $json = [
