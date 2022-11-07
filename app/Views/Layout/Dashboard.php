@@ -356,7 +356,7 @@
                         <td>
                             <?php
                                 $db = \Config\Database::connect();
-                                $meetSLA = $db->table('tbl_packing')->where(['warehouse' => $x->stock_location, 'updated_at<=' => $x->created_at])->countAllResults();
+                                $meetSLA = $db->table('tbl_packing')->where(['warehouse' => $x->stock_location, 'updated_at>=' => $x->created_at])->countAllResults();
 
                                 echo $meetSLA;
                                 ?>
@@ -364,7 +364,7 @@
                         <td>
                             <?php
                                 $db = \Config\Database::connect();
-                                $overSLA = $db->table('tbl_packing')->where(['warehouse' => $x->stock_location, 'updated_at>=' => $x->created_at])->countAllResults();
+                                $overSLA = $db->table('tbl_packing')->where(['warehouse' => $x->stock_location, 'updated_at<=' => $x->created_at])->countAllResults();
 
                                 echo $overSLA;
                                 ?>
