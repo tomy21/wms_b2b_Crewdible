@@ -49,11 +49,7 @@
                             icon: 'success',
                             title: 'Berhasil',
                             text: response.success,
-                        }).then((result) => {
-                            if (result.isConfirmed) {
-                                window.location.reload();
-                            }
-                        });
+                        })
                         play_notif();
                     }
 
