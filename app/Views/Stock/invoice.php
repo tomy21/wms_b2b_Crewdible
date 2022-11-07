@@ -119,7 +119,9 @@
                             <th>Status</th>
                             <th>Detail</th>
                         </thead>
+                        <tbody>
 
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -145,19 +147,11 @@
 // });
 
 $(document).ready(function() {
-    $('#example1').DataTable({
+    $('#example1').dataTable({
         processing: true,
         serverSide: true,
-        ajax: {
-            url: '<?= site_url('Invoice/dataAjax') ?>',
-            type: 'POST',
-        },
-        responsive: true,
-        lengthChange: true,
-        autoWidth: true,
-        Sort: true,
-        // "buttons": ["excel", "pdf", "print"],
-
+        serverMethod: 'post',
+        ajax: "<?= site_url('Invoice/dataAjax') ?>",
     })
 });
 

@@ -80,57 +80,7 @@ class Invoice extends BaseController
 
         echo json_encode($output);
     }
-    function historyOutbound()
-    {
-        $request = Services::request();
-        $modelInvoice = new InvoiceModel();
-        $param['draw'] = isset($_REQUEST['draw']) ? $_REQUEST['draw'] : '';
-        $katakunci = isset($_REQUEST['search']['value']) ? $_REQUEST['search']['value'] : '';
-        $start = isset($_REQUEST['start']) ? $_REQUEST['start'] : '';
-        $length = isset($_REQUEST['length']) ? $_REQUEST['length'] : '';
 
-        $tampilData = $modelInvoice->tampilDataInvoice($katakunci, $start, $length);
-
-        $jumlahData = $modelInvoice->tampilDataInvoice($katakunci);
-        $no         = $start;
-        $data       = [];
-
-        $sumQtyOrder = 0;
-        $sumQtyPacking = 0;
-        foreach ($tampilData as $list) {
-            $no++;
-            $row = [];
-
-            $modelPacking = new PackingModel();
-            $getPacking = $modelPacking->getWhere(['order_id' => $list->Order_id])->getRow();
-            $status = $getPacking->updated_at < $list->created_at;
-
-
-            $invoiceSum = $modelInvoice->getWhere(['Order_id' => $list->Order_id])->getResult();
-            foreach ($invoiceSum as $z) {
-                $sumQtyOrder += $z->quantity;
-            }
-
-            $row[] = $no;
-            $row[] = $list->stock_location;
-            $row[] = $list->Order_id;
-            $row[] = $sumQtyOrder;
-            $row[] = $list->Drop_name;
-            $row[] = $list->Drop_contact;
-            $row[] = $list->Drop_city;
-            $row[] = $status;
-            $row[] = "<button class=\"btn btn-sm btn-info\" onclick=\"detail('$list->Order_id')\"><i class=\"fa fa-eye\"></i></button>";
-            $data[] = $row;
-        }
-        $output = array(
-            'draw'              => intval($param['draw']),
-            'recordsTotal'      => count($jumlahData),
-            'recordsFiltered'   => count($jumlahData),
-            'data'              => $data,
-        );
-
-        echo json_encode($output);
-    }
     public function upload()
     {
 

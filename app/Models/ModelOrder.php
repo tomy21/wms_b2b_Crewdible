@@ -10,12 +10,13 @@ class ModelOrder extends Model
     protected $primaryKey       = 'Order_id';
     protected $allowedFields    = ['driver', 'status', 'created_at', 'stock_location', 'Order_id', 'Drop_name', 'Drop_contact', 'Drop_city'];
     protected $useTimestamps    = true;
-    // protected $column_order     = array(null, 'created_at', 'stock_location', 'Order_id', 'Drop_name', 'Drop_contact', 'Drop_city', null, null);
-    // protected $column_search    = array('created_at', 'stock_location', 'Order_id', 'Drop_name', 'Drop_contact', 'Drop_city');
-    // protected $order            = array(['created_at' => 'asc', 'stock_location' => 'asc', 'Order_id' => 'asc', 'Drop_name' => 'asc', 'Drop_contact' => 'asc']);
-    // protected $request;
-    // protected $dt;
-    // protected $db;
+    protected $column_order     = array(null, 'created_at', 'stock_location', 'Order_id', 'Drop_name', 'Drop_contact', 'Drop_city', null, null);
+    protected $column_search    = array('id', 'created_at', 'stock_location', 'Order_id', 'Drop_name', 'Drop_contact', 'Drop_city');
+    protected $order            = array(['created_at' => 'asc', 'stock_location' => 'asc', 'Order_id' => 'asc', 'Drop_name' => 'asc', 'Drop_contact' => 'asc']);
+    protected $request;
+    protected $dt;
+    protected $db;
+
 
     function tampilDataInvoice($katakunci = null, $start = 0, $length = 0)
     {

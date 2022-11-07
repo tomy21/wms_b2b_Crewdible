@@ -5,11 +5,12 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\HandoverModel;
 use App\Models\InvoiceModel;
+use App\Models\ModelHistoryOutbound;
 use App\Models\ModelListHandover;
 use App\Models\ModelOrder;
 use App\Models\PackingModel;
+use Config\Services;
 
-use function PHPUnit\Framework\isNull;
 
 class Handover extends BaseController
 {
@@ -144,6 +145,82 @@ class Handover extends BaseController
     }
     function detailHandover()
     {
+        $request = Services::request();
+        $datatable = new ModelHistoryOutbound($request);
+
+        if ($request->getMethod(true) === 'POST') {
+            $lists = $datatable->getDatatables();
+            $data = [];
+            $no = $request->getPost('start');
+
+            foreach ($lists as $list) {
+                $no++;
+                $row = [];
+                // data invoice 
+                $modelInvoice = new InvoiceModel();
+                $count = $modelInvoice->where(['Order_id' => $list->Order_id])->countAllResults();
+                $sumData = 0;
+                $idInv = [];
+                $query = $modelInvoice->where(['Order_id' => $list->Order_id])->get()->getResult();
+                foreach ($query as $x) {
+                    $sumData += $x->quantity;
+                    $idInv = $x->id;
+                }
+
+                // data Packing
+                $modelPacking = new PackingModel();
+                $queryPacking = $modelPacking->getWhere(['order_id' => $list->Order_id])->getResult();
+                $sumPacking = 0;
+                $countPacking = 0;
+                $datePacking = [];
+                foreach ($queryPacking as $z) {
+                    foreach (json_decode($z->list) as $y) {
+                        $sumPacking += intval($y->quantity);
+                    }
+                    $jsonData = json_decode($z->list, true);
+                    $countPacking = count($jsonData);
+                    $datePacking = $z->updated_at;
+                }
+
+                // date Handover 
+                $modelHandover = new ModelListHandover();
+                $queryHandover = $modelHandover->getWhere(['order_id' => $list->Order_id])->getResult();
+                $updatedHandover = [];
+                foreach ($queryHandover as $p) {
+                    $updatedHandover = $p->updated_at;
+                }
+
+                $buttonDetail = "<button class=\"btn btn-sm btn-info\" type=\"button\" 
+                onclick=\"detail('$idInv')\"><i class=\"fa fa-eye\"></i></button>";
+
+                $row[] = $no;
+                $row[] = $list->stock_location;
+                $row[] = $list->Order_id;
+                $row[] = $sumData;
+                $row[] = $sumPacking;
+                $row[] = $count;
+                $row[] = $countPacking;
+                $row[] = $list->created_at;
+                $row[] = $datePacking == null ? '-' : $datePacking;
+                $row[] = $updatedHandover == null ? '-' : $updatedHandover;
+                $row[] = $list->created_at <= $datePacking ? "<span class=\" badge badge-danger\">Over SLA</span>" : "<span
+        class=\"badge badge-success\">Meet SLA</span>";
+                $row[] = $buttonDetail;
+                $data[] = $row;
+            }
+
+            $output = [
+                'draw' => $request->getPost('draw'),
+                'recordsTotal' => $datatable->countAll(),
+                'recordsFiltered' => $datatable->countFiltered(),
+                'data' => $data
+            ];
+
+            echo json_encode($output);
+        }
+    }
+    function dataDetail()
+    {
         if ($this->request->isAjax()) {
             $po = $this->request->getPost('id');
 
@@ -151,32 +228,63 @@ class Handover extends BaseController
             $getOrderId = $modelInvoice->getWhere(['id' => $po])->getRow();
 
             $modelPo = new ModelOrder();
-            $ambilData = $modelPo->getWhere(['Order_id' => $getOrderId->Order_id])->getRow();
+            $ambilData = $modelPo->getWhere(['Order_id' => $getOrderId->Order_id])->getResult();
+            $created_at = null;
+            $Drop_name = null;
+            $Drop_address = null;
+            $Drop_contact = null;
+            foreach($ambilData as $a){
+                $created_at = $a->created_at;
+                $Drop_name = $a->Drop_name;
+                $Drop_address = $a->Drop_address;
+                $Drop_contact = $a->Drop_contact;
+            }
 
             $modelPacking = new PackingModel();
-            $ambilData1 = $modelPacking->getWhere(['order_id' => $getOrderId->Order_id])->getRow();
+            $ambilData1 = $modelPacking->getWhere(['order_id' => $getOrderId->Order_id])->getResult();
+            $foto = null;
+            $updated_at = null;
+            $foto_after = null;
+            foreach($ambilData1 as $a1){
+                $foto = $a1->foto;
+                $updated_at = $a1->updated_at;
+                $foto_after = $a1->foto_after;
+            }
 
             $modelListHandover = new ModelListHandover();
-            $ambilData2 = $modelListHandover->getWhere(['order_id' => $getOrderId->Order_id])->getRow();
+            $ambilData2 = $modelListHandover->getWhere(['order_id' => $getOrderId->Order_id])->getResult();
+            $idHandover = null;
+            foreach($ambilData2 as $y){
+                $idHandover = $y->id_handover;
+            }
 
             $modelHandover = new HandoverModel();
-            $ambilData3 = $modelHandover->getWhere(['id_handover' => $ambilData2->id_handover])->getRow();
+            $ambilData3 = $modelHandover->getWhere(['id_handover' => $idHandover])->getResult();
+            $foto1 = null;
+            $tandatangan = null;
+            $driver = null;
+            foreach($ambilData3 as $a3){
+                $foto1 = $a3->foto;
+                $tandatangan = $a3->tandatangan;
+                $driver = $a3->driver;
+            }
 
+            
             $data = [
-                'Order_id'          => $getOrderId->Order_id,
-                'time_slot'         => $ambilData->created_at,
-                'time_packing'      => $ambilData1->updated_at,
-                'foto_before'       => $ambilData1->foto,
-                'foto_after'        => $ambilData1->foto_after,
-                'foto_handover'     => $ambilData3->foto,
-                'tandatangan'       => $ambilData3->tandatangan,
-                'driver'            => $ambilData3->driver,
-                'penerima'          => $ambilData->Drop_name,
-                'alamat'            => $ambilData->Drop_address,
-                'no_tlp'            => $ambilData->Drop_contact,
+                'Order_id' => $getOrderId->Order_id,
+                'time_slot' => $created_at,
+                'time_packing' => $updated_at,
+                'foto_before' => $foto,
+                'foto_after' => $foto_after,
+                'foto_handover' => $foto1,
+                'tandatangan' => $tandatangan,
+                'driver' => $driver,
+                'penerima' => $Drop_name,
+                'alamat' => $Drop_address,
+                'no_tlp' => $Drop_contact,
             ];
             $json = [
-                'data'  => view('Laporan/dataTemp', $data)
+                'data' => view('Laporan/dataTemp', $data)
             ];
             echo json_encode($json);
         }

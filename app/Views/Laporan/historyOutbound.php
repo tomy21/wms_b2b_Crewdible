@@ -29,100 +29,7 @@
                         <th>Detail</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <?php
-                    $no = 1;
-                    $db = \Config\Database::connect();
-                    $warehouse = $db->table('tbl_invoice')->getWhere(['stock_location' => user()->warehouse, 'status' => 6])->getResultArray();
-                    $head = $db->table('tbl_invoice')->getWhere(['status' => 6])->getResultArray();
-                    user()->warehouse == 'Headoffice' ? $data = $head : $data = $warehouse;
-                    foreach ($data as $query) :
-                    ?>
-                    <tr>
-                        <td><?= $no++ ?></td>
-                        <td><?= $query['stock_location'] ?></td>
-                        <td><?= $query['Order_id'] ?></td>
-                        <td>
-                            <?php
-                                $db = \Config\Database::connect();
-                                $warehouse = $db->table('tbl_invoice')->getWhere(['Order_id' => $query['Order_id']])->getResult();
-                                $sumData = 0;
-                                foreach ($warehouse as $g) {
-                                    $sumData += intval($g->quantity);
-                                }
-                                echo $sumData;
-                                ?>
-                        </td>
-                        <td>
-                            <?php
-                                $db = \Config\Database::connect();
-                                $warehouse = $db->table('tbl_packing')->getWhere(['order_id' => $query['Order_id']])->getRow();
 
-                                $sumQty = 0;
-                                $listItem = $warehouse->list;
-                                foreach (json_decode($listItem) as $t) {
-                                    $sumQty += intval($t->quantity);
-                                }
-                                echo $sumQty;
-                                ?>
-                        </td>
-                        <td>
-                            <?php
-                                $db = \Config\Database::connect();
-                                $data = $db->table('tbl_invoice')->where(['Order_id' => $query['Order_id']])->countAllResults();
-                                echo $data;
-                                ?>
-                        </td>
-                        <td>
-                            <?php
-                                $db = \Config\Database::connect();
-                                $warehouse = $db->table('tbl_packing')->getWhere(['order_id' => $query['Order_id']])->getRow();
-                                $listItem = $warehouse->list;
-
-                                echo count(json_decode($listItem));
-                                ?>
-                        </td>
-                        <td><?= $query['created_at'] ?></td>
-                        <td>
-                            <?php
-                                $db = \Config\Database::connect();
-                                $warehouse = $db->table('tbl_packing')->getWhere(['order_id' => $query['Order_id']])->getRow();
-
-                                echo $warehouse->updated_at;
-                                ?>
-                        </td>
-                        <td><?php
-                                $db = \Config\Database::connect();
-                                $listHandover = $db->table('tbl_listhandover')->getWhere(['order_id' => $query['Order_id']])->getResult();
-                                $id = [];
-                                foreach ($listHandover as $m) :
-                                    $id = $db->table('tbl_listhandover')->getWhere(['id' => $m->id])->getRow();
-                                    echo $id->updated_at;
-                                endforeach;
-
-                                ?>
-                        </td>
-                        <td>
-                            <?php $db = \Config\Database::connect();
-                                $warehouse = $db->table('tbl_packing')->getWhere(['order_id' => $query['Order_id']])->getRow();
-                                $date = $warehouse->updated_at;
-                                if ($date > $query['created_at']) {
-                                    $sla = 'Over SLA';
-                                } else {
-                                    $sla = 'Meet SLA';
-                                }
-                                ?>
-                            <span class="badge <?= $sla == 'Over SLA' ? 'badge-danger' : 'badge-success' ?>">
-                                <?= $sla == 'Over SLA' ? 'Over SLA' : 'Meet SLA' ?></span>
-
-                        </td>
-                        <td style="text-align:center;">
-                            <button class="btn btn-sm btn-info" type="button"
-                                onclick="detail('<?= $query['id']; ?>')"><i class="fa fa-eye"></i></button>
-                        </td>
-                    </tr>
-                    <?php endforeach; ?>
-                </tbody>
 
             </table>
         </div>
@@ -131,20 +38,27 @@
 <div class="viewmodal" style="display: none;"></div>
 
 <script>
-$(function() {
-    $("#example1").DataTable({
-        "responsive": true,
-        "lengthChange": true,
-        "autoWidth": true,
-        "buttons": ["excel", "pdf", "print"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-
+$(document).ready(function() {
+    var table = $('#example1').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "order": [],
+        "info": true,
+        "ajax": {
+            "url": "<?php echo site_url('Handover/detailHandover') ?>",
+            "type": "POST"
+        },
+        "columnDefs": [{
+            "targets": [0, 3, 4, 5, 6, 8, 9, 11],
+            "orderable": false,
+        }],
+    });
 });
 
 function detail(id) {
     $.ajax({
         type: "post",
-        url: "<?= site_url('/Handover/detailHandover') ?>",
+        url: "<?= site_url('/Handover/dataDetail') ?>",
         data: {
             id: id,
         },
