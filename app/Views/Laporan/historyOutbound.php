@@ -13,12 +13,12 @@
 <div class="col-lg-12">
     <div class="card">
         <div class="card-body">
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-md-3">
                     <input type="text" name="awal" id="awal" class="form-control" readonly>
                 </div>
                 <button class="btn btn-sm btn-info"><i class="fa fa-search"></i> filter data</button>
-            </div>
+            </div> -->
             <br>
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
@@ -63,10 +63,7 @@
                     
 
                 },
-                dom: 'lBftip', // Add the Copy, Print and export to CSV, Excel and PDF buttons
-                buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print'
-                ],
+                
                 "columnDefs": [{
                     "targets": [0, 3, 4, 5, 6, 8, 9, 11],
                     "orderable": false,
@@ -74,20 +71,20 @@
             });
         }
 
-        $('#awal').daterangepicker({
-            "ranges": {
-                'Hari ini': [moment(), moment()],
-                'Kemarin': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                '7 Hari Terakhir': [moment().subtract(6, 'days'), moment()],
-                '30 Hari Terakhir': [moment().subtract(29, 'days'), moment()],
-                'Bulan ini': [moment().startOf('month'), moment().endOf('month')],
-            },
-            format: 'YYYY-MM-DD'
-        }, function(start, end) {
-            $('#example1').DataTable().destroy();
+        // $('#awal').daterangepicker({
+        //     "ranges": {
+        //         'Hari ini': [moment(), moment()],
+        //         'Kemarin': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+        //         '7 Hari Terakhir': [moment().subtract(6, 'days'), moment()],
+        //         '30 Hari Terakhir': [moment().subtract(29, 'days'), moment()],
+        //         'Bulan ini': [moment().startOf('month'), moment().endOf('month')],
+        //     },
+        //     format: 'YYYY-MM-DD'
+        // }, function(start, end) {
+        //     $('#example1').DataTable().destroy();
 
-            fetch_data(start.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
-        });
+        //     fetch_data(start.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
+        // });
     });
 
 
