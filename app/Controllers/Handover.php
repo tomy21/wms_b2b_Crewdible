@@ -330,7 +330,7 @@ class Handover extends BaseController
         $data = [
             'updated_at'     => date('Y-m-d H:i:s', $estimate)
         ];
-        $modalPacking->update($idInv,['updated_at'     => date('Y-m-d H:i:s', $estimate)]);
+        $modalPacking->update($id,['updated_at'     => date('Y-m-d H:i:s', $estimate)]);
 
         $json = [
             'success' => 'Data berhasil di update'
