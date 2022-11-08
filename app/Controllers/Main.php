@@ -150,46 +150,6 @@ class Main extends BaseController
             $numrow++;
         endforeach;
 
-        $writer = new Xlsx($spreadsheet);
-        $fileName = 'Tamplate Input Inbound';
-
-        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-        header('Content-Disposition: attachment;filename=' . $fileName . '.xlsx');
-        header('Cache-Control: max-age=0');
-
-        $writer->save('php://output');
-
-        $tglawal        = $this->request->getPost('tglAwalOut');
-        $tglakhir       = $this->request->getPost('tglAkhirOut');
-
-        $modelOutbound = new InvoiceModel();
-
-        $reportOut = $modelOutbound->reportPeriode($tglawal, $tglakhir);
-        $spreadsheet = new Spreadsheet();
-        $sheet = $spreadsheet->getActiveSheet();
-        $sheet->setCellValue('A1', "Data Barang Keluar");
-        $sheet->mergeCells('A1:E1');
-        $sheet->getStyle('A1')->getFont()->setBold(true);
-        $sheet->setCellValue('A3', "No");
-        $sheet->setCellValue('B3', "Tanggal Masuk");
-        $sheet->setCellValue('C3', "No SKU");
-        $sheet->setCellValue('D3', "Nama Barang");
-        $sheet->setCellValue('E3', "Quantity");
-
-        $no = 1;
-        $numrow = 4;
-        foreach ($reportOut->getResultArray() as $row) :
-            $sheet->setCellValue('A' . $numrow, $no);
-            $sheet->setCellValue('B' . $numrow, $row['created_at']);
-            $sheet->setCellValue('C' . $numrow, $row['codeSKU']);
-            $sheet->setCellValue('D' . $numrow, $row['namaSKU']);
-            $sheet->setCellValue('E' . $numrow, $row['quantity']);
-
-            $no++;
-            $numrow++;
-        endforeach;
-
-
         $sheet->getDefaultRowDimension()->getRowHeight(-1);
         $sheet->getPageSetup()->setOrientation(\PhpOffice\PhpSpreadsheet\Worksheet\PageSetup::ORIENTATION_LANDSCAPE);
         $sheet->setTitle('Laporan Barang Keluar');
