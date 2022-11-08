@@ -193,8 +193,7 @@ class Handover extends BaseController
                 $buttonDetail = "<button class=\"btn btn-sm btn-info\" type=\"button\" 
                 onclick=\"detail('$idInv')\"><i class=\"fa fa-eye\"></i></button>";
                 $btnEdit = "<button class=\"btn btn-sm btn-warning\" type=\"button\" onclick=\"edit('$list->Order_id')\"><i class=\"fa fa-edit\"></i></button>";
-                // date('Y-m-d H:i:s') < date('Y-m-d 17:21:00') ? $btn :
-
+                
                 $btn = "$buttonDetail &nbsp $btnEdit";
 
                 $row[] = $no;
@@ -208,7 +207,7 @@ class Handover extends BaseController
                 $row[] = $datePacking == null ? '-' : $datePacking;
                 $row[] = $updatedHandover == null ? '-' : $updatedHandover;
                 $row[] = $list->created_at <= $datePacking ? "<span class=\" badge badge-danger\">Over SLA</span>" : "<span class=\"badge badge-success\">Meet SLA</span>";
-                $row[] =  $btn;
+                $row[] = date('Y-m-d H:i:s') < date('Y-m-d 17:21:00') ? $buttonDetail : $btn ;
                 $data[] = $row;
             }
 
