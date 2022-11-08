@@ -207,7 +207,7 @@ class Handover extends BaseController
                 $row[] = $datePacking == null ? '-' : $datePacking;
                 $row[] = $updatedHandover == null ? '-' : $updatedHandover;
                 $row[] = $list->created_at <= $datePacking ? "<span class=\" badge badge-danger\">Over SLA</span>" : "<span class=\"badge badge-success\">Meet SLA</span>";
-                $row[] = date('Y-m-d H:i:s') < date('Y-m-d 12:21:00') ? $buttonDetail : $btn ;
+                $row[] = $btn ;
                 $data[] = $row;
             }
 
