@@ -40,9 +40,9 @@ class Laporan extends BaseController
     //     $tglawal        = $this->request->getPost('tglAwal');
     //     $tglakhir       = $this->request->getPost('tglAkhir');
 
-    //     $modelBarang    = new InvoiceModel();
+        // $modelBarang    = new InvoiceModel();
 
-    //     $dataReport = $modelBarang->reportPeriode($tglawal, $tglakhir);
+        // $dataReport = $modelBarang->reportPeriode($tglawal, $tglakhir);
 
 
     //     $spreadsheet = new Spreadsheet();

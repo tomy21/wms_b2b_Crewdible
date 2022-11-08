@@ -40,6 +40,10 @@ class ModelOrder extends Model
 
         return $builder->get()->getResult();
     }
+    public function reportPeriode($tglawal, $tglakhir)
+    {
+        return $this->table('tbl_order')->where('status', 6)->where('created_at>=', $tglawal)->where('created_at<=', $tglakhir)->get();
+    }
     public function add($orderNow2)
     {
         $this->db->table('tbl_order')->ignore(true)->insert($orderNow2);
