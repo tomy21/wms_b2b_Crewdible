@@ -33,6 +33,7 @@
                 <?php
                 $no = 1;
                 $db = \Config\Database::connect();
+                $date = date('d-m-Y');
                 $hari = 1;
                 $hariKemarin = date('Y-m-d', strtotime('-$hari day', strtotime($date)));
                 $data1 = $db->table('tbl_handover')->getWhere(['warehouse' => user()->warehouse, 'created_at>=' => $hariKemarin])->getResultArray();
