@@ -327,4 +327,17 @@ class Inbound extends BaseController
             echo json_encode($json);
         }
     }
+    function hapusData()
+    {
+        $nopo = $this->request->getPost();
+
+        $modelPO = new PoModel();
+        $modelPO->delete($nopo);
+
+        $json = [
+            'sukses' => 'Data berhasil di hapus'
+        ];
+
+        echo json_encode($json);
+    }
 }
