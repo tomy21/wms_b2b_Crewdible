@@ -13,7 +13,7 @@
 <div class="col-lg-12">
     <div class="card">
         <div class="card-body">
-            
+
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
@@ -42,33 +42,30 @@
 
 <script>
     $(document).ready(function() {
-        fetch_data()
+        var table = $('#example1').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "responsive": true,
+            "order": [],
+            "info": true,
+            "ajax": {
+                "url": "<?php echo site_url('Handover/detailHandover') ?>",
+                "type": "POST",
 
-        function fetch_data(start_date = '', end_date = '') {
-            var table = $('#example1').DataTable({
-                "processing": true,
-                "serverSide": true,
-                "responsive": true,
-                "order": [],
-                "info": true,
-                "ajax": {
-                    "url": "<?php echo site_url('Handover/detailHandover') ?>",
-                    "type": "POST",
-                    
 
-                },
-                dom: 'lBftip', // Add the Copy, Print and export to CSV, Excel and PDF buttons
-                buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print'
-                ],
-                "columnDefs": [{
-                    "targets": [0, 3, 4, 5, 6, 8, 9, 11],
-                    "orderable": false,
-                }],
-            });
-        }
+            },
+            dom: 'lBftip', // Add the Copy, Print and export to CSV, Excel and PDF buttons
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ],
+            "columnDefs": [{
+                "targets": [0, 3, 4, 5, 6, 8, 9, 11],
+                "orderable": false,
+            }],
+        });
 
-        
+
+
     });
 
 

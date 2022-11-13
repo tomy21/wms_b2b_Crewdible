@@ -9,6 +9,7 @@ use App\Models\ModelOrder;
 use App\Models\PackingModel;
 use App\Models\PickingModel;
 use TCPDF;
+use Config\Services;
 
 class Sorting extends BaseController
 {
@@ -35,8 +36,9 @@ class Sorting extends BaseController
     {
         $id = $this->request->getVar('id');
 
+        $request = Services::request();
         $modalInvoice = new InvoiceModel();
-        $modalOrder = new ModelOrder();
+        $modalOrder = new ModelOrder($request);
         $modalPicking = new PickingModel();
         $modalBasket = new ModelMasterBasket();
         $cekData = $modalInvoice->getWhere(['id_basket' => $id, 'status' => 3])->getResult();
@@ -74,9 +76,10 @@ class Sorting extends BaseController
         set_time_limit(60);
         $id = $this->request->uri->getSegment(3);
 
-        $modelInvoice = new ModelOrder();
+        $request = Services::request();
+        $modelInvoice = new ModelOrder($request);
         $modelInv       = new InvoiceModel();
-        $modelPacking   = new PackingModel();
+        $modelPacking   = new PackingModel($request);
         $order = $modelInvoice->find($id);
         $cekData = $modelInv->getWhere(['Order_id' => $id]);
         $listItem = $modelInv->where('Order_id', $id)->select('id,Item_id,Item_detail,quantity,Drop_name')->get()->getResultArray();
@@ -128,7 +131,7 @@ class Sorting extends BaseController
             'fontsize' => 8,
             'stretchtext' => 4
         );
-        $modelInvoice = new ModelOrder();
+        $modelInvoice = new ModelOrder($request);
         $order = $modelInvoice->find($id);
         // var_dump($order);
         // die;

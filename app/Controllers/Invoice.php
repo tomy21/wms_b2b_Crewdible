@@ -16,8 +16,9 @@ class Invoice extends BaseController
 {
     public function __construct()
     {
+        $request = Services::request();
         $this->invoiceModel = new InvoiceModel();
-        $this->ModalOrder   = new ModelOrder();
+        $this->ModalOrder   = new ModelOrder($request);
         $this->ModelStock    = new StockModel();
     }
     public function index()
@@ -28,57 +29,55 @@ class Invoice extends BaseController
     function dataAjax()
     {
         $request = Services::request();
-        $modelInvoice = new ModelOrder();
-        $param['draw'] = isset($_REQUEST['draw']) ? $_REQUEST['draw'] : '';
-        $katakunci = isset($_REQUEST['search']['value']) ? $_REQUEST['search']['value'] : '';
-        $start = isset($_REQUEST['start']) ? $_REQUEST['start'] : '';
-        $length = isset($_REQUEST['length']) ? $_REQUEST['length'] : '';
+        $modelInvoice = new ModelOrder($request);
+        
+        if($request->getMethod(true) === 'POST'){
+            $lists = $modelInvoice->getDatatables();
+            $data = [];
+            $no = $request->getPost('start');
+            foreach ($lists as $list) {
+                $no++;
+                $row = [];
 
-        $tampilData = $modelInvoice->tampilDataInvoice($katakunci, $start, $length);
+                if ($list->status == 1) {
+                    $status = "<span class=\"badge badge-dark\">Transaksi Baru</span>";
+                } else if ($list->status == 2) {
+                    $status = "<span class=\"badge badge-info\">Assign</span>";
+                } else if ($list->status == 3) {
+                    $status = "<span class=\"badge badge-primary\">Picking</span>";
+                } else if ($list->status == 4) {
+                    $status = "<span class=\"badge badge-warning\">Packing</span>";
+                } else if ($list->status == 5) {
+                    $status = "<span class=\"badge badge-Fuchsia\">Shipping</span>";
+                } else if ($list->status == 6) {
+                    $status = "<span class=\"badge badge-success\">Done</span>";
+                } else {
+                    $status = "<span class=\"badge badge-danger\">Return</span>";
+                }
 
-        $jumlahData = $modelInvoice->tampilDataInvoice($katakunci);
-        $no         = $start;
-        $data       = [];
-
-        foreach ($tampilData as $list) {
-            $no++;
-            $row = [];
-
-            if ($list->status == 1) {
-                $status = "<span class=\"badge badge-dark\">Transaksi Baru</span>";
-            } else if ($list->status == 2) {
-                $status = "<span class=\"badge badge-info\">Assign</span>";
-            } else if ($list->status == 3) {
-                $status = "<span class=\"badge badge-primary\">Picking</span>";
-            } else if ($list->status == 4) {
-                $status = "<span class=\"badge badge-warning\">Packing</span>";
-            } else if ($list->status == 5) {
-                $status = "<span class=\"badge badge-Fuchsia\">Shipping</span>";
-            } else if ($list->status == 6) {
-                $status = "<span class=\"badge badge-success\">Done</span>";
-            } else {
-                $status = "<span class=\"badge badge-danger\">Return</span>";
+                $row[] = $no;
+                $row[] = $list->created_at;
+                $row[] = $list->stock_location;
+                $row[] = $list->Order_id;
+                $row[] = $list->Drop_name;
+                $row[] = $list->Drop_contact;
+                $row[] = $list->Drop_city;
+                $row[] = $status;
+                $row[] = "<button class=\"btn btn-sm btn-info\" onclick=\"detail('$list->Order_id')\"><i class=\"fa fa-eye\"></i></button>";
+                $data[] = $row;
             }
+            $output = array(
+                'draw'              => isset($_POST['draw']) ? intval($_POST['draw']) : 0,
+                'recordsTotal' => $modelInvoice->countAll(),
+                'recordsFiltered' => $modelInvoice->countFiltered(),
+                'data'              => $data,
+            );
 
-            $row[] = $no;
-            $row[] = $list->created_at;
-            $row[] = $list->stock_location;
-            $row[] = $list->Order_id;
-            $row[] = $list->Drop_name;
-            $row[] = $list->Drop_contact;
-            $row[] = $list->Drop_city;
-            $row[] = $status;
-            $row[] = "<button class=\"btn btn-sm btn-info\" onclick=\"detail('$list->Order_id')\"><i class=\"fa fa-eye\"></i></button>";
-            $data[] = $row;
+            echo json_encode($output);
         }
-        $output = array(
-            'draw'              => isset($_POST['draw']) ? intval($_POST['draw']) : 0,
-            'recordsTotal'      => count($jumlahData),
-            'recordsFiltered'   => count($jumlahData),
-            'data'              => $data,
-        );
 
-        echo json_encode($output);
+        
+        
     }
 
     public function upload()

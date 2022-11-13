@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
+use CodeIgniter\HTTP\RequestInterface;
 
 class ModelOrder extends Model
 {
@@ -10,36 +11,66 @@ class ModelOrder extends Model
     protected $primaryKey       = 'Order_id';
     protected $allowedFields    = ['driver', 'status', 'created_at', 'stock_location', 'Order_id', 'Drop_name', 'Drop_contact', 'Drop_city'];
     protected $useTimestamps    = true;
-    protected $column_order     = array(null, 'created_at', 'stock_location', 'Order_id', 'Drop_name', 'Drop_contact', 'Drop_city', null, null);
-    protected $column_search    = array('id', 'created_at', 'stock_location', 'Order_id', 'Drop_name', 'Drop_contact', 'Drop_city');
-    protected $order            = array(['created_at' => 'asc', 'stock_location' => 'asc', 'Order_id' => 'asc', 'Drop_name' => 'asc', 'Drop_contact' => 'asc']);
+    protected $column_order     = array(null, 'created_at', 'stock_location', 'Order_id', 'Drop_name', 'Drop_contact', 'Drop_city', 'status', null);
+    protected $column_search    = array('created_at', 'stock_location', 'Order_id', 'Drop_name', 'Drop_contact', 'Drop_city', 'status');
+    protected $order            = array('created_at' => 'desc');
     protected $request;
     protected $dt;
     protected $db;
 
-
-    function tampilDataInvoice($katakunci = null, $start = 0, $length = 0)
+    public function __construct(RequestInterface $request)
     {
-        $builder = $this->table('tbl_order');
-        if ($katakunci) {
-            $arr = explode(" ", $katakunci);
-            for ($i = 0; $i < count($arr); $i++) {
-                $builder = $builder->orLike('created_at', $arr[$i]);
-                $builder = $builder->orLike('stock_location', $arr[$i]);
-                $builder = $builder->orLike('Order_id', $arr[$i]);
-                $builder = $builder->orLike('Drop_name', $arr[$i]);
-                $builder = $builder->orLike('Drop_contact', $arr[$i]);
-                $builder = $builder->orLike('Drop_city', $arr[$i]);
-                $builder = $builder->orLike('status', $arr[$i]);
-            }
-        }
-
-        if ($start != 0  or $length != 0) {
-            $builder = $builder->limit($length, $start);
-        }
-
-        return $builder->get()->getResult();
+        parent::__construct();
+        $this->db = db_connect();
+        $this->request = $request;
+        $this->dt = $this->db->table($this->table);
     }
+    private function getDatatablesQuery()
+    {
+        $i = 0;
+        foreach ($this->column_search as $item) {
+            if ($_POST['search']['value']) {
+                if ($i === 0) {
+                    $this->dt->groupStart();
+                    $this->dt->like($item, $_POST['search']['value']);
+                } else {
+                    $this->dt->orLike($item, $_POST['search']['value']);
+                }
+                if (count($this->column_search) - 1 == $i)
+                    $this->dt->groupEnd();
+            }
+            $i++;
+        }
+        if ($this->request->getPost('order')) {
+            $this->dt->orderBy($this->column_order[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
+        } else if (isset($this->order)) {
+            $order = $this->order;
+            $this->dt->orderBy(key($order), $order[key($order)]);
+        }
+    }
+
+    public function getDatatables()
+    {
+        $this->getDatatablesQuery();
+        if ($_POST['length'] != -1)
+            $this->dt->limit($_POST['length'], $_POST['start']);
+        $query = $this->dt->get();
+        return $query->getResult();
+    }
+
+    public function countFiltered()
+    {
+        $this->getDatatablesQuery();
+        return $this->dt->countAllResults();
+    }
+
+    public function countAll()
+    {
+        $tbl_storage = $this->db->table($this->table);
+        return $tbl_storage->countAllResults();
+    }
+
+
     public function reportPeriode($tglawal, $tglakhir)
     {
         return $this->table('tbl_order')->where('status', 6)->where('created_at>=', $tglawal)->where('created_at<=', $tglakhir)->get();

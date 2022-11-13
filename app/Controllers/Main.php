@@ -11,13 +11,14 @@ use App\Models\PoModel;
 use App\Models\StockModel;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
-
+use Config\Services;
 
 class Main extends BaseController
 {
     public function index()
     {
-        $ModelInvoice = new ModelOrder();
+        $request = Services::request();
+        $ModelInvoice = new ModelOrder($request);
         $ModelStock = new StockModel();
         $Totnew = $ModelInvoice->where(['status' => 1, 'created_at>=' => date('Y-m-d')])->countAllResults();
 
@@ -43,7 +44,7 @@ class Main extends BaseController
         $data['sum'] = $result['sumQuantities'];
 
         $modelInvoice = new InvoiceModel();
-        $modelOrder = new ModelOrder();
+        $modelOrder = new ModelOrder($request);
 
         // $countSLA = count($sla);
 
@@ -69,8 +70,9 @@ class Main extends BaseController
         $tglawal        = $this->request->getPost('valAwalOut');
         $tglakhir       = $this->request->getPost('valAkhirOut');
 
+        $request = Services::request();
         $spreadsheet = new Spreadsheet();
-        $modelBarang = new ModelOrder();
+        $modelBarang = new ModelOrder($request);
         $dataReport = $modelBarang->reportPeriode($tglawal, $tglakhir);
 
         // $id = null;
@@ -113,7 +115,8 @@ class Main extends BaseController
             }
 
             // data Packing
-            $modelPacking = new PackingModel();
+            $request = Services::request();
+            $modelPacking = new PackingModel($request);
             $queryPacking = $modelPacking->getWhere(['order_id' => $row->Order_id])->getResult();
             $sumPacking = 0;
             $countPacking = 0;

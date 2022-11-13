@@ -7,6 +7,7 @@ use App\Models\InvoiceModel;
 use App\Models\ModelMasterBasket;
 use App\Models\ModelOrder;
 use App\Models\PickingModel;
+use Config\Services;
 
 class Assign extends BaseController
 {
@@ -57,6 +58,7 @@ class Assign extends BaseController
     }
     public function ProsesPick()
     {
+        $request = Services::request();
         $id   = $this->request->getVar('id');
         $assign = $this->request->getVar('picker');
         $basket = $this->request->getVar('basket');
@@ -64,7 +66,7 @@ class Assign extends BaseController
         $modelInvoice = new InvoiceModel();
         $modelPicking = new PickingModel();
         $modelBasket = new ModelMasterBasket();
-        $modelOrder = new ModelOrder();
+        $modelOrder = new ModelOrder($request);
 
         $count = count($id);
         $cekData = $modelInvoice->whereIn('Item_id', $id)->where('stock_location', $warehouse)->where('status', 1)->get();
@@ -92,9 +94,10 @@ class Assign extends BaseController
     }
     function assign()
     {
+        $request = Services::request();
         $modelInvoice   = new InvoiceModel();
         $modelPicking   = new PickingModel();
-        $modelOrder     = new ModelOrder();
+        $modelOrder     = new ModelOrder($request);
         $tampilData     = $modelInvoice->group_item();
 
         $cek = $modelInvoice->getWhere(['status' => 2])->getResult();
