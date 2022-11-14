@@ -14,6 +14,7 @@
             <table id="viewStatus" class="table table-striped" style="width: 100%;">
                 <thead>
                     <th>No</th>
+                    <th>Created date</th>
                     <th>No_Po</th>
                     <th>Warehouse</th>
                     <th>Driver</th>
@@ -46,6 +47,7 @@
                         foreach ($inbound as $user) :
                         ?>
                             <td style="vertical-align: middle ;"><?= $no++; ?></td>
+                            <td style="vertical-align: middle ;"><?= $user['created_at']; ?></td>
                             <td style="vertical-align: middle ;"><?= $user['no_Po']; ?></td>
                             <td style="vertical-align: middle ;"><?= $user['warehouse'] ?></td>
                             <td style="vertical-align: middle ;"><?= $user['driver'] ?></td>
