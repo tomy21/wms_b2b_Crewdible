@@ -87,8 +87,12 @@ class Handover extends BaseController
                 $modelListHandover->insert($data);
 
                 $modelPacking   = new PackingModel($request);
-                $getId          = $modelPacking->getWhere(['order_id' => $order])->getRow();
-                $modelPacking->update($getId->id, ['Status' => 3]);
+                $getId          = $modelPacking->getWhere(['order_id' => $order])->getResult();
+                $idData = null;
+                foreach($getId as $y){
+                    $idData = $y->id;
+                }
+                $modelPacking->update($idData, ['Status' => 3]);
 
                 // $modelOrder->update($order, ['driver' => $driver]);
                 $json = [
