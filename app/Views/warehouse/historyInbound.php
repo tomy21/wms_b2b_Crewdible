@@ -17,6 +17,8 @@
                         <th>No</th>
                         <th>Warehouse</th>
                         <th>No PO</th>
+                        <th>Total Qty</th>
+                        <th>Total SKU</th>
                         <th>Nama Driver</th>
                         <th>No Pelat Kendaraan</th>
                         <th>Kedatangan Driver</th>
@@ -34,16 +36,24 @@
                     user()->warehouse == 'Headoffice' ? $data = $head : $data = $warehouse;
                     foreach ($data as $query) :
                     ?>
-                    <tr>
-                        <td><?= $no++ ?></td>
-                        <td><?= $query['warehouse'] ?></td>
-                        <td><?= $query['no_Po'] ?></td>
-                        <td><?= $query['driver'] ?></td>
-                        <td><?= $query['noplat'] ?></td>
-                        <td><?= $query['waktu_datang'] ?></td>
-                        <td><?= $query['updated_at'] ?></td>
-                        <td>
-                            <?php
+                        <tr>
+                            <td><?= $no++ ?></td>
+                            <td><?= $query['warehouse'] ?></td>
+                            <td><?= $query['no_Po'] ?></td>
+                            <td>
+                                <?php
+                                $db = \Config\Database::connect();
+                                $jumlah = $db->table('tbl_inbound')->where('nopo', $query['no_Po'])->countAllResults();
+                                echo $jumlah;
+                                ?>
+                            </td>
+                            <td><?= $query['quantity_item'] ?></td>
+                            <td><?= $query['driver'] ?></td>
+                            <td><?= $query['noplat'] ?></td>
+                            <td><?= $query['waktu_datang'] ?></td>
+                            <td><?= $query['updated_at'] ?></td>
+                            <td>
+                                <?php
                                 $date2 = date_create($query['waktu_datang']);
                                 $dateFormat1 = date_format($date2, 'Y-m-d 23:59:00');
                                 $dateFormat2 = date_format($date2, 'Y-m-d 18:00:00');
@@ -53,14 +63,12 @@
                                     $sla = 'Meet SLA';
                                 }
                                 ?>
-                            <span
-                                class="badge <?= $sla == 'Over SLA' ? 'badge-danger' : 'badge-success' ?>"><?= $sla == 'Over SLA' ? 'Over SLA' : 'Meet SLA' ?></span>
-                        </td>
-                        <td style="text-align:center;">
-                            <button class="btn btn-sm btn-info" type="button"
-                                onclick="detail('<?= $query['no_Po']; ?>')"><i class="fa fa-eye"></i></button>
-                        </td>
-                    </tr>
+                                <span class="badge <?= $sla == 'Over SLA' ? 'badge-danger' : 'badge-success' ?>"><?= $sla == 'Over SLA' ? 'Over SLA' : 'Meet SLA' ?></span>
+                            </td>
+                            <td style="text-align:center;">
+                                <button class="btn btn-sm btn-info" type="button" onclick="detail('<?= $query['no_Po']; ?>')"><i class="fa fa-eye"></i></button>
+                            </td>
+                        </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
@@ -70,36 +78,36 @@
 <div class="viewmodal" style="display: none;"></div>
 
 <script>
-$(function() {
-    $("#example1").DataTable({
-        "responsive": true,
-        "lengthChange": true,
-        "autoWidth": true,
-        "buttons": ["excel", "pdf", "print"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $(function() {
+        $("#example1").DataTable({
+            "responsive": true,
+            "lengthChange": true,
+            "autoWidth": true,
+            "buttons": ["excel", "pdf", "print"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
-});
-
-function detail(po) {
-    $.ajax({
-        type: "post",
-        url: "<?= site_url('/Inbound/detailInbound') ?>",
-        data: {
-            po: po,
-        },
-        dataType: "json",
-        success: function(response) {
-            if (response.data) {
-                $('.viewmodal').html(response.data).show();
-                $('#modalDetail').modal('show');
-
-            }
-        },
-        error: function(xhr, ajaxOptions, thrownError) {
-            alert(xhr.status + '\n' + thrownError);
-        }
     });
-}
+
+    function detail(po) {
+        $.ajax({
+            type: "post",
+            url: "<?= site_url('/Inbound/detailInbound') ?>",
+            data: {
+                po: po,
+            },
+            dataType: "json",
+            success: function(response) {
+                if (response.data) {
+                    $('.viewmodal').html(response.data).show();
+                    $('#modalDetail').modal('show');
+
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status + '\n' + thrownError);
+            }
+        });
+    }
 </script>
 
 <?= $this->endsection('isi'); ?>
