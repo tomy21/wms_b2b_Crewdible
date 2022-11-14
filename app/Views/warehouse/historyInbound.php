@@ -82,6 +82,7 @@
         $("#example1").DataTable({
             "responsive": true,
             "lengthChange": true,
+            "lengthMenu": [10, 25, 50, 75, 100, 1000],
             "autoWidth": true,
             "buttons": ["excel", "pdf", "print"]
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
