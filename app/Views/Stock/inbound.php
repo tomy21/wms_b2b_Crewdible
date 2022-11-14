@@ -26,8 +26,8 @@
                     <th>Selisih</th>
                     <th>Selesai Inbound</th>
                     <th>#</th>
-                    <?php if(user()->warehouse == 'Headoffice') :  ?>
-                    <th>Aksi</th>
+                    <?php if (user()->warehouse == 'Headoffice') :  ?>
+                        <th>Aksi</th>
                     <?php endif; ?>
                 </thead>
                 <tbody>
@@ -88,8 +88,8 @@
 
                             </td>
                             <td>
-                                <?php if(user()->warehouse == 'Headoffice') :  ?>
-                                <button type="button" class="btn btn-sm btn-outline-danger" onclick="hapus('<?= $user['no_Po']; ?>')"><i class="fa fa-trash"></i></button>
+                                <?php if (user()->warehouse == 'Headoffice') :  ?>
+                                    <button type="button" class="btn btn-sm btn-outline-danger" onclick="hapus('<?= $user['no_Po']; ?>')"><i class="fa fa-trash"></i></button>
                                 <?php endif; ?>
                             </td>
                     </tr>
@@ -163,7 +163,9 @@
     }
 
     $(document).ready(function() {
-        $('#viewStatus').DataTable();
+        $('#viewStatus').DataTable({
+            "responsive": true,
+        });
 
 
     });
