@@ -333,4 +333,21 @@ class Handover extends BaseController
 
         echo json_encode($json);
     }
+    function hapusData(){
+        $id = $this->request->getPost('id');
+
+        $modelList = new ModelListHandover();
+        $getData    = $modelList->getWhere(['order_id'=>$id])->getResult();
+        $idData = null;
+        foreach($getData as $x){
+            $idData = $x->id;
+        }
+        $modelList->delete($idData);
+
+        $json = [
+            'sukses' => 'Data berhasil di hapus'
+        ];
+
+        echo json_encode($json);
+    }
 }

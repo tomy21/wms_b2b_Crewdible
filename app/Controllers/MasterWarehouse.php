@@ -56,7 +56,7 @@ class MasterWarehouse extends BaseController
             $id     = $this->request->getPost('code');
             $data = $modalWarehouse->find($id);
             $json = [
-                'data' => view('master_warehouse/updateWarehouse', ['id' => $data['id_warehouse'], 'warehouse' => $data['warehouse_name']]),
+                'data' => view('master_warehouse/updateWarehouse', ['id' => $data['id_warehouse'], 'warehouse' => $data['warehouse_name'],'code'=>$data['warehouse_code']]),
             ];
 
             echo json_encode($json);
@@ -70,7 +70,8 @@ class MasterWarehouse extends BaseController
             $modalWarehouse = new ModelWarehouse();
             $id     = $this->request->getPost('id');
             $name   = $this->request->getPost('warehouse');
-            $modalWarehouse->update($id, ['warehouse_name' => $name]);
+            $code   = $this->request->getPost('code');
+            $modalWarehouse->update($id, ['warehouse_name' => $name,'warehouse_code'=>$code]);
             $json = [
                 'success' => "$id Berhasil di update"
             ];

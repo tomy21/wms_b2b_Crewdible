@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-sm modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Tambah Warehouse</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Update Warehouse</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -19,6 +19,11 @@
                     <label for="warehouse">Nama Warehouse</label>
                     <input type="text" class="form-control" name="warehouse" id="warehouse" aria-describedby="warehouse"
                         value="<?= $warehouse ?>">
+                </div>
+                <div class="form-group">
+                    <label for="warehouse">Code Warehouse</label>
+                    <input type="text" class="form-control" name="code" id="code" aria-describedby="warehouse"
+                        value="<?= $code ?>">
                 </div>
 
 
