@@ -84,7 +84,10 @@ class Inbound extends BaseController
                 $row[] = $list->selisih;
                 $row[] = $status;
                 $row[] = $status1;
-                $row[] = $hapus;
+                if (user()->warehouse == 'Headoffice') {
+                    $row[] = $hapus;
+                }
+                
                 $data[] = $row;
             }
             $output = array(
