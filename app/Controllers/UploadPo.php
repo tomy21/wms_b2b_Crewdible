@@ -90,14 +90,16 @@ class UploadPo extends BaseController
                         Quantity tidak valid
                         </div>'
                     ];
-                } else if (empty($item_id) || is_null($item_id)) {
+                } else if (is_null($item_id) || is_null($item_detail) || is_null($qty)) {
                     $htmlError = [
                         'error' => '<div class="alert alert-danger alert-dismissible" role="alert">
                         <button type="button" class="close" data-dissmis="alert" aria-hidden="true">X</button>
                         <h5><i class="icon fas fa-times"></i> Gagal </h5>
-                        Item ID tidak boleh kosong
+                        Semua data harus diisi
                         </div>'
                     ];
+                } else if($item_id == "END") {
+                    break;
                 } else {
                     $data = [
                         'nopo'          => $nopo,
