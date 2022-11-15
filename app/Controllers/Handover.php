@@ -60,7 +60,7 @@ class Handover extends BaseController
         $request = Services::request();
         $modelOrder = new ModelOrder($request);
         $cekOrder = $modelOrder->getWhere(['Order_id' => $order, 'status' => 5])->getRow();
-        $cekOrder1 = $modelOrder->getWhere(['Order_id' => $order, 'status' => 5])->getResult();
+        $cekOrder1 = $modelOrder->getWhere(['Order_id' => $order, 'status' => 4])->getResult();
 
         $modelListHandover = new ModelListHandover();
         $cekList = $modelListHandover->getWhere(['order_id' => $order])->getResult();
