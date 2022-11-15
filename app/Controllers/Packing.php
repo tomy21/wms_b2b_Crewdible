@@ -50,10 +50,12 @@ class Packing extends BaseController
                 $no++;
                 $row = [];
 
-                if ($list->Status == 1) {
+                if ($list->Status == 0) {
                     $status = "<span class=\"badge badge-dark\">Proses</span>";
-                }  else {
-                    $status = "<span class=\"badge badge-success\">Done</span>";
+                }else if($list->Status == 1){
+                    $status = "<span class=\"badge badge-warning\">Done</span>";
+                }else {
+                    $status = "<span class=\"badge badge-success\">Done Manifest</span>";
                 }
 
                 $modelOrder = new ModelOrder($request);
@@ -67,8 +69,7 @@ class Packing extends BaseController
 
                 
 
-                $foto = 
-                "<img src=\"https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/". $list->foto."\" width=\"50\">";
+                $foto = "<img src=\"https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/". $list->foto."\" width=\"50\">";
                 $fotoAfter = "<img src=\"https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/".$list->foto_after."\"  width=\"50\">";
 
                 $row[] = $no;
