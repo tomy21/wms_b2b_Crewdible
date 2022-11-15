@@ -54,6 +54,8 @@ class Packing extends BaseController
                     $status = "<span class=\"badge badge-dark\">Proses</span>";
                 }else if($list->Status == 1){
                     $status = "<span class=\"badge badge-warning\">Done</span>";
+                } else if ($list->Status == 2) {
+                    $status = "<span class=\"badge badge-warning\">Done</span>";
                 }else {
                     $status = "<span class=\"badge badge-success\">Done Manifest</span>";
                 }
