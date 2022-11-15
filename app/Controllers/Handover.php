@@ -64,9 +64,9 @@ class Handover extends BaseController
         $alamat = null;
         $tlp = null;
         foreach($cekOrder as $i){
-            $nama = $cekOrder->Drop_name;
-            $alamat = $cekOrder->Drop_address;
-            $tlp = $cekOrder->Drop_contact;
+            $nama = $i->Drop_name;
+            $alamat = $i->Drop_address;
+            $tlp = $i->Drop_contact;
         }
         $cekOrder1 = $modelOrder->getWhere(['Order_id' => $order, 'status' => 4])->getResult();
 
