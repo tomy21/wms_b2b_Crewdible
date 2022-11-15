@@ -10,7 +10,7 @@ class InboundModel extends Model
     protected $primaryKey       = 'id';
     protected $allowedFields    = ['nopo', 'warehouse', 'Item_id', 'Item_detail', 'quantity', 'qty_received', 'estimate_date','status'];
     protected $useTimestamps    = true;
-
+    
     public function add($data)
     {
         $this->db->table('tbl_inbound')->insert($data);

@@ -56,14 +56,26 @@ class Packing extends BaseController
                     $status = "<span class=\"badge badge-success\">Done</span>";
                 }
 
-                $foto = "<img src=\"https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/\".$list->foto.\"\"alt=\"\" width=\"50\">";
-                $fotoAfter = "<img src=\"https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/\".$list->foto_after.\"\"alt=\"\" width=\"50\">";
+                $modelOrder = new ModelOrder($request);
+                $dataUser = $modelOrder->getWhere(['Order_id'=> $list->order_id])->getResult();
+                $nama = null;
+                $alamat = null;
+                foreach($dataUser as $z){
+                    $nama = $z->Drop_name;
+                    $alamat = $z->Drop_address;
+                }
+
+                
+
+                $foto = 
+                "<img src=\"https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/". $list->foto."\" width=\"50\">";
+                $fotoAfter = "<img src=\"https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/".$list->foto_after."\"  width=\"50\">";
 
                 $row[] = $no;
                 $row[] = $list->order_id;
                 $row[] = $list->warehouse;
-                $row[] = '';
-                $row[] = '';
+                $row[] = $nama;
+                $row[] = $alamat;
                 $row[] = $foto;
                 $row[] = $fotoAfter;
                 $row[] = $list->assign;

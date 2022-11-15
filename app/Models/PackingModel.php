@@ -53,9 +53,15 @@ class PackingModel extends Model
     public function getDatatables()
     {
         $this->getDatatablesQuery();
+        $warehouse = user()->warehouse;
         if ($_POST['length'] != -1)
             $this->dt->limit($_POST['length'], $_POST['start']);
-        $query = $this->dt->get();
+
+        if ($warehouse == "Headoffice"){
+            $query = $this->dt->get();
+        }else{
+            $query = $this->dt->where('warehouse',$warehouse)->get();
+        }
         return $query->getResult();
     }
 

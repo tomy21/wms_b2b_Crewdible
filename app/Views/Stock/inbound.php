@@ -11,7 +11,7 @@
             <h5>Inbound Received</h5>
         </div>
         <div class="card-body">
-            <table id="viewStatus" class="table table-striped" style="width: 100%;">
+            <table id="example1" class="table table-striped" style="width: 100%;">
                 <thead>
                     <th>No</th>
                     <th>Created date</th>
@@ -30,71 +30,6 @@
                         <th>Aksi</th>
                     <?php endif; ?>
                 </thead>
-                <tbody>
-                    <tr>
-                        <?php
-                        $no = 1;
-                        $db = \Config\Database::connect();
-                        $date = date('d-m-Y');
-                        $hari = 1;
-                        $hariKemarin = date('Y-m-d', strtotime('-$hari day', strtotime($date)));
-                        if (user()->warehouse == 'Headoffice') {
-                            $admin = $db->table('tbl_po')->where(['updated_at>=' => $hariKemarin])->orderBy('updated_at', 'DESC')->get()->getResultArray();
-                        } else {
-                            $warehouse = $db->table('tbl_po')->where(['warehouse' => user()->warehouse, 'updated_at>=' => $hariKemarin])->orderBy('updated_at', 'DESC')->get()->getResultArray();
-                        }
-                        user()->warehouse == 'Headoffice' ? $inbound = $admin : $inbound = $warehouse;
-                        foreach ($inbound as $user) :
-                        ?>
-                            <td style="vertical-align: middle ;"><?= $no++; ?></td>
-                            <td style="vertical-align: middle ;"><?= $user['created_at']; ?></td>
-                            <td style="vertical-align: middle ;"><?= $user['no_Po']; ?></td>
-                            <td style="vertical-align: middle ;"><?= $user['warehouse'] ?></td>
-                            <td style="vertical-align: middle ;"><?= $user['driver'] ?></td>
-                            <td style="vertical-align: middle ;" align="center"><img src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $user['foto'] ?>" alt="" width="50"></td>
-                            <td style="vertical-align: middle ;" align="center"><img src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $user['tandatangan'] ?>" alt="" width="50">
-                            </td>
-                            <td style="vertical-align: middle ;" align="center">
-                                <?php
-                                $db = \Config\Database::connect();
-                                $jumlah = $db->table('tbl_inbound')->where('nopo', $user['no_Po'])->countAllResults();
-                                ?>
-                                <span style="cursor:pointer; font-weight:bold; color:#0000FF;" onclick="detail('<?= $user['no_Po']; ?>')"><?= $jumlah; ?></span>
-                            </td>
-                            <td style="vertical-align: middle ;"><?= $user['quantity_item']; ?></td>
-                            <td style="vertical-align: middle ;"><?= $user['quantity_count']; ?></td>
-                            <td style="vertical-align: middle ;"><?= $user['selisih']; ?></td>
-                            <td style="vertical-align: middle ;">
-                                <?php
-                                if ($user['status'] < 2) {
-                                    echo '-';
-                                } else {
-                                    echo $user['updated_at'];
-                                }
-                                ?>
-                            </td>
-                            <td style="vertical-align: middle ;">
-                                <?php
-                                $resi
-                                ?>
-                                <?php if ($user['status'] == 2) : ?>
-                                    <span class="badge badge-success"><i class="fa fa-check"></i> Done</span>
-                                <?php elseif ($user['status'] == 0) : ?>
-                                    <span class="badge badge-danger"> Dalam Perjalanan</span>
-                                <?php elseif ($user['status'] == 1) : ?>
-                                    <button type="button" class="btn btn-sm btn-outline-info" onclick="edit('<?= $user['no_Po']; ?>')"><i class="fa fa-edit"></i>
-                                    </button>
-                                <?php endif; ?>
-
-                            </td>
-                            <td>
-                                <?php if (user()->warehouse == 'Headoffice') :  ?>
-                                    <button type="button" class="btn btn-sm btn-outline-danger" onclick="hapus('<?= $user['no_Po']; ?>')"><i class="fa fa-trash"></i></button>
-                                <?php endif; ?>
-                            </td>
-                    </tr>
-                <?php endforeach; ?>
-                </tbody>
             </table>
 
         </div>
@@ -163,11 +98,26 @@
     }
 
     $(document).ready(function() {
-        $('#viewStatus').DataTable({
+        var table = $('#example1').DataTable({
+            "processing": true,
+            "serverSide": true,
             "responsive": true,
+            "order": [],
+            "info": true,
+            "ajax": {
+                "url": "<?php echo site_url('Inbound/dataAjax') ?>",
+                "type": "POST",
+            },
+            "lengthMenu": [10, 25, 50, 75, 100, 1000],
+            dom: 'lBftip', // Add the Copy, Print and export to CSV, Excel and PDF buttons
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ],
+            "columnDefs": [{
+                "targets": [0, 3, 4, 5, 6, 8, 9, 11],
+                "orderable": false,
+            }],
         });
-
-
     });
 </script>
 <?= $this->endsection('isi'); ?>

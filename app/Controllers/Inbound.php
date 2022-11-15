@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\InboundModel;
+use App\Models\InvoiceModel;
 use App\Models\ModelLogInbound;
 use App\Models\ModelStockDummy;
 use App\Models\ModelWarehouse;
@@ -11,23 +12,90 @@ use App\Models\PoModel;
 use App\Models\StockModel;
 use App\Models\TempPO;
 use App\Models\UploadPoModel;
+use Config\Services;
 
 class Inbound extends BaseController
 {
     public function __construct()
     {
+        $request = Services::request();
         $this->ModelInbound = new InboundModel();
-        $this->ModelPo = new PoModel();
+        $this->ModelPo = new PoModel($request);
         $this->StockModel = new StockModel();
     }
     public function index()
     {
-        $data = [
-            'data'  => $this->ModelPo->tampilDataTransaksi(),
-            'inbound' => $this->ModelInbound->tampilDataTransaksi(),
-        ];
+        // $data = [
+        //     'data'  => $this->ModelPo->tampilDataTransaksi(),
+        //     'inbound' => $this->ModelInbound->tampilDataTransaksi(),
+        // ];
 
-        return view('Stock/inbound', $data);
+        return view('Stock/inbound');
+    }
+    function dataAjax()
+    {
+        $request = Services::request();
+        $modelInvoice = new PoModel($request);
+
+        if ($request->getMethod(true) === 'POST') {
+            $lists = $modelInvoice->getDatatables();
+            $data = [];
+            $no = $request->getPost('start');
+            foreach ($lists as $list) {
+                $no++;
+                $row = [];
+
+                $foto =
+                "<img src=\"https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/" . $list->foto . "\" width=\"50\">";
+                $tandatangan = 
+                "<img src=\"https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/" . $list->tandatangan . "\"  width=\"50\">";
+
+                $modelInbound = new InboundModel();
+                $jumlah = $modelInbound->where('nopo', $list->no_Po)->countAllResults();
+
+                if (user()->warehouse == 'Headoffice'){
+                    $hapus = "<button type=\"button\" class=\"btn btn-sm btn-outline-danger\" onclick=\"hapus('$list->no_Po')\"><i class=\"fa fa-trash\"></i></button>";
+                }
+
+                if ($list->status < 2) {
+                    $status = '-';
+                } else {
+                    $status = $list->updated_at;
+                }
+
+                if ($list->status == 2){
+                    $status1 = "<span class=\"badge badge-success\"><i class=\"fa fa-check\"></i> Done</span>";
+                }else if($list->status == 2){
+                    $status1 = "<span class=\"badge badge-danger\"> Dalam Perjalanan</span>";
+                }else{
+                    $status1 = "<button type=\"button\" class=\"btn btn-sm btn-outline-info\" onclick=\"edit('$list->no_Po')\"><i class=\"fa fa-edit\"></i>";
+                }
+
+                $row[] = $no;
+                $row[] = $list->created_at;
+                $row[] = $list->no_Po;
+                $row[] = $list->warehouse;
+                $row[] = $list->driver;
+                $row[] = $foto;
+                $row[] = $tandatangan;
+                $row[] = $jumlah;
+                $row[] = $list->quantity_item;
+                $row[] = $list->quantity_count;
+                $row[] = $list->selisih;
+                $row[] = $status;
+                $row[] = $status1;
+                $row[] = $hapus;
+                $data[] = $row;
+            }
+            $output = array(
+                'draw'              => isset($_POST['draw']) ? intval($_POST['draw']) : 0,
+                'recordsTotal'      => $modelInvoice->countAll(),
+                'recordsFiltered'   => $modelInvoice->countFiltered(),
+                'data'              => $data,
+            );
+
+            echo json_encode($output);
+        }
     }
     function detail()
     {
@@ -215,10 +283,11 @@ class Inbound extends BaseController
         $selisih    = $this->request->getVar('selisih');
         $reason     = $this->request->getVar('reason');
 
+        $request = Services::request();
         $count      = count($itemid);
         $modalStock = new StockModel();
         $modalLog   = new ModelLogInbound();
-        $modalPo    = new PoModel();
+        $modalPo    = new PoModel($request);
         $modalDumm  = new ModelStockDummy();
         $modalInbound  = new InboundModel();
 
@@ -309,7 +378,8 @@ class Inbound extends BaseController
         if ($this->request->isAjax()) {
             $po = $this->request->getPost('po');
 
-            $modelInvoice = new PoModel();
+            $request = Services::request();
+            $modelInvoice = new PoModel($request);
             $ambilData = $modelInvoice->find($po);
             $data = [
                 'nopo'        => $po,
@@ -331,7 +401,8 @@ class Inbound extends BaseController
     {
         $nopo = $this->request->getPost();
 
-        $modelPO = new PoModel();
+        $request = Services::request();
+        $modelPO = new PoModel($request);
         $modelPO->delete($nopo);
 
         $json = [
