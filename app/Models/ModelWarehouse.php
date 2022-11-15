@@ -8,7 +8,7 @@ class ModelWarehouse extends Model
 {
     protected $table            = 'tbl_warehouse';
     protected $primaryKey       = 'id_warehouse';
-    protected $allowedFields    = ['id_warehouse', 'warehouse_name'];
+    protected $allowedFields    = ['id_warehouse', 'warehouse_name','warehouse_code'];
 
     public function idWarehosue()
     {

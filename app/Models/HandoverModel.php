@@ -11,7 +11,7 @@ class HandoverModel extends Model
     protected $allowedFields    = ['id_handover', 'listItem', 'driver', 'foto', 'tandatangan', 'status', 'warehouse'];
     protected $useTimestamps    = true;
 
-    public function idHandover()
+    public function idHandover($code = null)
     {
         $kode = $this->db->table('tbl_handover')->select('RIGHT(id_handover,3) as id', false)->orderBy('id_handover', 'DESC')->limit(1)->get()->getRowArray();
 
@@ -22,9 +22,17 @@ class HandoverModel extends Model
             $no = intval($kode['id']) + 1;
         }
 
-        $tgl = date('Ymd');
+        $warehouse = new ModelWarehouse();
+        $code = user()->warehouse;
+        $dataWarehouse = $warehouse->getWhere(['warehouse_name'=> $code])->getResult();
+        $codeWh = null;
+        foreach($dataWarehouse as $t){
+            $codeWh = $t->warehouse_code;
+        }
+        $tgl = date('md');
+        $p  = '-';
         $batas = str_pad($no, 3, "0", STR_PAD_LEFT);
-        $noId = $tgl . $batas;
+        $noId = $codeWh . $p . $tgl . $batas;
         return $noId;
     }
 }

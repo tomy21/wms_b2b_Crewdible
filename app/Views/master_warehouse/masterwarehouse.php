@@ -36,6 +36,7 @@
                         <td><?= $no++ ?></td>
                         <td><?= $row['id_warehouse'] ?></td>
                         <td><?= $row['warehouse_name'] ?></td>
+                        <td><?= $row['warehouse_code'] ?></td>
                         <td>
                             <button class="btn btn-sm btn-info" onclick="edit('<?= $row['id_warehouse']; ?>')"> <i
                                     class="fa fa-pen"></i></button>

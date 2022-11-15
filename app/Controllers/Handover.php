@@ -25,8 +25,9 @@ class Handover extends BaseController
 
         $modalHandover = new HandoverModel();
         $modalList      = new ModelListHandover();
+        $code = user()->warehouse;
         $data = [
-            'idHandover'    => $modalHandover->idHandover(),
+            'idHandover'    => $modalHandover->idHandover($code),
             // 'query'         => $modalList->getWhere(['status' => 0])->getResult(),
         ];
 
