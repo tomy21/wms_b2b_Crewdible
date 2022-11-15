@@ -12,13 +12,15 @@ use App\Models\ModelMasterItem;
 use App\Models\ModelOrder;
 use App\Models\PickingModel;
 use App\Models\StockModel;
+use Config\Services;
 
 class Picking extends BaseController
 {
     public function __construct()
     {
+        $request = Services::request();
         $this->ModelInv = new InvoiceModel();
-        $this->modelOrder = new ModelOrder();
+        $this->modelOrder = new ModelOrder($request);
         $this->modelPicking = new PickingModel();
     }
     public function index()

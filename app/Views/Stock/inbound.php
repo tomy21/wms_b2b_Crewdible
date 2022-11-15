@@ -14,6 +14,7 @@
             <table id="viewStatus" class="table table-striped" style="width: 100%;">
                 <thead>
                     <th>No</th>
+                    <th>Created date</th>
                     <th>No_Po</th>
                     <th>Warehouse</th>
                     <th>Driver</th>
@@ -25,6 +26,9 @@
                     <th>Selisih</th>
                     <th>Selesai Inbound</th>
                     <th>#</th>
+                    <?php if (user()->warehouse == 'Headoffice') :  ?>
+                        <th>Aksi</th>
+                    <?php endif; ?>
                 </thead>
                 <tbody>
                     <tr>
@@ -42,57 +46,54 @@
                         user()->warehouse == 'Headoffice' ? $inbound = $admin : $inbound = $warehouse;
                         foreach ($inbound as $user) :
                         ?>
-                        <td style="vertical-align: middle ;"><?= $no++; ?></td>
-                        <td style="vertical-align: middle ;"><?= $user['no_Po']; ?></td>
-                        <td style="vertical-align: middle ;"><?= $user['warehouse'] ?></td>
-                        <td style="vertical-align: middle ;"><?= $user['driver'] ?></td>
-                        <td style="vertical-align: middle ;" align="center"><img
-                                src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $user['foto'] ?>"
-                                alt="" width="50"></td>
-                        <td style="vertical-align: middle ;" align="center"><img
-                                src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $user['tandatangan'] ?>"
-                                alt="" width="50">
-                        </td>
-                        <td style="vertical-align: middle ;" align="center">
-                            <?php
+                            <td style="vertical-align: middle ;"><?= $no++; ?></td>
+                            <td style="vertical-align: middle ;"><?= $user['created_at']; ?></td>
+                            <td style="vertical-align: middle ;"><?= $user['no_Po']; ?></td>
+                            <td style="vertical-align: middle ;"><?= $user['warehouse'] ?></td>
+                            <td style="vertical-align: middle ;"><?= $user['driver'] ?></td>
+                            <td style="vertical-align: middle ;" align="center"><img src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $user['foto'] ?>" alt="" width="50"></td>
+                            <td style="vertical-align: middle ;" align="center"><img src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $user['tandatangan'] ?>" alt="" width="50">
+                            </td>
+                            <td style="vertical-align: middle ;" align="center">
+                                <?php
                                 $db = \Config\Database::connect();
                                 $jumlah = $db->table('tbl_inbound')->where('nopo', $user['no_Po'])->countAllResults();
                                 ?>
-                            <span style="cursor:pointer; font-weight:bold; color:#0000FF;"
-                                onclick="detail('<?= $user['no_Po']; ?>')"><?= $jumlah; ?></span>
-                        </td>
-                        <td style="vertical-align: middle ;"><?= $user['quantity_item']; ?></td>
-                        <td style="vertical-align: middle ;"><?= $user['quantity_count']; ?></td>
-                        <td style="vertical-align: middle ;"><?= $user['selisih']; ?></td>
-                        <td style="vertical-align: middle ;">
-                            <?php
+                                <span style="cursor:pointer; font-weight:bold; color:#0000FF;" onclick="detail('<?= $user['no_Po']; ?>')"><?= $jumlah; ?></span>
+                            </td>
+                            <td style="vertical-align: middle ;"><?= $user['quantity_item']; ?></td>
+                            <td style="vertical-align: middle ;"><?= $user['quantity_count']; ?></td>
+                            <td style="vertical-align: middle ;"><?= $user['selisih']; ?></td>
+                            <td style="vertical-align: middle ;">
+                                <?php
                                 if ($user['status'] < 2) {
                                     echo '-';
                                 } else {
                                     echo $user['updated_at'];
                                 }
                                 ?>
-                        </td>
-                        <td style="vertical-align: middle ;">
-                            <?php
+                            </td>
+                            <td style="vertical-align: middle ;">
+                                <?php
                                 $resi
                                 ?>
-                            <?php if ($user['status'] == 2) : ?>
-                            <span class="badge badge-success"><i class="fa fa-check"></i> Done</span>
-                            <?php elseif ($user['status'] == 0) : ?>
-                            <span class="badge badge-danger"> Dalam Perjalanan</span>
-                            <?php elseif ($user['status'] == 1) : ?>
-                            <button type="button" class="btn btn-sm btn-outline-info"
-                                onclick="edit('<?= $user['no_Po']; ?>')"><i class="fa fa-edit"></i>
-                            </button>
-                            <?php endif; ?>
+                                <?php if ($user['status'] == 2) : ?>
+                                    <span class="badge badge-success"><i class="fa fa-check"></i> Done</span>
+                                <?php elseif ($user['status'] == 0) : ?>
+                                    <span class="badge badge-danger"> Dalam Perjalanan</span>
+                                <?php elseif ($user['status'] == 1) : ?>
+                                    <button type="button" class="btn btn-sm btn-outline-info" onclick="edit('<?= $user['no_Po']; ?>')"><i class="fa fa-edit"></i>
+                                    </button>
+                                <?php endif; ?>
 
-                        </td>
+                            </td>
+                            <td>
+                                <?php if (user()->warehouse == 'Headoffice') :  ?>
+                                    <button type="button" class="btn btn-sm btn-outline-danger" onclick="hapus('<?= $user['no_Po']; ?>')"><i class="fa fa-trash"></i></button>
+                                <?php endif; ?>
+                            </td>
                     </tr>
-                    <?php endforeach; ?>
-
-                    </tr>
-
+                <?php endforeach; ?>
                 </tbody>
             </table>
 
@@ -101,37 +102,72 @@
 </div>
 <div class="viewmodal" style="display: none;"></div>
 <script>
-function edit(nopo) {
-    window.location.href = ("<?= site_url('/inbound/edit/') ?>") + nopo;
-}
+    function edit(nopo) {
+        window.location.href = ("<?= site_url('/inbound/edit/') ?>") + nopo;
+    }
 
-function detail(nopo) {
-    let crsfToken = '<?= csrf_token() ?>';
-    let crsfHash = '<?= csrf_hash() ?>';
-    $.ajax({
-        type: "post",
-        url: "<?= site_url('/inbound/detail') ?>",
-        data: {
-            [crsfToken]: crsfHash,
-            nopo: nopo,
-        },
-        dataType: "json",
-        success: function(response) {
-            if (response.data) {
-                $('.viewmodal').html(response.data).show();
-                $('#modalitem').modal('show');
+    function detail(nopo) {
+        $.ajax({
+            type: "post",
+            url: "<?= site_url('/inbound/detail') ?>",
+            data: {
+                [crsfToken]: crsfHash,
+                nopo: nopo,
+            },
+            dataType: "json",
+            success: function(response) {
+                if (response.data) {
+                    $('.viewmodal').html(response.data).show();
+                    $('#modalitem').modal('show');
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status + '\n' + thrownError);
             }
-        },
-        error: function(xhr, ajaxOptions, thrownError) {
-            alert(xhr.status + '\n' + thrownError);
-        }
+        });
+    }
+
+    function hapus(nopo) {
+        Swal.fire({
+            title: 'Hapus PO ini',
+            text: "Yakin akan dihapus ? ",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Hapus Sekarang !'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "POST",
+                    url: "<?= site_url('Inbound/hapusData') ?>",
+                    data: {
+                        nopo: nopo,
+                    },
+                    dataType: "JSON",
+                    success: function(response) {
+                        if (response.sukses) {
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Berhasil',
+                                showConfirmButton: false,
+                                timer: 1000
+                            });
+                            window.location.reload();
+                        }
+                    }
+                });
+            }
+        })
+    }
+
+    $(document).ready(function() {
+        $('#viewStatus').DataTable({
+            "responsive": true,
+        });
+
+
     });
-}
-
-$(document).ready(function() {
-    $('#viewStatus').DataTable();
-
-
-});
 </script>
 <?= $this->endsection('isi'); ?>

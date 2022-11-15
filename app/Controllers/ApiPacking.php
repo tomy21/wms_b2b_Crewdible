@@ -13,6 +13,7 @@ use Aws\S3\S3Client;
 use Aws\S3\Exception\S3Exception;
 use App\Controllers\Exception;
 use CodeIgniter\Files\File;
+use Config\Services;
 
 class ApiPacking extends ResourceController
 {
@@ -20,7 +21,8 @@ class ApiPacking extends ResourceController
 
     public function index($warehouse = null)
     {
-        $modelPacking   = new PackingModel();
+        $request = Services::request();
+        $modelPacking   = new PackingModel($request);
 
         $cekOrder = $modelPacking->where(['warehouse' => $warehouse])->findAll();
         if (!$cekOrder) {
@@ -39,7 +41,8 @@ class ApiPacking extends ResourceController
     }
     public function detail($warehouse = null)
     {
-        $modelPacking   = new PackingModel();
+        $request = Services::request();
+        $modelPacking   = new PackingModel($request);
         $cekOrder = $modelPacking->where(['Status<' => 2, 'warehouse' => $warehouse])->findAll();
         if (!$cekOrder) {
             $response = [
@@ -57,7 +60,8 @@ class ApiPacking extends ResourceController
     }
     public function show($assign = null)
     {
-        $modelPacking = new PackingModel();
+        $request = Services::request();
+        $modelPacking = new PackingModel($request);
         $id = $this->request->getPost('id');
 
         $Order = $modelPacking->getWhere(['order_id' => $id, 'Status<' => 2])->getResultArray();
@@ -71,9 +75,10 @@ class ApiPacking extends ResourceController
     }
     public function update($id = null)
     {
-        $modelPacking   = new PackingModel();
+        $request = Services::request();
+        $modelPacking   = new PackingModel($request);
         $modelInvoice   = new InvoiceModel();
-        $modelOrder     = new ModelOrder();
+        $modelOrder     = new ModelOrder($request);
         $file1 = $this->request->getFile('fotoAfter');
         $id = $this->request->getPost('id');
         $assign = $this->request->getPost('assign');
@@ -184,9 +189,10 @@ class ApiPacking extends ResourceController
     }
     public function updateFoto($id = null)
     {
-        $modelPacking   = new PackingModel();
+        $request = Services::request();
+        $modelPacking   = new PackingModel($request);
         $modelInvoice   = new InvoiceModel();
-        $modelOrder     = new ModelOrder();
+        $modelOrder     = new ModelOrder($request);
         $file1 = $this->request->getFile('foto');
         $id = $this->request->getPost('id');
         $Order = $modelPacking->getWhere(['order_id' => $id])->getResultArray();

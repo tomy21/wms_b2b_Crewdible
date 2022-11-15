@@ -4,6 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
+
 class InvoiceModel extends Model
 {
     protected $table            = 'tbl_invoice';
@@ -15,31 +16,9 @@ class InvoiceModel extends Model
         'stock_location', 'status', 'assign', 'id_basket', 'created_at'
     ];
     protected $useTimestamps    = true;
-    protected $column_order     = array(null, 'stock_location', 'Order_id', null, null, null, null, 'created_at', null, null, null, null);
-    protected $column_search    = array('created_at', 'stock_location', 'Order_id');
-    protected $order            = array('created_at' => 'desc');
-    protected $request;
-    protected $dt;
-    protected $db;
+    
 
-    function tampilDataInvoice($katakunci = null, $start = 0, $length = 0)
-    {
-        $builder = $this->table('tbl_order');
-        if ($katakunci) {
-            $arr = explode(" ", $katakunci);
-            for ($i = 0; $i < count($arr); $i++) {
-                $builder = $builder->orLike('stock_location', $arr[$i]);
-                $builder = $builder->orLike('Order_id', $arr[$i]);
-                $builder = $builder->orLike('created_at', $arr[$i]);
-            }
-        }
-
-        if ($start != 0  or $length != 0) {
-            $builder = $builder->limit($length, $start);
-        }
-
-        return $builder->orderBy('created_at', 'desc')->get()->getResult();
-    }
+    
 
     function tampilDataTransaksi($warehouse)
     {
@@ -84,7 +63,7 @@ class InvoiceModel extends Model
     }
     public function getDataSorting()
     {
-        return $this->db->table('tbl_invoice')->where('status', 4)->select(' Order_id,Drop_name,Drop_address,Drop_contact,Drop_city,stock_location,status,sum(quantity) as jumlah,')
+        return $this->db->table('tbl_invoice')->where('status', 4)->select('Order_id,Drop_name,Drop_address,Drop_contact,Drop_city,stock_location,status,sum(quantity) as jumlah,')
             ->groupBy('Order_id')->get()->getResult();
     }
     public function getDataItem()

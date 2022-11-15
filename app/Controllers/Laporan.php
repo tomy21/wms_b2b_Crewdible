@@ -9,13 +9,15 @@ use App\Controllers\Xlsx;
 use App\Models\ModelOrder;
 use App\Models\PackingModel;
 use App\Models\PickingModel;
+use Config\Services;
 
 class Laporan extends BaseController
 {
     public function index()
     {
-        $modelOrder = new ModelOrder();
-        $modelPacking = new PackingModel();
+        $request = Services::request();
+        $modelOrder = new ModelOrder($request);
+        $modelPacking = new PackingModel($request);
         $modelPicking = new PickingModel();
         $tanggalAwal = $this->request->getVar('tglAwal');
         $tanggalAkhir = $this->request->getVar('tglAkhir');

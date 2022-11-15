@@ -9,8 +9,7 @@
 
 <div class="card">
     <div class="card-header bg-green">
-        <button class="btn btn-sm btn-info" type="button"
-            onclick="location.href=('<?= site_url('/Handover/buatManifest') ?>')">
+        <button class="btn btn-sm btn-info" type="button" onclick="location.href=('<?= site_url('/Handover/buatManifest') ?>')">
             <i class="fa fa-plus"></i>
             Tambah Data</button>
     </div>
@@ -34,39 +33,39 @@
                 <?php
                 $no = 1;
                 $db = \Config\Database::connect();
-                $data1 = $db->table('tbl_handover')->getWhere(['warehouse' => user()->warehouse, 'created_at>' => date('Y-m-d')])->getResultArray();
-                $data2 = $db->table('tbl_handover')->getWhere(['created_at>=' => date('Y-m-d')])->getResultArray();
+                $date = date('d-m-Y');
+                $hari = 1;
+                $hariKemarin = date('Y-m-d', strtotime('-$hari day', strtotime($date)));
+                $data1 = $db->table('tbl_handover')->getWhere(['warehouse' => user()->warehouse, 'created_at>=' => $hariKemarin])->getResultArray();
+                $data2 = $db->table('tbl_handover')->getWhere(['created_at>=' => $hariKemarin])->getResultArray();
                 $data = user()->warehouse == 'Headoffice' ? $data2 : $data1;
                 foreach ($data as $row) :
                 ?>
-                <tr>
-                    <td style="vertical-align: middle;"><?= $no++; ?></td>
-                    <td style="vertical-align: middle;"><?= $row['created_at']; ?></td>
-                    <td style="vertical-align: middle;"><?= $row['warehouse']; ?></td>
-                    <td style="vertical-align: middle;"><?= $row['id_handover']; ?></td>
-                    <td style="vertical-align: middle;">
-                        <?php foreach (json_decode($row['listItem'], true) as $k) : ?>
-                        <ul>
-                            <ol><?= $k['order_id'] ?></ol>
-                        </ul>
-                        <?php endforeach; ?>
-                    </td>
-                    <td style="vertical-align: middle;"><?= $row['driver'] ?></td>
-                    <td style="vertical-align: middle;"><img
-                            src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $row['foto'] ?>"
-                            alt="" width="50"></td>
-                    <td style="vertical-align: middle;">
-                        <img src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $row['tandatangan'] ?>"
-                            alt="" width="50">
-                    </td>
-                    <td style="vertical-align: middle;">
-                        <?php if ($row['status'] == 1) : ?>
-                        <span class="badge badge-success">Done</span>
-                        <?php else : ?>
-                        <span class="badge badge-danger">Proses</span>
-                        <?php endif; ?>
-                    </td>
-                </tr>
+                    <tr>
+                        <td style="vertical-align: middle;"><?= $no++; ?></td>
+                        <td style="vertical-align: middle;"><?= $row['created_at']; ?></td>
+                        <td style="vertical-align: middle;"><?= $row['warehouse']; ?></td>
+                        <td style="vertical-align: middle;"><?= $row['id_handover']; ?></td>
+                        <td style="vertical-align: middle;">
+                            <?php foreach (json_decode($row['listItem'], true) as $k) : ?>
+                                <ul>
+                                    <ol><?= $k['order_id'] ?></ol>
+                                </ul>
+                            <?php endforeach; ?>
+                        </td>
+                        <td style="vertical-align: middle;"><?= $row['driver'] ?></td>
+                        <td style="vertical-align: middle;"><img src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $row['foto'] ?>" alt="" width="50"></td>
+                        <td style="vertical-align: middle;">
+                            <img src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $row['tandatangan'] ?>" alt="" width="50">
+                        </td>
+                        <td style="vertical-align: middle;">
+                            <?php if ($row['status'] == 1) : ?>
+                                <span class="badge badge-success">Done</span>
+                            <?php else : ?>
+                                <span class="badge badge-danger">Proses</span>
+                            <?php endif; ?>
+                        </td>
+                    </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
@@ -84,39 +83,39 @@
 <div class="manifest" style="display: none;"></div>
 
 <script>
-function play_notif() {
-    var audio = document.createElement('audio');
-    audio.setAttribute('src', '<?= site_url() ?>/dist/img/success.mp3');
-    audio.setAttribute('autoplay', 'autoplay');
-    audio.play();
-    audio.load();
-}
+    function play_notif() {
+        var audio = document.createElement('audio');
+        audio.setAttribute('src', '<?= site_url() ?>/dist/img/success.mp3');
+        audio.setAttribute('autoplay', 'autoplay');
+        audio.play();
+        audio.load();
+    }
 
-function kosong() {
-    $('#orderId').val('');
-    $('#orderId').focus();
-}
+    function kosong() {
+        $('#orderId').val('');
+        $('#orderId').focus();
+    }
 
 
-$(document).ready(function() {
-    $('#table1').DataTable();
-    kosong();
-    $('#tombolcariIn').click(function(e) {
-        e.preventDefault();
-        $.ajax({
-            url: "<?= site_url() ?>/Handover/buatManifest",
-            dataType: "json",
-            success: function(response) {
-                if (response.data) {
-                    $('.manifest').html(response.data).show();
-                    $('#manifest').modal('show');
-                    kosong();
+    $(document).ready(function() {
+        $('#table1').DataTable();
+        kosong();
+        $('#tombolcariIn').click(function(e) {
+            e.preventDefault();
+            $.ajax({
+                url: "<?= site_url() ?>/Handover/buatManifest",
+                dataType: "json",
+                success: function(response) {
+                    if (response.data) {
+                        $('.manifest').html(response.data).show();
+                        $('#manifest').modal('show');
+                        kosong();
 
+                    }
                 }
-            }
+            });
         });
-    });
 
-});
+    });
 </script>
 <?= $this->endsection('isi'); ?>

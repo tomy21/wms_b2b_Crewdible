@@ -9,6 +9,7 @@ use App\Models\ModelItemTemp;
 use App\Models\ModelKaryawan;
 use App\Models\ModelOrder;
 use App\Models\PickingModel;
+use Config\Services;
 
 class ProsesInvoice extends BaseController
 {
@@ -19,8 +20,9 @@ class ProsesInvoice extends BaseController
 
     public function index()
     {
+        $request = Services::request();
         $ModelInvoice   = new InvoiceModel();
-        $modelOrder     = new ModelOrder();
+        $modelOrder     = new ModelOrder($request);
         $sum            = $ModelInvoice->sumData();
         $cekData        = $modelOrder->getWhere(['status' => 1]);
         $jumlah = 0;

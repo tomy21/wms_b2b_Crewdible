@@ -13,6 +13,7 @@ use Aws\S3\S3Client;
 use CodeIgniter\RESTful\ResourceController;
 use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\Files\File;
+use Config\Services;
 
 class ApiManifest extends ResourceController
 {
@@ -71,10 +72,10 @@ class ApiManifest extends ResourceController
     }
     public function update($id = null)
     {
-
+        $request = Services::request();
         $modelPacking = new HandoverModel();
         $modelInvoice = new InvoiceModel();
-        $modelOrder   = new ModelOrder();
+        $modelOrder   = new ModelOrder($request);
         $id = $this->request->getPost('id');
         $assign = $this->request->getPost('assign');
         $warehouse = $this->request->getPost('warehouse');

@@ -81,7 +81,7 @@ class UploadPo extends BaseController
                 }
                 $item_id                = $row[0];
                 $item_detail            = $row[1];
-                $qty                    = $row[2];
+                $qty                    = intval($row[2]);
                 if (!is_int($qty)) {
                     $htmlError = [
                         'error' => '<div class="alert alert-danger alert-dismissible" role="alert">

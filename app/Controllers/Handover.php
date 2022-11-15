@@ -56,7 +56,8 @@ class Handover extends BaseController
         $warehouse = $this->request->getVar('warehouse');
         $id = $this->request->getVar('idHandover');
 
-        $modelOrder = new ModelOrder();
+        $request = Services::request();
+        $modelOrder = new ModelOrder($request);
         $cekOrder = $modelOrder->getWhere(['Order_id' => $order, 'status' => 5])->getRow();
         $cekOrder1 = $modelOrder->getWhere(['Order_id' => $order, 'status' => 5])->getResult();
 
@@ -85,9 +86,13 @@ class Handover extends BaseController
                 ];
                 $modelListHandover->insert($data);
 
-                $modelPacking   = new PackingModel();
-                $getId          = $modelPacking->getWhere(['order_id' => $order])->getRow();
-                $modelPacking->update($getId->id, ['Status' => 3]);
+                $modelPacking   = new PackingModel($request);
+                $getId          = $modelPacking->getWhere(['order_id' => $order])->getResult();
+                $idData = null;
+                foreach($getId as $y){
+                    $idData = $y->id;
+                }
+                $modelPacking->update($idData, ['Status' => 3]);
 
                 // $modelOrder->update($order, ['driver' => $driver]);
                 $json = [
@@ -103,7 +108,8 @@ class Handover extends BaseController
         $driver = $this->request->getVar('driver');
         $warehouse = $this->request->getVar('warehouse');
 
-        $modelOrder     = new ModelOrder();
+        $request = Services::request();
+        $modelOrder     = new ModelOrder($request);
         $modelListHandover = new ModelListHandover();
         $cek = $modelListHandover->getWhere(['id_handover' => $id])->getRow();
         $cek2 = $modelListHandover->getWhere(['id_handover' => $id])->getResult();
@@ -168,7 +174,7 @@ class Handover extends BaseController
                 }
 
                 // data Packing
-                $modelPacking = new PackingModel();
+                $modelPacking = new PackingModel($request);
                 $queryPacking = $modelPacking->getWhere(['order_id' => $list->Order_id])->getResult();
                 $sumPacking = 0;
                 $countPacking = 0;
@@ -207,7 +213,7 @@ class Handover extends BaseController
                 $row[] = $datePacking == null ? '-' : $datePacking;
                 $row[] = $updatedHandover == null ? '-' : $updatedHandover;
                 $row[] = $list->created_at <= $datePacking ? "<span class=\" badge badge-danger\">Over SLA</span>" : "<span class=\"badge badge-success\">Meet SLA</span>";
-                $row[] = $btn ;
+                $row[] = $buttonDetail ;
                 $data[] = $row;
             }
 
@@ -226,10 +232,11 @@ class Handover extends BaseController
         if ($this->request->isAjax()) {
             $po = $this->request->getPost('id');
 
+            $request = Services::request();
             $modelInvoice = new InvoiceModel();
             $getOrderId = $modelInvoice->getWhere(['id' => $po])->getRow();
 
-            $modelPo = new ModelOrder();
+            $modelPo = new ModelOrder($request);
             $ambilData = $modelPo->getWhere(['Order_id' => $getOrderId->Order_id])->getResult();
             $created_at = null;
             $Drop_name = null;
@@ -242,7 +249,7 @@ class Handover extends BaseController
                 $Drop_contact = $a->Drop_contact;
             }
 
-            $modelPacking = new PackingModel();
+            $modelPacking = new PackingModel($request);
             $ambilData1 = $modelPacking->getWhere(['order_id' => $getOrderId->Order_id])->getResult();
             $foto = null;
             $updated_at = null;
@@ -295,7 +302,8 @@ class Handover extends BaseController
     {
         $po = $this->request->getPost('id');
 
-        $modelInvoice = new PackingModel();
+        $request = Services::request();
+        $modelInvoice = new PackingModel($request);
         $getOrderId = $modelInvoice->getWhere(['order_id' => $po])->getResult();
         $updated_at = null;
         foreach ($getOrderId as $y) {
@@ -318,13 +326,30 @@ class Handover extends BaseController
         $date   = $this->request->getVar('date');
         $estimate   = strtotime($date);
 
-
-        $modalPacking   = new PackingModel();
+        $request = Services::request();
+        $modalPacking   = new PackingModel($request);
         
         $modalPacking->update($id,['updated_at'     => date('Y-m-d H:i:s', $estimate)]);
 
         $json = [
             'success' => 'Data berhasil di update'
+        ];
+
+        echo json_encode($json);
+    }
+    function hapusData(){
+        $id = $this->request->getPost('id');
+
+        $modelList = new ModelListHandover();
+        $getData    = $modelList->getWhere(['order_id'=>$id])->getResult();
+        $idData = null;
+        foreach($getData as $x){
+            $idData = $x->id;
+        }
+        $modelList->delete($idData);
+
+        $json = [
+            'sukses' => 'Data berhasil di hapus'
         ];
 
         echo json_encode($json);

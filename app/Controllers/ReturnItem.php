@@ -9,6 +9,7 @@ use App\Models\ModelReturn;
 use App\Models\ModelReturnReject;
 use App\Models\PickingModel;
 use App\Models\StockModel;
+use Config\Services;
 
 class ReturnItem extends BaseController
 {
@@ -154,10 +155,11 @@ class ReturnItem extends BaseController
             $OrderId        = $this->request->getPost('OrderId');
             $receive        = $this->request->getPost('receive');
 
+            $request = Services::request();
             $modelStock = new StockModel();
             $modelReturn = new ModelReturn();
             $modaInv    = new InvoiceModel();
-            $orderModel = new ModelOrder();
+            $orderModel = new ModelOrder($request);
             $cariStock  = $modelStock->find($ItemId);
             $qtyStock   = $cariStock['quantity_reject'];
             $resultStock    = intval($qtyStock) + intval($qty);
@@ -206,10 +208,11 @@ class ReturnItem extends BaseController
             $reason         = $this->request->getPost('reason');
             $OrderId        = $this->request->getPost('OrderId');
 
+            $request = Services::request();
             $modelStock = new StockModel();
             $modelReturn = new ModelReturn();
             $modaInv    = new InvoiceModel();
-            $orderModel = new ModelOrder();
+            $orderModel = new ModelOrder($request);
             $cariStock  = $modelStock->find($ItemId);
             $qtyStock   = $cariStock['quantity_good'];
             $resultStock    = intval($qtyStock) + intval($qty);

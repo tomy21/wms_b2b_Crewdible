@@ -11,13 +11,14 @@ use App\Models\PoModel;
 use App\Models\StockModel;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
-
+use Config\Services;
 
 class Main extends BaseController
 {
     public function index()
     {
-        $ModelInvoice = new ModelOrder();
+        $request = Services::request();
+        $ModelInvoice = new ModelOrder($request);
         $ModelStock = new StockModel();
         $Totnew = $ModelInvoice->where(['status' => 1, 'created_at>=' => date('Y-m-d')])->countAllResults();
 
@@ -43,7 +44,7 @@ class Main extends BaseController
         $data['sum'] = $result['sumQuantities'];
 
         $modelInvoice = new InvoiceModel();
-        $modelOrder = new ModelOrder();
+        $modelOrder = new ModelOrder($request);
 
         // $countSLA = count($sla);
 
@@ -69,8 +70,9 @@ class Main extends BaseController
         $tglawal        = $this->request->getPost('valAwalOut');
         $tglakhir       = $this->request->getPost('valAkhirOut');
 
+        $request = Services::request();
         $spreadsheet = new Spreadsheet();
-        $modelBarang = new ModelOrder();
+        $modelBarang = new ModelOrder($request);
         $dataReport = $modelBarang->reportPeriode($tglawal, $tglakhir);
 
         // $id = null;
@@ -81,9 +83,9 @@ class Main extends BaseController
         }
 
         $spreadsheet = new Spreadsheet();
-        $sheet = $spreadsheet->getActiveSheet();
+        $sheet = $spreadsheet->getActiveSheet(0);
         $sheet->setCellValue('A1', "Data OutBound");
-        $sheet->mergeCells('A1:E1');
+        $sheet->mergeCells('A1:K1');
         $sheet->getStyle('A1')->getFont()->setBold(true);
         $sheet->setCellValue('A3', "No");
         $sheet->setCellValue('B3', "Warehouse");
@@ -99,7 +101,7 @@ class Main extends BaseController
 
         $no = 1;
         $numrow = 4;
-        foreach ($dataReport->getResult() as $row) :
+        foreach ($dataReport->getResultArray() as $row) {
 
             // data invoice 
             $modelInvoice = new InvoiceModel();
@@ -113,7 +115,8 @@ class Main extends BaseController
             }
 
             // data Packing
-            $modelPacking = new PackingModel();
+            $request = Services::request();
+            $modelPacking = new PackingModel($request);
             $queryPacking = $modelPacking->getWhere(['order_id' => $row->Order_id])->getResult();
             $sumPacking = 0;
             $countPacking = 0;
@@ -134,31 +137,30 @@ class Main extends BaseController
             foreach ($queryHandover as $p) {
                 $updatedHandover = $p->updated_at;
             }
-
-            $sheet->setCellValue('A' . $numrow, '1');
-            $sheet->setCellValue('B' . $numrow, $row->stock_location);
-            $sheet->setCellValue('C' . $numrow, $row->Order_id);
+            $sheet->setCellValue('A' . $numrow, $no);
+            $sheet->setCellValue('B' . $numrow, $row['stock_location']);
+            $sheet->setCellValue('C' . $numrow, $row['Order_id']);
             $sheet->setCellValue('D' . $numrow, $sumData);
             $sheet->setCellValue('E' . $numrow, $sumPacking);
             $sheet->setCellValue('F' . $numrow, $count);
             $sheet->setCellValue('G' . $numrow, $countPacking);
-            $sheet->setCellValue('H' . $numrow, $row->created_at);
-            $sheet->setCellValue('I' . $numrow, $updatedHandover);
-            $sheet->setCellValue('J' . $numrow, $row->created_at <= $datePacking ? "<span class=\" badge badge-danger\">Over SLA</span>" : "<span class=\"badge badge-success\">Meet SLA</span>");
+            $sheet->setCellValue('H' . $numrow, $row['created_at']);
+            $sheet->setCellValue('I' . $numrow, $row['created_at']);
+            $sheet->setCellValue('J' . $numrow, $updatedHandover);
+            $sheet->setCellValue('K' . $numrow, $row['created_at'] <= $datePacking ? "<span class=\" badge badge-danger\">Over SLA</span>" : "<span class=\"badge badge-success\">Meet SLA</span>");
 
             $no++;
             $numrow++;
-        endforeach;
-
-        $sheet->getDefaultRowDimension()->getRowHeight(-1);
+        }
+        $sheet->getDefaultRowDimension()->setRowHeight(-1);
         $sheet->getPageSetup()->setOrientation(\PhpOffice\PhpSpreadsheet\Worksheet\PageSetup::ORIENTATION_LANDSCAPE);
-        $sheet->setTitle('Laporan Barang Keluar');
+        $sheet->setTitle("Report Outbound");
 
-        header('Content-Type : application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-        header('Content-Disposition: attachment; filename = "LaporanBarangKeluar.xlsx"');
-        header('Cache-Control: max-age=0');
+        header('Content-Type : application/vnd.opnxmlformats-officedocument.spreadseheet.sheet');
+        header('Content-Disposition : attachment; filename = "Outbound'.$tglawal.'-'.$tglakhir.'.xlsx"');
+        header('Cache-Control:max-age=0');
 
-        $writer = new Xlsx($spreadsheet);
-        $writer->save('php://output');
+        $write = new Xlsx($spreadsheet);
+        $write->save('php://output');
     }
 }
