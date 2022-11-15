@@ -59,7 +59,15 @@ class Handover extends BaseController
 
         $request = Services::request();
         $modelOrder = new ModelOrder($request);
-        $cekOrder = $modelOrder->getWhere(['Order_id' => $order, 'status' => 5])->getRow();
+        $cekOrder = $modelOrder->getWhere(['Order_id' => $order, 'status' => 5])->getResult();
+        $nama = null;
+        $alamat = null;
+        $tlp = null;
+        foreach($cekOrder as $i){
+            $nama = $cekOrder->Drop_name;
+            $alamat = $cekOrder->Drop_address;
+            $tlp = $cekOrder->Drop_contact;
+        }
         $cekOrder1 = $modelOrder->getWhere(['Order_id' => $order, 'status' => 4])->getResult();
 
         $modelListHandover = new ModelListHandover();
@@ -78,9 +86,9 @@ class Handover extends BaseController
 
                 $data = [
                     'order_id'      => $order,
-                    'nama_penerima' => $cekOrder->Drop_name,
-                    'alamat'        => $cekOrder->Drop_address,
-                    'no_tlp'        => $cekOrder->Drop_contact,
+                    'nama_penerima' => $nama,
+                    'alamat'        => $alamat,
+                    'no_tlp'        => $tlp,
                     'status'        => 0,
                     'warehouse'     => $warehouse,
                     'id_handover'   => $id
