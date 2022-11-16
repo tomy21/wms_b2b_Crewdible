@@ -7,7 +7,7 @@ use App\Models\InboundModel;
 use App\Models\PoModel;
 use App\Models\UploadPoModel;
 use CodeIgniter\HTTP\Files\UploadedFile;
-
+use Config\Services;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
@@ -15,8 +15,9 @@ class UploadPo extends BaseController
 {
     public function __construct()
     {
+        $request = Services::request();
         $this->InboundModel = new InboundModel();
-        $this->PoModel  = new PoModel();
+        $this->PoModel  = new PoModel($request);
     }
     public function index()
     {
