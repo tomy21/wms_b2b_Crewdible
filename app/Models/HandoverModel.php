@@ -29,7 +29,7 @@ class HandoverModel extends Model
         foreach($dataWarehouse as $t){
             $codeWh = $t->warehouse_code;
         }
-        $tgl = date('Ymd');
+        $tgl = date('ymd');
         $p  = '-';
         $batas = str_pad($no, 3, "0", STR_PAD_LEFT);
         $noId = $codeWh . $p . $tgl . $batas;
