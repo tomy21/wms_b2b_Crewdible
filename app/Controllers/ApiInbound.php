@@ -9,6 +9,7 @@ use Aws\S3\Exception\S3Exception;
 use Aws\S3\S3Client;
 use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\Files\File;
+use Config\Services;
 
 class ApiInbound extends BaseController
 {
@@ -16,7 +17,8 @@ class ApiInbound extends BaseController
 
     public function index()
     {
-        $modelInbound = new PoModel();
+        $request = Services::request();
+        $modelInbound = new PoModel($request);
         $data = $modelInbound->findAll();
 
         if (!$data) {
@@ -33,8 +35,9 @@ class ApiInbound extends BaseController
 
     public function getId($id = null)
     {
+        $request = Services::request();
         $model = new InboundModel();
-        $modelPo = new PoModel();
+        $modelPo = new PoModel($request);
         $id     = $this->request->getVar('id');
         $data2  = $modelPo->getWhere(['no_Po' => $id])->getResult();
         $data1 = $model->getWhere(['nopo' => $id])->getResult();
@@ -70,7 +73,8 @@ class ApiInbound extends BaseController
 
     public function show($warehouse = null)
     {
-        $modelInbound = new PoModel();
+        $request = Services::request();
+        $modelInbound = new PoModel($request);
 
         $data = $modelInbound->getWhere(['warehouse' => $warehouse, 'status' => "0"])->getResult();
 
@@ -118,7 +122,8 @@ class ApiInbound extends BaseController
                             'status'        => $status,
                         ];
                         $model->update($id, $data);
-                        $modelPo = new PoModel();
+                        $request = Services::request();
+                        $modelPo = new PoModel($request);
                         $cekItem = $model->select('sum(qty_received) as qtyRec')->getWhere(['nopo' => $row->nopo])->getRow();
                         $cekSelisih = $modelPo->getWhere(['no_Po' => $row->nopo])->getRow();
 
@@ -144,7 +149,8 @@ class ApiInbound extends BaseController
     }
     public function updatePo($po = null)
     {
-        $modelInbound = new PoModel();
+        $request = Services::request();
+        $modelInbound = new PoModel($request);
 
         $po = $this->request->getPost('nopo');
         $noplat = $this->request->getPost('noplat');
