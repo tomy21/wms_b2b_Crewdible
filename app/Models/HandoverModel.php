@@ -13,7 +13,7 @@ class HandoverModel extends Model
 
     public function idHandover($code = null)
     {
-        $kode = $this->db->table('tbl_handover')->select('RIGHT(id_handover,3) as id', false)->orderBy('id_handover', 'DESC')->limit(1)->get()->getRowArray();
+        $kode = $this->db->table('tbl_handover')->select('RIGHT(id_handover,4) as id', false)->orderBy('id_handover', 'DESC')->limit(1)->get()->getRowArray();
 
         // $no = 1;
         if (isset($kode['id']) == null) {
@@ -31,7 +31,7 @@ class HandoverModel extends Model
         }
         $tgl = date('ymd');
         $p  = '-';
-        $batas = str_pad($no, 3, "0", STR_PAD_LEFT);
+        $batas = str_pad($no, 4, "0", STR_PAD_LEFT);
         $noId = $codeWh . $p . $tgl . $batas;
         return $noId;
     }
