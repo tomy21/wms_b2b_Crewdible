@@ -159,7 +159,7 @@ class ApiPacking extends ResourceController
             $modelOrder->update($id, ['status' => 5]);
 
             $orderInvoice = $modelInvoice->getWhere(['Order_id' => $id])->getRow();
-            $modelInvoice->update($orderInvoice->id, ['status' => 4]);
+            $modelInvoice->update($orderInvoice->id, ['status' => 5]);
 
             // $modelHandover = new HandoverModel();
             // foreach ($Order as $row) {
@@ -268,10 +268,10 @@ class ApiPacking extends ResourceController
                 'foto' => $file1->getName(),
             ];
             $modelPacking->update($id, $data);
-            $modelOrder->update($id, ['status' => 4]);
+            $modelOrder->update($id, ['status' => 5]);
 
             $orderInvoice = $modelInvoice->getWhere(['Order_id' => $id])->getRow();
-            $modelInvoice->update($orderInvoice->id, ['status' => 4]);
+            $modelInvoice->update($orderInvoice->id, ['status' => 5]);
 
             // $modelHandover = new HandoverModel();
             // foreach ($Order as $row) {
