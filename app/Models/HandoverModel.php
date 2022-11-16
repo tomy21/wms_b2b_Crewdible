@@ -13,7 +13,10 @@ class HandoverModel extends Model
 
     public function idHandover($code = null)
     {
-        $kode = $this->db->table('tbl_handover')->select('RIGHT(id_handover,4) as id', false)->orderBy('id_handover', 'DESC')->limit(1)->get()->getRowArray();
+        $warehouse = new ModelWarehouse();
+        $code = user()->warehouse;
+
+        $kode = $this->db->table('tbl_handover')->where('warehouse',$code)->select('RIGHT(id_handover,4) as id', false)->orderBy('id_handover', 'DESC')->limit(1)->get()->getRowArray();
 
         // $no = 1;
         if (isset($kode['id']) == null) {
@@ -22,8 +25,7 @@ class HandoverModel extends Model
             $no = intval($kode['id']) + 1;
         }
 
-        $warehouse = new ModelWarehouse();
-        $code = user()->warehouse;
+        
         $dataWarehouse = $warehouse->getWhere(['warehouse_name'=> $code])->getResult();
         $codeWh = null;
         foreach($dataWarehouse as $t){
