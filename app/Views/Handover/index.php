@@ -15,7 +15,7 @@
     </div>
     <div class="card-body">
 
-        <table id="table1" class="table table-striped" style="width: 100%;">
+        <table id="example1" class="table table-striped" style="width: 100%;">
             <thead>
                 <tr>
                     <th>No</th>
@@ -29,45 +29,7 @@
                     <th>Status</th>
                 </tr>
             </thead>
-            <tbody>
-                <?php
-                $no = 1;
-                $db = \Config\Database::connect();
-                $date = date('d-m-Y');
-                $hari = 1;
-                $hariKemarin = date('Y-m-d', strtotime('-$hari day', strtotime($date)));
-                $data1 = $db->table('tbl_handover')->getWhere(['warehouse' => user()->warehouse, 'created_at>=' => $hariKemarin])->getResultArray();
-                $data2 = $db->table('tbl_handover')->getWhere(['created_at>=' => $hariKemarin])->getResultArray();
-                $data = user()->warehouse == 'Headoffice' ? $data2 : $data1;
-                foreach ($data as $row) :
-                ?>
-                    <tr>
-                        <td style="vertical-align: middle;"><?= $no++; ?></td>
-                        <td style="vertical-align: middle;"><?= $row['created_at']; ?></td>
-                        <td style="vertical-align: middle;"><?= $row['warehouse']; ?></td>
-                        <td style="vertical-align: middle;"><?= $row['id_handover']; ?></td>
-                        <td style="vertical-align: middle;">
-                            <?php foreach (json_decode($row['listItem'], true) as $k) : ?>
-                                <ul>
-                                    <ol><?= $k['order_id'] ?></ol>
-                                </ul>
-                            <?php endforeach; ?>
-                        </td>
-                        <td style="vertical-align: middle;"><?= $row['driver'] ?></td>
-                        <td style="vertical-align: middle;"><img src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $row['foto'] ?>" alt="" width="50"></td>
-                        <td style="vertical-align: middle;">
-                            <img src="https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/<?= $row['tandatangan'] ?>" alt="" width="50">
-                        </td>
-                        <td style="vertical-align: middle;">
-                            <?php if ($row['status'] == 1) : ?>
-                                <span class="badge badge-success">Done</span>
-                            <?php else : ?>
-                                <span class="badge badge-danger">Proses</span>
-                            <?php endif; ?>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
+
         </table>
     </div>
 </div>
@@ -83,6 +45,29 @@
 <div class="manifest" style="display: none;"></div>
 
 <script>
+    $(document).ready(function() {
+        var table = $('#example1').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "responsive": true,
+            "order": [],
+            "info": true,
+            "ajax": {
+                "url": "<?php echo site_url('Handover/dataAjax') ?>",
+                "type": "POST",
+            },
+            "lengthMenu": [10, 25, 50, 75, 100, 1000],
+            dom: 'lBftip', // Add the Copy, Print and export to CSV, Excel and PDF buttons
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ],
+            "columnDefs": [{
+                "targets": [0, 4],
+                "orderable": false,
+            }],
+        });
+    });
+
     function play_notif() {
         var audio = document.createElement('audio');
         audio.setAttribute('src', '<?= site_url() ?>/dist/img/success.mp3');

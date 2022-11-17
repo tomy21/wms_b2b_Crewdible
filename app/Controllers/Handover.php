@@ -16,14 +16,13 @@ class Handover extends BaseController
 {
     public function index()
     {
-        $modelHandover = new ModelListHandover();
 
         return view('Handover/index');
     }
     public function buatManifest()
     {
-
-        $modalHandover = new HandoverModel();
+        $request = Services::request();
+        $modalHandover = new HandoverModel($request);
         $modalList      = new ModelListHandover();
         $code = user()->warehouse;
         $data = [
@@ -63,7 +62,7 @@ class Handover extends BaseController
         $nama = null;
         $alamat = null;
         $tlp = null;
-        foreach($cekOrder as $i){
+        foreach ($cekOrder as $i) {
             $nama = $i->Drop_name;
             $alamat = $i->Drop_address;
             $tlp = $i->Drop_contact;
@@ -137,7 +136,7 @@ class Handover extends BaseController
 
             $modelOrder->update($q->order_id, ['driver' => $driver]);
         }
-        $modelHandover  = new HandoverModel();
+        $modelHandover  = new HandoverModel($request);
         $cekId = $modelHandover->getWhere(['id_handover' => $id])->getResult();
         if (count($cekId) > 0) {
             $json = [
@@ -208,7 +207,7 @@ class Handover extends BaseController
                 $buttonDetail = "<button class=\"btn btn-sm btn-info\" type=\"button\" 
                 onclick=\"detail('$idInv')\"><i class=\"fa fa-eye\"></i></button>";
                 $btnEdit = "<button class=\"btn btn-sm btn-warning\" type=\"button\" onclick=\"edit('$list->Order_id')\"><i class=\"fa fa-edit\"></i></button>";
-                
+
                 $btn = "$buttonDetail &nbsp $btnEdit";
 
                 $row[] = $no;
@@ -222,7 +221,7 @@ class Handover extends BaseController
                 $row[] = $datePacking == null ? '-' : $datePacking;
                 $row[] = $updatedHandover == null ? '-' : $updatedHandover;
                 $row[] = $list->created_at <= $datePacking ? "<span class=\" badge badge-danger\">Over SLA</span>" : "<span class=\"badge badge-success\">Meet SLA</span>";
-                $row[] = $buttonDetail ;
+                $row[] = $buttonDetail;
                 $data[] = $row;
             }
 
@@ -276,7 +275,7 @@ class Handover extends BaseController
                 $idHandover = $y->id_handover;
             }
 
-            $modelHandover = new HandoverModel();
+            $modelHandover = new HandoverModel($request);
             $ambilData3 = $modelHandover->getWhere(['id_handover' => $idHandover])->getResult();
             $foto1 = null;
             $tandatangan = null;
@@ -337,8 +336,8 @@ class Handover extends BaseController
 
         $request = Services::request();
         $modalPacking   = new PackingModel($request);
-        
-        $modalPacking->update($id,['updated_at'     => date('Y-m-d H:i:s', $estimate)]);
+
+        $modalPacking->update($id, ['updated_at'     => date('Y-m-d H:i:s', $estimate)]);
 
         $json = [
             'success' => 'Data berhasil di update'
@@ -346,13 +345,14 @@ class Handover extends BaseController
 
         echo json_encode($json);
     }
-    function hapusData(){
+    function hapusData()
+    {
         $id = $this->request->getPost('id');
 
         $modelList = new ModelListHandover();
-        $getData    = $modelList->getWhere(['order_id'=>$id])->getResult();
+        $getData    = $modelList->getWhere(['order_id' => $id])->getResult();
         $idData = null;
-        foreach($getData as $x){
+        foreach ($getData as $x) {
             $idData = $x->id;
         }
         $modelList->delete($idData);
@@ -362,5 +362,58 @@ class Handover extends BaseController
         ];
 
         echo json_encode($json);
+    }
+    function dataAjax()
+    {
+        $request = Services::request();
+        $dataQuery = new HandoverModel($request);
+
+        if ($request->getMethod(true) === 'POST') {
+            $lists = $dataQuery->getDatatables();
+            $data = [];
+            $no = $request->getPost('start');
+            foreach ($lists as $list) {
+                $no++;
+                $row = [];
+
+                if ($list->status == 0) {
+                    $status = "<span class=\"badge badge-dark\">Proses</span>";
+                } else {
+                    $status = "<span class=\"badge badge-success\">Done</span>";
+                } 
+
+                $listData = null;
+                foreach (json_decode($list->listItem) as $k) {
+                    $listData = $k->order_id;
+                }
+                $listItems = " <ul>
+                                    <ol>".$listData."</ol>
+                                </ul>";
+
+
+
+                $foto = "<img src=\"https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/" . $list->foto . "\" width=\"50\">";
+                $tandatangan = "<img src=\"https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/" . $list->tandatangan . "\"  width=\"50\">";
+
+                $row[] = $no;
+                $row[] = $list->created_at;
+                $row[] = $list->warehouse;
+                $row[] = $list->id_handover;
+                $row[] = $listItems;
+                $row[] = $list->id_handover;
+                $row[] = $foto;
+                $row[] = $tandatangan;
+                $row[] = $status;
+                $data[] = $row;
+            }
+            $output = array(
+                'draw'              => isset($_POST['draw']) ? intval($_POST['draw']) : 0,
+                'recordsTotal' => $dataQuery->countAll(),
+                'recordsFiltered' => $dataQuery->countFiltered(),
+                'data'              => $data,
+            );
+
+            echo json_encode($output);
+        }
     }
 }
