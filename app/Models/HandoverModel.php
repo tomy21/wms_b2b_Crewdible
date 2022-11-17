@@ -58,7 +58,7 @@ class HandoverModel extends Model
         if ($warehouse == "Headoffice") {
             $query = $this->dt->get();
         } else {
-            $query = $this->dt->where('warehouse', $warehouse)->get();
+            $query = $this->dt->where(['warehouse' => $warehouse, 'created_at>=' => date('Y-m-d', strtotime('-1 days'))])->get();
         }
         return $query->getResult();
     }

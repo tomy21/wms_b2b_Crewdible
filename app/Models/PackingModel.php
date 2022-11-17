@@ -58,9 +58,9 @@ class PackingModel extends Model
             $this->dt->limit($_POST['length'], $_POST['start']);
 
         if ($warehouse == "Headoffice"){
-            $query = $this->dt->get();
+            $query = $this->dt->where(['created_at>=' => date('Y-m-d',strtotime('-1 days'))])->get();
         }else{
-            $query = $this->dt->where('warehouse',$warehouse)->get();
+            $query = $this->dt->where(['warehouse'=>$warehouse,'created_at>='=>date('Y-m-d', strtotime('-1 days'))])->get();
         }
         return $query->getResult();
     }

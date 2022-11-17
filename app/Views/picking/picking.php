@@ -36,7 +36,7 @@
 
                     $data1 = $db->table('tbl_picking')->where(['warehouse' => user()->warehouse, 'updated_at>=' => $hariKemarin])->orderBy('updated_at', 'DESC')->get()->getResultArray();
 
-                    $data2 = $db->table('tbl_picking')->where(['updated_at>=' => $hariKemarin])->orderBy('created_at', 'DESC')->get()->getResultArray();
+                    $data2 = $db->table('tbl_picking')->where(['updated_at>=' => $hariKemarin])->orderBy('updated_at', 'DESC')->get()->getResultArray();
 
                     $data = user()->warehouse == 'Headoffice' ? $data2 : $data1;
                     foreach ($data as $query) :
