@@ -20,7 +20,8 @@ class ApiManifest extends ResourceController
     use ResponseTrait;
     public function index()
     {
-        $modelPacking = new HandoverModel();
+        $request = Services::request();
+        $modelPacking = new HandoverModel($request);
         $order = $modelPacking->getWhere(['status' => 0])->getResult();
 
         if (!$order) {
@@ -39,7 +40,8 @@ class ApiManifest extends ResourceController
     }
     public function detail($warehouse = null)
     {
-        $modelManifest = new HandoverModel();
+        $request = Services::request();
+        $modelManifest = new HandoverModel($request);
         $order = $modelManifest->getWhere(['status' => 0, 'warehouse' => $warehouse])->getResult();
 
         if (!$order) {
@@ -58,7 +60,8 @@ class ApiManifest extends ResourceController
     }
     public function show($assign = null)
     {
-        $modelPacking = new HandoverModel();
+        $request = Services::request();
+        $modelPacking = new HandoverModel($request);
         $id = $this->request->getPost('id');
 
         $Order = $modelPacking->getWhere(['id_handover' => $id, 'status' => 0])->getResultArray();
@@ -73,7 +76,7 @@ class ApiManifest extends ResourceController
     public function update($id = null)
     {
         $request = Services::request();
-        $modelPacking = new HandoverModel();
+        $modelPacking = new HandoverModel($request);
         $modelInvoice = new InvoiceModel();
         $modelOrder   = new ModelOrder($request);
         $id = $this->request->getPost('id');
@@ -186,7 +189,8 @@ class ApiManifest extends ResourceController
                 $modelListHandover->update($p->id, ['status' => 2]);
             }
 
-            $modelHandover = new HandoverModel();
+            $request = Services::request();
+            $modelHandover = new HandoverModel($request);
 
             $respon = [
                 'success'       => true,
@@ -199,7 +203,8 @@ class ApiManifest extends ResourceController
     }
     public function add()
     {
-        $modelHandover = new HandoverModel();
+        $request = Services::request();
+        $modelHandover = new HandoverModel($request);
         $idHandover = $modelHandover->idHandover();
         $list   = $this->request->getPost('list');
         $driver = $this->request->getPost('driver');
