@@ -10,8 +10,7 @@
     <title>BMI Project | Crewdible</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?= base_url() ?>/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -62,9 +61,8 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-light-danger elevation-4">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
-                <img src="<?= base_url() ?>/dist/img/logocrew.png" alt="Logo Crewdible" width="100%"
-                    style="object-fit:fill;">
+            <a href="<?= site_url('main/index'); ?>" class="brand-link">
+                <img src="<?= base_url() ?>/dist/img/logocrew.png" alt="Logo Crewdible" width="100%" style="object-fit:fill;">
             </a>
 
             <!-- Sidebar -->
@@ -76,8 +74,7 @@
                         return redirect()->to('login/index');
                     } ?>
                     <div class="image">
-                        <img src="<?= base_url() ?>/dist/img/<?= user()->foto; ?>" class="img-circle elevation-2"
-                            alt="User Image">
+                        <img src="<?= base_url() ?>/dist/img/<?= user()->foto; ?>" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block"><?= user()->username; ?></a>
@@ -87,124 +84,123 @@
                 <!-- SidebarSearch Form -->
 
                 <?php if (in_groups('admin')) : ?>
-                <!-- Sidebar Menu -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
+                    <!-- Sidebar Menu -->
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                        <li class="nav-header">Master</li>
-                        <li class="nav-item">
-                            <a href="<?= site_url('main/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-laptop"></i>
-                                <p>
-                                    Dashboard
-                                </p>
-                            </a>
-                        </li>
+                            <li class="nav-header">Master</li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('main/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-laptop"></i>
+                                    <p>
+                                        Dashboard
+                                    </p>
+                                </a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a href="<?= site_url('UploadPo/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-upload"></i>
-                                <p>
-                                    Upload PO
-                                </p>
-                            </a>
-                        </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('UploadPo/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-upload"></i>
+                                    <p>
+                                        Upload PO
+                                    </p>
+                                </a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a href="<?= site_url('Stock/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-tags"></i>
-                                <p>
-                                    Stock
-                                </p>
-                            </a>
-                        </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('Stock/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-tags"></i>
+                                    <p>
+                                        Stock
+                                    </p>
+                                </a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a href="<?= site_url('Invoice/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-file"></i>
-                                <p>
-                                    Upload Order
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= site_url('Inbound/history'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-truck"></i>
-                                <p>
-                                    History Inbound
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= site_url('Invoice/history'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-motorcycle"></i>
-                                <p>
-                                    History Outbound
-                                </p>
-                            </a>
-                        </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('Invoice/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-file"></i>
+                                    <p>
+                                        Upload Order
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('Inbound/history'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-truck"></i>
+                                    <p>
+                                        History Inbound
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('Invoice/history'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-motorcycle"></i>
+                                    <p>
+                                        History Outbound
+                                    </p>
+                                </a>
+                            </li>
 
-                        <li class="nav-header">Warehouse</li>
+                            <li class="nav-header">Warehouse</li>
 
-                        <li class="nav-item">
-                            <a href="<?= site_url('Inbound/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-warehouse"></i>
-                                <p>
-                                    Inbound Receiving
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= site_url('basket/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-shopping-bag"></i>
-                                <p>
-                                    Basket
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= site_url('Assign/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-cart-arrow-down"></i>
-                                <p>
-                                    Picklist Assignment
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= site_url('Picking/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-box"></i>
-                                <p>
-                                    Picking
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= site_url('Sorting/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-sort"></i>
-                                <p>
-                                    Sorting
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= site_url('Packing/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-square"></i>
-                                <p>
-                                    Packing
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= site_url('Handover/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-motorcycle"></i>
-                                <p>
-                                    Handover
-                                </p>
-                            </a>
-                        </li>
-                        <!-- <li class="nav-item">
+                            <li class="nav-item">
+                                <a href="<?= site_url('Inbound/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-warehouse"></i>
+                                    <p>
+                                        Inbound Receiving
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('basket/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-shopping-bag"></i>
+                                    <p>
+                                        Basket
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('Assign/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-cart-arrow-down"></i>
+                                    <p>
+                                        Picklist Assignment
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('Picking/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-box"></i>
+                                    <p>
+                                        Picking
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('Sorting/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-sort"></i>
+                                    <p>
+                                        Sorting
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('Packing/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-square"></i>
+                                    <p>
+                                        Packing
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('Handover/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-motorcycle"></i>
+                                    <p>
+                                        Handover
+                                    </p>
+                                </a>
+                            </li>
+                            <!-- <li class="nav-item">
                             <a href="<?= site_url('ReturnItem/index'); ?>" class="nav-link">
                                 <i class="nav-icon fas fa-file-archive"></i>
                                 <p>
@@ -213,131 +209,130 @@
                             </a>
                         </li> -->
 
-                        <li class="nav-header">Utility</li>
-                        <li class="nav-item">
-                            <a href="<?= site_url('Users/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
-                                <p class="text">Daftar Users</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= site_url('Karyawan/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-users"></i>
-                                <p class="text">Daftar Acount</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= site_url('MasterWarehouse/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-industry"></i>
-                                <p class="text">Daftar Warehouse</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= site_url('laporan/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-file"></i>
-                                <p class="text">Report</p>
-                            </a>
-                        </li>
+                            <li class="nav-header">Utility</li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('Users/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-user"></i>
+                                    <p class="text">Daftar Users</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('Karyawan/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-users"></i>
+                                    <p class="text">Daftar Acount</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('MasterWarehouse/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-industry"></i>
+                                    <p class="text">Daftar Warehouse</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('laporan/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-file"></i>
+                                    <p class="text">Report</p>
+                                </a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a href="<?= site_url('login/keluar'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-sign-out-alt"></i>
-                                <p class="text">Sign Out</p>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                            <li class="nav-item">
+                                <a href="<?= site_url('login/keluar'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-sign-out-alt"></i>
+                                    <p class="text">Sign Out</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
 
                 <?php elseif (in_groups('warehouse')) : ?>
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-                        <li class="nav-header">Warehouse</li>
-                        <li class="nav-item">
-                            <a href="<?= site_url('Invoice/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-list"></i>
-                                <p>
-                                    List Transaksi
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= site_url('main/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-laptop"></i>
-                                <p>
-                                    Dashboard
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= site_url('Inbound/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-warehouse"></i>
-                                <p>
-                                    Inbound Receiving
-                                </p>
-                            </a>
-                        </li>
+                            <li class="nav-header">Warehouse</li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('Invoice/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-list"></i>
+                                    <p>
+                                        List Transaksi
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('main/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-laptop"></i>
+                                    <p>
+                                        Dashboard
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('Inbound/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-warehouse"></i>
+                                    <p>
+                                        Inbound Receiving
+                                    </p>
+                                </a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a href="<?= site_url('Stock/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-tags"></i>
-                                <p>
-                                    Stock
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= site_url('basket/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-shopping-bag"></i>
-                                <p>
-                                    Basket
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= site_url('Assign/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-cart-arrow-down"></i>
-                                <p>
-                                    Picklist Assignment
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= site_url('Picking/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-box"></i>
-                                <p>
-                                    Picking
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= site_url('Sorting/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-sort"></i>
-                                <p>
-                                    Sorting
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= site_url('Packing/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-square"></i>
-                                <p>
-                                    Packing
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= site_url('Handover/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-motorcycle"></i>
-                                <p>
-                                    Handover
-                                </p>
-                            </a>
-                        </li>
-                        <!-- <li class="nav-item">
+                            <li class="nav-item">
+                                <a href="<?= site_url('Stock/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-tags"></i>
+                                    <p>
+                                        Stock
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('basket/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-shopping-bag"></i>
+                                    <p>
+                                        Basket
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('Assign/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-cart-arrow-down"></i>
+                                    <p>
+                                        Picklist Assignment
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('Picking/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-box"></i>
+                                    <p>
+                                        Picking
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('Sorting/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-sort"></i>
+                                    <p>
+                                        Sorting
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('Packing/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-square"></i>
+                                    <p>
+                                        Packing
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('Handover/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-motorcycle"></i>
+                                    <p>
+                                        Handover
+                                    </p>
+                                </a>
+                            </li>
+                            <!-- <li class="nav-item">
                             <a href="<?= site_url('ReturnItem/index'); ?>" class="nav-link">
                                 <i class="nav-icon fas fa-file-archive"></i>
                                 <p>
@@ -346,64 +341,63 @@
                             </a>
                         </li> -->
 
-                        <li class="nav-item">
-                            <a href="<?= site_url('Karyawan/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-users"></i>
-                                <p class="text">Daftar Acount</p>
-                            </a>
-                        </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('Karyawan/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-users"></i>
+                                    <p class="text">Daftar Acount</p>
+                                </a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a href="<?= site_url('login/keluar'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-sign-out-alt"></i>
-                                <p class="text">Sign Out</p>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                            <li class="nav-item">
+                                <a href="<?= site_url('login/keluar'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-sign-out-alt"></i>
+                                    <p class="text">Sign Out</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 <?php elseif (in_groups('seller')) : ?>
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                        <li class="nav-item">
-                            <a href="<?= site_url('main/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-laptop"></i>
-                                <p>
-                                    Dashboard
-                                </p>
-                            </a>
-                        </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('main/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-laptop"></i>
+                                    <p>
+                                        Dashboard
+                                    </p>
+                                </a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a href="<?= site_url('UploadPO/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-upload"></i>
-                                <p>
-                                    Upload PO
-                                </p>
-                            </a>
-                        </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('UploadPO/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-upload"></i>
+                                    <p>
+                                        Upload PO
+                                    </p>
+                                </a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a href="<?= site_url('Stock/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-tags"></i>
-                                <p>
-                                    Stock
-                                </p>
-                            </a>
-                        </li>
+                            <li class="nav-item">
+                                <a href="<?= site_url('Stock/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-tags"></i>
+                                    <p>
+                                        Stock
+                                    </p>
+                                </a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a href="<?= site_url('invoice/index'); ?>" class="nav-link">
-                                <i class="nav-icon fas fa-file"></i>
-                                <p>
-                                    Upload Order
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                            <li class="nav-item">
+                                <a href="<?= site_url('invoice/index'); ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-file"></i>
+                                    <p>
+                                        Upload Order
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 <?php endif; ?>
                 <!-- /.sidebar-menu -->
             </div>
@@ -454,7 +448,7 @@
     <script src="<?= base_url() ?>/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
-    // $.widget.bridge('uibutton', $.ui.button)
+        // $.widget.bridge('uibutton', $.ui.button)
     </script>
     <!-- Bootstrap 4 -->
     <script src="<?= base_url() ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -495,25 +489,25 @@
     <script src="<?= site_url() ?>/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
     <script src="<?= base_url() ?>/plugins/select2/js/select2.full.min.js"></script>
     <script>
-    let log_off = new Date();
-    log_off.setSeconds(log_off.getSeconds() + 1800)
-    log_off = new Date(log_off)
-
-    let int_logoff = setInterval(function() {
-        let now = new Date();
-        if (now > log_off) {
-            window.location.assign("<?= site_url() ?>/Login/keluar");
-            clearInterval(int_logoff);
-        }
-    }, 30000)
-
-
-    $('body').on('click', function() {
-        log_off = new Date()
+        let log_off = new Date();
         log_off.setSeconds(log_off.getSeconds() + 1800)
         log_off = new Date(log_off)
-        console.log(log_off)
-    })
+
+        let int_logoff = setInterval(function() {
+            let now = new Date();
+            if (now > log_off) {
+                window.location.assign("<?= site_url() ?>/Login/keluar");
+                clearInterval(int_logoff);
+            }
+        }, 30000)
+
+
+        $('body').on('click', function() {
+            log_off = new Date()
+            log_off.setSeconds(log_off.getSeconds() + 1800)
+            log_off = new Date(log_off)
+            console.log(log_off)
+        })
     </script>
 
 

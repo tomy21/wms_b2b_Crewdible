@@ -488,7 +488,6 @@
 //     tampilGrafik();
 // });
 </script>
-<script src="<?= site_url() ?>dist/js/adminlte.js"></script>
 <script src="<?= site_url() ?>plugins/jquery-mapael/maps/usa_states.min.js"></script>
-<script src="<?= site_url() ?>dist/js/pages/dashboard2.js"></script>
+<!-- <script src="<?= site_url() ?>dist/js/pages/dashboard2.js"></script> -->
 <?= $this->endsection('isi'); ?>
