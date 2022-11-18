@@ -68,8 +68,8 @@ class Invoice extends BaseController
             }
             $output = array(
                 'draw'              => isset($_POST['draw']) ? intval($_POST['draw']) : 0,
-                'recordsTotal' => $modelInvoice->countAll(),
-                'recordsFiltered' => $modelInvoice->countFiltered(),
+                'recordsTotal'      => $modelInvoice->countAll(),
+                'recordsFiltered'   => $modelInvoice->countFiltered(),
                 'data'              => $data,
             );
 

@@ -66,12 +66,23 @@ class ModelOrder extends Model
     public function countFiltered()
     {
         $this->getDatatablesQuery();
-        return $this->dt->countAllResults();
+        $warehouse = user()->warehouse;
+        if ($warehouse == "Headoffice") {
+            $tbl_storage = $this->dt->where(['created_at>=' => date('Y-m-d', strtotime('-1 days'))]);
+        } else {
+            $tbl_storage = $this->dt->where(['stock_location' => $warehouse, 'created_at>=' => date('Y-m-d', strtotime('-1 days'))]);
+        }
+        return $tbl_storage->countAllResults();
     }
 
     public function countAll()
     {
-        $tbl_storage = $this->dt->where(['created_at>=' => date('Y-m-d', strtotime('-1 days'))]);
+        $warehouse = user()->warehouse;
+        if ($warehouse == "Headoffice") {
+            $tbl_storage = $this->dt->where(['created_at>=' => date('Y-m-d', strtotime('-1 days'))]);
+        } else {
+            $tbl_storage = $this->dt->where(['stock_location' => $warehouse,'created_at>=' => date('Y-m-d', strtotime('-1 days'))]);
+        }
         return $tbl_storage->countAllResults();
     }
 
