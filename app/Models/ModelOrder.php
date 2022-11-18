@@ -71,7 +71,7 @@ class ModelOrder extends Model
 
     public function countAll()
     {
-        $tbl_storage = $this->db->table($this->table);
+        $tbl_storage = $this->dt->where(['created_at>=' => date('Y-m-d', strtotime('-1 days'))]);
         return $tbl_storage->countAllResults();
     }
 

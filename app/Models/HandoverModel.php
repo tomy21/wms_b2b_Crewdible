@@ -71,7 +71,8 @@ class HandoverModel extends Model
 
     public function countAll()
     {
-        $tbl_storage = $this->db->table($this->table);
+        $warehouse = user()->warehouse;
+        $tbl_storage = $this->dt->where(['warehouse' => $warehouse,'created_at>=' => date('Y-m-d', strtotime('-1 days'))]);
         return $tbl_storage->countAllResults();
     }
 

@@ -390,8 +390,6 @@ class Handover extends BaseController
                                     <ol>".$listData."</ol>
                                 </ul>";
 
-
-
                 $foto = "<img src=\"https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/" . $list->foto . "\" width=\"50\">";
                 $tandatangan = "<img src=\"https://crewdible-sandbox-asset.s3.ap-southeast-1.amazonaws.com/aws-b2b/" . $list->tandatangan . "\"  width=\"50\">";
 
