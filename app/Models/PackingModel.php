@@ -79,11 +79,12 @@ class PackingModel extends Model
 
     public function countAll()
     {
+        $warehouse = user()->warehouse;
         if ($warehouse == "Headoffice") {
             $tbl_storage = $this->dt->where(['created_at>=' => date('Y-m-d', strtotime('-1 days'))]);
         } else {
-            $tbl_storage = $this->dt->where(['warehouse' => $warehouse, 'created_at>=' => date('Y-m-d', strtotime('-1 days'))]);
-    
+            $tbl_storage = $this->dt->where(['warehouse' => $warehouse,'created_at>=' => date('Y-m-d', strtotime('-1 days'))]);
+        }
         return $tbl_storage->countAllResults();
     }
 
