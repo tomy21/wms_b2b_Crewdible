@@ -43,8 +43,8 @@ class Laporan extends BaseController
         $sheet->setCellValue('A3', "No");
         $sheet->setCellValue('B3', "Warehouse");
         $sheet->setCellValue('C3', "No PO");
-        $sheet->setCellValue('D3', "Total Qty");
-        $sheet->setCellValue('E3', "Total SKU");
+        $sheet->setCellValue('D3', "Total SKU");
+        $sheet->setCellValue('E3', "Total Qty");
         $sheet->setCellValue('F3', "Nama Driver");
         $sheet->setCellValue('G3', "No Pelat Kendaraan");
         $sheet->setCellValue('H3', "Kedatangan Driver");
