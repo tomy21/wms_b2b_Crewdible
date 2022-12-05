@@ -117,4 +117,8 @@ class ModelOrder extends Model
     {
         return $this->db->table('tbl_order')->where('status', 1)->get();
     }
+    public function dataSummaryOrder()
+    {
+        return $this->db->table('tbl_order')->select('stock_location, Order_id, count(Order_id) as order, created_at, updated_at')->groupBy('stock_location')->get()->getResult();
+    }
 }

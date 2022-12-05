@@ -3,11 +3,84 @@
 <h1>Dashboard</h1>
 <?= $this->endsection('judul'); ?>
 <?= $this->section('subjudul'); ?>
+<style>
+    #container {
+        height: 100%;
+    }
 
+    .highcharts-figure,
+    .highcharts-data-table table {
+        min-width: 100%;
+        max-width: 100%;
+        margin: 1em auto;
+    }
+
+    .highcharts-data-table table {
+        font-family: Verdana, sans-serif;
+        border-collapse: collapse;
+        border: 1px solid #ebebeb;
+        margin: 10px auto;
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .highcharts-data-table caption {
+        padding: 1em 0;
+        font-size: 1.2em;
+        color: #555;
+    }
+
+    .highcharts-data-table th {
+        font-weight: 600;
+        padding: 0.5em;
+    }
+
+    .highcharts-data-table td,
+    .highcharts-data-table th,
+    .highcharts-data-table caption {
+        padding: 0.5em;
+    }
+
+    .highcharts-data-table thead tr,
+    .highcharts-data-table tr:nth-child(even) {
+        background: #f8f8f8;
+    }
+
+    .highcharts-data-table tr:hover {
+        background: #f1f7ff;
+    }
+</style>
+<?= form_open(site_url('Main/dashboardData')) ?>
+<div class="row m-auto">
+    <div class="col-3">
+        <div class="form-group row">
+            <label for="" class="col-sm-4 col-form-label">Start Date</label>
+            <div class="col-sm-8">
+                <input type="date" name="start" class="form-control">
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="form-group row">
+            <label for="" class="col-sm-4 col-form-label">End Date</label>
+            <div class="col-sm-8">
+                <input type="date" name="end" class="form-control">
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <button type="submit" name="btnFilter" class="btn btn-info"> Filter</button>
+    </div>
+</div>
+<?= form_close(); ?>
 <?= $this->endsection('subjudul'); ?>
 <?= $this->section('isi'); ?>
+
+
 <section class="content">
     <div class="container-fluid">
+
         <!-- Small boxes (Stat box) -->
         <div class="row">
             <div class="col-lg-3 col-6">
@@ -168,24 +241,12 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h5 class="card-title">Monthly Recap Report</h5>
+                <h5 class="card-title">Report by Warehouse</h5>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
                         <i class="fas fa-minus"></i>
                     </button>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
-                            <i class="fas fa-wrench"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right" role="menu">
-                            <a href="#" class="dropdown-item">Action</a>
-                            <a href="#" class="dropdown-item">Another action</a>
-                            <a href="#" class="dropdown-item">Something else here</a>
-                            <a class="dropdown-divider"></a>
-                            <a href="#" class="dropdown-item">Separated link</a>
-                        </div>
-                    </div>
                     <button type="button" class="btn btn-tool" data-card-widget="remove">
                         <i class="fas fa-times"></i>
                     </button>
@@ -194,110 +255,15 @@
             <!-- /.card-header -->
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-8">
-                        <p class="text-center">
-                            <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
-                        </p>
+                    <figure class="highcharts-figure">
+                        <div id="container"></div>
 
-
-                        <div class="chart">
-                            <!-- Sales Chart Canvas -->
-                            <canvas id="salesChart" height="180" style="height: 180px;"></canvas>
-                        </div>
-                        <span class="badge" style="background-color:rgba(60,141,188,0.9);">Total Inbound</span>
-                        <span class="badge" style="background-color:rgba(210, 214, 222, 1);">Total Outbound</span>
-                        <!-- /.chart-responsive -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-md-4">
-                        <p class="text-center">
-                            <strong>Goal Completion</strong>
-                        </p>
-
-                        <div class="progress-group">
-                            Add Products to Cart
-                            <span class="float-right"><b>160</b>/200</span>
-                            <div class="progress progress-sm">
-                                <div class="progress-bar bg-primary" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <!-- /.progress-group -->
-
-                        <div class="progress-group">
-                            Complete Purchase
-                            <span class="float-right"><b>310</b>/400</span>
-                            <div class="progress progress-sm">
-                                <div class="progress-bar bg-danger" style="width: 75%"></div>
-                            </div>
-                        </div>
-
-                        <!-- /.progress-group -->
-                        <div class="progress-group">
-                            <span class="progress-text">Visit Premium Page</span>
-                            <span class="float-right"><b>480</b>/800</span>
-                            <div class="progress progress-sm">
-                                <div class="progress-bar bg-success" style="width: 60%"></div>
-                            </div>
-                        </div>
-
-                        <!-- /.progress-group -->
-                        <div class="progress-group">
-                            Send Inquiries
-                            <span class="float-right"><b>250</b>/500</span>
-                            <div class="progress progress-sm">
-                                <div class="progress-bar bg-warning" style="width: 50%"></div>
-                            </div>
-                        </div>
-                        <!-- /.progress-group -->
-                    </div>
-                    <!-- /.col -->
+                    </figure>
                 </div>
                 <!-- /.row -->
             </div>
             <!-- ./card-body -->
-            <div class="card-footer">
-                <div class="row">
-                    <div class="col-sm-3 col-6">
-                        <div class="description-block border-right">
-                            <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span>
-                            <h5 class="description-header">30.000</h5>
-                            <span class="description-text">TOTAL ORDER</span>
-                        </div>
-                        <!-- /.description-block -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-sm-3 col-6">
-                        <div class="description-block border-right">
-                            <span class="description-percentage text-warning"><i class="fas fa-caret-left"></i>
-                                0%</span>
-                            <h5 class="description-header">5</h5>
-                            <span class="description-text">TOTAL WAREHOUSE</span>
-                        </div>
-                        <!-- /.description-block -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-sm-3 col-6">
-                        <div class="description-block border-right">
-                            <span class="description-percentage text-success"><i class="fas fa-caret-up"></i>
-                                <?= round((intval(30000) / intval(70)) / intval(100), 2) ?>%</span>
-                            <h5 class="description-header">70</h5>
-                            <span class="description-text">TOTAL COMPLAIN</span>
-                        </div>
-                        <!-- /.description-block -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-sm-3 col-6">
-                        <div class="description-block">
-                            <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i>
-                                <?= round((intval(50000) / intval(30000)) / intval(100), 2) ?> %</span>
-                            <h5 class="description-header">50.000</h5>
-                            <span class="description-text">GOAL</span>
-                        </div>
-                        <!-- /.description-block -->
-                    </div>
-                </div>
-                <!-- /.row -->
-            </div>
+
             <!-- /.card-footer -->
         </div>
         <!-- /.card -->
@@ -321,9 +287,10 @@
         </div>
     </div>
     <!-- /.card-header -->
-    <div class="card-body p-0">
+    <div class="card-body">
         <div class="table-responsive">
-            <table class="table m-0">
+
+            <table class="table">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -340,44 +307,44 @@
                 <tbody>
                     <?php $no = 1;
                     foreach ($warehouse as $x) : ?>
-                    <tr>
-                        <td><?= $no++ ?></td>
-                        <td><?= $x->stock_location; ?></td>
-                        <td>
-                            <?php
+                        <tr>
+                            <td><?= $no++ ?></td>
+                            <td><?= $x->stock_location; ?></td>
+                            <td>
+                                <?php
                                 $db = \Config\Database::connect();
                                 $jumlah = $db->table('tbl_order')->where('stock_location', $x->stock_location)->countAllResults();
 
                                 echo $jumlah;
                                 ?>
-                        </td>
-                        <td><?= $x->item; ?></td>
-                        <td><?= $x->qty; ?></td>
-                        <td>
-                            <?php
+                            </td>
+                            <td><?= $x->item; ?></td>
+                            <td><?= $x->qty; ?></td>
+                            <td>
+                                <?php
                                 $db = \Config\Database::connect();
                                 $meetSLA = $db->table('tbl_packing')->where(['warehouse' => $x->stock_location, 'updated_at>=' => $x->created_at])->countAllResults();
 
                                 echo $meetSLA;
                                 ?>
-                        </td>
-                        <td>
-                            <?php
+                            </td>
+                            <td>
+                                <?php
                                 $db = \Config\Database::connect();
                                 $overSLA = $db->table('tbl_packing')->where(['warehouse' => $x->stock_location, 'updated_at<=' => $x->created_at])->countAllResults();
 
                                 echo $overSLA;
                                 ?>
-                        </td>
-                        <td>
-                            <?= round((intval($meetSLA) / intval($jumlah) * 100), 2) ?> %
-                        </td>
-                        <td>
-                            <?= round((intval($overSLA) / intval($jumlah) * 100), 2) ?> %
-                        </td>
-                    </tr>
+                            </td>
+                            <td>
+                                <?= round((intval($meetSLA) / intval($jumlah) * 100), 2) ?> %
+                            </td>
+                            <td>
+                                <?= round((intval($overSLA) / intval($jumlah) * 100), 2) ?> %
+                            </td>
+                        </tr>
                 </tbody>
-                <?php endforeach; ?>
+            <?php endforeach; ?>
             </table>
         </div>
         <!-- /.table-responsive -->
@@ -417,32 +384,32 @@
                 </thead>
                 <tbody>
                     <?php foreach ($warehouse as $x) : ?>
-                    <tr>
-                        <td><?= $x->stock_location; ?></td>
-                        <td>
-                            <?php
+                        <tr>
+                            <td><?= $x->stock_location; ?></td>
+                            <td>
+                                <?php
                                 $db = \Config\Database::connect();
                                 $jumlah = $db->table('tbl_order')->where('stock_location', $x->stock_location)->countAllResults();
 
                                 echo $jumlah;
                                 ?>
-                        </td>
-                        <td><?= $x->item; ?></td>
-                        <td><?= $x->qty; ?></td>
-                        <td>
-                            <?php
+                            </td>
+                            <td><?= $x->item; ?></td>
+                            <td><?= $x->qty; ?></td>
+                            <td>
+                                <?php
                                 $db = \Config\Database::connect();
                                 $jumlah = $db->table('tbl_order')->where('stock_location', $x->stock_location)->get()->getResult();
 
                                 foreach ($jumlah as $value) {
                                 }
                                 ?>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
                 </tbody>
-                <?php endforeach; ?>
+            <?php endforeach; ?>
             </table>
         </div>
         <!-- /.table-responsive -->
@@ -457,37 +424,64 @@
 <!-- <div class="viewTampilGrafik"></div> -->
 <!-- /.content -->
 </div>
-
+<?php
+$namaWarehouse  = [];
+$jumlahOrder    = [];
+foreach ($dataOrder as $p) {
+    $namaWarehouse[] = $p->stock_location;
+    $db = \Config\Database::connect();
+    $jumlahOrder[] = $db->table('tbl_order')->where('stock_location',$p->stock_location)->countAllResults();
+}
+print_r(json_encode($jumlahOrder));
+?>
 <script>
-// let crsfToken = '<?= csrf_token() ?>';
-// let crsfHash = '<?= csrf_hash() ?>';
 
-// function tampilGrafik() {
-//     $.ajax({
-//         type: "post",
-//         url: "/Report/tampilGrafikBarangMasuk",
-//         data: {
-//             [crsfToken]: crsfHash,
-//             bulan: '2022-06'
-//         },
-//         dataType: "json",
-//         beforeSend: function() {
-//             $('.viewTampilGrafik').html('<i class="fa fa-spin fa-spinner></i>')
-//         },
-//         success: function(response) {
-//             if (response.data) {
-//                 $('.viewTampilGrafik').html(response.data);
-//             }
-//         },
-//         error: function(xhr, ajaxOptions, thrownError) {
-//             alert(xhr.status + '\n' + thrownError);
-//         }
-//     });
-// }
-// $(document).ready(function() {
-//     tampilGrafik();
-// });
 </script>
-<script src="<?= site_url() ?>plugins/jquery-mapael/maps/usa_states.min.js"></script>
-<!-- <script src="<?= site_url() ?>dist/js/pages/dashboard2.js"></script> -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script>
+    Highcharts.chart('container', {
+        chart: {
+            type: 'area'
+        },
+        title: {
+            text: 'Jumlah Order By Warehouse'
+        },
+        yAxis: {
+            title: {
+                text: 'Billions',
+            },
+            lables: {
+                formatter: function() {
+                    return this.value;
+                }
+            }
+        },
+        xAxis: {
+            categories: <?= json_encode($namaWarehouse) ?>,
+            tickmarkPlacement: 'on',
+            title: {
+                enabled: false,
+            }
+        },
+        plotOptions: {
+
+            area: {
+                stacking: 'normal',
+                lineColor: '#666666',
+                lineWidth: 1,
+                marker: {
+                    lineWidth: 1,
+                    lineColor: '#666666'
+                }
+            }
+        },
+        series: [{
+            name: 'Jumlah Order',
+            data: <?= json_encode($jumlahOrder) ?>
+        }]
+    });
+</script>
 <?= $this->endsection('isi'); ?>
